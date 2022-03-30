@@ -76,4 +76,98 @@ $ touch README.md    :Purpose- To create a README file for the repository
 $ git init  :Purpose- Initialized empty Git repository in C:/Users/hp/Desktop/Git/.git/
 ------------------------------------------------------------------------------------------------------------
 
+$ git status   #what is in the diffrent areas of repo
+On branch master
 
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        PasswordCheatSheet-200227-164354.pdf
+        PhishingCheatSheet-200227-164243.pdf
+        README.md
+        Records - (Mahima).xlsx
+        Screenshot (27).png
+        Screenshot 2022-03-14 232114.png
+        Screenshot 2022-03-15 004028.png
+        Screenshot 2022-03-15 010331.png
+        Screenshot 2022-03-15 010829.png
+        new.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+-------------------------------------------------------------------------------------------------------------------------
+$ git add .  
+# Adds all the files in the local repository and stages them for commit
+-----------------------------------------------------------------------------------------------------
+$ git commit -m "First commit"     :Purpose- to commit files you added to your git repo
+-----------------------------------------------------------------------------------------------------
+$ git log  :Purpose- to see the history of commit you made to your files
+-----------------------------------------------------------------------------------------------------
+
+Git Branches
+Branches allow you to work on different parts of a project without impacting the main branch.
+When the work is complete, a branch can be merged with the main project.
+
+$ git branch b1
+$ git branch
+  b1
+* master
+
+$ git checkout b1
+Switched to branch 'b1'
+
+----------------------------------------------------------------------------------------------------
+Git Merge  merge branches
+$ git merge b1
+Updating 307013f..c31bf7b
+Fast-forward
+ new.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+$ git push -u origin master # pushes changes to origin
+-----------------------------------------------------------------------------------------------------
+$ git status   :Purpose-Lists all new or modified files to be committed
+
+
+-----------------------------------------------------------------------------------------------------
+$ git fetch   :Purpose-used to get files from the remote repository to the local repository but not into the working directory
+$ git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 647 bytes | 58.00 KiB/s, done.
+From https://github.com/Mahima01/LocalPush
+   c31bf7b..288dedd  master     -> origin/master
+-----------------------------------------------------------------------------------------------------   
+
+ $ git log origin/master
+commit 288deddd2eb9d48da5876fddeed29323f6e5be97 (origin/master)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 00:59:55 2022 +0530
+
+    Update new.txt
+
+commit c31bf7bbeff97f0b7d8d02f60f1b102f0bfd63d1 (HEAD -> master, b1)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 22:25:09 2022 +0530
+
+    first b1 comit
+    
+    
+    commit 307013f526f2981378dd3078ccbddfdf8d03057e
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 22:25:09 2022 +0530
+
+    commiting without staging
+
+commit 248d1a22de036bbdc623cde87a1309bd05102a4a
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 22:25:09 2022 +0530
+
+    first commit
+    ---------------------------------------------------------------------------------------------------
+    
+    
+   

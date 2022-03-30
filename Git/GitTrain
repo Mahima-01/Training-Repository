@@ -26,4 +26,9 @@ AMDRM_Install.log    NTUSER.DAT{1c2b59c5-c5f5-11eb-bacb-000d3a96488e}.TxR.1.regt
 echo - print a message to the screen or to a file if > (redirect) is present.
 Touch new.txt -To create new emty  file "new.txt"
 vim new.txt -to edit the file in the Vim editor
-
+Exiting in between command shift +z+z.
+---------------------------------------------------------------------------------------------------------------------------------
+$ git config --global user.name "Mahima Tewatia"
+$ git config --global user.email "mahima.tewatia@itsacheckmate.com"
+: purpose - Add User and Id for whom the git is being used by locally.
+----------------------------------------------------------------------------------------------------------------------------------

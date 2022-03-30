@@ -306,3 +306,21 @@ Ours
 Octopus
 Resolve
 Subtree
+
+Branching  
+# Creating the new branch
+git branch feature
+# going to feature branch
+git checkout feature
+
+Branching strategies
+GitFlow -	master and develop – over the lifetime of the project. It also uses three supporting branches: feature-*, hotfix-*, and release-*. 
+        It’s the most complex model.
+GitHub Flow - A feature branch is created to work on any feature or bug fix. Each feature branch must be finished and fully tested before being 
+        merged with the main branch.
+Trunk-Based Development - Very similar to GitHub Flow except that Trunk-Based Development suggests deployment after production code is merged 
+          to the main branch to minimize chances for regression.
+GitLab Flow - this strategy is like an extension of GitHub Flow with master and feature branches. However, it adds environment and release 
+          branches to better support SaaS and mobile projects.
+OneFlow	- Formulated by Adam Ruka, OneFlow proposes to be a simplification of GitFlow with the use of rebase options some consider controversial.
+

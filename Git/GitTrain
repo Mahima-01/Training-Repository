@@ -219,3 +219,17 @@ write working from top of stash stack
 git stash drop
 discard the changes from top of stash stack
 --------------------------------------------------------------------------------------------------------
+
+# Cherry picking in Git means to choose a commit from one branch and apply it onto another.
+Go the the brach where the Cherry pich commit is to be commitetd
+
+Git CherryPick <hashcode>  
+
+
+Commit Only related files in one Commit
+
+git commit -p index.html   
+#add on a patch level ie one by one add to staging area changes in the file
+
+Commit Message: Subject Should be concise
+                Body should explain in detail (Reason, Diffrence, Remrkable concept)

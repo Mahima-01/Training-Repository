@@ -1,1 +1,500 @@
-This is my first Git file.
+$ git --version
+git version 2.35.1.windows.2
+#Find the version of the git installed in the system.
+Working with Git
+Initialize Git on a folder, making it a Repository
+Git now creates a hidden folder to keep track of changes in that folder
+When a file is changed, added or deleted, it is considered modified
+You select the modified files you want to Stage
+The Staged files are Committed, which prompts Git to store a permanent snapshot of the files
+Git allows you to see the full history of every commit.
+You can revert back to any previous commit.
+Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit!
+$ cd desktop- Changing directory to desktop.
+$ mkdir Git - Making git directory.
+$ git init - Intializing Git.
+Initialized empty Git repository in C:/Users/hp/Desktop/Git/.git/
+--------------------------------------------------------------------------------------------------------------------------------
+Important bash commands:
+$ pwd git
+/c/Users/hp/desktop/git
+
+ls  - List all the files in the current directory
+-1.14-windows.xml    ntuser.dat.LOG2
+'3D Objects'/         NTUSER.DAT{1c2b59c5-c5f5-11eb-bacb-000d3a96488e}.TxR.0.regtrans-ms
+AMDRM_Install.log    NTUSER.DAT{1c2b59c5-c5f5-11eb-bacb-000d3a96488e}.TxR.1.regtrans-ms
+echo - print a message to the screen or to a file if > (redirect) is present.
+Touch new.txt -To create new emty  file "new.txt"
+vim new.txt -to edit the file in the Vim editor
+Exiting in between command shift +z+z.
+---------------------------------------------------------------------------------------------------------------------------------
+$ git config --global user.name "Mahima Tewatia"
+$ git config --global user.email "mahima.tewatia@itsacheckmate.com"
+: purpose - Add User and Id for whom the git is being used by locally.
+----------------------------------------------------------------------------------------------------------------------------------
+$ ssh-keygen -t rsa -b 4096 -C "mahima.tewatia@itsacheckmate.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/hp/.ssh/id_rsa):
+
+:Purpose- Create SSh key to authenticate the user to Global Repo.
+$ ssh-keygen -t rsa -b 4096 -C "mahima.tewatia@itsackeckmate.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/hp/.ssh/id_rsa):
+Created directory /c/Users/hp/desktop/git
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/hp/.ssh/id_rsa
+Your public key has been saved in /c/Users/hp/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:LgkD9L33joNCg9epsFyvPDxf1yzVXt7mdP0ErsEYPKY mahima.tewatia@itsackeckmate.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  .              |
+| . . .           |
+|  . . .          |
+|   .   . .   .   |
+|   .o...S = . o .|
+|  o =oo+ + O o +o|
+| . B +o.E = = o O|
+|  o.* oo.+ . o =o|
+|    o*. ... .   o|
++----[SHA256]-----+
+$ eval "$(ssh-agent -s)"
+Agent pid 1483
+
+$ ssh-add -K /c/Users/hp/.ssh/id_rsa
+Enter PIN for authenticator:
+-----------------------------------------------------------------------------------------------------
+git archive --format=tar HEAD
+
+git archive --output=./example_repo_archive.tar --format=tar HEAD
+-----------------------------------------------------------------------------------------------------
+$ git remote add origin https://github.com/Mahima01/Training.git  :Purpose- Add remote Repo to the local Rel machine and connect it.
+
+$ touch README.md    :Purpose- To create a README file for the repository
+
+$ git init  :Purpose- Initialized empty Git repository in C:/Users/hp/Desktop/Git/.git/
+------------------------------------------------------------------------------------------------------------
+
+$ git status   #what is in the diffrent areas of repo
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        PasswordCheatSheet-200227-164354.pdf
+        PhishingCheatSheet-200227-164243.pdf
+        README.md
+        Records - (Mahima).xlsx
+        Screenshot (27).png
+        Screenshot 2022-03-14 232114.png
+        Screenshot 2022-03-15 004028.png
+        Screenshot 2022-03-15 010331.png
+        Screenshot 2022-03-15 010829.png
+        new.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+-------------------------------------------------------------------------------------------------------------------------
+$ git add .  
+# Adds all the files in the local repository and stages them for commit
+-----------------------------------------------------------------------------------------------------
+$ git commit -m "First commit"     :Purpose- to commit files you added to your git repo
+-----------------------------------------------------------------------------------------------------
+$ git log  :Purpose- to see the history of commit you made to your files
+-----------------------------------------------------------------------------------------------------
+
+Git Branches
+Branches allow you to work on different parts of a project without impacting the main branch.
+When the work is complete, a branch can be merged with the main project.
+
+$ git branch b1
+$ git branch
+  b1
+* master
+
+$ git checkout b1
+Switched to branch 'b1'
+
+----------------------------------------------------------------------------------------------------
+Git Merge  merge branches
+$ git merge b1
+Updating 307013f..c31bf7b
+Fast-forward
+ new.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+$ git push -u origin master # pushes changes to origin
+-----------------------------------------------------------------------------------------------------
+$ git status   :Purpose-Lists all new or modified files to be committed
+
+
+-----------------------------------------------------------------------------------------------------
+$ git fetch   :Purpose-used to get files from the remote repository to the local repository but not into the working directory
+$ git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 647 bytes | 58.00 KiB/s, done.
+From https://github.com/Mahima01/LocalPush
+   c31bf7b..288dedd  master     -> origin/master
+-----------------------------------------------------------------------------------------------------   
+
+ $ git log origin/master
+commit 288deddd2eb9d48da5876fddeed29323f6e5be97 (origin/master)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 00:59:55 2022 +0530
+
+    Update new.txt
+
+commit c31bf7bbeff97f0b7d8d02f60f1b102f0bfd63d1 (HEAD -> master, b1)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 22:25:09 2022 +0530
+
+    first b1 comit
+    
+    
+    commit 307013f526f2981378dd3078ccbddfdf8d03057e
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 22:25:09 2022 +0530
+
+    commiting without staging
+
+commit 248d1a22de036bbdc623cde87a1309bd05102a4a
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   WED Mar 30 22:25:09 2022 +0530
+
+    first commit
+    ---------------------------------------------------------------------------------------------------
+    
+ #showing the differences between our local master and origin/master 
+ $ git diff origin/master
+diff --git a/new.txt b/new.txt
+index 119a813..836ae8b 100644
+--- a/new.txt
++++ b/new.txt
+@@ -10,6 +10,4 @@ Adding SSh in git hub
+
+ How to do Branching in the remote Repo
+ adding sometihng
+
+-working in branch
+-
+-fetch
++working in branch
+\ No newline at end of file
+
+git merge origin/master
+Updating c31bf7b..288dedd
+Fast-forward
+ new.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+-----------------------------------------------------------------------------------------------------
+$ git merge :Purpose- It is a command used to get the files from the local repository into the working directory.
+-----------------------------------------------------------------------------------------------------
+$ git pull  :Purpose-it is a command used to get files from the remote repository directly into the working directory.
+-----------------------------------------------------------------------------------------------------
+$ git reset HEAD~1  :Purpose- Remove the most recent commit
+-----------------------------------------------------------------------------------------------------
+$ git remote add origin remote_repository_URL  :Purpose- sets the new remote
+-----------------------------------------------------------------------------------------------------
+$ git push -u origin master :Purpose- pushes changes to origin
+-----------------------------------------------------------------------------------------------------
+$ git diff :Purpose- To show the files changes not yet staged
+-----------------------------------------------------------------------------------------------------
+Git Reset
+Git commit --amend
+Git Reflog #Recovering deleted commits
+
+-----------------------------------------------------------------------------------------------------
+Git Stash 
+git stash
+Save modified and staged changes
+git stash list
+list stack-order of stashed file changes
+git stash pop
+write working from top of stash stack
+git stash drop
+discard the changes from top of stash stack
+--------------------------------------------------------------------------------------------------------
+
+# Cherry picking in Git means to choose a commit from one branch and apply it onto another.
+Go the the brach where the Cherry pich commit is to be commitetd
+
+Git CherryPick <hashcode>  
+
+
+Commit Only related files in one Commit
+
+git commit -p index.html   
+#add on a patch level ie one by one add to staging area changes in the file
+
+Commit Message: Subject Should be concise
+                Body should explain in detail (Reason, Diffrence, Remrkable concept)
+                
+Branching Strategies:
+Conventions Among team to avert collisions
+Feature , Develop branch ANd Main BRanch
+ 
+GitHub Flow long running and short lived branch
+Use tools to resolve merge conflicts (TOWER)
+
+Merge seees  3 points Common Ancenstors and last commits of both branches
+Rebase: diffrent from merge  does not show branching in logs if rebase done shows only one main line(use them to cleanup local history)
+Interactive Rebase:
+
+Submodules to manage outside code.
+-----------------------------------------------------------------------------------------------------
+ #tells the difference between staging and working directory
+ git diff
+diff --git a/new.txt b/new.txt
+index 6eeeca8..e9ff1aa 100644
+--- a/new.txt
++++ b/new.txt
+@@ -12,7 +12,7 @@ adding sometihng
+
+ working in branch
+
+-fetch
+-pull
++
+ push
+ newbranch
++adding to see the different int the diff
+\ No newline at end of file
+
+
+# tells the difference between repository and staging directory
+$ git diff --staged
+diff --git a/Holidays_Schedule_2022.png b/Holidays_Schedule_2022.png
+new file mode 100644
+index 0000000..e0bb9a3
+Binary files /dev/null and b/Holidays_Schedule_2022.png differ
+diff --git a/PasswordCheatSheet-200227-164354.pdf b/PasswordCheatSheet-200227-164354.pdf
+new file mode 100644
+index 0000000..f314339
+--- /dev/null
++++ b/PasswordCheatSheet-200227-164354.pdf
+@@ -0,0 +1,9 @@
++3 easy steps to fantastic passwords
++
++     1                 2                      3
++
++Think passphrase     Punctuate and       Replace letter(s) for
++   not password   capitalize creatively        numbers
++
++I hate beets      I.Hate!Beets!           I.H8!Beets!
++^L
+\ No newline at end of file
+diff --git a/PhishingCheatSheet-200227-164243.pdf b/PhishingCheatSheet-200227-164243.pdf
+new file mode 100644
+index 0000000..27b6a4d
+--- /dev/null
++++ b/PhishingCheatSheet-200227-164243.pdf
+@@ -0,0 +1,12 @@
++3 Easy steps to smell
++   phishing attacks
+---------------------------------------------------------------------------------------------------------------------------------
+
+There are various types of merge strategies :
+
+Fast Forward
+Recursive
+Ours
+Octopus
+Resolve
+Subtree
+
+Branching  
+# Creating the new branch
+git branch feature
+# going to feature branch
+git checkout feature
+
+Branching strategies
+GitFlow -	master and develop – over the lifetime of the project. It also uses three supporting branches: feature-*, hotfix-*, and release-*. 
+        It’s the most complex model.
+GitHub Flow - A feature branch is created to work on any feature or bug fix. Each feature branch must be finished and fully tested before being 
+        merged with the main branch.
+Trunk-Based Development - Very similar to GitHub Flow except that Trunk-Based Development suggests deployment after production code is merged 
+          to the main branch to minimize chances for regression.
+GitLab Flow - this strategy is like an extension of GitHub Flow with master and feature branches. However, it adds environment and release 
+          branches to better support SaaS and mobile projects.
+OneFlow	- Formulated by Adam Ruka, OneFlow proposes to be a simplification of GitFlow with the use of rebase options some consider controversial.
+
+
+$ git commit -a -m"commit new features in branch"
+[feature 8e468a2] commit new features in branch
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ 
+# Branching has the has same  previous logs  as the main it is branched from 
+git log
+commit 8e468a23ae9249b540cc5440b79693bc573913ae (HEAD -> feature)  # here head shows the current branch we are working on#
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Wed Mar 30 20:58:30 2022 +0530
+
+    commit new features in branch
+
+commit b3419185927650ca6ec3c06def5f0cbfd01ae8bd (newbranch)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Wed Mar 30 04:07:25 2022 +0530
+
+    adding every file in the directory
+
+commit fca22c78a29f63af829bbd7c65cd4bcdb78c97ab (origin/newbranch)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Thu Mar 30 01:39:29 2022 +0530
+
+    Update new.txt
+
+commit 320463d58515a8536b08bfa004a11118eb438a71 (origin/master, master)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Thu Mar 30 01:11:43 2022 +0530
+
+
+pushcommand
+
+commit bcdb56794de63464e082ab4afb1ebe0671f1b136
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Thu Mar 30 01:07:34 2022 +0530
+
+    Update new.txt
+    
+    
+# deleting branch after the work is done
+git branch -D feature1
+
+Merging
+
+Mah@HOME MINGW64 ~/desktop/Newfile (feature)
+$ git commit -a -m"commit gibberish in branch"
+[feature 5e774ac] commit gibberish in branch
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+Mah@HOME MINGW64 ~/desktop/Newfile (feature)
+$ git checkout master
+Switched to branch 'master'
+M       w3schools-test.github.io
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Mah@HOME MINGW64 ~/desktop/Newfile (master)
+$ git commit -a -m"commit gibberish in master"
+[master 7ce5f87] commit gibberish in master
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+Mah@HOME MINGW64 ~/desktop/Newfile (master)
+$ git merge feature  -m"creating confilict in this small world"
+Auto-merging new.txt
+CONFLICT (content): Merge conflict in new.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+why iT did not show where the conflict is??
+conflicts are reflected in the file itself so solve there what to be saved and updated and commit again
+
+<<<<<<< HEAD    # code in the HEad i.e. in current branch where the conflicts happen
+why do this
+=======   # seperating the code of the current and branch being mereged
+abcdcabdd
+>>>>>>> feature  # end of the conflict in the branch being merged
+
+after resolving the conflict commit the file 
+
+$ git commit -a -m "commiting after resolving merge conflicts"
+[master c203dd0] commiting after resolving merge conflicts
+
+
+-----------------------------------------------------------------------------------------------------
+Feature branch workflow (BRanching Strategies applying)
+1. Create a branch for the new feature (called a "feature branch").
+git branch new-feature
+git checkout new-feature
+Switched to branch 'new-feature'
+M       w3schools-test.github.io
+
+making some chencges in code
+$ git commit -m "new feature message"
+[new-feature fea8cfc] new feature message
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+ 
+ 2. Upload the feature branch to GitHub.
+git push origin new-feature
+Enumerating objects: 32, done.
+Counting objects: 100% (32/32), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (30/30), 22.61 MiB | 2.59 MiB/s, done.
+Total 30 (delta 11), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (11/11), completed with 1 local object.
+remote:
+remote: Create a pull request for 'new-feature' on GitHub by visiting:
+remote:      https://github.com/Mahima01/LocalPush/pull/new/new-feature
+remote:
+To github.com:Mahima01/LocalPush.git
+ * [new branch]      new-feature -> new-feature
+  
+3. Create a pull request on GitHub (a pull request lets teammates do code reviews and add
+comments).
+
+4. Merge the feature branch into the main branch (by opening the pull request in the browser
+and clicking "Merge pull request")
+Shows the log in local repo and asks if to merge them
+
+5. After merging, update the local repository (so that it stays in sync with the remote repository
+on GitHub).
+$ git pull origin new-feature
+From github.com:Mahima01/LocalPush
+ * branch            new-feature -> FETCH_HEAD
+Already up to date.
+----------------------------------------------------------------------------------------------------------------------------
+
+Merge Conflicts in the Feature Branch Workflow
+
+$ git push origin
+To github.com:Mahima01/LocalPush.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:Shubham0197/LocalPush.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+# Pull the repo first to have the latest repo to work from
+$ git pull origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 678 bytes | 67.00 KiB/s, done.
+From github.com:Mahima01/LocalPush
+   320463d..9123298  master     -> origin/master
+Auto-merging new.txt
+Merge made by the 'ort' strategy.
+ new.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ 
+ # showing the updates done to the latest file in the remote to the local repo
+ 
+ # and push command  worked
+ $ git push origin
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 365 bytes | 365.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Mahima01/LocalPush.git
+   9123298..6cb9e39  master -> master
+   
+   
+Changing file and pushing it again 
+
+This branch has conflicts that must be resolved
+Use the web editor or the  to resolve conflicts.
+Conflicting files
+new.txt
+

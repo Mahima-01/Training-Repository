@@ -1,1 +1,29 @@
-This is my first Git file.
+$ git --version
+git version 2.35.1.windows.2
+#Find the version of the git installed in the system.
+Working with Git
+Initialize Git on a folder, making it a Repository
+Git now creates a hidden folder to keep track of changes in that folder
+When a file is changed, added or deleted, it is considered modified
+You select the modified files you want to Stage
+The Staged files are Committed, which prompts Git to store a permanent snapshot of the files
+Git allows you to see the full history of every commit.
+You can revert back to any previous commit.
+Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit!
+$ cd desktop- Changing directory to desktop.
+$ mkdir Git - Making git directory.
+$ git init - Intializing Git.
+Initialized empty Git repository in C:/Users/hp/Desktop/Git/.git/
+--------------------------------------------------------------------------------------------------------------------------------
+Important bash commands:
+$ pwd git
+/c/Users/hp/desktop/git
+
+ls  - List all the files in the current directory
+-1.14-windows.xml    ntuser.dat.LOG2
+'3D Objects'/         NTUSER.DAT{1c2b59c5-c5f5-11eb-bacb-000d3a96488e}.TxR.0.regtrans-ms
+AMDRM_Install.log    NTUSER.DAT{1c2b59c5-c5f5-11eb-bacb-000d3a96488e}.TxR.1.regtrans-ms
+echo - print a message to the screen or to a file if > (redirect) is present.
+Touch new.txt -To create new emty  file "new.txt"
+vim new.txt -to edit the file in the Vim editor
+

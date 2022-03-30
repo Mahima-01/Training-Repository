@@ -32,3 +32,48 @@ $ git config --global user.name "Mahima Tewatia"
 $ git config --global user.email "mahima.tewatia@itsacheckmate.com"
 : purpose - Add User and Id for whom the git is being used by locally.
 ----------------------------------------------------------------------------------------------------------------------------------
+$ ssh-keygen -t rsa -b 4096 -C "mahima.tewatia@itsacheckmate.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/hp/.ssh/id_rsa):
+
+:Purpose- Create SSh key to authenticate the user to Global Repo.
+$ ssh-keygen -t rsa -b 4096 -C "mahima.tewatia@itsackeckmate.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/hp/.ssh/id_rsa):
+Created directory /c/Users/hp/desktop/git
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/hp/.ssh/id_rsa
+Your public key has been saved in /c/Users/hp/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:LgkD9L33joNCg9epsFyvPDxf1yzVXt7mdP0ErsEYPKY mahima.tewatia@itsackeckmate.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  .              |
+| . . .           |
+|  . . .          |
+|   .   . .   .   |
+|   .o...S = . o .|
+|  o =oo+ + O o +o|
+| . B +o.E = = o O|
+|  o.* oo.+ . o =o|
+|    o*. ... .   o|
++----[SHA256]-----+
+$ eval "$(ssh-agent -s)"
+Agent pid 1483
+
+$ ssh-add -K /c/Users/hp/.ssh/id_rsa
+Enter PIN for authenticator:
+-----------------------------------------------------------------------------------------------------
+git archive --format=tar HEAD
+
+git archive --output=./example_repo_archive.tar --format=tar HEAD
+-----------------------------------------------------------------------------------------------------
+$ git remote add origin https://github.com/Mahima01/Training.git  :Purpose- Add remote Repo to the local Rel machine and connect it.
+
+$ touch README.md    :Purpose- To create a README file for the repository
+
+$ git init  :Purpose- Initialized empty Git repository in C:/Users/hp/Desktop/Git/.git/
+------------------------------------------------------------------------------------------------------------
+
+

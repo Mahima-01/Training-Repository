@@ -324,3 +324,46 @@ GitLab Flow - this strategy is like an extension of GitHub Flow with master and 
           branches to better support SaaS and mobile projects.
 OneFlow	- Formulated by Adam Ruka, OneFlow proposes to be a simplification of GitFlow with the use of rebase options some consider controversial.
 
+
+$ git commit -a -m"commit new features in branch"
+[feature 8e468a2] commit new features in branch
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ 
+# Branching has the has same  previous logs  as the main it is branched from 
+git log
+commit 8e468a23ae9249b540cc5440b79693bc573913ae (HEAD -> feature)  # here head shows the current branch we are working on#
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Wed Mar 30 20:58:30 2022 +0530
+
+    commit new features in branch
+
+commit b3419185927650ca6ec3c06def5f0cbfd01ae8bd (newbranch)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Wed Mar 30 04:07:25 2022 +0530
+
+    adding every file in the directory
+
+commit fca22c78a29f63af829bbd7c65cd4bcdb78c97ab (origin/newbranch)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Thu Mar 30 01:39:29 2022 +0530
+
+    Update new.txt
+
+commit 320463d58515a8536b08bfa004a11118eb438a71 (origin/master, master)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Thu Mar 30 01:11:43 2022 +0530
+
+
+pushcommand
+
+commit bcdb56794de63464e082ab4afb1ebe0671f1b136
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Thu Mar 30 01:07:34 2022 +0530
+
+    Update new.txt
+    
+    
+# deleting branch after the work is done
+git branch -D feature1
+
+

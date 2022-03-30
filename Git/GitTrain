@@ -366,6 +366,87 @@ Date:   Thu Mar 30 01:07:34 2022 +0530
 # deleting branch after the work is done
 git branch -D feature1
 
+Merging
 
+Mah@HOME MINGW64 ~/desktop/Newfile (feature)
+$ git commit -a -m"commit gibberish in branch"
+[feature 5e774ac] commit gibberish in branch
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+Mah@HOME MINGW64 ~/desktop/Newfile (feature)
+$ git checkout master
+Switched to branch 'master'
+M       w3schools-test.github.io
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Mah@HOME MINGW64 ~/desktop/Newfile (master)
+$ git commit -a -m"commit gibberish in master"
+[master 7ce5f87] commit gibberish in master
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+Mah@HOME MINGW64 ~/desktop/Newfile (master)
+$ git merge feature  -m"creating confilict in this small world"
+Auto-merging new.txt
+CONFLICT (content): Merge conflict in new.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+why iT did not show where the conflict is??
+conflicts are reflected in the file itself so solve there what to be saved and updated and commit again
+
+<<<<<<< HEAD    # code in the HEad i.e. in current branch where the conflicts happen
+why do this
+=======   # seperating the code of the current and branch being mereged
+abcdcabdd
+>>>>>>> feature  # end of the conflict in the branch being merged
+
+after resolving the conflict commit the file 
+
+$ git commit -a -m "commiting after resolving merge conflicts"
+[master c203dd0] commiting after resolving merge conflicts
+
+
+-----------------------------------------------------------------------------------------------------
+Feature branch workflow (BRanching Strategies applying)
+1. Create a branch for the new feature (called a "feature branch").
+git branch new-feature
+git checkout new-feature
+Switched to branch 'new-feature'
+M       w3schools-test.github.io
+
+making some chencges in code
+$ git commit -m "new feature message"
+[new-feature fea8cfc] new feature message
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+ 
+ 2. Upload the feature branch to GitHub.
+git push origin new-feature
+Enumerating objects: 32, done.
+Counting objects: 100% (32/32), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (30/30), 22.61 MiB | 2.59 MiB/s, done.
+Total 30 (delta 11), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (11/11), completed with 1 local object.
+remote:
+remote: Create a pull request for 'new-feature' on GitHub by visiting:
+remote:      https://github.com/Mahima01/LocalPush/pull/new/new-feature
+remote:
+To github.com:Mahima01/LocalPush.git
+ * [new branch]      new-feature -> new-feature
+  
+3. Create a pull request on GitHub (a pull request lets teammates do code reviews and add
+comments).
+
+4. Merge the feature branch into the main branch (by opening the pull request in the browser
+and clicking "Merge pull request")
+Shows the log in local repo and asks if to merge them
+
+5. After merging, update the local repository (so that it stays in sync with the remote repository
+on GitHub).
+$ git pull origin new-feature
+From github.com:Mahima01/LocalPush
+ * branch            new-feature -> FETCH_HEAD
+Already up to date.
 
 

@@ -497,4 +497,16 @@ This branch has conflicts that must be resolved
 Use the web editor or the  to resolve conflicts.
 Conflicting files
 new.txt
+----------------------------------------------------------------------------------------------------------------------------
+
+Git reflog vs. log differences
+The biggest difference between Git reflog vs. log is that the log is a public accounting of the repository's commit history while 
+the reflog is a private, workspace-specific accounting of the repo's local commits.
+The Git log is part of the Git repository and is replicated after a push, fetch or pull. 
+In contrast, the Git reflog is not part of the replicated repo. A developer can't examine a local repository's reflog without having physical access to the computer where it is located.
+
+Use the git log command to view the log and use the git reflog command to view the reflog.
+In more technical terms, the reflog is a file found in .git\logs\refs\heads that tracks the history of local commits for a given branch and excludes any commits that were potentially pruned away through Git garbage collection routines. 
+In contrast, the Git log provides a branch's historical traversal of commits that starts from the most recent commit and ends at the very first commit of the entire branch history.
+
 

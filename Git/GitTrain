@@ -169,5 +169,10 @@ Date:   WED Mar 30 22:25:09 2022 +0530
     first commit
     ---------------------------------------------------------------------------------------------------
     
-    
-   
+ #showing the differences between our local master and origin/master 
+ $ git diff origin/master
+diff --git a/new.txt b/new.txt
+index 119a813..836ae8b 100644
+--- a/new.txt
++++ b/new.txt
+@@ -10,6 +10,4 @@ Adding SSh in git hub

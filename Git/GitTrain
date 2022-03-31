@@ -574,3 +574,14 @@ index 4d6f522..17d218a 100644
 --- a/new.txt
 +++ b/new.txt
 @@ -18,7 +18,4 @@ working in branch
+
+
+
+Rebase
+#it is a process to reapply commits on top of another base trip
+$ git rebase -i origin/master
+Successfully rebased and updated refs/heads/master.
+pick 4e774d2 ignored directory created.
+pick 3820547 ignored directory created.
+pick b8e1ea8 to see untracked files
+pick 9574a16 To rebase commiting chenges

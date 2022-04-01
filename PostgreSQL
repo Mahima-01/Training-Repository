@@ -1,0 +1,53 @@
+What is PostgreSQL?
+PostgreSQL (pronounced as post-gress-Q-L) is an open source relational database management system (DBMS) developed by a worldwide team of volunteers. 
+
+Key Features of PostgreSQL
+PostgreSQL runs on all major operating systems, including Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris, Tru64), and Windows. 
+It supports text, images, sounds, and video, and includes programming interfaces for C / C++, Java, Perl, Python, Ruby, Tcl and Open Database Connectivity (ODBC).
+PostgreSQL supports a large part of the SQL standard and offers many modern features including the following −
+Complex SQL queries
+SQL Sub-selects
+Foreign keys
+Trigger
+Views
+Transactions
+Multiversion concurrency control (MVCC)
+Streaming Replication (as of 9.0)
+Hot Standby (as of 9.0)
+
+#Show Databases
+
+\l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+(3 rows)
+
+postgres=# CREATE DATABASE TEST;
+CREATE DATABASE
+
+test-#
+Here # shows I am Super User
+test=>
+" => " have rights to the database
+
+# To see current date
+SELECT current_date;
+ current_date
+--------------
+ 2022-03-31
+(1 row)
+
+# Running Arithmatic Commands
+SELECT 2 + 2;
+ ?column?
+----------
+        4
+(1 row)
+# \h for help
+# \q to quit

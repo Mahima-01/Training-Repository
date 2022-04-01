@@ -51,3 +51,49 @@ SELECT 2 + 2;
 (1 row)
 # \h for help
 # \q to quit
+
+# Postgre uses the SQL language
+# "-- " to write comments in SQL
+
+Syntax
+The basic syntax of CREATE DATABASE statement is as follows −
+
+CREATE DATABASE dbname;
+where dbname is the name of a database to create.
+# Creating the tables in the databse
+
+test1=# CREATE TABLE weather (
+test1(#     city            varchar(80),
+test1(#     temp_lo         int,           -- low temperature
+test1(#     temp_hi         int,           -- high temperature
+test1(#     prcp            real,          -- precipitation
+test1(#     date            date
+test1(# );
+CREATE TABLE
+test1=# CREATE TABLE cities (
+test1(#     name            varchar(80),
+test1(#     location        point
+test1(# );
+CREATE TABLE
+
+# Deleteing the whole table  
+test1=# DROP TABLE cities;
+DROP TABLE
+
+Basic syntax of INSERT INTO statement is as follows −
+
+INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)
+VALUES (value1, value2, value3,...valueN);
+#inserting data in the tables
+est1=# INSERT INTO weather VALUES ('San Francisco', 46, 50, 0.25, '1994-11-27');
+INSERT 0 1
+test1=# INSERT INTO cities VALUES ('San Francisco', '(-194.0, 53.0)');
+INSERT 0 1
+test1=# INSERT INTO weather (city, temp_lo, temp_hi, prcp, date)
+test1-#     VALUES ('San Francisco', 43, 57, 0.0, '1994-11-29');
+INSERT 0 1
+test1=# INSERT INTO weather (date, city, temp_hi, temp_lo)
+test1-#     VALUES ('1994-11-29', 'Hayward', 54, 37);
+INSERT 0 1
+
+

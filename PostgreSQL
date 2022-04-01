@@ -96,4 +96,168 @@ test1=# INSERT INTO weather (date, city, temp_hi, temp_lo)
 test1-#     VALUES ('1994-11-29', 'Hayward', 54, 37);
 INSERT 0 1
 
+# Quering the data from the to see data 
+test1=# SELECT * FROM weather;
+     city      | temp_lo | temp_hi | prcp |    date
+---------------+---------+---------+------+------------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27
+ San Francisco |      43 |      57 |    0 | 1994-11-29
+ Hayward       |      37 |      54 |      | 1994-11-29
+(3 rows)
+
+# Quesring data using Orerators to manipulate data 
+test1=# SELECT city, (temp_hi+temp_lo)/2 AS temp_avg, date FROM weather;
+     city      | temp_avg |    date
+---------------+----------+------------
+ San Francisco |       48 | 1994-11-27
+ San Francisco |       50 | 1994-11-29
+ Hayward       |       45 | 1994-11-29
+(3 rows)
+
+# Quering data with where clause to seespecific data
+
+test1=# SELECT * FROM weather
+test1-#     WHERE city = 'San Francisco' AND prcp > 0.0;
+     city      | temp_lo | temp_hi | prcp |    date
+---------------+---------+---------+------+------------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27
+(1 row)
+
+# using orderby to arrandata while query it
+test1=# SELECT * FROM weather
+test1-#     ORDER BY city;
+     city      | temp_lo | temp_hi | prcp |    date
+---------------+---------+---------+------+------------
+ Hayward       |      37 |      54 |      | 1994-11-29
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27
+ San Francisco |      43 |      57 |    0 | 1994-11-29
+(3 rows)
+
+#query uniques data from the table 
+test1=# SELECT DISTINCT city
+test1-#     FROM weather;
+     city
+---------------
+ Hayward
+ San Francisco
+(2 rows)
+
+#Using Aggregate Functions MAX
+test1=# SELECT max(temp_lo) FROM weather;
+ max
+-----
+  46
+(1 row)
+
+test1=# SELECT city, max(temp_lo)
+test1-#     FROM weather
+test1-#     GROUP BY city;
+     city      | max
+---------------+-----
+ Hayward       |  37
+ San Francisco |  46
+(2 rows)
+
+
+test1=# UPDATE weather
+test1-#     SET temp_hi = temp_hi - 2,  temp_lo = temp_lo - 2
+test1-#     WHERE date > '1994-11-28';
+UPDATE 2
+
+#Manupulating the tables
+
+#Deleting the specific data from the table
+
+test1=# DELETE FROM weather WHERE city = 'Hayward';
+DELETE 1
+
+# updating the data in the table
+test1=# UPDATE weather
+test1-#     SET temp_hi = temp_hi - 2,  temp_lo = temp_lo - 2
+test1-#     WHERE date > '1994-11-28';
+UPDATE 2
+test1=# SELECT * FROM weather;
+     city      | temp_lo | temp_hi | prcp |    date
+---------------+---------+---------+------+------------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27
+ San Francisco |      41 |      55 |    0 | 1994-11-29
+(2 rows)
+
+# Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database.
+
+test1=# CREATE VIEW myview AS
+test1-#     SELECT name, temp_lo, temp_hi, prcp, date, location
+test1-#         FROM weather, cities
+test1-#         WHERE city = name;
+CREATE VIEW
+test1=# SELECT * FROM myview;
+     name      | temp_lo | temp_hi | prcp |    date    | location
+---------------+---------+---------+------+------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | (-194,53)
+ San Francisco |      41 |      55 |    0 | 1994-11-29 | (-194,53)
+(2 rows)
+
+FOREIGN KEY Constraint
+A foreign key constraint specifies that the values in a column (or a group of columns) must match the values appearing in some row of another table. 
+We say this maintains the referential integrity between two related tables. 
+They are called foreign keys because the constraints are foreign; that is, outside the table. 
+Foreign keys are sometimes called a referencing key.
+For Eg in above table if no data should be added in weather if there is no matching data in cities here we use foriegn keys so Postgresql can do this it self and mintain refrential integrity.
+#create table cities with mane as primary key
+ create table cities(
+ name varchar(80) primary key,
+ location point
+ );
+ ERROR:  relation "cities" already exists
+ 
+ # and make refrence / foreign key of ctiries name column in weather table
+ create table weather(
+ city varchar(80) references cities(name),
+ temp_lo int,
+ temp_hi int,
+ prcp real,
+ date date
+ );
+ ERROR:  relation "weather" already exists
+ # to describe table name
+ \d tablename
+ test1=# \d cities
+                       Table "public.cities"
+  Column  |         Type          | Collation | Nullable | Default
+----------+-----------------------+-----------+----------+---------
+ name     | character varying(80) |           |          |
+ location | point                 |           |          |
+
+# adding constrain to existing column in table
+alter table cities add constraint cities_pk primary key(name);
+ALTER TABLE
+test1=# \d cities
+                       Table "public.cities"
+  Column  |         Type          | Collation | Nullable | Default
+----------+-----------------------+-----------+----------+---------
+ name     | character varying(80) |           | not null |
+ location | point                 |           |          |
+Indexes:
+    "cities_pk" PRIMARY KEY, btree (name)
+	
+# Alter table to add foreign key constraints
+alter table weather add constraint weather_pk foreign key (city) references cities(name);
+ALTER TABLE
+
+                      Table "public.weather"
+ Column  |         Type          | Collation | Nullable | Default
+---------+-----------------------+-----------+----------+---------
+ city    | character varying(80) |           |          |
+ temp_lo | integer               |           |          |
+ temp_hi | integer               |           |          |
+ prcp    | real                  |           |          |
+ date    | date                  |           |          |
+Foreign-key constraints:
+    "weather_pk" FOREIGN KEY (city) REFERENCES cities(name)
+
+#insert error due to Berkley not present in cities table
+test1=# INSERT INTO weather VALUES ('Berkeley', 45, 53, 0.0, '1994-11-28');
+ERROR:  insert or update on table "weather" violates foreign key constraint "weather_pk"
+DETAIL:  Key (city)=(Berkeley) is not present in table "cities".
+
 

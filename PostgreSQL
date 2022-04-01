@@ -260,4 +260,15 @@ test1=# INSERT INTO weather VALUES ('Berkeley', 45, 53, 0.0, '1994-11-28');
 ERROR:  insert or update on table "weather" violates foreign key constraint "weather_pk"
 DETAIL:  Key (city)=(Berkeley) is not present in table "cities".
 
+A transaction is a unit of work that is performed against a database. 
+Transactions are units or sequences of work accomplished in a logical order, whether in a manual fashion by a user or automatically by some sort of a database program.
+A transaction is the propagation of one or more changes to the database. 
+For example, if you are creating a record, updating a record, or deleting a record from the table, then you are performing transaction on the table. 
+It is important to control transactions to ensure data integrity and to handle database errors.
+
+The following commands are used to control transactions −
+BEGIN TRANSACTION − To start a transaction.
+Transactions can be started using BEGIN TRANSACTION or simply BEGIN command.
+COMMIT − To save the changes, alternatively you can use END TRANSACTION command.
+ROLLBACK − To rollback the changes.
 

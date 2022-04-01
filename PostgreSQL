@@ -260,12 +260,72 @@ test1=# INSERT INTO weather VALUES ('Berkeley', 45, 53, 0.0, '1994-11-28');
 ERROR:  insert or update on table "weather" violates foreign key constraint "weather_pk"
 DETAIL:  Key (city)=(Berkeley) is not present in table "cities".
 
+Joins:
+oins clause is used to combine records from two or more tables in a database. 
+A JOIN is a means for combining fields from two tables by using values common to each.
+1.The CROSS JOIN
+A CROSS JOIN matches every row of the first table with every row of the second table.
+If the input tables have x and y columns, respectively, the resulting table will have x+y columns.
+2.A INNER JOIN 
+creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate.
+An INNER JOIN is the most common type of join and is the default type of join.
+3.The LEFT OUTER JOIN
+The OUTER JOIN is an extension of the INNER JOIN. SQL standard defines three types of OUTER JOINs: LEFT, RIGHT, and FULL and PostgreSQL supports all of these.
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+
+SELECT * FROM weather JOIN cities ON city = name;
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+ San Francisco |      43 |      57 |    0 | 1994-11-29 | San Francisco | (-194,53)
+(2 rows)
+
+
+test1=# SELECT weather.city, weather.temp_lo, weather.temp_hi,
+test1-#        weather.prcp, weather.date, cities.location
+test1-#     FROM weather JOIN cities ON weather.city = cities.name;
+     city      | temp_lo | temp_hi | prcp |    date    | location
+---------------+---------+---------+------+------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | (-194,53)
+ San Francisco |      43 |      57 |    0 | 1994-11-29 | (-194,53)
+(2 rows)
+
+
+test1=# SELECT *
+test1-#     FROM weather LEFT OUTER JOIN cities ON weather.city = cities.name;
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+ San Francisco |      43 |      57 |    0 | 1994-11-29 | San Francisco | (-194,53)
+ Hayward       |      37 |      54 |      | 1994-11-29 |               |
+(3 rows)
+
+
+test1=# SELECT w1.city, w1.temp_lo AS low, w1.temp_hi AS high,
+test1-#        w2.city, w2.temp_lo AS low, w2.temp_hi AS high
+test1-#     FROM weather w1 JOIN weather w2
+test1-#         ON w1.temp_lo < w2.temp_lo AND w1.temp_hi > w2.temp_hi;
+     city      | low | high |     city      | low | high
+---------------+-----+------+---------------+-----+------
+ San Francisco |  43 |   57 | San Francisco |  46 |   50
+ Hayward       |  37 |   54 | San Francisco |  46 |   50
+ 
+ test1=# SELECT *
+test1-#     FROM weather w JOIN cities c ON w.city = c.name;
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+ San Francisco |      43 |      57 |    0 | 1994-11-29 | San Francisco | (-194,53)
+(2 rows)
+
+
+Transaction
 A transaction is a unit of work that is performed against a database. 
 Transactions are units or sequences of work accomplished in a logical order, whether in a manual fashion by a user or automatically by some sort of a database program.
 A transaction is the propagation of one or more changes to the database. 
 For example, if you are creating a record, updating a record, or deleting a record from the table, then you are performing transaction on the table. 
 It is important to control transactions to ensure data integrity and to handle database errors.
-
 The following commands are used to control transactions −
 BEGIN TRANSACTION − To start a transaction.
 Transactions can be started using BEGIN TRANSACTION or simply BEGIN command.

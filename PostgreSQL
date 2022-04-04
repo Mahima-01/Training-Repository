@@ -4,6 +4,13 @@ PostgreSQL (pronounced as post-gress-Q-L) is an open source relational database 
 Key Features of PostgreSQL
 PostgreSQL runs on all major operating systems, including Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris, Tru64), and Windows. 
 It supports text, images, sounds, and video, and includes programming interfaces for C / C++, Java, Perl, Python, Ruby, Tcl and Open Database Connectivity (ODBC).
+
+Importance of PostgreSQL:
+Stores data securely.
+Supports best practices,
+Allows retrieving the data when the request is processed.
+Is cross-platform and can run on many operating systems including Linux, FreeBSD, OS X, Solaris, and Microsoft Windows.
+ 
 PostgreSQL supports a large part of the SQL standard and offers many modern features including the following −
 Complex SQL queries
 SQL Sub-selects

@@ -824,3 +824,77 @@ test1=# select sqrt(9);
 ------
     3
 (1 row)
+
+#ASCII()-Returns numeric value of left-most character
+                     ^
+test1=# select ascii('a');
+ ascii
+-------
+    97
+(1 row)
+
+
+test1=# select ascii('ax');
+ ascii
+-------
+    97
+(1 row)
+
+
+#BIT_LENGTH()-Returns length of argument in bits
+test1=# select bit_length('b');
+ bit_length
+------------
+          8
+(1 row)
+
+
+test1=# select bit_length('@');
+ bit_length
+------------
+          8
+(1 row)
+
+
+test1=# select bit_length('@sdafgfsdfsd');
+ bit_length
+------------
+         96
+(1 row)
+
+
+
+#CHAR_LENGTH()-Returns number of characters in argument
+test1=# select char_length('asad');
+ char_length
+-------------
+           4
+(1 row)
+
+
+test1=# select char_length('asad13123');
+ char_length
+-------------
+           9
+(1 row)
+
+#CHARACTER_LENGTH()-A synonym for CHAR_LENGTH()
+test1=# select character_length('adaws233');
+ character_length
+------------------
+                8
+(1 row)
+
+#CONCAT_WS() - Returns concatenate with separator,first argument is the separator for the rest of the arguments
+test1=# select concat_ws('sdas','232','ase','1213','32312');
+          concat_ws
+-----------------------------
+ 232sdasasesdas1213sdas32312
+(1 row)
+
+#CONCAT()-Returns concatenated string
+test1=# select concat('sdas','232','ase');
+   concat
+------------
+ sdas232ase
+(1 row)

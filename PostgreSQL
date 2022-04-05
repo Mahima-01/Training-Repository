@@ -898,3 +898,66 @@ test1=# select concat('sdas','232','ase');
 ------------
  sdas232ase
 (1 row)
+
+#LCASE()-Synonym for LOWER()
+test1=# select LCASE('CSACASDCAS');
+ERROR:  function lcase(unknown) does not exist
+LINE 1: select LCASE('CSACASDCAS');
+
+
+#LEFT()- Returns the leftmost number of characters as specified
+test1=# SELECT LEFT('adafesfewfdr3q2rwecsd',9);
+   left
+-----------
+ adafesfew
+(1 row)
+ 
+#LENGTH()- Returns the length of a string in bytes (looks like char_length())
+
+test1=# select length('14234afsdf!@!@#$');
+ length
+--------
+     16
+(1 row)
+
+
+#LOWER()-Returns the argument in lowercase
+test1=# select lower('SDSDD');
+ lower
+-------
+ sdsdd
+(1 row)
+
+
+test1=# select lower('2132');
+ lower
+-------
+ 2132
+(1 row)
+
+
+11	LPAD()- Returns the string argument, left-padded with the specified string
+test1=# select lpad('qw',4,'11');
+ lpad
+------
+ 11qw
+(1 row)
+
+
+test1=# select lpad('qw121',4,'11');
+ lpad
+------
+ qw12
+(1 row)
+
+#LTRIM()-Removes leading spaces
+test1=# SELECT LTRIM('  basa    ');
+  ltrim
+----------
+ basa
+(1 row)
+
+
+13	MID()
+Returns a substring starting from the specified position
+

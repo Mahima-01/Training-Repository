@@ -1,0 +1,42 @@
+hospitalms=# \d
+                   List of relations
+ Schema |          Name           |   Type   |  Owner
+--------+-------------------------+----------+----------
+ public | department              | table    | postgres
+ public | department_id_seq       | sequence | postgres
+ public | disease                 | table    | postgres
+ public | disease_id_seq          | sequence | postgres
+ public | employee                | table    | postgres
+ public | employee_id_seq         | sequence | postgres
+ public | patient                 | table    | postgres
+ public | patient_appointment     | table    | postgres
+ public | patient_billing         | table    | postgres
+ public | patient_billing_id_seq  | sequence | postgres
+ public | patient_diseases        | table    | postgres
+ public | patient_doctor          | table    | postgres
+ public | patient_id_seq          | sequence | postgres
+ public | patient_register        | table    | postgres
+ public | patient_register_id_seq | sequence | postgres
+ public | role                    | table    | postgres
+ public | role_id_seq             | sequence | postgres
+(17 rows)
+
+
+hospitalms=# Insert into disease(Disease_Name) values('Chickenpox');
+ERROR:  null value in column "symptoms" of relation "disease" violates not-null constraint
+DETAIL:  Failing row contains (2, Chickenpox, null).
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Chickenpox','Fever');
+INSERT 0 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Allergies','food');
+INSERT 0 1
+hospitalms=# delete from disease where Disease_name='Allergies';
+DELETE 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Allergies','Sneezing');
+INSERT 0 1
+
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Cold and Flu','Headache');
+INSERT 0 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Diarrhea','Cramping in abdomen');
+INSERT 0 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Vomiting','Stomach ulcers');
+INSERT 0 1

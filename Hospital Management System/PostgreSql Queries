@@ -345,3 +345,44 @@ hospitalms-# ON patient.id = patient_billing.id;
  Rishab     |  5
 (5 rows)
 
+# IMPLEMENTING LEFT,RIGHT AND INNER QUERY:
+hospitalms=# Select *
+hospitalms-# From patient
+hospitalms-# Left Join patient_billing
+hospitalms-# ON patient.id = patient_billing.id;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group | id | patient_register_id |  amount  | generateddate | paymenttype
+----+------------+-----------+------------+--------+------------+--------+--------+-------------+----+---------------------+----------+---------------+-------------
+  1 | Harry      | kumar     | 2001-03-09 | Male   | 8796545654 |    5.5 |     62 | B           |  1 |                   2 | 10000.00 | 2020-04-01    | Cash
+  2 | Bhavi      | Raheja    | 2004-10-10 | Male   | 7896545654 |    5.8 |     68 | A           |  2 |                   3 | 20000.00 | 2020-08-07    | Cash
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O           |  3 |                   3 | 25000.00 | 2020-10-10    | UPI
+  4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A           |  4 |                   2 | 35000.00 | 2020-12-15    | UPI
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B           |  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay
+(5 rows)
+
+
+hospitalms=# Select *
+hospitalms-# From patient
+hospitalms-# Right Join patient_billing
+hospitalms-# ON patient.id = patient_billing.id;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group | id | patient_register_id |  amount  | generateddate | paymenttype
+----+------------+-----------+------------+--------+------------+--------+--------+-------------+----+---------------------+----------+---------------+-------------
+  1 | Harry      | kumar     | 2001-03-09 | Male   | 8796545654 |    5.5 |     62 | B           |  1 |                   2 | 10000.00 | 2020-04-01    | Cash
+  2 | Bhavi      | Raheja    | 2004-10-10 | Male   | 7896545654 |    5.8 |     68 | A           |  2 |                   3 | 20000.00 | 2020-08-07    | Cash
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O           |  3 |                   3 | 25000.00 | 2020-10-10    | UPI
+  4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A           |  4 |                   2 | 35000.00 | 2020-12-15    | UPI
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B           |  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay
+(5 rows)
+
+
+hospitalms=# Select *
+hospitalms-# From patient
+hospitalms-# Inner Join patient_billing
+hospitalms-# ON patient.id = patient_billing.id;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group | id | patient_register_id |  amount  | generateddate | paymenttype
+----+------------+-----------+------------+--------+------------+--------+--------+-------------+----+---------------------+----------+---------------+-------------
+  1 | Harry      | kumar     | 2001-03-09 | Male   | 8796545654 |    5.5 |     62 | B           |  1 |                   2 | 10000.00 | 2020-04-01    | Cash
+  2 | Bhavi      | Raheja    | 2004-10-10 | Male   | 7896545654 |    5.8 |     68 | A           |  2 |                   3 | 20000.00 | 2020-08-07    | Cash
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O           |  3 |                   3 | 25000.00 | 2020-10-10    | UPI
+  4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A           |  4 |                   2 | 35000.00 | 2020-12-15    | UPI
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B           |  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay
+(5 rows)

@@ -308,3 +308,40 @@ hospitalms=# select * from patient;
   4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A
   5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B
 (5 rows)
+
+# Inner Joins:
+hospitalms=# select * from patient;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group
+----+------------+-----------+------------+--------+------------+--------+--------+-------------
+  1 | Harry      | kumar     | 2001-03-09 | Male   | 8796545654 |    5.5 |     62 | B
+  2 | Bhavi      | Raheja    | 2004-10-10 | Male   | 7896545654 |    5.8 |     68 | A
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O
+  4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B
+(5 rows)
+
+
+hospitalms=# select * from patient_billing;
+ id | patient_register_id |  amount  | generateddate | paymenttype
+----+---------------------+----------+---------------+-------------
+  1 |                   2 | 10000.00 | 2020-04-01    | Cash
+  2 |                   3 | 20000.00 | 2020-08-07    | Cash
+  3 |                   3 | 25000.00 | 2020-10-10    | UPI
+  4 |                   2 | 35000.00 | 2020-12-15    | UPI
+  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay
+(5 rows)
+
+
+hospitalms=# Select patient.first_name, patient_billing.id
+hospitalms-# From patient
+hospitalms-# Inner Join patient_billing
+hospitalms-# ON patient.id = patient_billing.id;
+ first_name | id
+------------+----
+ Harry      |  1
+ Bhavi      |  2
+ Bhavya     |  3
+ Prachi     |  4
+ Rishab     |  5
+(5 rows)
+

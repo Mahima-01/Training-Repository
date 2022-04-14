@@ -417,3 +417,14 @@ hospitalms-# ON patient.id = patient_register.pateint_id;
  Rishab     | Allergies
  Bhavya     | Chickenpox
 (5 rows)
+
+# Implementing Limit clause:
+hospitalms=# Select first_name,last_name
+hospitalms-# from patient
+hospitalms-# Limit 3;
+ first_name | last_name
+------------+-----------
+ Harry      | kumar
+ Bhavi      | Raheja
+ Bhavya     | Yadav
+(3 rows)

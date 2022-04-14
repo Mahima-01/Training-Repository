@@ -428,3 +428,53 @@ hospitalms-# Limit 3;
  Bhavi      | Raheja
  Bhavya     | Yadav
 (3 rows)
+
+# Orderby Clause:
+hospitalms=# SELECT * FROM patient ORDER BY first_name DESC;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group
+----+------------+-----------+------------+--------+------------+--------+--------+-------------
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B
+  4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A
+  1 | Harry      | kumar     | 2001-03-09 | Male   | 8796545654 |    5.5 |     62 | B
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O
+  2 | Bhavi      | Raheja    | 2004-10-10 | Male   | 7896545654 |    5.8 |     68 | A
+(5 rows) 
+
+
+hospitalms=# Select first_name, department_name
+hospitalms-# From employee join department ON employee.department_id = department.id
+hospitalms-# where department.id >=1
+hospitalms-# Group By first_name, department_name;
+ first_name |         department_name
+------------+---------------------------------
+ Ram        | Medical Record Department (MRD)
+ Raman      | Medical Record Department (MRD)
+ Meena      | Medical Record Department (MRD)
+ Reena      | Medical Record Department (MRD)
+(4 rows)
+
+hospitalms=# Select first_name, department_name
+hospitalms-# From employee join department ON employee.department_id = department.id
+hospitalms-# where department.id >=1
+hospitalms-# Group By first_name, department_name;
+ first_name |         department_name
+------------+---------------------------------
+ Ram        | Medical Record Department (MRD)
+ Raman      | Medical Record Department (MRD)
+ Meena      | Medical Record Department (MRD)
+ Reena      | Medical Record Department (MRD)
+(4 rows)
+               ^
+hospitalms=# Select first_name, department_name
+hospitalms-# From employee join department ON employee.department_id = department.id
+hospitalms-# where department.id >=1
+hospitalms-# Group By first_name, department_name
+hospitalms-# Having first_name like 'R%';
+ first_name |         department_name
+------------+---------------------------------
+ Ram        | Medical Record Department (MRD)
+ Raman      | Medical Record Department (MRD)
+ Reena      | Medical Record Department (MRD)
+(3 rows)
+
+

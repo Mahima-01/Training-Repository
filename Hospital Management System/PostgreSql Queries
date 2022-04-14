@@ -386,3 +386,34 @@ hospitalms-# ON patient.id = patient_billing.id;
   4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A           |  4 |                   2 | 35000.00 | 2020-12-15    | UPI
   5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B           |  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay
 (5 rows)
+
+# Joins of 3 tables:
+hospitalms=# Select *
+hospitalms-# From patient
+hospitalms-# Inner Join patient_billing
+hospitalms-# ON patient.id = patient_billing.id
+hospitalms-# Inner Join disease
+hospitalms-# ON disease.id = patient.id;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group | id | patient_register_id |  amount  | generateddate | paymenttype | id | disease_name | symptoms
+----+------------+-----------+------------+--------+------------+--------+--------+-------------+----+---------------------+----------+---------------+-------------+----+--------------+----------
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O           |  3 |                   3 | 25000.00 | 2020-10-10    | UPI         |  3 | Chickenpox   | Fever
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B           |  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay   |  5 | Allergies    | Sneezing
+(2 rows)
+
+# Using joins on four tables:
+hospitalms=# Select patient.first_name, disease.disease_name
+hospitalms-# From patient_diseases
+hospitalms-# Inner Join disease
+hospitalms-# ON disease.id = patient_diseases.disease_id
+hospitalms-# Inner Join patient_register
+hospitalms-# ON patient_register.id = patient_diseases.patient_registerid
+hospitalms-# Inner Join patient
+hospitalms-# ON patient.id = patient_register.pateint_id;
+ first_name | disease_name
+------------+--------------
+ Bhavi      | Chickenpox
+ Bhavya     | Chickenpox
+ Bhavya     | Allergies
+ Rishab     | Allergies
+ Bhavya     | Chickenpox
+(5 rows)

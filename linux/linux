@@ -1,0 +1,74 @@
+Client Server Architecture:
+The Client-server model is a distributed application structure that partitions task or workload between the providers of a resource or service, called servers, and service requesters called clients. In the client-server architecture, when the client computer sends a request for data to the server through the internet, the server accepts the requested process and deliver the data packets requested back to the client. Clients do not share any of their resources. Examples of Client-Server Model are Email, World Wide Web, etc.
+
+Linux:
+Linux is an open-source operating system. It is like Windows, Mac, Android, etc.
+Terminal in Linux is case sensitive to two file Test.txt and test.txt are different.
+To see hidden folder in linux ctrl+h.
+
+Directory Structure:
+Create Folder
+Delete Folder
+Rename Folder
+Moving Folder
+Copying Files from folder
+CP vs SCP
+
+Files
+pwd
+Chmod
+ls
+clear screen
+ps
+shutdown
+touch
+locate
+find
+grep
+sudo
+Chown
+kill
+ping
+wget
+top
+history
+man
+echo
+zip/unzip
+
+Linux commands:
+1- pwd: Print working directory. It prints the path of the working directory, starting from the root.
+itsacheckmate@itsacheckmate:~$ mkdir Linux
+Touch: Created the file named linus commands.
+itsacheckmate@itsacheckmate:~$ touch linux commands
+This command has two flags.
+
+    pwd -L: Prints the symbolic path.
+    pwd -P: Prints the actual path.
+
+itsacheckmate@itsacheckmate:~$ pwd -L
+/home/itsacheckmate
+itsacheckmate@itsacheckmate:~$ pwd -P
+/home/itsacheckmate
+itsacheckmate@itsachec
+
+2- cd:cd command in linux known as change directory command. It is used to change current working directory. 
+
+Syntax:  
+$ cd [directory]
+cd command in linux known as change directory command. It is used to change current working directory. 
+
+itsacheckmate@itsacheckmate:~$ cd ..
+itsacheckmate@itsacheckmate:/home$ 
+
+cd /: this command is used to change directory to the root directory, The root directory is the first directory in your filesystem hierarchy. 
+$ cd /
+
+cd ~ : this command is used to change directory to the home directory. 
+$ cd ~
+cd .. : this command is used to move to the parent directory of current directory, or the directory one level up from the current directory. “..” represents parent directory. 
+
+cd “dir name”: This command is used to navigate to a directory with white spaces.Instead of using double quotes we can use single quotes then also this command will work. 
+$ cd "dir name"
+
+

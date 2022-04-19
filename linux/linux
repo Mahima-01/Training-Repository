@@ -251,3 +251,248 @@ CP vs SCP
 scp copies files between hosts on a network.  It uses ssh(1) for data transfer, and uses the same authentication
  and provides the same security as     ssh(1).  Unlike rcp(1), scp will ask for passwords or passphrases if they are needed for authentication.
 # The cp command is for copying files locally, i.e. within your host's system.
+
+Files
+Name -       pwd
+Purpose-    Print Working Directory				   pwd is shell built-in command(pwd) or an actual binary(/bin/pwd).
+Examples- It has 2 options -[LP]
+					pwd -L: Prints the symbolic path. it is default command shwon by pwd 
+					Also by the $pwd variable value is shown
+					pwd -P: Prints the actual path.It is the path shown by /bin/pwd
+itsacheckmate@itsacheckmate:~/tmp$ pwd -L
+/home/itsacheckmate/tmp
+itsacheckmate@itsacheckmate:~/tmp$ pwd -P
+/home/itsacheckmate/tmp
+-----------------------------------------------------------------------------------------------------------------------------
+Name -       chmod
+Purpose-      Change the access mode of the file i.e what user have the permission on the file 
+wether they can edit it, or read or execute the file or the directory .
+Examples- Syntax is chmod [reference][operator][mode] file... 
+Here the reference is whoh the permission apply it is represented by folloing letters
+Reference   Class     Description
+u          owner      file's owner
+
+g          group      users who are members of
+                      the file's group
+
+o          others     users who are neither the
+                      file's owner nor members of 
+                      the file's group
+
+a          all       All three of the above, same as ugo
+Then there is operator which specify how the modes of files should be adjusted
+Operator  Description
++         Adds the specified modes to the
+          specified classes
+
+-         Removes the specified modes from 
+          the specified classes
+
+=         The modes specified are to be made
+          the exact modes for the specified 
+          classes
+and the the modes which indicate which permission is to be granted
+r       Permission to read the file.
+w       Permission to write (or delete) the file.
+x       Permission to execute the file, or, in
+        the case of a directory, search it.
+
+the very first column represents the type of the file 
+if its is a directory  'd' or if its a file the  '-'
+then the folling 3set of letter represents the permission of the file owner
+rwx =all three permission or rw- = only the read and write permission 
+
+Then the following set off 3 letters are the group permission and other user permission
+respectively 
+if the directory has only x permission it means that there is premission to search the directory
+
+Then it spescifies the owner and the group which owner belons to  
+ Octal notaions could be used for this
+ octal    binary   fileMode
+ 0			000			---
+ 1			001			--x
+ 2			010			-w-
+ 3			011			-wx
+ 4			100			r--
+ 5			101			r-x
+ 6			110			rw-
+ 7			111			rwx
+ 
+ so for user,group,and other permission willl be written as
+ - rwx--x--x => 711
+ 
+Usage------------
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 8
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 5081 Apr 18 19:10 linuxcommands.txt
+-rw-rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod u=r practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 8
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 5081 Apr 18 19:10 linuxcommands.txt
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ mkdir practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls-l
+ls-l: command not found
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 12
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 5081 Apr 18 19:10 linuxcommands.txt
+drwxrwxr-x 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod u=rw practice
+
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 8
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 5081 Apr 18 19:10 linuxcommands.txt
+-rw-rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod u=r practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 8
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 5081 Apr 18 19:10 linuxcommands.txt
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ mkdir practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls-l
+ls-l: command not found
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 12
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 5081 Apr 18 19:10 linuxcommands.txt
+drwxrwxr-x 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod u=rw practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ cd practice
+bash: cd: practice: Permission denied
+itsacheckmate@itsacheckmate:~/Training/Linux$ cd u=rwx practice
+bash: cd: too many arguments
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod u=rwx practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod 700 practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls-l
+ls-l: command not found
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 12
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 7916 Apr 19 13:58 linuxcommands.txt
+drwx------ 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+
+Sudo Chmod - This is to used to run the chmod command on the files where we do not have
+ownership of the file
+sudo chmod o+x practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ sudo chmod u+x practice
+[sudo] password for itsacheckmate: 
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 16
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 9639 Apr 19 14:01 linuxcommands.txt
+drwx------ 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ sudo chmod o-x practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 16
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 9639 Apr 19 14:01 linuxcommands.txt
+drwx------ 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ sudo chmod o=x practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 16
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 9639 Apr 19 14:01 linuxcommands.txt
+drwx-----x 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+itsacheckmate@itsacheckmate:~/Training/Linux$ sudo chmod o+r practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 16
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 9639 Apr 19 14:01 linuxcommands.txt
+drwx---r-x 2 itsacheckmate itsacheckmate 4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate    0 Apr 19 13:46 practice.txt
+
+Recursive Permission change - it is used to change the permission of multiple files in the 
+directory at once   chmod -R is used with find command
+Change all the files 
+sudo find /path/to/someDirectory -type f -print0 | xargs -0 sudo chmod 644
+change for all the directory
+sudo find /path/to/someDirectory -type d -print0 | xargs -0 sudo chmod 755
+
+Sticky Bit - It applies only to the directory and specially used by the derictory which is publicly available 
+it prevents the user to deleting and remaning any file which they do not personally own  for thsi 't' flag is used
+chmod +t <directory>
+chmod -t <directory>
+
+itsacheckmate@itsacheckmate:~/Training/Linux$ chmod +t practice
+itsacheckmate@itsacheckmate:~/Training/Linux$ ls -l
+total 16
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 11552 Apr 19 14:53 linuxcommands.txt
+drwx---r-t 2 itsacheckmate itsacheckmate  4096 Apr 19 13:48 practice
+-r--rw-r-- 1 itsacheckmate itsacheckmate     0 Apr 19 13:46 practice.txt
+	
+------------------------------------------------------------------------------------------------------------------------------
+Name -       ls
+Purpose-    lists all the files int the present working directory
+Examples-  itsacheckmate@itsacheckmate:~$ ls
+Desktop    Downloads     Music     Public  Templates  Training
+Documents  GITSetup.txt  Pictures  snap    tmp        Videos
+itsacheckmate@itsacheckmate:~$ ^C
+
+ls -l : this will list the file sin the long format
+itsacheckmate@itsacheckmate:~/Training$ ls -l
+total 16
+drwxrwxr-x 2 itsacheckmate itsacheckmate 4096 Apr 18 16:40 git
+drwxrwxr-x 2 itsacheckmate itsacheckmate 4096 Apr 18 16:46 Linux
+drwxrwxr-x 2 itsacheckmate itsacheckmate 4096 Apr 18 16:44 PostgreSQL
+-rw-rw-r-- 1 itsacheckmate itsacheckmate  227 Apr 18 16:40 README.md
+
+ls -a = shows the whole list with the hidden files also
+
+ls -d */ = only displays the subdirectories 
+ls -g =donot show the owner information
+ls -lG = do not show the group information
+ls ~ = shows the contents of the home directory
+ls ../=  shows the contents of the parent directory
+itsacheckmate@itsacheckmate:~/Training$ ls ../
+ Desktop     GITSetup.txt   Public                Templates   Videos
+ Documents   Music         'Mahima Linux.svgz'   tmp         Write
+ Downloads   Pictures       snap                  Training
+itsacheckmate@itsacheckmate:~/Training$ ls ~
+ Desktop     GITSetup.txt   Public                Templates   Videos
+ Documents   Music         'Mahima Linux.svgz'   tmp         Write
+ Downloads   Pictures       snap                  Training
+itsacheckmate@itsacheckmate:~/Training$ ls -iG
+17174268 abc  17174132 b  17173060 git    17173039 PostgreSQL  17174259 s
+17173117 abs  17174269 d  17173032 Linux  16922561 README.md
+itsacheckmate@itsacheckmate:~/Training$ ls -g
+total 36
+drwxrwxr-- 2 itsacheckmate 4096 Apr 19 15:53 abc
+drwxrwxr-- 2 itsacheckmate 4096 Apr 19 15:53 abs
+drwxrwxr-x 2 itsacheckmate 4096 Apr 19 15:33 b
+drwxrwxr-x 3 itsacheckmate 4096 Apr 19 15:54 d
+drwxrwxr-x 2 itsacheckmate 4096 Apr 18 16:40 git
+drwxrwxr-x 4 itsacheckmate 4096 Apr 19 18:51 Linux
+drwxrwxr-x 2 itsacheckmate 4096 Apr 18 16:44 PostgreSQL
+-rw-rw-r-- 1 itsacheckmate  227 Apr 18 16:40 README.md
+drwxrwxr-x 2 itsacheckmate 4096 Apr 19 15:33 s
+itsacheckmate@itsacheckmate:~/Training$ ls -a
+.  ..  abc  abs  b  d  .git  git  Linux  PostgreSQL  README.md  s
+itsacheckmate@itsacheckmate:~/Training$ ls d */
+abc/:
+
+abs/:
+
+b/:
+
+d:
+v
+
+d/:
+v
+
+git/:
+GIT
+
+Linux/:
+copyfolder  linuxcommands.txt  practice  practice.txt
+
+PostgreSQL/:
+'In Built Functions'                     LibraryManagmentSystemQueries
+'Library Management System'             'Naming Conventions'
+'Library Management System.drawio.png'   Queries
+'Library Management System.drawio.svg'
+
+s/:
+itsacheckmate@itsacheckmate:~/Training$ ls -d */
+abc/  abs/  b/  d/  git/  Linux/  PostgreSQL/  s/

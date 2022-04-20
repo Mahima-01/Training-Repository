@@ -496,3 +496,136 @@ PostgreSQL/:
 s/:
 itsacheckmate@itsacheckmate:~/Training$ ls -d */
 abc/  abs/  b/  d/  git/  Linux/  PostgreSQL/  s/
+
+
+Name -       clear screen
+Purpose-    clears the screen of the terminal
+Examples- clear
+-----------------------------------------------------------------------------------------------------
+Name -       ps
+Purpose-    Used to list the currently running processes and their PIDs along with some other information 
+depends on different options
+Examples- 
+PID = Process id
+TTY = which terminal is the process running
+time= how much time is the process is seeking the cpu
+cmd  = which is that process is running for 
+itsacheckmate@itsacheckmate:~$ ps
+    PID TTY          TIME CMD
+   3627 pts/0    00:00:00 bash
+  11339 pts/0    00:00:00 git
+  11340 pts/0    00:00:00 less
+  12829 pts/0    00:00:00 ps
+
+
+ 
+--------------------------------------------------------------------------------------------------------------------------
+Name -       shutdown
+Purpose-    used to shutdown the system in a safe way.
+Examples- syntax shutdown [OPTIONS] [TIME] [MESSAGE]
+					sudo shutdown
+					to shutdown the system at a specified time
+The time argument can have two different formats
+schedule a system shutdown at 05 A.M:
+sudo shutdown 05:00
+ system shutdown in 20 minutes from now:
+sudo shutdown +20
+
+to  broadcast a custom message
+sudo shutdown +10 "System upgrade"
+
+itsacheckmate@itsacheckmate:~/Training$ sudo shutdown +1 "System upgrade"
+[sudo] password for itsacheckmate: 
+Shutdown scheduled for Mon 2022-04-18 19:11:26 IST, use 'shutdown -c' to cancel.
+
+
+How to halt your system
+This can be achieved using the -H option.
+
+shutdown -H
+Halting means stopping all CPUs and powering off also makes sure the main power is disconnected.
+
+How to make shutdown power-off machine
+Although this is by default, you can still use the -P option to explicitly specify that you want shutdown to power off the system.
+
+shutdown -P
+How to reboot using shutdown
+For reboot, the option is -r.
+
+shutdown -r
+You can also specify a time argument and a custom message:
+
+shutdown -r +5 "Updating Your System"
+The command above will reboot the system after 5 minutes and broadcast Updating Your System”
+
+If you have scheduled a shutdown and you want to cancel it you can use the -c argument:
+
+sudo shutdown -c
+ cannot specify a time argument, but can still broadcast a message 
+
+sudo shutdown -c "Canceling the reboot"
+----------------------------------------------------------------------------------------------------
+Name -       touch
+Purpose-    Used to create, change and modify timestamps of a file
+It is used to create a file without any content.
+Examples-
+To modify access time  ->
+itsacheckmate@itsacheckmate:~$ touch -a url
+itsacheckmate@itsacheckmate:~$ stat url.txt
+  File: url.txt
+  Size: 33        	Blocks: 8          IO Block: 4096   regular file
+Device: 10305h/66309d	Inode: 16785990    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 2022-04-20 18:41:11.726554500 +0530
+Modify: 2022-04-20 13:56:01.863313125 +0530
+Change: 2022-04-20 18:41:11.726554500 +0530
+ Birth: -
+touch -c : This command is used to check whether a file is created or not. 
+If not created then don’t create it.
+touch -c asdf
+file not created
+
+touch -c-d : This is used to update access and modification time.
+itsacheckmate@itsacheckmate:~$ touch -c -d '16 Sep' url
+itsacheckmate@itsacheckmate:~$ stat url
+  File: url
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 10305h/66309d	Inode: 16781564    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 2022-09-16 00:00:00.000000000 +0530
+Modify: 2022-09-16 00:00:00.000000000 +0530
+Change: 2022-04-20 18:45:06.989284094 +0530
+ Birth: -
+ touch -m : only changes the modification time 
+ itsacheckmate@itsacheckmate:~$ touch -m url
+itsacheckmate@itsacheckmate:~$ stat url
+  File: url
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 10305h/66309d	Inode: 16781564    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 2022-09-16 00:00:00.000000000 +0530
+Modify: 2022-04-20 18:48:05.093890993 +0530
+Change: 2022-04-20 18:48:05.093890993 +0530
+ Birth: -
+touch -r : this commmand is used to use the timestamp of the another file 
+itsacheckmate@itsacheckmate:~$ touch -r url url.txt
+itsacheckmate@itsacheckmate:~$ stat url.txt
+  File: url.txt
+  Size: 33        	Blocks: 8          IO Block: 4096   regular file
+Device: 10305h/66309d	Inode: 16785990    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 2022-04-20 18:41:11.726554500 +0530
+Modify: 2022-04-20 13:56:01.863313125 +0530
+Change: 2022-04-20 18:50:44.474972140 +0530
+
+touch -t : This is used to create a file using a specified time.
+itsacheckmate@itsacheckmate:~$ touch -t 9701260101 birth
+itsacheckmate@itsacheckmate:~$ stat birth
+  File: birth
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 10305h/66309d	Inode: 16786076    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 1997-01-26 01:01:00.000000000 +0530
+Modify: 1997-01-26 01:01:00.000000000 +0530
+Change: 2022-04-20 18:51:57.451596419 +0530
+ Birth: -

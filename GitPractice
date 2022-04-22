@@ -1042,6 +1042,52 @@ Your branch is ahead of 'origin/Branch2' by 4 commits.
 nothing to commit, working tree clean
 itsacheckmate@itsacheckmate:~/Training-Repository$ 
 
+Git Rebase:
+itsacheckmate@itsacheckmate:~/Training-Repository$ git commit -am 'Committing all the unsaved changes to practise rebase commands.'
+[Branch2 1c370c3] Committing all the unsaved changes to practise rebase commands.
+ 2 files changed, 788 insertions(+)
+ create mode 100644 gitcheatsheet
+itsacheckmate@itsacheckmate:~/Training-Repository$ git rebase main
+Auto-merging linux/linux
+CONFLICT (add/add): Merge conflict in linux/linux
+Auto-merging new.txt
+CONFLICT (add/add): Merge conflict in new.txt
+error: could not apply e9c4211... Adding linux and new.txt file in stash
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply e9c4211... Adding linux and new.txt file in stash
+itsacheckmate@itsacheckmate:~/Training-Repository$ git add .
+itsacheckmate@itsacheckmate:~/Training-Repository$ git rebase --continue
+[detached HEAD 043f5be] Adding linux and new.txt file in stash
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+Successfully rebased and updated refs/heads/Branch2.
+itsacheckmate@itsacheckmate:~/Training-Repository$ git log
+commit 0a03b3b1208623c312975a64348117152378bc43 (HEAD -> Branch2)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Fri Apr 22 14:13:21 2022 +0530
+
+    Committing all the unsaved changes to practise rebase commands.
+
+commit 043f5be188d17ad3d47b3a107c55cfcc276c2bd3
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Fri Apr 22 12:43:16 2022 +0530
+
+    Adding linux and new.txt file in stash
+
+commit 1ecd30de6188e2338cc088ccbb6f873854433a5d
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Fri Apr 22 12:38:50 2022 +0530
+
+    Conflict resolved which occured due to stash
+
+commit f00ac4ca91bbb17c9d5e274f145b2545fff1af4b
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Fri Apr 22 12:23:59 2022 +0530
+
+
+[2]+  Stopped                 git log
 
 
 

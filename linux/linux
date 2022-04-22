@@ -70,5 +70,3 @@ cd .. : this command is used to move to the parent directory of current director
 
 cd “dir name”: This command is used to navigate to a directory with white spaces.Instead of using double quotes we can use single quotes then also this command will work. 
 $ cd "dir name"
-
-

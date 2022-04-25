@@ -1,0 +1,24 @@
+hospitalms=# \d
+                   List of relations
+ Schema |          Name           |   Type   |  Owner
+--------+-------------------------+----------+----------
+ public | department              | table    | postgres
+ public | department_id_seq       | sequence | postgres
+ public | disease                 | table    | postgres
+ public | disease_id_seq          | sequence | postgres
+ public | employee                | table    | postgres
+ public | employee_id_seq         | sequence | postgres
+ public | patient                 | table    | postgres
+ public | patient_appointment     | table    | postgres
+ public | patient_billing         | table    | postgres
+ public | patient_billing_id_seq  | sequence | postgres
+ public | patient_diseases        | table    | postgres
+ public | patient_doctor          | table    | postgres
+ public | patient_id_seq          | sequence | postgres
+ public | patient_register        | table    | postgres
+ public | patient_register_id_seq | sequence | postgres
+ public | role                    | table    | postgres
+ public | role_id_seq             | sequence | postgres
+(17 rows)
+
+

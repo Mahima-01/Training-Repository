@@ -22,3 +22,289 @@ hospitalms=# \d
 (17 rows)
 
 
+hospitalms=# Insert into disease(Disease_Name) values('Chickenpox');
+ERROR:  null value in column "symptoms" of relation "disease" violates not-null constraint
+DETAIL:  Failing row contains (2, Chickenpox, null).
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Chickenpox','Fever');
+INSERT 0 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Allergies','food');
+INSERT 0 1
+hospitalms=# delete from disease where Disease_name='Allergies';
+DELETE 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Allergies','Sneezing');
+INSERT 0 1
+
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Cold and Flu','Headache');
+INSERT 0 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Diarrhea','Cramping in abdomen');
+INSERT 0 1
+hospitalms=# Insert into disease(Disease_Name,Symptoms) values('Vomiting','Stomach ulcers');
+INSERT 0 1
+
+                                                                    ^
+hospitalms=# Insert into employee(First_Name,Last_Name,DOB,Gender,Phone_No,role_id) values('Ram','Kumar','1997-01-26','Male',9891594788,1);
+INSERT 0 1
+hospitalms=# Select * from department;
+ id |         department_name
+----+---------------------------------
+  5 | Outpatient department (OPD)
+  6 | Operation Theatre Complex (OT)
+  7 | Radiology Department (X-ray)
+  8 | Paramedical Department
+  9 | Medical Record Department (MRD)
+ 10 | Outpatient department (OPD)
+(6 rows)
+
+
+hospitalms=# Insert into employee(First_Name,Last_Name,DOB,Gender,Phone_No,role_id) values('Raman','Sharma','1987-02-18','Male',9891594843,2);
+INSERT 0 1
+hospitalms=# Insert into employee(First_Name,Last_Name,DOB,Gender,Phone_No,role_id) values('Reena','Gupta','1999-04-02','Female',9895594843,3);
+INSERT 0 1
+hospitalms=# Insert into employee(First_Name,Last_Name,DOB,Gender,Phone_No,role_id) values('Meena','Tawar','2000-08-01','Female',9995594843,4);
+ERROR:  insert or update on table "employee" violates foreign key constraint "employee_role_id_fkey"
+DETAIL:  Key (role_id)=(4) is not present in table "role".
+hospitalms=# Insert into employee(First_Name,Last_Name,DOB,Gender,Phone_No,role_id) values('Meena','Tawar','2000-08-01','Female',9995594843,3);
+INSERT 0 1
+
+hospitalms=# Insert into patient(First_Name,Last_Name,DOB,Gender,Phone_no,Height,Weight,Blood_Group) values('Harry','kumar','2001-03-09','Male',8796545654,5.5,62,'B');
+INSERT 0 1
+hospitalms=# Insert into patient(First_Name,Last_Name,DOB,Gender,Phone_no,Height,Weight,Blood_Group) values('Bhavi','Raheja','2004-10-10','Male',7896545654,5.8,68,'A');
+INSERT 0 1
+hospitalms=# Insert into patient(First_Name,Last_Name,DOB,Gender,Phone_no,Height,Weight,Blood_Group) values('Bhavya','Yadav','2006-04-12','Female',7086545654,4.5,70,'O');
+INSERT 0 1
+hospitalms=# Insert into patient(First_Name,Last_Name,DOB,Gender,Phone_no,Height,Weight,Blood_Group) values('Prachi','Gupta','2012-09-12','Female',7786545654,6.0,87,'A');
+INSERT 0 1
+hospitalms=# Insert into patient(First_Name,Last_Name,DOB,Gender,Phone_no,Height,Weight,Blood_Group) values('Rishab','Sharma','1995-09-06','Male',8886545654,6.2,80,'B');
+INSERT 0 1
+
+                                              ^
+hospitalms=# \d patient_register
+                                      Table "public.patient_register"
+    Column    |         Type          | Collation | Nullable |                   Default
+--------------+-----------------------+-----------+----------+----------------------------------------------
+ id           | integer               |           | not null | nextval('patient_register_id_seq'::regclass)
+ pateint_id   | integer               |           | not null |
+ admitted_on  | date                  |           |          |
+ discharge_on | date                  |           |          |
+ room_number  | character varying(45) |           |          |
+Indexes:
+    "patient_register_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "patient_register_pateint_id_fkey" FOREIGN KEY (pateint_id) REFERENCES patient(id)
+Referenced by:
+    TABLE "patient_appointment" CONSTRAINT "patient_appointment_patient_register_id_fkey" FOREIGN KEY (patient_register_id) REFERENCES patient_register(id)
+    TABLE "patient_billing" CONSTRAINT "patient_billing_patient_register_id_fkey" FOREIGN KEY (patient_register_id) REFERENCES patient_register(id)
+    TABLE "patient_diseases" CONSTRAINT "patient_diseases_patient_registerid_fkey" FOREIGN KEY (patient_registerid) REFERENCES patient_register(id)
+    TABLE "patient_doctor" CONSTRAINT "patient_doctor_patient_register_id_fkey" FOREIGN KEY (patient_register_id) REFERENCES patient_register(id)
+
+
+hospitalms=# Insert into patient_register values(1,1,'2000-04-01','2000-04-03','4A');
+INSERT 0 1
+hospitalms=# Insert into patient_register values(2,2,'2000-04-02','2000-04-04','4B');
+INSERT 0 1
+hospitalms=# Insert into patient_register values(3,3,'2000-04-06','2000-04-10','5A');
+INSERT 0 1
+hospitalms=# Insert into patient_register values(4,4,'2000-04-09','2000-04-12','5B');
+INSERT 0 1
+hospitalms=# Insert into patient_register values(5,5,'2000-04-15','2000-04-20','6A');
+INSERT 0 1
+hospitalms=# \d patient_appointment
+               Table "public.patient_appointment"
+       Column        |  Type   | Collation | Nullable | Default
+---------------------+---------+-----------+----------+---------
+ patient_register_id | integer |           | not null |
+ employee_id         | integer |           | not null |
+ appointment_date    | date    |           |          |
+Foreign-key constraints:
+    "patient_appointment_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(id)
+    "patient_appointment_patient_register_id_fkey" FOREIGN KEY (patient_register_id) REFERENCES patient_register(id)
+
+
+hospitalms=# Insert into patient_appointment values(1,2,'2000-04-15');
+INSERT 0 1
+hospitalms=# Insert into patient_appointment values(2,3,'2000-04-20');
+INSERT 0 1
+hospitalms=# Insert into patient_appointment values(3,4,'2001-05-22');
+INSERT 0 1
+hospitalms=# Insert into patient_appointment values(4,5,'2001-06-24');
+ERROR:  insert or update on table "patient_appointment" violates foreign key constraint "patient_appointment_employee_id_fkey"
+DETAIL:  Key (employee_id)=(5) is not present in table "employee".
+hospitalms=# Insert into patient_appointment values(4,3,'2001-06-24');
+INSERT 0 1
+hospitalms=# Insert into patient_appointment values(2,2,'2002-06-30');
+INSERT 0 1
+
+hospitalms=# \d patient_doctor
+                 Table "public.patient_doctor"
+       Column        |  Type   | Collation | Nullable | Default
+---------------------+---------+-----------+----------+---------
+ patient_register_id | integer |           | not null |
+ employee_id         | integer |           | not null |
+Foreign-key constraints:
+    "patient_doctor_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(id)
+    "patient_doctor_patient_register_id_fkey" FOREIGN KEY (patient_register_id) REFERENCES patient_register(id)
+
+
+hospitalms=# Insert into patient_doctor values(1,1);
+ERROR:  insert or update on table "patient_doctor" violates foreign key constraint "patient_doctor_employee_id_fkey"
+DETAIL:  Key (employee_id)=(1) is not present in table "employee".
+hospitalms=# Insert into patient_doctor values(2,2);
+INSERT 0 1
+hospitalms=# Insert into patient_doctor values(2,3);
+INSERT 0 1
+hospitalms=# Insert into patient_doctor values(3,4);
+INSERT 0 1
+hospitalms=# Insert into patient_doctor values(4,4);
+INSERT 0 1
+hospitalms=# Insert into patient_doctor values(3,3);
+INSERT 0 1
+
+hospitalms=# \d patient_billing
+                                          Table "public.patient_billing"
+       Column        |         Type          | Collation | Nullable |                   Default
+---------------------+-----------------------+-----------+----------+---------------------------------------------
+ id                  | integer               |           | not null | nextval('patient_billing_id_seq'::regclass)
+ patient_register_id | integer               |           | not null |
+ amount              | numeric(8,2)          |           |          |
+ generateddate       | date                  |           |          |
+ paymenttype         | character varying(45) |           |          |
+Indexes:
+    "patient_billing_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "patient_billing_patient_register_id_fkey" FOREIGN KEY (patient_register_id) REFERENCES patient_register(id)
+
+
+hospitalms=# Insert into patient_billing values(1,2,10000,'2020-04-01','Cash');
+INSERT 0 1
+hospitalms=# Insert into patient_billing values(2,3,20000,'2020-08-07','Cash');
+INSERT 0 1
+hospitalms=# Insert into patient_billing values(3,3,25000,'2020-10-10','UPI');
+INSERT 0 1
+hospitalms=# Insert into patient_billing values(4,2,35000,'2020-12-15','UPI');
+INSERT 0 1
+hospitalms=# Insert into patient_billing values(5,4,36000,'2020-12-12','Googlepay');
+INSERT 0 1
+
+hospitalms=# \d patient_diseases
+                Table "public.patient_diseases"
+       Column       |  Type   | Collation | Nullable | Default
+--------------------+---------+-----------+----------+---------
+ patient_registerid | integer |           | not null |
+ disease_id         | integer |           | not null |
+Foreign-key constraints:
+    "patient_diseases_disease_id_fkey" FOREIGN KEY (disease_id) REFERENCES disease(id)
+    "patient_diseases_patient_registerid_fkey" FOREIGN KEY (patient_registerid) REFERENCES patient_register(id)
+
+
+hospitalms=# Insert into patient_diseases values(2,3);
+INSERT 0 1
+hospitalms=# Insert into patient_diseases values(3,3);
+INSERT 0 1
+hospitalms=# Insert into patient_diseases values(3,4);
+ERROR:  insert or update on table "patient_diseases" violates foreign key constraint "patient_diseases_disease_id_fkey"
+DETAIL:  Key (disease_id)=(4) is not present in table "disease".
+hospitalms=# Insert into patient_diseases values(3,5);
+INSERT 0 1
+hospitalms=# Insert into patient_diseases values(5,5);
+INSERT 0 1
+hospitalms=# Insert into patient_diseases values(2,2);
+ERROR:  insert or update on table "patient_diseases" violates foreign key constraint "patient_diseases_disease_id_fkey"
+DETAIL:  Key (disease_id)=(2) is not present in table "disease".
+hospitalms=# Insert into patient_diseases values(3,3);
+INSERT 0 1
+
+hospitalms=# select * from patient_diseases;
+ patient_registerid | disease_id
+--------------------+------------
+                  2 |          3
+                  3 |          3
+                  3 |          5
+                  5 |          5
+                  3 |          3
+(5 rows)
+
+
+hospitalms=# select * from patient_appointment;
+ patient_register_id | employee_id | appointment_date
+---------------------+-------------+------------------
+                   1 |           2 | 2000-04-15
+                   2 |           3 | 2000-04-20
+                   3 |           4 | 2001-05-22
+                   4 |           3 | 2001-06-24
+                   2 |           2 | 2002-06-30
+(5 rows)
+
+
+hospitalms=# select * from patient_doctor;
+ patient_register_id | employee_id
+---------------------+-------------
+                   2 |           2
+                   2 |           3
+                   3 |           4
+                   4 |           4
+                   3 |           3
+(5 rows)
+
+
+hospitalms=# select * from patient_billing;
+ id | patient_register_id |  amount  | generateddate | paymenttype
+----+---------------------+----------+---------------+-------------
+  1 |                   2 | 10000.00 | 2020-04-01    | Cash
+  2 |                   3 | 20000.00 | 2020-08-07    | Cash
+  3 |                   3 | 25000.00 | 2020-10-10    | UPI
+  4 |                   2 | 35000.00 | 2020-12-15    | UPI
+  5 |                   4 | 36000.00 | 2020-12-12    | Googlepay
+(5 rows)
+
+
+hospitalms=# select * from employee;
+ id | first_name | last_name |    dob     | gender |  phone_no  | role_id | department_id
+----+------------+-----------+------------+--------+------------+---------+---------------
+  2 | Ram        | Kumar     | 1997-01-26 | Male   | 9891594788 |       1 |
+  3 | Raman      | Sharma    | 1987-02-18 | Male   | 9891594843 |       2 |
+  4 | Reena      | Gupta     | 1999-04-02 | Female | 9895594843 |       3 |
+  6 | Meena      | Tawar     | 2000-08-01 | Female | 9995594843 |       3 |
+(4 rows)
+
+
+hospitalms=# select * from department;
+ id |         department_name
+----+---------------------------------
+  5 | Outpatient department (OPD)
+  6 | Operation Theatre Complex (OT)
+  7 | Radiology Department (X-ray)
+  8 | Paramedical Department
+  9 | Medical Record Department (MRD)
+ 10 | Outpatient department (OPD)
+(6 rows)
+
+
+hospitalms=# select * from role;
+ id |       role_description
+----+------------------------------
+  1 | Specialists
+  2 | Hospital Pharmacists
+  3 | Interns and medical students
+(3 rows)
+
+
+hospitalms=# select * from disease;
+ id | disease_name |      symptoms
+----+--------------+---------------------
+  3 | Chickenpox   | Fever
+  5 | Allergies    | Sneezing
+  6 | Cold and Flu | Headache
+  7 | Diarrhea     | Cramping in abdomen
+  8 | Vomiting     | Stomach ulcers
+(5 rows)
+
+
+hospitalms=# select * from patient;
+ id | first_name | last_name |    dob     | gender |  phone_no  | height | weight | blood_group
+----+------------+-----------+------------+--------+------------+--------+--------+-------------
+  1 | Harry      | kumar     | 2001-03-09 | Male   | 8796545654 |    5.5 |     62 | B
+  2 | Bhavi      | Raheja    | 2004-10-10 | Male   | 7896545654 |    5.8 |     68 | A
+  3 | Bhavya     | Yadav     | 2006-04-12 | Female | 7086545654 |    4.5 |     70 | O
+  4 | Prachi     | Gupta     | 2012-09-12 | Female | 7786545654 |      6 |     87 | A
+  5 | Rishab     | Sharma    | 1995-09-06 | Male   | 8886545654 |    6.2 |     80 | B
+(5 rows)

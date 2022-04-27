@@ -201,3 +201,316 @@ hospitalms=# Select * from Billing;
  15 |            205 |  48000 | PhonePay
  16 |            206 |  50000 | PhonePay
 (6 rows)
+
+
+
+
+# Using joins:
+hospitalms=# Select Doctor.name, Department.dept_name
+From Doctor
+Inner Join Department
+ON Doctor.department_id=department.id;
+      name      |         dept_name         
+----------------+---------------------------
+ Rishabh Sharma | General Surgery
+ Dr AK Mehta    | Neurology
+ Mamta Singh    | Neurology
+ Aman Gulati    | Orthopedics
+ Khushi Katuria | Outpatient department
+ Dr AK Mehta    | Radiology department
+ Mamta Singh    | Radiology department
+ Geeta Dua      | Rehabilitation department
+(8 rows)
+
+hospitalms=# Select Doctor.name, Department.id  
+From Doctor
+Inner Join Department
+ON Doctor.department_id=department.id;
+      name      | id 
+----------------+----
+ Rishabh Sharma |  1
+ Dr AK Mehta    |  4
+ Mamta Singh    |  4
+ Aman Gulati    |  2
+ Khushi Katuria |  3
+ Dr AK Mehta    |  4
+ Mamta Singh    |  4
+ Geeta Dua      |  5
+(8 rows)
+
+
+
+
+
+
+hospitalms=# Select * 
+hospitalms-# From Patient
+hospitalms-# Where gender='Female';
+ id |     name      |     address      | gender | age |    dob     |  phone_no  
+----+---------------+------------------+--------+-----+------------+------------
+  3 | Neelam Kumari | Govindpuri,Delhi | Female |  27 | 1996-12-12 | 8882341788
+  4 | Ruchi Garg    | Khanpur,Delhi    | Female |  21 | 2002-04-05 | 9889341788
+  6 | Neha Bhati    | Murthal          | Female |   4 | 2018-03-03 | 9893059123
+(3 rows)
+
+hospitalms=# Select count(dept_name),id
+From Department
+Group by id;
+ count | id 
+-------+----
+     1 |  3
+     1 |  5
+     2 |  4
+     1 |  2
+     1 |  1
+(5 rows)
+
+hospitalms=# Select count(Distinct id) AS "No. of patients taken atleast one appointment"
+hospitalms-# From Appointment;
+ No. of patients taken atleast one appointment 
+-----------------------------------------------
+                                             6
+(1 row)
+
+hospitalms=# Select amount
+hospitalms-# from Billing
+hospitalms-# where amount>40000;
+ amount 
+--------
+  48000
+  50000
+(2 rows)
+
+hospitalms=# Select name  
+from Patient
+where name='Ruchi Garg';
+    name    
+------------
+ Ruchi Garg
+(1 row)
+
+# To find max amount spent by patient:
+hospitalms=# Select name,patient_id,sum(amount)
+From Patient
+Inner Join Appointment
+ON Patient.id=Appointment.patient_id
+Inner Join Billing
+ON appointment.id=Billing.appointment_id Group By patient_id,name Order By sum(amount) desc Limit 1;
+    name     | patient_id |  sum  
+-------------+------------+-------
+ Keshav Jain |          5 | 50000
+(1 row)
+
+hospitalms=# Select name,sum(amount)
+From Patient
+Inner Join Appointment
+ON Patient.id=Appointment.patient_id
+Inner Join Billing
+ON appointment.id=Billing.appointment_id Group By patient_id,name Order By sum(amount) desc Limit 1;
+    name     |  sum  
+-------------+-------
+ Keshav Jain | 50000
+(1 row)
+
+hospitalms=# Select name,sum(amount)
+From Patient
+Inner Join Appointment
+ON Patient.id=Appointment.patient_id
+Inner Join Billing
+ON appointment.id=Billing.appointment_id Group By patient_id,name Order By sum(amount) desc Limit 1;
+    name     |  sum  
+-------------+-------
+ Keshav Jain | 50000
+(1 row)
+
+hospitalms=# Select name,amount
+From Patient
+Inner Join Appointment
+ON Patient.id=Appointment.patient_id
+Inner Join Billing
+ON appointment.id=Billing.appointment_id;
+      name      | amount 
+----------------+--------
+ Ram Jain       |  25000
+ Hariom Vashist |  38000
+ Ruchi Garg     |  40000
+ Neelam Kumari  |  30000
+ Neha Bhati     |  48000
+ Keshav Jain    |  50000
+(6 rows)
+
+hospitalms=# Select name,gender,sum(amount)
+From Patient
+Inner Join Appointment
+ON Patient.id=Appointment.patient_id
+Inner Join Billing
+ON appointment.id=Billing.appointment_id
+Group by patient_id,name,gender
+Order by sum(amount) desc Limit 1;
+    name     | gender |  sum  
+-------------+--------+-------
+ Keshav Jain | Male   | 50000
+(1 row)
+
+# Query to find number of males and females:
+hospitalms=# select ( select count(*) from Patient where Gender='Male') as Male_Count;
+ male_count 
+------------
+          3
+(1 row)
+
+hospitalms=# select ( select count(*) from Patient where Gender='Male') as Male_Count, (Select count(*) from Patient where Gender='Female') as Female_Count;
+ male_count | female_count 
+------------+--------------
+          3 |            3
+(1 row)
+
+hospitalms=# Select name,sum(amount)
+From Patient
+Inner Join Appointment
+ON Patient.id=Appointment.patient_id
+Inner Join Billing
+ON appointment.id=Billing.appointment_id
+Group by patient_id,name
+Order by sum(amount) desc;
+      name      |  sum  
+----------------+-------
+ Keshav Jain    | 50000
+ Neha Bhati     | 48000
+ Ruchi Garg     | 40000
+ Hariom Vashist | 38000
+ Neelam Kumari  | 30000
+ Ram Jain       | 25000
+(6 rows)
+
+hospitalms=# Select name,Date_Time
+hospitalms-# From Doctor
+hospitalms-# Inner Join Appointment
+hospitalms-# ON Doctor.id=Appointment.doctor_id;
+      name      |      date_time      
+----------------+---------------------
+ Geeta Dua      | 1998-07-01 13:42:12
+ Dr AK Mehta    | 1999-02-10 08:20:26
+ Mamta Singh    | 2000-12-23 10:38:30
+ Khushi Katuria | 1994-11-30 06:15:10
+ Rishabh Sharma | 2012-02-28 14:06:45
+ Aman Gulati    | 2014-08-14 18:41:00
+(6 rows)
+
+hospitalms=# Select name,Date_Time,Salary
+From Doctor
+Inner Join Appointment
+ON Doctor.id=Appointment.doctor_id;
+      name      |      date_time      | salary 
+----------------+---------------------+--------
+ Geeta Dua      | 1998-07-01 13:42:12 |  70000
+ Dr AK Mehta    | 1999-02-10 08:20:26 |  50000
+ Mamta Singh    | 2000-12-23 10:38:30 | 540000
+ Khushi Katuria | 1994-11-30 06:15:10 | 500000
+ Rishabh Sharma | 2012-02-28 14:06:45 | 400000
+ Aman Gulati    | 2014-08-14 18:41:00 | 420000
+(6 rows)
+
+hospitalms=#                           
+Select Patient.name,Doctor.name
+From Patient
+Inner Join Appointment ON Patient.id=Appointment.patient_id
+Inner Join Doctor
+ON Doctor.id=Appointment.doctor_id
+Group by patient.name,doctor.name
+Having count(*)>=1;
+      name      |      name      
+----------------+----------------
+ Hariom Vashist | Dr AK Mehta
+ Ruchi Garg     | Mamta Singh
+ Neha Bhati     | Rishabh Sharma
+ Ram Jain       | Geeta Dua
+ Keshav Jain    | Aman Gulati
+ Neelam Kumari  | Khushi Katuria
+(6 rows)
+
+# Query to find that a doctor has visited a patient once:
+hospitalms=# 
+Select Doctor.name
+From Patient
+Inner Join Appointment ON Patient.id=Appointment.patient_id
+Inner Join Doctor
+ON Doctor.id=Appointment.doctor_id
+Group by doctor.name
+Having count(*)>=1;
+      name      
+----------------
+ Mamta Singh
+ Dr AK Mehta
+ Khushi Katuria
+ Aman Gulati
+ Geeta Dua
+ Rishabh Sharma
+(6 rows)
+
+hospitalms=# 
+Select Doctor.name
+From Patient
+Inner Join Appointment ON Patient.id=Appointment.patient_id
+Inner Join Doctor
+ON Doctor.id=Appointment.doctor_id
+Group by doctor.name
+Having count(*)>=2;
+ name 
+------
+(0 rows)
+
+hospitalms=# Select * from Appointment;
+ id  | doctor_id | patient_id |      date_time      
+-----+-----------+------------+---------------------
+ 201 |       106 |          1 | 1998-07-01 13:42:12
+ 202 |       105 |          2 | 1999-02-10 08:20:26
+ 203 |       104 |          4 | 2000-12-23 10:38:30
+ 204 |       103 |          3 | 1994-11-30 06:15:10
+ 205 |       101 |          6 | 2012-02-28 14:06:45
+ 206 |       102 |          5 | 2014-08-14 18:41:00
+(6 rows)
+
+hospitalms=# Insert into Appointment Values(207,106,1,'1998-07-01 13:42:12'),(208,104,3,'2012-02-28 14:10:34');
+INSERT 0 2
+hospitalms=# Select * from Appointment;
+ id  | doctor_id | patient_id |      date_time      
+-----+-----------+------------+---------------------
+ 201 |       106 |          1 | 1998-07-01 13:42:12
+ 202 |       105 |          2 | 1999-02-10 08:20:26
+ 203 |       104 |          4 | 2000-12-23 10:38:30
+ 204 |       103 |          3 | 1994-11-30 06:15:10
+ 205 |       101 |          6 | 2012-02-28 14:06:45
+ 206 |       102 |          5 | 2014-08-14 18:41:00
+ 207 |       106 |          1 | 1998-07-01 13:42:12
+ 208 |       104 |          3 | 2012-02-28 14:10:34
+(8 rows)
+
+# Query to find that a doctor has visited a patient atleat twice:
+hospitalms=#                           
+Select Doctor.name
+From Patient
+Inner Join Appointment ON Patient.id=Appointment.patient_id
+Inner Join Doctor
+ON Doctor.id=Appointment.doctor_id
+Group by doctor.name
+Having count(*)>=2;
+    name     
+-------------
+ Mamta Singh
+ Geeta Dua
+(2 rows)
+
+hospitalms=#                           
+Select Patient.name,Doctor.name
+From Patient
+Inner Join Appointment ON Patient.id=Appointment.patient_id
+Inner Join Doctor
+ON Doctor.id=Appointment.doctor_id
+Group by patient.name,doctor.name
+Having count(*)>=2;
+   name   |   name    
+----------+-----------
+ Ram Jain | Geeta Dua
+(1 row)
+

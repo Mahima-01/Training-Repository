@@ -1,0 +1,395 @@
+postgres=# Create database AirlineFI;
+CREATE DATABASE
+
+airlinefi=# Create table Flights(flno int,frm varchar,too varchar,distance int,departs time,arrives time,price bigint);
+CREATE TABLE
+
+airlinefi=# Insert into Flights Values(21,'Pune','Delhi',300,'12:00:00','2:30:20',90000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(22,'Delhi','Dubai',400,'10:00:00','12:30:20',18000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(23,'Madison','New York',500,'06:30:00','10:36:30',35000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(24,'Chandigarh','Goa',350,'18:40:00','21:36:30',30000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(25,'Delhi','Mumbai',200,'13:40:10','15:36:40',20000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(26,'Hyderabad','Gujarat',340,'05:30:15','09:40:00',25000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(27,'Orrisa','Delhi',1000,'12:15:25','14:05:00',27000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(28,'Kerela','Mumbai',1060,'10:15:20','11:45:30',7000);
+INSERT 0 1
+airlinefi=# Insert into Flights Values(29,'Pune','Goa',300,'12:05:00','2:30:20',9000);
+INSERT 0 1
+airlinefi=# Select * from Flights;
+ flno |    frm     |   too    | distance | departs  | arrives  | price 
+------+------------+----------+----------+----------+----------+-------
+   21 | Pune       | Delhi    |      300 | 12:00:00 | 02:30:20 | 90000
+   22 | Delhi      | Dubai    |      400 | 10:00:00 | 12:30:20 | 18000
+   23 | Madison    | New York |      500 | 06:30:00 | 10:36:30 | 35000
+   24 | Chandigarh | Goa      |      350 | 18:40:00 | 21:36:30 | 30000
+   25 | Delhi      | Mumbai   |      200 | 13:40:10 | 15:36:40 | 20000
+   26 | Hyderabad  | Gujarat  |      340 | 05:30:15 | 09:40:00 | 25000
+   27 | Orrisa     | Delhi    |     1000 | 12:15:25 | 14:05:00 | 27000
+   28 | Kerela     | Mumbai   |     1060 | 10:15:20 | 11:45:30 |  7000
+   29 | Pune       | Goa      |      300 | 12:05:00 | 02:30:20 |  9000
+(9 rows)
+
+
+airlinefi=# Create table Aircraft(id serial primary key,name varchar(80),cruisingrange int);
+CREATE TABLE
+
+airlinefi=# Insert into Aircraft (name,cruisingrange) values
+airlinefi-# ('Boeing747',1000),('Jet01',1200),('Boeing777',800),('Airbus320',1250),('Boeing767',1500),('Airbus350',500),('Comac',1300),('Boeing307',1600);
+INSERT 0 8
+airlinefi=# Select * from Aircraft;
+ id |   name    | cruisingrange 
+----+-----------+---------------
+  1 | Boeing747 |          1000
+  2 | Jet01     |          1200
+  3 | Boeing777 |           800
+  4 | Airbus320 |          1250
+  5 | Boeing767 |          1500
+  6 | Airbus350 |           500
+  7 | Comac     |          1300
+  8 | Boeing307 |          1600
+(8 rows)
+
+
+airlinefi=# Create table Employees(id serial primary key, name varchar (80), salary int);
+CREATE TABLE
+
+airlinefi=# INSERT INTO employees (name,salary) VALUES ('Raman Sharma',80000),('Neha Bhati',90000),('Sagar Dalal',85000),('Mahima Sharma',150000),('Rohan Saini',120000),('Neelam Verma',160000),('Piyush Dua',100000),('Dhruv Singh',130000);
+INSERT 0 8
+airlinefi=# INSERT INTO employees (name,salary) VALUES ('Rajan Dutt',15000),('Lata Pandey',100000);
+INSERT 0 2
+airlinefi=# Select * from Employees;
+ id |     name      | salary 
+----+---------------+--------
+  1 | Raman Sharma  |  80000
+  2 | Neha Bhati    |  90000
+  3 | Sagar Dalal   |  85000
+  4 | Mahima Sharma | 150000
+  5 | Rohan Saini   | 120000
+  6 | Neelam Verma  | 160000
+  7 | Piyush Dua    | 100000
+  8 | Dhruv Singh   | 130000
+  9 | Rajan Dutt    |  15000
+ 10 | Lata Pandey   | 100000
+(10 rows)
+
+
+
+airlinefi=# Create table Certified(employee_id int references employees(id),aircraft_id int references aircraft(id));
+CREATE TABLE
+
+airlinefi=# Insert into Certified Values(1,1),(2,1),(1,3),(3,4),(4,2),(5,6),(6,7),(7,4);
+INSERT 0 8
+airlinefi=# Insert into Certified Values(8,1);
+INSERT 0 1
+airlinefi=# Insert into Certified Values(5,4);
+INSERT 0 1
+airlinefi=# Insert into Certified Values(6,6);
+INSERT 0 1
+airlinefi=# Insert into Certified Values(3,6);
+INSERT 0 1
+airlinefi=# Insert into Certified Values(1,7);
+INSERT 0 1
+airlinefi=# Insert into Certified Values(3,8);
+INSERT 0 1
+airlinefi=# Insert into Certified Values(5,5);
+INSERT 0 1
+airlinefi=# Select * from Certified;
+ employee_id | aircraft_id 
+-------------+-------------
+           1 |           1
+           2 |           1
+           1 |           3
+           3 |           4
+           4 |           2
+           5 |           6
+           6 |           7
+           7 |           4
+           8 |           1
+           5 |           4
+           6 |           6
+           3 |           6
+           1 |           7
+           3 |           8
+           5 |           5
+(15 rows)
+
+
+
+a. Find the names of aircraft such that all pilots certified to operate them earn 
+more than $80,000. 
+airlinefi=# Select distinct (aircraft.name)
+From Aircraft
+Inner Join Certified
+ON aircraft.id=Certified.aircraft_id
+Inner Join Employees
+ON employees.id=Certified.employee_id
+where aircraft.id Not In (Select Certified.aircraft_id from Certified Inner join Employees ON Employees.id=Certified.employee_id  where employees.salary<=80000);
+   name    
+-----------
+ Jet01
+ Comac
+ Airbus350
+ Airbus320
+(4 rows)
+
+b. For each pilot who is certified for more than three aircraft, find the eid and the 
+maximum cruisingrange of the aircraft for which she or he is certified.
+airlinefi=# Select Certified.employee_id,max(cruisingrange)
+From Certified
+Inner Join Aircraft 
+ON Certified.aircraft_id=Aircraft.id
+Group By Certified.employee_id
+Having count(*)>=3;
+ employee_id | max  
+-------------+------
+           3 | 1600
+           5 | 1500
+           1 | 1300
+(3 rows)
+
+
+c. Find the names of pilots whose salary is less than the price of the cheapest 
+route from Los Angeles(Pune) to Honolulu(Delhi). 
+airlinefi=# Select name 
+From Employees
+Where id in (Select employee_id From Certified) and 
+salary<(select min(price) from Flights
+where(frm='Pune' and too='Delhi'));
+     name     
+--------------
+ Raman Sharma
+ Sagar Dalal
+(2 rows)
+
+
+d. For all aircraft with cruisingrange over 1000 miles, find the name of the 
+airlinefi=# Select Aircraft.name, avg(Employees.salary)
+From Employees
+Inner Join Certified
+ON Employees.id=Certified.employee_id
+Inner Join Aircraft
+ON Aircraft.id=Certified.aircraft_id
+where Aircraft.cruisingrange>1000
+Group By Aircraft.name;
+   name    |         avg         
+-----------+---------------------
+ Jet01     | 150000.000000000000
+ Comac     | 120000.000000000000
+ Boeing307 |  85000.000000000000
+ Airbus320 | 101666.666666666667
+ Boeing767 | 120000.000000000000
+(5 rows)
+
+
+e. Find the names of pilots certified for some Boeing aircraft.
+airlinefi=# Select Employees.name
+From Employees
+Inner Join Certified 
+ON Employees.id=Certified.employee_id
+Inner Join Aircraft
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.name Like'Boeing%';
+     name     
+--------------
+ Raman Sharma
+ Neha Bhati
+ Raman Sharma
+ Dhruv Singh
+ Sagar Dalal
+ Rohan Saini
+(6 rows)
+
+
+f. Find the aids of all aircraft that can be used on routes from Los Angeles(Kerela) to 
+Chicago(Mumbai).
+airlinefi=# Select id
+airlinefi-# From Aircraft
+airlinefi-# Where cruisingrange>(Select distance from Flights Where frm='Kerela' and too='Mumbai');
+ id 
+----
+  2
+  4
+  5
+  7
+  8
+(5 rows)
+
+
+g. Identify the routes that can be piloted by every pilot who makes more than 
+$100,000
+airlinefi=# select flno 
+airlinefi-# from Flights
+airlinefi-# Where distance< (
+airlinefi(# Select min(cruisingrange) 
+airlinefi(# From Aircraft where id in(Select Certified.aircraft_id
+airlinefi(# From Employees
+airlinefi(# Inner Join Certified ON
+airlinefi(# Employees.id = Certified.employee_id
+airlinefi(# where Employees.salary >= 100000));
+ flno 
+------
+   21
+   22
+   24
+   25
+   26
+   29
+(6 rows)
+
+
+h. Print the enames of pilots who can operate planes with cruisingrange greater 
+than 3000 miles but are not certified on any Boeing aircraft. 
+--> In this I have not taken cruising range>3000, so result is showing 0 rows.
+airlinefi=# Select Employees.name
+From Employees
+Inner Join Certified
+ON Employees.id=Certified.employee_id
+Inner Join Aircraft
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.cruisingrange>3000 and Employees.name Not In
+(Select Employees.name
+From Employees
+Inner Join Certified 
+ON Employees.id=Certified.employee_id
+Inner Join Aircraft
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.name Like'Boeing%');
+ name 
+------
+(0 rows)
+
+--> Same done with cruisingrange>1000, then answer is :
+airlinefi=# Select Employees.name
+From Employees
+Inner Join Certified
+ON Employees.id=Certified.employee_id
+Inner Join Aircraft
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.cruisingrange>1000 and Employees.name Not In
+(Select Employees.name
+From Employees
+Inner Join Certified 
+ON Employees.id=Certified.employee_id
+Inner Join Aircraft
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.name Like'Boeing%');
+     name      
+---------------
+ Mahima Sharma
+ Neelam Verma
+ Piyush Dua
+(3 rows)
+
+
+
+i. A customer wants to travel from Madison to New York with no more than two 
+changes of flight. List the choice of departure times from Madison if the 
+customer wants to arrive in New York by 6 p.m. 
+airlinefi=# Select  flno from Flights Where flno in((
+airlinefi(# Select flno from Flights  where frm='Madison' and
+airlinefi(# too='New York' and arrives<'18:00:00') 
+airlinefi(# union
+airlinefi(# (select a.flno from flights a, flights b where 
+airlinefi(# a.frm='Madison' and
+airlinefi(# a.too=b.frm and
+airlinefi(# a.arrives< b.departs and 
+airlinefi(# b.too='New York' and b.arrives<'18:00:00')
+airlinefi(# union
+airlinefi(# (select a.flno from flights a, flights b,flights c where 
+airlinefi(# a.frm='Madison' and
+airlinefi(# a.too=b.frm and 
+airlinefi(# b.too=c.frm and 
+airlinefi(# a.arrives< b.departs and
+airlinefi(# b.arrives< c.departs and
+airlinefi(# c.too='New York' and c.arrives<'18:00:00'));
+ flno 
+------
+   23
+(1 row)
+
+
+j. Compute the difference between the average salary of a pilot and the average 
+airlinefi=# Select round((Select avg(salary)From Employees)-(Select avg(salary) From Employees where id in (Select employee_id From Certified)),2)as differences;
+ differences 
+-------------
+   -11375.00
+(1 row)
+
+
+k. Print the name and salary of every nonpilot whose salary is more than the 
+average salary for pilots.
+--> In this there is no nonpilot who is earning more than pilot.
+irlinefi=# Select name,salary
+From Employees
+Where salary>(Select avg(salary) From Employees
+Where id in (Select employee_id from Certified))
+and 
+id Not In (Select employee_id From Certified);
+ name | salary 
+------+--------
+(0 rows)
+
+
+l. Print the names of employees who are certified only on aircrafts with cruising 
+range longer than 1000 miles. 
+airlinefi=#                        
+Select name               
+From Employees                                                          
+Where id not in (Select Certified.employee_id From Certified
+Inner Join Aircraft                                         
+ON Aircraft.id=Certified.aircraft_id                        
+Where Aircraft.cruisingrange<1000)                        
+and id in (Select employee_id From Certified);            
+     name      
+---------------
+ Neha Bhati
+ Mahima Sharma
+ Piyush Dua
+ Dhruv Singh
+(4 rows)
+
+
+m. Print the names of employees who are certified only on aircrafts with cruising 
+range longer than 1000 miles, but on at least two such aircrafts. 
+airlinefi=# select name from employees 
+where id not in (
+Select Certified.employee_id
+From Certified   
+Inner Join Aircraft ON
+Aircraft.id = Certified.aircraft_id 
+Where Aircraft.cruisingrange<1000)
+and id in (select Certified.employee_id From Certified 
+Inner Join Aircraft ON
+Aircraft.id = Certified.aircraft_id 
+where Aircraft.cruisingrange>1000
+group by Certified.employee_id 
+having count(*)>=2);
+ name 
+------
+(0 rows)
+
+
+n. Print the names of employees who are certified only on aircrafts with cruising 
+range longer than 1000 miles and who are certified on some Boeing aircraft.
+airlinefi=# Select name
+From Employees
+Where id not in(Select Certified.employee_id From Certified
+Inner Join Aircraft 
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.cruisingrange<1000) and id in(Select Certified.employee_id From Certified
+Inner Join Aircraft 
+ON Aircraft.id=Certified.aircraft_id
+Where Aircraft.name Like'Boeing%');
+    name     
+-------------
+ Neha Bhati
+ Dhruv Singh
+(2 rows)
+

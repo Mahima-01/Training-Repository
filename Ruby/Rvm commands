@@ -1,0 +1,125 @@
+# RVM Install command:
+itsacheckmate@itsacheckmate:~$ rvm install ruby
+Already installed ruby-3.0.0.
+To reinstall use:
+rvm reinstall ruby-3.0.0
+
+# RVM Use command:
+itsacheckmate@itsacheckmate:~$ rvm use 3.0.0
+Using /home/itsacheckmate/.rvm/gems/ruby-3.0.0
+
+# RVM info command:
+itsacheckmate@itsacheckmate:~$ rvm info
+
+ruby-3.0.0:
+
+  system:
+    uname:        "Linux itsacheckmate 5.13.0-40-generic #45~20.04.1-Ubuntu SMP Mon Apr 4 09:38:31 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux"
+    name:         "Ubuntu"
+    version:      "20.04"
+    architecture: "x86_64"
+    bash:         "/usr/bin/bash => GNU bash, version 5.0.17(1)-release (x86_64-pc-linux-gnu)"
+    zsh:          " => not installed"
+    remote_path:  "ubuntu/20.04/x86_64"
+
+  rvm:
+    version:      "1.29.12 (latest)"
+    updated:      "1 hour 37 minutes 49 seconds ago"
+    path:         "/home/itsacheckmate/.rvm"
+    autolibs:     "[4] Allow RVM to use package manager if found, install missing dependencies, install package manager (only OS X)."
+
+  ruby:
+    interpreter:  "ruby"
+    version:      "3.0.0p0"
+    date:         "2020-12-25"
+    platform:     "x86_64-linux"
+    patchlevel:   "2020-12-25 revision 95aff21468"
+    full_version: "ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]"
+
+  homes:
+    gem:          "/home/itsacheckmate/.rvm/gems/ruby-3.0.0"
+    ruby:         "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0"
+
+  binaries:
+    ruby:         "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/ruby"
+    irb:          "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb"
+    gem:          "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/gem"
+    rake:         "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/rake"
+
+  environment:
+    PATH:         "/home/itsacheckmate/.rvm/gems/ruby-3.0.0/bin:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global/bin:/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin:/home/itsacheckmate/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    GEM_HOME:     "/home/itsacheckmate/.rvm/gems/ruby-3.0.0"
+    GEM_PATH:     "/home/itsacheckmate/.rvm/gems/ruby-3.0.0:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global"
+    MY_RUBY_HOME: "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0"
+    IRBRC:        "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/.irbrc"
+    RUBYOPT:      ""
+    gemset:       ""
+
+# RVM env command:
+itsacheckmate@itsacheckmate:~$ rvm env
+export PATH="/home/itsacheckmate/.rvm/gems/ruby-3.0.0/bin:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global/bin:/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin:$PATH"
+export GEM_HOME='/home/itsacheckmate/.rvm/gems/ruby-3.0.0'
+export GEM_PATH='/home/itsacheckmate/.rvm/gems/ruby-3.0.0:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global'
+export MY_RUBY_HOME='/home/itsacheckmate/.rvm/rubies/ruby-3.0.0'
+export IRBRC='/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
+export RUBY_VERSION='ruby-3.0.0'
+
+# RVM get command:
+itsacheckmate@itsacheckmate:~$ rvm get
+Ruby enVironment Manager 1.29.12 (latest) (c) 2009-2020 Michal Papis, Piotr Kuczynski, Wayne E. Seguin
+
+# rvm get
+
+Update RVM
+
+## Usage
+
+  rvm get {stable|latest|latest-x.y|x.y.z|head|master|branch|help} [--auto-dotfiles] [--autolibs=X]
+
+## Options
+
+  stable     - install the latest RVM stable release
+
+  latest     - install the latest RVM release
+
+  latest-minor
+             - install the latest minor RVM release for currently installed version
+
+  latest-x.y - install the latest RVM release matching the x.y* pattern
+
+  x.y.z      - install a specific RVM release
+
+  head
+  master     - install the latest RVM development version
+
+  --auto-dotfiles
+             - automatically update shell profile files.
+
+  --autolibs=X
+             - update autolibs mode to `X`, read more: `rvm autolibs`
+
+  help       - Output this message.
+
+## Branches
+
+    branch <branch>
+    branch /<branch>
+    branch <repo>/
+    branch <repo>/<branch>
+
+## Defaults
+
+    branch: master
+    repo:   rvm
+
+## Examples
+
+    rvm get branch shoes   # will fetch branch shoes from rvm/rvm repo
+    rvm get branch mpapis/ # will fetch branch master from mpapis/rvm repo
+
+For additional documentation please visit https://rvm.io
+
+# RVM reset command:
+Nothing to reset.

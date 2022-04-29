@@ -1,0 +1,119 @@
+Ruby is a perfect Object Oriented Programming Language. The features of the object-oriented programming language include −
+Data Encapsulation
+Data Abstraction
+Polymorphism
+Inheritance
+
+# Basic ruby code practice:
+itsacheckmate@itsacheckmate:~$ irb
+3.0.0 :001 > puts "Learning Ruby";
+Learning Ruby
+ => nil 
+3.0.0 :002 > def Helloout = "Hello World"
+3.0.0 :003 >   
+ => :Helloout 
+3.0.0 :004 > def hello
+3.0.0 :005 >   out = "Hello World"
+3.0.0 :006 >   puts out
+3.0.0 :007 > end
+ => :hello 
+3.0.0 :008 > hello
+Hello World
+ => nil 
+3.0.0 :009 > exit
+
+itsacheckmate@itsacheckmate:~$ cd Training-Repository/
+itsacheckmate@itsacheckmate:~/Training-Repository$ Rvm\ and\ Ruby/
+Hello,started learning Rub
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Hello,started learning Ruby
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ irb
+3.0.0 :001"> print <<EOF
+3.0.0 :002"> This is the first way of creating
+3.0.0 :003"> here document ie. multiple string.
+3.0.0 :004"> EOF
+3.0.0 :006"> This is the second way of creating
+3.0.0 :007"> here document ie. multiple line string.
+3.0.0 :008 > EOF
+This is the second way of creating
+here document ie. multiple line string.
+ => nil 
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ irb
+3.0.0 :001"> print <<"EOC";
+3.0.0 :002"> echo hy
+3.0.0 :003"> EOC
+echo hy
+ => nil 
+3.0.0 :004`> print <<`EOC`;                      #SAME AS ABOVE
+3.0.0 :005`> echo hy
+3.0.0 :006`> echo there
+3.0.0 :007 > EOC
+hy
+there
+ => nil 
+3.0.0 :008"> print <<"foo",<<"bar"
+3.0.0 :009"> I said foo.
+3.0.0 :010"> foo
+3.0.0 :011"> I said bar.
+3.0.0 :012 > bar
+I said foo.
+I said bar.
+ => nil 
+
+3.0.0 :013 > puts "This is main Ruby Program"
+This is main Ruby Program
+ => nil 
+
+# Using BEGIN Statement:
+--> First put block of code in a file then it will execute.
+--> It will show the line which is entered in "begin" block firstly then other lines of the file.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Initializing Ruby Program
+Hello,started learning Ruby
+This is main Ruby Program
+
+# Using END Statement:
+--> Declares code to be called at the end of the program.
+puts "Hello,started learning Ruby";
+puts "This is main Ruby Program"
+BEGIN {
+   puts "Initializing first Ruby Program"
+}
+END {
+   puts "Terminating Ruby Program"
+}
+BEGIN {
+   puts "Initializing second Ruby Program"
+}
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Initializing first Ruby Program
+Initializing second Ruby Program
+Hello,started learning Ruby
+This is main Ruby Program
+Terminating Ruby Program
+
+# Ruby Comments
+-->A comment hides a line, part of a line, or several lines from the Ruby interpreter. You can use the hash character (#) at the beginning of a line −
+# I am a comment. Just ignore me.
+Or, a comment may be on the same line after a statement or expression −
+name = "Maddy" # This is again comment
+You can comment multiple lines as follows −
+# This is a comment.
+# This is a comment, too.
+# This is a comment, too.
+# I said that already.
+Here is another form. This block comment conceals several lines from the interpreter with =begin/=end −
+=begin
+This is a comment.
+This is a comment, too.
+This is a comment, too.
+I said that already.
+=end (Will not display anything becoz it is a comment.)
+
+# Defining a Class in Ruby:
+A class in Ruby always starts with the keyword class followed by the name of the class. The name should always be in initial capitals. The class Customer can be displayed as −
+Syntax:
+class Customer
+end
+You terminate a class by using the keyword end.

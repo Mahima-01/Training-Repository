@@ -483,3 +483,186 @@ end
 puts MR_COUNT        # this is the global constant
 puts Foo::MR_COUNT   # this is the local "Foo" constant
 
+# If-else,unless in Ruby:
+# Ruby if...else Statement:
+The if expressions execute a single statement or a group of statements if a certain condition is met. It can not do anything if the condition is false. For this purpose else is used.
+Syntax
+if conditional [then]
+   code...
+[elsif conditional [then]
+   code...]...
+[else
+   code...]
+end
+
+3.0.0 :047 > x = 1
+ => 1 
+3.0.0 :048 > if x > 2
+3.0.0 :049 >    puts "x is greater than 2"
+3.0.0 :050 > elsif x <= 2 and x!=0
+3.0.0 :051 >    puts "x is 1"
+3.0.0 :052 > else
+3.0.0 :053 >    puts "I can't guess the number"
+3.0.0 :054 > end
+x is 1
+ => nil 
+ 
+ 3.0.0 :061 > x = 100
+ => 100 
+3.0.0 :062 > if x == 1
+3.0.0 :063 >   puts "x is One."
+3.0.0 :064 > elsif x == 100
+3.0.0 :065 >   puts "x is Hundred."
+3.0.0 :066 > else
+3.0.0 :067 >   puts "x has different value."
+3.0.0 :068 > end
+x is Hundred.
+ => nil 
+
+# Ruby unless Statement
+The unless expression is the opposite of the if expression. If the value is false the "then" expression is executed :
+Syntax
+unless conditional [then]
+   code
+[else
+   code ]
+end
+Executes code if conditional is false. If the conditional is true, code specified in the else clause is executed.
+3.0.0 :070 > unless x > 0
+3.0.0 :071 >  puts "x is less than 0"
+3.0.0 :072 > end
+ => nil 
+3.0.0 :073 > x = 1
+ => 1 
+3.0.0 :074 > unless x > 0
+3.0.0 :075 >  puts "x is less than 0"
+3.0.0 :076 > else   
+3.0.0 :077 >  puts "x is greater than 0"
+3.0.0 :078 > end
+x is greater than 0
+ => nil 
+
+.0.0 :088 > if a>b
+3.0.0 :089 > puts"a is greater than b"
+3.0.0 :090 > elseif b>a
+3.0.0 :091 > puts"b is greater than a"
+3.0.0 :092 > else
+3.0.0 :093 > puts"a is equal to b"
+3.0.0 :094 > end
+a is greater than b
+
+#Ruby case Statement
+Syntax
+case expression
+[when expression [, expression ...] [then]
+   code ]...
+[else
+   code ]
+end
+
+case expr0
+when expr1, expr2
+   stmt1
+when expr3, expr4
+   stmt2
+else
+   stmt3
+end
+
+is basically similar to the following −
+_tmp = expr0
+if expr1 === _tmp || expr2 === _tmp
+   stmt1
+elsif expr3 === _tmp || expr4 === _tmp
+   stmt2
+else
+   stmt3
+end
+
+Ex- 3.0.0 :108 > $age = 16
+ => 16 
+3.0.0 :109 > case $age
+3.0.0 :110 > when 0 .. 2
+3.0.0 :111 >    puts "baby"
+3.0.0 :112 > when 3 .. 6
+3.0.0 :113 >    puts "little child"
+3.0.0 :114 > when 7 .. 12
+3.0.0 :115 >    puts "child"
+3.0.0 :116 > when 13 .. 18
+3.0.0 :117 >    puts "youth"
+3.0.0 :118 > else
+3.0.0 :119 >    puts "adult"
+3.0.0 :120 > end
+youth
+ => nil 
+ 
+  Loops in Ruby:
+Loops in Ruby are used to execute the same block of code a specified number of times.
+1.Ruby while Statement
+Syntax
+while conditional [do]
+   code
+end
+
+Ex-3.0.0 :121 > $i = 0
+ => 0 
+3.0.0 :122 > $num = 5
+ => 5 
+3.0.0 :123 > while $i<$num do
+3.0.0 :124 >   puts("Inside the loop i=#$i")
+3.0.0 :125 >   $i +=1
+3.0.0 :126 > end
+Inside the loop i=0
+Inside the loop i=1
+Inside the loop i=2
+Inside the loop i=3
+Inside the loop i=4
+ => nil 
+
+-Ruby while modifier
+Syntax
+code while condition
+
+OR
+
+begin 
+  code 
+end while conditional
+
+Ex- 3.0.0 :127 > $i = 0
+ => 0 
+3.0.0 :128 > $num = 5
+ => 5 
+3.0.0 :129 > begin
+3.0.0 :130 >    puts("Inside the loop i = #$i" )
+3.0.0 :131 >    $i +=1
+3.0.0 :132 > end while $i < $num
+Inside the loop i = 0
+Inside the loop i = 1
+Inside the loop i = 2
+Inside the loop i = 3
+Inside the loop i = 4
+ => nil 
+
+# Ruby until Statement
+until conditional [do]
+   code
+end
+
+Ex- 3.0.0 :133 > $i = 0
+ => 0 
+3.0.0 :134 > $num = 5
+ => 5 
+3.0.0 :135 > 
+3.0.0 :136 > until $i > $num  do
+3.0.0 :137 >    puts("Inside the loop i = #$i" )
+3.0.0 :138 >    $i +=1;
+3.0.0 :139 > end
+Inside the loop i = 0
+Inside the loop i = 1
+Inside the loop i = 2
+Inside the loop i = 3
+Inside the loop i = 4
+Inside the loop i = 5
+ => nil 
+ 

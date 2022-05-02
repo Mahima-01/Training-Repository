@@ -117,3 +117,179 @@ Syntax:
 class Customer
 end
 You terminate a class by using the keyword end.
+
+# Variables:
+Variables are the memory locations, which hold any data to be used by any program.
+Unlike other programming languages, there is no need to declare a variable in Ruby. A prefix is needed to indicate it.
+There are four types of variables in Ruby:
+
+1.Local variables: A local variable name starts with a lowercase letter or underscore (_). It is only accessible or have its scope within the block of its initialization. Once the code block completes, variable has no scope.
+When uninitialized local variables are called, they are interpreted as call to a method that has no arguments.
+# Example of local variable:
+color = "Red"
+def method1 
+color = 192
+puts("Color Value in method1 : ",color)
+end 
+def method2
+color = 255
+puts("Color Value method2: ",color)
+end
+method1 
+method2  
+method1
+puts("Color Value outside methods : "+color)
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Color Value in method1 : 
+192
+Color Value method2: 
+255
+Color Value in method1 : 
+192
+Color Value outside methods : Red
+
+2.Class variables: A class variable name starts with @@ sign. They need to be initialized before use. A class variable belongs to the whole class and can be accessible from anywhere inside the class. If the value will be changed at one instance, it will be changed at every instance.
+A class variable is shared by all the descendents of the class. An uninitialized class variable will result in an error.
+# Example of class variable:
+class Customer
+# class variable
+ @@no_of_customers = 0
+ def initialize(id, name, addr)   
+# An instance Variable
+ @cust_id = id
+ @cust_name = name
+ @cust_addr = addr
+ end
+# displaying result 
+ def display_details()
+ puts "Customer id #@cust_id"
+ puts "Customer name #@cust_name"
+ puts "Customer address #@cust_addr"
+ end 
+ def total_no_of_customers()   
+# class variable
+ @@no_of_customers += 1
+ puts "Total number of customers: #@@no_of_customers"
+    end
+end
+# Create Objects
+cust1 = Customer.new("1", "Ram", "BPTP, Faridabad")
+cust2 = Customer.new("2", "Ruchi", "Gol Chakkar road,Kalkaji")
+# Call Methods
+cust1.display_details()
+cust1.total_no_of_customers()
+cust2.display_details()
+cust2.total_no_of_customers()
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Customer id 1
+Customer name Ram
+Customer address BPTP, Faridabad
+Total number of customers: 1
+Customer id 2
+Customer name Ruchi
+Customer address Gol Chakkar road,Kalkaji
+Total number of customers: 2
+
+3.Instance variables: An instance variable name starts with a @ sign. It belongs to one instance of the class and can be accessed from any instance of the class within a method. 
+They only have limited access to a particular instance of a class,instance variables can change from object to object.
+They don't need to be initialize. An uninitialized instance variable will have a nil value.
+# EXAMPLE OF INSTANCE VARIABLE:
+class Customer
+ def initialize(id, name, addr)
+# Instance Variables     
+ @cust_id = id
+ @cust_name = name
+ @cust_addr = addr
+ end 
+ # displaying result
+ def display_details()
+ puts "Customer id #@cust_id"
+ puts "Customer name #@cust_name"
+ puts "Customer address #@cust_addr"
+ end
+end
+# Create Objects
+cust1 = Customer.new("1", "John", "Wisdom Apartments, Ludhiya")
+cust2 = Customer.new("2", "Poul", "New Empire road, Khandala")
+# Call Methods
+cust1.display_details()
+cust2.display_details()
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Customer id 1
+Customer name John
+Customer address Wisdom Apartments, Ludhiya
+Customer id 2
+Customer name Poul
+Customer address New Empire road, Khandala
+
+# Another example:
+class Student
+  def initialize(student_id, student_name)
+    @student_id = student_id
+    @student_name = student_name
+  end
+  
+  def show
+    puts "Student Name and ID : "
+    puts(@student_id, @student_name)
+  end
+end
+Student.new(1, "Sara").show
+Student.new(2, "Raju").show
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Student Name and ID : 
+1
+Sara
+Student Name and ID : 
+2
+Raju
+
+4.Global variables: A global variable name starts with a $ sign. Its scope is globally, means it can be accessed from any where in a program.An uninitialized global variable will have a nil value.
+# Example of Gloabal Variable:
+# global variable
+$global_variable = 10
+class Class1
+ def print_global
+ puts "Global variable in Class1 is #$global_variable"
+ end
+end
+class Class2
+ def print_global
+ puts "Global variable in Class2 is #$global_variable"
+ end
+end
+class1obj = Class1.new
+class1obj.print_global
+class2obj = Class2.new
+class2obj.print_global
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Global variable in Class1 is 10
+Global variable in Class2 is 10
+
+# Symbol	Type of Variable:
+[a-z] or _	Local Variable
+@	Instance Variable
+@@	Class Variable
+$	Global Variable
+
+# Ruby Constants:
+Constants begin with an uppercase letter. Constants defined within a class or module can be accessed from within that class or module, and those defined outside a class or module can be accessed globally.
+
+ex- class Example
+ VAR1 = 100
+ VAR2 = 200
+ def show
+ puts "Value of first constant is #{VAR1}"
+ puts "Value of second constant is #{VAR2}"
+ end
+end
+object = Example.new()
+object.show
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+Value of first constant is 100
+Value of second constant is 200

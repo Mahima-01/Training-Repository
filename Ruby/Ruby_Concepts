@@ -995,3 +995,84 @@ itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
 BEGIN code block
 MAIN code block
 END code block
+
+# Ruby - Modules:
+Modules are a way of grouping together methods, classes, and constants. Modules give you two major benefits.
+Modules provide a namespace and prevent name clashes.
+Modules implement the mixin facility.
+Modules define a namespace, a sandbox in which your methods and constants can play without having to worry about being stepped on by other methods and constant.
+
+Syntax
+module Identifier
+   statement1
+   statement2
+   ...........
+end
+Like class methods, whenever you define a method in a module, you specify the module name followed by a dot and then the method name.
+
+3.0.0 :001 > module Trig
+3.0.0 :002 >   PI = 3.14159
+3.0.0 :003 >   def Trig.sin(x)
+3.0.0 :004 >   end
+3.0.0 :005 >   def Trig.cos(x)
+3.0.0 :006 >   end
+3.0.0 :007 > end
+ => :cos 
+
+3.0.0 :009 > module Moral
+3.0.0 :010 >    VERY_BAD = 0
+3.0.0 :011 >    BAD = 1
+3.0.0 :012 >    def Moral.sin(badness)
+3.0.0 :013 >    # ...
+3.0.0 :014 >    end
+3.0.0 :015 > end
+ => :sin 
+
+# Ruby require Statement
+The require statement is similar to the include statement of C and C++ and the import statement of Java. If a third program wants to use any defined module, it can simply load the module files using the Ruby require statement −
+Syntax:
+require filename
+
+# Ruby include Statement
+You can embed a module in a class. To embed a module in a class, you use the include statement in the class −
+Syntax:
+include modulename
+
+If a module is defined in a separate file, then it is required to include that file using require statement before embedding module in a class.
+
+module Week
+   FIRST_DAY = "Sunday"
+   def Week.weeks_in_month
+      puts "You have four weeks in a month"
+   end
+   def Week.weeks_in_year
+      puts "You have 52 weeks in a year"
+   end
+end
+ 
+$LOAD_PATH << '.'
+require "support"
+
+class Decade
+include Week
+   no_of_yrs = 10
+   def no_of_months
+      puts Week::FIRST_DAY
+      number = 10*12
+      puts number
+   end
+end
+d1 = Decade.new
+puts Week::FIRST_DAY
+Week.weeks_in_month
+Week.weeks_in_year
+d1.no_of_months
+These above mention two codes are being put and called in the file.
+ 
+In this we have save our required file in Ruby.rv file and then we have created a new file at same location with different name i.e New_file so that we can access required file from that New_file.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby New_file.rb
+Sunday
+You have four weeks in a month
+You have 52 weeks in a year
+Sunday
+120

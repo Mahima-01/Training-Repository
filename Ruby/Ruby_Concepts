@@ -1076,3 +1076,146 @@ You have four weeks in a month
 You have 52 weeks in a year
 Sunday
 120
+
+
+# Mixins in Ruby:
+Ruby does not support multiple inheritance directly but Ruby Modules have a unique feature called mixins to support multiple inheritance.
+
+module A
+   def a1
+   end
+   def a2
+   end
+end
+module B
+   def b1
+   end
+   def b2
+   end
+end
+
+class Sample
+include A
+include B
+   def s1
+   end
+end
+
+samp = Sample.new
+samp.a1
+samp.a2
+samp.b1
+samp.b2
+samp.s1
+
+Module A consists of the methods a1 and a2. Module B consists of the methods b1 and b2. The class Sample includes both modules A and B. The class Sample can access all four methods, namely, a1, a2, b1, and b2. Therefore, you can see that the class Sample inherits from both the modules. Thus, you can say the class Sample shows multiple inheritance or a mixin.
+
+Example:
+3.0.0 :005 > module Child1
+3.0.0 :006 >   def a1
+3.0.0 :007 >     puts"This is a child one."
+3.0.0 :008 >   end
+3.0.0 :009 > end
+ => :a1 
+3.0.0 :010 > module Child2
+3.0.0 :011 >   def a2
+3.0.0 :012 >     puts"This is a child two"
+3.0.0 :013 >   end
+3.0.0 :014 > end
+ => :a2 
+3.0.0 :015 > module Child3
+3.0.0 :016 >   def a3
+3.0.0 :017 >     puts"This is a child three"
+3.0.0 :018 >   end
+3.0.0 :019 > end
+ => :a3 
+3.0.0 :020 > class Parent
+3.0.0 :021 > include Child1
+3.0.0 :022 > include Child2
+3.0.0 :023 > include Child3
+3.0.0 :020 >  def display
+3.0.0 :021 >    puts"Three modules have included"
+3.0.0 :022 >  end
+3.0.0 :023 > end
+ => :display 
+3.0.0 :024 > object = Parent.new
+ => #<Parent:0x0000560459b0e038> 
+3.0.0 :025 > object.display
+Three modules have included
+ => nil 
+3.0.0 :026 > object.a1
+This is a child one
+ => nil 
+3.0.0 :027 > object.a2
+This is a child two
+ => nil 
+3.0.0 :028 > object.a3
+This is a child three
+ => nil 
+
+# Defining CALCULATE modules which consists of some methods for arithmetic operations.
+module CALCULATE
+def add(a,b)
+puts "The sum of two number is #{a+b}"
+end
+def multi(a,b)
+puts "The multiplication of two number is #{a*b}"
+end
+def div(a,b)
+puts "The division of two number is #{a/b}"
+end
+defsubstract(a,b)
+puts "The subtraction of two number is #{a-b}"
+end
+end
+# Defining a main class method and inside the method we are simply including all the three modules which we have defined above.
+class USECALCULATION
+include CALCULATE
+defdisplay_output
+puts 'This is inside the USECALCULATION and method CALCULATE'
+end
+end
+# Creating object
+mainObject = USECALCULATION.new
+# Calling methods
+mainObject.display_output
+mainObject.add(1,3)
+mainObject.multi(2,4)
+mainObject.div(2,4)
+mainObject.substract(2,4)
+
+3.0.0 :059 >   def add(a,b)
+3.0.0 :061 >   end
+3.0.0 :062 >   def mul(a,b)
+3.0.0 :064 >   end
+3.0.0 :065 >   def div(a,b)
+3.0.0 :067 >   end
+3.0.0 :068 >   def sub(a,b)
+3.0.0 :070 >   end
+3.0.0 :071 > end
+3.0.0 :072 > class UseCalculation
+3.0.0 :073 >   include Calculate
+3.0.0 :075 >     puts"This is inside the UseCalculation and method Calculate"
+3.0.0 :076 >   end
+3.0.0 :077 > end
+ => :display_output 
+3.0.0 :078 > mainObject = UseCalculation.new
+ => #<UseCalculation:0x000056045a10a9a0> 
+3.0.0 :079 > mainObject.display_output
+This is inside the UseCalculation and method Calculate
+ => nil 
+3.0.0 :080 > mainObject.add(1,3)
+The sum of two number is 4
+ => nil 
+3.0.0 :081 > mainObject.mul(1,3)
+The product of two number is 3
+ => nil 
+3.0.0 :082 > mainObject.div(2,4)
+The division of two number is 0
+ => nil 
+3.0.0 :083 > mainObject.div(4,2)
+The division of two number is 2
+ => nil 
+3.0.0 :084 > mainObject.sub(4,2)
+The subtraction of two number is 2
+ => nil 

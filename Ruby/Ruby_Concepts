@@ -666,3 +666,143 @@ Inside the loop i = 4
 Inside the loop i = 5
  => nil 
  
+3.Ruby for Statement
+Syntax
+for variable [, variable ...] in expression [do]
+   code
+end
+
+Ex- 3.0.0 :001 > for i in 0..5
+3.0.0 :002 >    puts "Value of local variable is #{i}"
+3.0.0 :003 > end
+Value of local variable is 0
+Value of local variable is 1
+Value of local variable is 2
+Value of local variable is 3
+Value of local variable is 4
+Value of local variable is 5
+ => 0..5 
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ irb
+3.0.0 :001 > for i in 1...10
+3.0.0 :002 >     puts"Hello Ruby"
+3.0.0 :003 > end
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+ => 1...10 
+## Here ... means loop will print value one less than given condition i.e here value is printed 9 times.
+
+3.0.0 :004 > for i in 1..10
+3.0.0 :005 >     puts"Hello Ruby"
+3.0.0 :006 > end
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+Hello Ruby
+ => 1..10 
+ ## Here .. means loop will print value equal to the given condition i.e here value is printed 10 times.
+ 
+# Another method of writing For loop using each do:
+A for...in loop is almost exactly equivalent to the following −
+(expression).each do |variable[, variable...]| code end
+
+3.0.0 :005 > (0..8).each do |i|
+3.0.0 :006 >    puts "Value of local variable is #{i}"
+3.0.0 :007 > end
+Value of local variable is 0
+Value of local variable is 1
+Value of local variable is 2
+Value of local variable is 3
+Value of local variable is 4
+Value of local variable is 5
+Value of local variable is 6
+Value of local variable is 7
+Value of local variable is 8
+
+4.Ruby break Statement
+Syntax
+break
+Terminates the most internal loop. Terminates a method with an associated block if called within the block (with the method returning nil).
+
+ex- 3.0.0 :008 > for i in 0..5
+3.0.0 :009 >    if i > 2 then
+3.0.0 :010 >       break
+3.0.0 :011 >    end
+3.0.0 :012 >    puts "Value of local variable is #{i}"
+3.0.0 :013 > end
+Value of local variable is 0
+Value of local variable is 1
+Value of local variable is 2
+ => nil 
+
+# Ruby next Statement
+Syntax
+next
+Jumps to the next iteration of the most internal loop. Terminates execution of a block if called within a block (with yield or call returning nil).
+Ex-3.0.0 :014 > for i in 0..4
+3.0.0 :015 >    if i < 2 then
+3.0.0 :016 >       next
+3.0.0 :017 >    end
+3.0.0 :018 >    puts "Value of local variable is #{i}"
+3.0.0 :019 > end
+Value of local variable is 2
+Value of local variable is 3
+Value of local variable is 4
+ => 0..4 
+
+#Ruby redo Statement
+Syntax
+redo
+Restarts this iteration of the most internal loop, without checking loop condition. Restarts yield or call if called within a block.
+Ex- for i in 0..5
+   if i < 2 then
+      puts "Value of local variable is #{i}"
+      redo
+   end
+end
+This will produce the following result and will go in an infinite loop −
+Value of local variable is 0
+Value of local variable is 0
+............................
+
+# Ruby retry Statement
+Syntax
+retry
+If retry appears in rescue clause of begin expression, restart from the beginning of the begin body.
+begin
+   do_something # exception raised
+rescue
+   # handles error
+   retry  # restart from beginning
+end
+Ex-If retry appears in the iterator, the block, or the body of the for expression, restarts the invocation of the iterator call. Arguments to the iterator is re-evaluated.
+
+for i in 1..5
+   retry if some_condition # restart from i == 1
+end
+Ex- for i in 0..5
+   retry if i > 2
+puts "Value of local variable is #{i}"
+end
+This will produce the following result and will go in an infinite loop −
+
+Value of local variable is 1
+Value of local variable is 2
+Value of local variable is 1
+Value of local variable is 2
+Value of local variable is 1
+Value of local variable is 2
+............................

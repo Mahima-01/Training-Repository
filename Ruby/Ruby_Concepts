@@ -806,3 +806,192 @@ Value of local variable is 2
 Value of local variable is 1
 Value of local variable is 2
 ............................
+
+# Ruby - Methods:
+-A method in ruby always starts with the "def" keyword.
+-Method name always starts with a lower case character,just like we define local variables in ruby.
+-Method always end with the 'end' keyword.
+-Methods should be defined before calling them, otherwise Ruby will raise an exception for undefined method invoking.
+-The return statement in ruby is used to return one or more values from a Ruby Method.
+- Last line of method is already considered as return statement so no need to use "return" keyword.
+Syntax:
+def method_name 
+   expr..
+end
+
+Ex- 3.0.0 :007 > def example_method
+3.0.0 :008 >   puts"Hello World"
+3.0.0 :009 > end
+ => :example_method 
+3.0.0 :010 > example_method
+Hello World
+ => nil 
+ 
+ # Methods with arguments:
+ 3.0.0 :011 > def area(length,width)
+3.0.0 :012 >   length*width
+3.0.0 :013 > end
+ => :area 
+3.0.0 :014 > area(3,2)
+ => 6 
+ 
+ # Methods with no arguments:
+ 3.0.0 :015 > def rectangle_area
+3.0.0 :016 >   length = 10
+3.0.0 :017 >   width = 5
+3.0.0 :018 >   length * width
+3.0.0 :019 > end
+ => :rectangle_area 
+3.0.0 :020 > rectangle_area
+ => 50 
+ 
+ # Method with default arguments:
+ - Arguments can be anything like string,arrays,boolean etc.
+ 3.0.0 :021 > def area(length=10, width=20)
+3.0.0 :022 >   length*width
+3.0.0 :023 > end
+ => :area 
+3.0.0 :024 > area
+ => 200 
+ 
+ 3.0.0 :025 > def test(a1 = "Ruby", a2 = "Perl")
+3.0.0 :026 >    puts "The programming language is #{a1}"
+3.0.0 :027 >    puts "The programming language is #{a2}"
+3.0.0 :028 > end
+ => :test 
+3.0.0 :029 > test "C", "C++"
+The programming language is C
+The programming language is C++
+ => nil 
+3.0.0 :030 > test
+The programming language is Ruby
+The programming language is Perl
+ => nil 
+
+# Ruby Return statement:
+.0.0 :031 > def test
+3.0.0 :032 >   i = 100
+3.0.0 :033 >   j = 200
+3.0.0 :034 >   k = 300
+3.0.0 :035 >   return i,j,k
+3.0.0 :036 > end
+ => :test 
+3.0.0 :037 > var = test
+ => [100, 200, 300] 
+3.0.0 :038 > puts var
+100
+200
+300
+ => nil 
+
+# Class Methods:
+3.0.0 :039 > class Accounts
+3.0.0 :040 >    def reading_charge
+3.0.0 :041 >    end
+3.0.0 :042 >    def Accounts.return_date
+3.0.0 :043 >    end
+3.0.0 :044 > end
+ => :return_date 
+See how the method return_date is declared. It is declared with the class name followed by a period, which is followed by the name of the method.
+To access this method, you need not create objects of the class Accounts.
+
+# Ruby alias Statement
+This gives alias to methods or global variables. Aliases cannot be defined within the method body. The alias of the method keeps the current definition of the method, even when methods are overridden.
+Syntax-
+alias method-name method-name
+alias global-variable-name global-variable-name
+Example-
+alias foo bar
+alias $MATCH $&
+Here we have defined foo alias for bar, and $MATCH is an alias for $&
+
+# Ruby undef Statement
+This cancels the method definition. An undef cannot appear in the method body.
+By using undef and alias, the interface of the class can be modified independently from the superclass, but notice it may be broke programs by the internal method call to self.
+Syntax-
+undef method-name
+
+# Ruby - Blocks
+Ruby defines methods where you can put number of statements and then you call that method. Similarly, Ruby has a concept of Block.
+-A block consists of chunks of code.
+-You assign a name to a block.
+-The code in the block is always enclosed within braces ({}).
+-A block is always invoked from a function with the same name as that of the block. This means that if you have a block with the name test, then you use the function test to invoke this block.
+-You invoke a block by using the yield statement.
+Syntax-
+block_name {
+   statement1
+   statement2
+   ..........
+}
+
+# The yield Statement:
+Ex- 3.0.0 :051 > def test
+3.0.0 :052 >   puts "You are in the method"
+3.0.0 :053 >   yield
+3.0.0 :054 >   puts "you are again back to the method"
+3.0.0 :055 >   yield
+3.0.0 :056 > end
+ => :test 
+3.0.0 :057 > test{puts "You are in the block"}
+You are in the method
+You are in the block
+you are again back to the method
+You are in the block
+ => nil 
+
+Ex-3.0.0 :058 > def test
+3.0.0 :059 >   yield 5
+3.0.0 :060 >   puts "You are in the method test"
+3.0.0 :061 >   yield 50
+3.0.0 :062 > end
+ => :test 
+3.0.0 :063 > test{|i| puts "You are in the block #{i}"}
+You are in the block 5
+You are in the method test
+You are in the block 50
+ => nil 
+Here, the yield statement is written followed by parameters. You can even pass more than one parameter. In the block, you place a variable between two vertical lines (||) to accept the parameters. Therefore, in the preceding code, the yield 5 statement passes the value 5 as a parameter to the test block.
+
+-If you want to pass more than one parameters, then the yield statement becomes −
+yield a, b
+and the block is −
+test {|a, b| statement}
+
+# Blocks and Methods:
+You normally invoke a block by using the yield statement from a method that has the same name as that of the block.
+
+Ex- 3.0.0 :069 > def test
+3.0.0 :070 >   yield
+3.0.0 :071 > end
+ => :test 
+3.0.0 :072 > test{puts"hello world"}
+hello world
+ => nil 
+ 
+-But if the last argument of a method is preceded by &, then you can pass a block to this method and this block will be assigned to the last parameter. In case both * and & are present in the argument list, & should come later.
+3.0.0 :001 > def test(&block)
+3.0.0 :002 >   block.call
+3.0.0 :003 > end
+ => :test 
+3.0.0 :004 > test {puts "Hello"}
+Hello
+ => nil 
+
+# Begin and End blocks:
+BEGIN { 
+   # BEGIN block code 
+   puts "BEGIN code block"
+} 
+
+END { 
+   # END block code 
+   puts "END code block"
+}
+   # MAIN block code 
+puts "MAIN code block"
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
+BEGIN code block
+MAIN code block
+END code block

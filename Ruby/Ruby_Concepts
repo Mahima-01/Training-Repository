@@ -1490,3 +1490,168 @@ Returns: Index of the first occurrence of the given substring or pattern (regexp
 3.0.0 :042 > puts "Checking".index('a')
 
  => nil 
+
+
+# Get the count of characters of a String:
+The str.count takes one or more sets of characters as parameters.
+3.0.0 :043 > puts "Looking".count('o')
+2
+ => nil 
+
+# Reverse a String:
+3.0.0 :044 > str = 'Mahima'
+ => "Mahima" 
+3.0.0 :045 > str.reverse
+ => "amihaM" 
+ 
+# Search for one or more characters of a String:
+The str.include? returns true if the String or character present and false if it is not.
+3.0.0 :046 > "heLLo wOrld".include?("w")
+ => true 
+3.0.0 :047 > "heLLo wOrld".include?("W")
+ => false 
+
+# Replace characters in a String
+The str.gsub or global substitute replaces all occurrences with provided Strings. Here the first argument represents the characters set we want to substitute, and the second argument is the replacement characters set.
+3.0.0 :048 > "Red, Red and Blue".gsub("Red", "Orange")
+ => "Orange, Orange and Blue"
+ 
+If you want to replace the first occurrence, use the str.sub.
+3.0.0 :049 > "Red, Red and Blue".sub("Red", "Orange") 
+ => "Orange, Red and Blue" 
+ 
+# Split a String
+3.0.0 :051 > words = sentence.split
+ => ["There", "Is", "No", "Spoon"] 
+
+You can limit the number of splits by providing the second argument.
+3.0.0 :052 > sentence = "June 27,June 26,June 25"
+ => "June 27,June 26,June 25" 
+3.0.0 :053 > words = sentence.split(/,/, 2)
+ => ["June 27", "June 26,June 25"] 
+
+
+# Trim a String
+The str.trim will remove any of the following leading and trailing characters: null("\x00"), horizontal tab("\t"), line feed(\n), vertical tab("\v"), form feed(f), carriage return(\r), space(" ").
+
+--> Strip!:
+Removes whitespaces from the reciever.Returns the altered reciever, or nil if there was no change.
+3.0.0 :055 > "   hEllo   ".strip! 
+ => "hEllo" 
+
+# casecmp(other_str):
+-1,0,1 or nil.
+
+-1: if other_string is smaller.
+0: if the two are equal.
+1: if other_str is larger.
+nil: if the two are incompatible.
+ 
+3.0.0 :056 > 'foo'.casecmp('foo')
+ => 0 
+3.0.0 :057 > 'foo'.casecmp('food')
+ => -1 
+3.0.0 :058 > 'food'.casecmp('foo')
+ => 1 
+3.0.0 :059 > 'foo'.casecmp('FOO')
+ => 0 
+3.0.0 :060 > 'foo'.casecmp(1)
+ => nil 
+
+# casecmp?(other_str):
+true,false or nil
+Returns true if self and other_str are equal after Unicode case folding,otherwise false:
+
+3.0.0 :061 > 'foo'.casecmp?('foo')
+ => true 
+3.0.0 :062 > 'foo'.casecmp?('food')
+ => false 
+3.0.0 :063 > 'food'.casecmp?('foo')
+ => false 
+3.0.0 :064 > 'foo'.casecmp?('FOO')
+ => true 
+
+
+# center(width,padstr='')-> new_str:
+Centers str in width. If width is greater than the length of str,returns a new string of length width with str centered and padded with padstr;otherwise,returns str.
+3.0.0 :065 > "hello".center(4)
+ => "hello" 
+3.0.0 :066 > "hello".center(14)
+ => "    hello     " 
+3.0.0 :067 > "hello".center(14,'40')
+ => "4040hello40404"
+ 
+# String chomp Method
+chomp is a predefined method in Ruby's library which is used to eliminate implicit newline character '\n' attached with the string entered by the user during run time.
+chomp is a String class method in Ruby which is used to returns new String with the given record separator removed from the end of str (if present). chomp method will also remove carriage return characters (that is it will remove \n, \r, and \r\n) if $/ has not been changed from the default Ruby record separator, t. If $/ is an empty string, it will remove all trailing newlines from the string.
+
+Syntax: str.chomp
+Parameters: Here, str is the given string.
+Returns: A new string having no record separator from the end.
+
+3.0.0 :068 > puts"Ruby\n".chomp
+Ruby
+ => nil 
+3.0.0 :069"> puts"Ruby\n\r".chomp
+Ruby
+ => nil 
+3.0.0 :070"> puts"Ruby\r\n".chomp
+Ruby
+ => nil 
+
+3.0.0 :071 > puts"Ruby\r\n\r\n\n".chomp
+Ruby
+
+ => nil 
+3.0.0 :072 > puts"Method".chomp("tho")
+Method
+ => nil 
+ 
+# String chomp! Method:
+Syntax: str.chomp!
+Parameters: Here, str is the given string.
+Returns: A new string having no record separator from the end or nil if no changes were made
+
+3.0.0 :073 > puts"Ruby".chomp!
+
+ => nil 
+3.0.0 :074 > puts"Ruby\n".chomp!
+Ruby
+ => nil 
+3.0.0 :075"> puts"Ruby\n\r".chomp!
+Ruby
+ => nil 
+3.0.0 :076 > puts"String\r\n\r\n\n".chomp!
+String
+
+ => nil 
+3.0.0 :077'> puts"String\r\n\r\n\n".chomp!('')
+String
+ => nil 
+3.0.0 :078 > puts"Method".chomp!("tho")
+
+ => nil 
+ 
+
+# String chop Method:
+chop is a String class method in Ruby which is used to return a new String with the last character removed. Both characters are removed if the string ends with \r\n, b. Applying chop to an empty string returns an empty string.
+ 
+
+Syntax:str.chop
+Parameters: Here, str is the given string.
+Returns: A new string having no record separator. 
+
+3.0.0 :079 > puts"Ruby".chop
+Rub
+ => nil 
+3.0.0 :080 > puts"Ruby\r\n".chop
+Ruby
+ => nil 
+
+3.0.0 :082 > puts"String\r\n\r\n\r\n".chop
+String
+
+ => nil 
+3.0.0 :083 > puts"Method".chop.chop
+Meth
+ => nil 

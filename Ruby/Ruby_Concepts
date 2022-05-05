@@ -1816,5 +1816,194 @@ Makes string empty.
  => "Learning" 
 3.0.0 :011 > a.chr
  => "L" 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# Iterators:
+-The word iterate means doing one thing multiple times and that is what iterators do. -Sometimes iterators are termed as the custom loops. 
+-Iterators is the object-oriented concept in Ruby.
+-Iterators are the methods which are supported by collections(Arrays, Hashes etc.). Collections are the objects which store a group of data members.
+-Ruby iterators return all the elements of a collection one after another.
+-Ruby iterators are “chainable” i.e adding functionality on top of each other.
+
+There are many iterators in Ruby as follows: 
+1.Each Iterator
+2.Collect Iterator
+3.Times Iterator
+4.Upto Iterator
+5.Downto Iterator
+6.Step Iterator
+7.Each_Line Iterator
+
+--> Each Iterator: This iterator returns all the elements of an array or a hash. Each iterator returns each value one by one. 
+Syntax: 
+ collection.each do |variable_name|
+   # code to be iterate
+end
+
+3.0.0 :024 > (0..9).each do |i|
+3.0.0 :025 >   puts i
+3.0.0 :026 > end
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ => 0..9 
+
+3.0.0 :027 > a = ['M','A','H','I','M','A']
+ => ["M", "A", "H", "I", "M", "A"] 
+3.0.0 :028 > a.each do|a|
+3.0.0 :029 >   puts a
+3.0.0 :030 > end
+M
+A
+H
+I
+M
+A
+ => ["M", "A", "H", "I", "M", "A"] 
+ 
+ 
+--> Collect Iterator: This iterator returns all the elements of a collection. The collect iterator returns an entire collection, regardless of whether it is an array or hash.
+The collect method need not always be associated with a block.
+Syntax: 
+Collection = collection.collect
+
+3.0.0 :034 > a = [1,2,3,4,5,6,7,8,9,10]
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+3.0.0 :035 > b = a.collect{|y| (5 * y)}
+ => [5, 10, 15, 20, 25, 30, 35, 40, 45, 50] 
+3.0.0 :036 > puts b
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+ => nil 
+
+
+--> Times Iterator: In this iterator, a loop is specified with number of time. The loop is initially started from zero and runs until the one less than the specified number.
+We can add an iteration variable by using the vertical bars around the identifier. 
+Syntax:
+t.times do |variable_name|  # t is the specified number which is used to define number of iteration.
+# code to be execute
+end
+
+3.0.0 :037 > 7.times do|i|
+3.0.0 :038 >   puts i
+3.0.0 :039 > end
+0
+1
+2
+3
+4
+5
+6
+ => 7 
+
+
+--> Upto Iterator: This iterator follows top to bottom approach. It includes both the top and bottom variable in the iteration. 
+Syntax:  
+top.upto(bottom) do |variable_name|
+# code to execute
+end
+
+NOTE: Point to remember that the value of bottom variable is always greater than the top variable and if it is not, then it will return nothing.
+
+3.0.0 :040 > 4.upto(7) do |n|
+3.0.0 :041 >   puts n
+3.0.0 :042 > end
+4
+5
+6
+7
+ => 4 
+3.0.0 :043 > 7.upto(4) do |n|
+3.0.0 :044 >   puts n
+3.0.0 :045 > end
+ => 7 
+ 
+ 
+--> Downto Iterator: This iterator follows bottom to top approach. It includes both the top and bottom variable in the iteration. 
+Syntax: 
+top.downto(bottom) do |variable_name|
+# code to execute
+end
+NOTE: Point to remember that the value of bottom variable is always smaller than the top variable and if it is not, then it will return nothing.
+
+3.0.0 :046 > 7.downto(3) do |n|
+3.0.0 :047 >   puts n
+3.0.0 :048 > end
+7
+6
+5
+4
+3
+ => 7 
+3.0.0 :049 > 4.downto(7) do |n|
+3.0.0 :050 >   puts n
+3.0.0 :051 > end
+ => 4 
+
+
+--> Step Iterator: Ruby step iterator is used to iterate where the user has to skip a specified range. 
+Syntax: 
+Collection.step(rng) do |variable_name|
+# code to be executed
+end 
+
+3.0.0 :055 > (0..50).step(5) do|i|
+3.0.0 :056 >   puts i
+3.0.0 :057 > end
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+ => 0..50 
+
+3.0.0 :052 > (0..60).step(10) do|i|
+3.0.0 :053 >   puts i
+3.0.0 :054 > end
+0
+10
+20
+30
+40
+50
+60
+ => 0..60 
+ 
+
+--> Each_line Iterator: Ruby each_line iterator is used to iterate over a new line in the string. 
+Syntax:
+string.each_line do |variable_name|
+# code to be executed
+end
+
+3.0.0 :058 > "Welcome\nto\nRuby\nPortal".each_line do|i|
+3.0.0 :059 >   puts i
+3.0.0 :060 > end
+Welcome
+to
+Ruby
+Portal
+ => "Welcome\nto\nRuby\nPortal" 
 
  

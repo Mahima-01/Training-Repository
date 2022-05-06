@@ -323,18 +323,18 @@ Operator  Description	                                                          
 
 2.Ruby Comparison Operators:
 Operator	Description	                                                                                                       Example
-==	Checks if the value of two operands are equal or not, if yes then condition becomes true.	                                   (a == b) is not true.
-!=	Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.	                    (a != b) is true.
->	Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.	    (a > b) is not true.
-<	Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.	            (a < b) is true.
+==	Checks if the value of two operands are equal or not, if yes then condition becomes true.	                                    (a == b) is not true.
+!=	Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.	                   (a != b) is true.
+>	Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.	           (a > b) is not true.
+<	Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.	              (a < b) is true.
 >=	Checks if the value of left operand is greater than or equal to the value of right operand,if yes then condition becomes true.  (a >= b) is not true.
 <=	Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.    (a <= b) is true.
 <=>	Combined comparison operator. Returns 0 if first operand equals second, 1 if first operand is greater than the second 
         and -1 if first operand is less than the second.	                                                                          (a <=> b) returns -1.
-===	Used to test equality within a when clause of a case statement.	                                                           (1...10) === 5 returns true.
-.eql?	True if the receiver and argument have both the same type and equal values.(Checks datatype as 1!=1.0 i.e 1 is int)              1 == 1.0 returns true, but 1.eql?(1.0) is false.
-equal?	True if the receiver and argument have the same object id.	                                                                   if aObj is duplicate of bObj then aObj == bObj is true, 
-                                                                                                                                         a.equal?bObj is false but a.equal?aObj is true.
+===	Used to test equality within a when clause of a case statement.	                                                               (1...10) === 5 returns true.
+.eql?	True if the receiver and argument have both the same type and equal values.(Checks datatype as 1!=1.0 i.e 1 is int)          1 == 1.0 returns true, but 1.eql?(1.0) is false.
+equal?	True if the receiver and argument have the same object id.	                                                                 if aObj is duplicate of bObj then aObj == bObj is true, 
+                                                                                                                                    a.equal?bObj is false but a.equal?aObj is true.
 
                                                                                                                                          
 3.0.0 :021 > a==b
@@ -2261,5 +2261,153 @@ uby Ruby.rb
 3.0.0 :067 > arr = [1,2,3,4,5]
 3.0.0 :074 > arr.map {|a| 2**a}
 => [2, 4, 8, 16, 32] 
+
+# Selecting Items from an Array:
+select! and reject! are the corresponding destructive methods to select and reject.
+drop_while can be used instead of reject.
+
+3.0.0 :001 > arr = [1,2,3,4,5,6]
+ => [1, 2, 3, 4, 5, 6] 
+3.0.0 :002 > arr.drop_while { |a| a < 4 }
+ => [4, 5, 6] 
+3.0.0 :003 > arr.reject { |a| a < 4 }
+ => [4, 5, 6] 
+3.0.0 :004 > arr.select { |a| a < 3 }
+ => [1, 2] 
+
+# delete_if and keep_if:
+3.0.0 :005 > arr.delete_if { |a| a < 4 }
+ => [4, 5, 6] 
+3.0.0 :006 > arr = [1,2,3,4,5,6]
+ => [1, 2, 3, 4, 5, 6] 
+3.0.0 :007 > arr.keep_if { |a| a < 4 }
+ => [1, 2, 3] 
+
+
+
+# Public Class Methods:
+1. [](*args):
+Returns a new array populated with the given objects.
+3.0.0 :010 > Array.[](1,'a',/^A/)
+ => [1, "a", /^A/] 
+3.0.0 :011?> Array.[1,'a',/^A/]
+3.0.0 :012?> (1,'a',/^A/]
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ irb
+3.0.0 :001 > First_array = ["Mahima","Tewatia"]
+ => ["Mahima", "Tewatia"] 
+3.0.0 :002 > Second_array = Array.new(First_array)
+ => ["Mahima", "Tewatia"] 
+3.0.0 :003 > First_array.equal? Second_array
+ => false 
+
+In the last form, an array of the given size is created. Each element in this array is created by passing the element's index to the given block and storing the return value.
+3.0.0 :004 > Array.new(4) { |index| index**2 }
+ => [0, 1, 4, 9] 
+ 
+# try_convert:
+Tries to convert obj into array using the 'to_ary' method. Returns converted array or nil if obj cannot be converted. 
+This method can be used to check if an argument is an array.
+3.0.0 :005 > Array.try_convert([1])
+ => [1] 
+3.0.0 :006 > Array.try_convert("1")
+ => nil 
+
+
+# Public Instance Methods:
+-Set Intersection- ary & other_ary → new_ary
+Returns a new array containing unique elements common to the two arrays.
+3.0.0 :010 > [1,1,3,5] & [3,2,1,6]
+ => [1, 3] 
+3.0.0 :011'> ['a','b','c','d'] & ['a','b','c']
+ => ["a", "b", "c"] 
+ 
+Repetition: - ary * int → new_ary:
+With string argument, equivalent to ary.join(str).
+3.0.0 :012 > [1,2,3] * 3
+ => [1, 2, 3, 1, 2, 3, 1, 2, 3] 
+3.0.0 :013 > [1,2,3] * ","
+ => "1,2,3" 
+ 
+Concatenation — - ary + other_ary → new_ary
+Returns a new array built by concatenating the two arrays together to produce a third array.
+3.0.0 :014 > [1,2,3] + [4,5]
+ => [1, 2, 3, 4, 5] 
+3.0.0 :015 > a = ['a','b','c','d']
+ => ["a", "b", "c", "d"] 
+3.0.0 :016'> c = a + ['e','f','g']
+ => ["a", "b", "c", "d", "e", "f", "g"] 
+3.0.0 :017'> ['a','b','c','d'] + ['e','f']
+ => ["a", "b", "c", "d", "e", "f"] 
+
+- Array Difference: ary - other_ary → new_ary
+Returns a new array that is a copy of the original array, removing all occurrences of any item that also appear in other_ary. The order is preserved from the original array.
+3.0.0 :018 > [1,1,3,4,4,5,5,6] - [1,2,4]
+ => [3, 5, 5, 6] 
+NOTE: All repetetive occurrence of element are removed in final array.
+
+-Append:ary << obj → ary
+Pushes the given object on to the end of this array. This expression returns the array itself, so several appends may be chained together.
+3.0.0 :019 > a = [1,2]
+ => [1, 2] 
+3.0.0 :020 > a << "c" << "hi" << "ruby"
+ => [1, 2, "c", "hi", "ruby"] 
+
+-Comparison: ary <=> other_ary → -1, 0, +1 or nil 
+Returns an integer (-1, 0, or +1) if this array is less than, equal to, or greater than other_ary.
+Each object in each array is compared (using the <=> operator).
+the first element of ary is compared with the first one of other_ary using the <=> operator, then each of the second elements, etc…
+nil is returned if the other_ary is not an array or if the comparison of two elements returned nil.
+3.0.0 :001 > ['a','a','c'] <=> ['a','b','c']
+ => -1 
+3.0.0 :002 > [1,2,3,4,5,6] <=> [1,2]
+ => 1 
+3.0.0 :003 > [1,2] <=> [1,:two]
+ => nil 
+
+-Equality: ary == other_ary 
+Two arrays are equal if they contain the same number of elements and if each element is equal to (according to Object#==) the corresponding element in other_ary.
+3.0.0 :004 > ['a','c',6] == ['a','c']
+ => false 
+3.0.0 :005 > ['a','c',6] == ['a','c',7]
+ => false 
+3.0.0 :006 > ['a','c',6] == ['a','c',6]
+ => true 
+3.0.0 :007 > ['a','c',6] == ['a','c','f']
+ => false 
+ 
+Element Reference:
+ary[index] → obj or nilclick to toggle source
+ary[start, length] → new_ary or nil
+ary[range] → new_ary or nil
+slice(index) → obj or nil
+slice(start, length) → new_ary or nil
+slice(range) → new_ary or nil
+Returns the element at index, or returns a subarray starting at the start index and continuing for length elements, or returns a subarray specified by range of indices.
+
+Negative indices count backward from the end of the array (-1 is the last element). For start and range cases the starting index is just before an element. Additionally, an empty array is returned when the starting index for an element range is at the end of the array.
+
+Returns nil if the index (or starting index) are out of range.
+
+3.0.0 :008 > a = ['a','b','c','d','e','f']
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :009 > a[2] + a[0] + a[1]
+ => "cab" 
+3.0.0 :010 > a[6]
+ => nil 
+3.0.0 :011 > a[1,2]
+ => ["b", "c"] 
+3.0.0 :012 > a[1..3]
+ => ["b", "c", "d"] 
+3.0.0 :013 > a[4..7]
+ => ["e", "f"] 
+3.0.0 :014 > a[7..10]
+ => nil 
+3.0.0 :015 > a[7]
+ => nil 
+3.0.0 :016 > a[4..7]
+ => ["e", "f"] 
+3.0.0 :017 > a[7,1]
+ => nil 
 
 

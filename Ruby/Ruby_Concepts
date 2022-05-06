@@ -2410,4 +2410,276 @@ Returns nil if the index (or starting index) are out of range.
 3.0.0 :017 > a[7,1]
  => nil 
 
+# combination(n) {|c| block} → aryclick to toggle source
+combination(n) → Enumerator
+When invoked with a block, yields all combinations of length n of elements from the array and then returns the array itself.
+The implementation makes no guarantees about the order in which the combinations are yielded.
+If no block is given, an Enumerator is returned instead.
+
+3.0.0 :018 > a = [1,2,3,4]
+ => [1, 2, 3, 4] 
+3.0.0 :019 > a.combination(1).to_a
+ => [[1], [2], [3], [4]] 
+3.0.0 :020 > a.combination(2).to_a
+ => [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]] 
+3.0.0 :021 > a.combination(3).to_a
+ => [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]] 
+3.0.0 :022 > a.combination(4).to_a
+ => [[1, 2, 3, 4]] 
+3.0.0 :023 > a.combination(5).to_a
+ => [] 
+3.0.0 :024 > a.combination(0).to_a
+ => [[]] 
+
+# compact → new_ary
+Returns a copy of self with all nil elements removed.
+3.0.0 :025 > ['a',nil,'b',nil,'c',nil].compact
+ => ["a", "b", "c"] 
+
+# compact! → ary or nil
+Removes nil elements from the array.
+Returns nil if no changes were made, otherwise returns the array.
+3.0.0 :026 > ['a',nil,'b',nil,'c',nil].compact!
+ => ["a", "b", "c"] 
+3.0.0 :027 > ['a','b','c'].compact!
+ => nil 
+
+# Count → int
+Returns the number of elements.
+count(obj) → int
+If an argument is given, counts the number of elements which equal obj using ==.
+count {|item| block} → int
+If a block is given, counts the number of elements for which the block returns a true value.
+
+3.0.0 :028 > arr = [1,2,3,4,2]
+ => [1, 2, 3, 4, 2] 
+3.0.0 :029 > arr.count
+ => 5 
+3.0.0 :030 > arr.count(3)
+ => 1 
+3.0.0 :031 > arr.count(2)
+ => 2 
+3.0.0 :032 > arr.count {|x| x % 2 == 0 }
+ => 3 
+
+# cycle(n=nil) {|obj| block} → nilclick to toggle source
+Calls the given block for each element n times or forever if nil is given.
+Does nothing if a non-positive number is given or the array is empty.
+
+cycle(n=nil) → Enumerator
+Returns nil if the loop has finished without getting interrupted.
+If no block is given, an Enumerator is returned instead.
+3.0.0 :033 > arr = ['a','b','c']
+ => ["a", "b", "c"] 
+3.0.0 :034 > a.cycle() { |x| puts x}
+Will run infinity times.
+3.0.0 :033 > arr = ['a','b','c']
+ => ["a", "b", "c"] 
+3.0.0 :034 > a.cycle(2) { |x| puts x}
+1
+2
+3
+4
+1
+2
+3
+4
+ => nil 
+
+# delete(obj) → item or nil
+Deletes all items from self that are equal to obj.
+Returns the last deleted item, or nil if no matching item is found.
+
+delete(obj) {block} → item or result of block
+If the optional code block is given, the result of the block is returned if the item is not found. (To remove nil elements and get an informative return value, use Array#compact!)
+
+3.0.0 :035 > arr = ['a','b','c','b','c','b']
+ => ["a", "b", "c", "b", "c", "b"] 
+3.0.0 :036 > arr.delete('b')
+ => "b" 
+3.0.0 :037 > arr
+ => ["a", "c", "c"] 
+3.0.0 :038 > arr.delete('z')
+ => nil 
+3.0.0 :039 > arr.delete('z') {'not found'}
+ => "not found"
+ 
+# delete_at:
+Deletes at a particular index.
+3.0.0 :040 > arr.delete_at(2)
+ => "c" 
+ 
+# each {|item| block} → ary
+Calls the given block once for each element in self, passing that element as a parameter. Returns the array itself.
+each → Enumerator
+If no block is given, an Enumerator is returned.
+3.0.0 :041 > arr = ['a','b','c']
+ => ["a", "b", "c"] 
+3.0.0 :042 > a.each_index { |x| print x, " "}
+0 1 2 3  => [1, 2, 3, 4] 
+
+# fetch(index) → objclick to toggle source
+fetch(index, default) → obj
+Tries to return the element at position index, but throws an IndexError exception if the referenced index lies outside of the array bounds. This error can be prevented by supplying a second argument, which will act as a default value.
+
+fetch(index) {|index| block} → obj
+Alternatively, if a block is given it will only be executed when an invalid index is referenced.
+
+Negative values of index count from the end of the array.
+
+3.0.0 :043 > a = [11,22,33,44]
+ => [11, 22, 33, 44] 
+3.0.0 :044 > a.fetch(1)
+ => 22 
+3.0.0 :045 > 
+3.0.0 :046 > a.fetch(-1)
+ => 44 
+3.0.0 :047'> a.fetch(4, 'cat')
+ => "cat" 
+
+# fill(obj) → ary
+fill(obj, start [, length]) → ary
+fill(obj, range) → ary
+The first three forms set the selected elements of self (which may be the entire array) to obj.
+
+fill {|index| block} → ary
+fill(start [, length]) {|index| block} → ary
+fill(range) {|index| block} → ary
+A start of nil is equivalent to zero.
+A length of nil is equivalent to the length of the array.
+The last three forms fill the array with the value of the given block, which is passed the absolute index of each element to be filled.
+
+Negative values of start count from the end of the array, where -1 is the last element.
+
+3.0.0 :050 > arr = ['a','b','c','d']
+ => ["a", "b", "c", "d"] 
+3.0.0 :051'> a.fill('x')
+ => ["x", "x", "x", "x"] 
+3.0.0 :052 > a.fill('z',2,2)
+ => ["x", "x", "z", "z"] 
+3.0.0 :053'> a.fill('y',0..1)
+ => ["y", "y", "z", "z"] 
+3.0.0 :055 > a.fill{ |i| i*i }
+ => [0, 1, 4, 9] 
+3.0.0 :056 > a.fill(-2) { |i| i*i*i }
+ => [0, 1, 8, 27] 
+ 
+# filter {|item| block} → new_ary
+Returns a new array containing all elements of ary for which the given block returns a true value.
+
+filter → Enumerator
+If no block is given, an Enumerator is returned instead.
+
+3.0.0 :057 > [1,1,3,4,5].select { |num| num.even? }
+ => [4] 
+3.0.0 :058 > [1,1,3,4,5].select { |num| num.odd? }
+ => [1, 1, 3, 5] 
+3.0.0 :059 > a = %w[a b c d e f]
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :060 > a.select { |v| v =~ /[aeiou]/ }
+ => ["a", "e"] 
+# first → obj or nil
+first(n) → new_ary
+Returns the first element, or the first n elements, of the array. If the array is empty, the first form returns nil, and the second form returns an empty array. See also Array#last for the opposite effect.
+3.0.0 :061 > a = ['q','r','s','t']
+ => ["q", "r", "s", "t"] 
+3.0.0 :062 > a.first
+ => "q" 
+3.0.0 :063 > a.first(2)
+ => ["q", "r"] 
+3.0.0 :064 > a.first(3)
+ => ["q", "r", "s"] 
+
+# initialize_copy(other_ary) → ary
+Replaces the contents of self with the contents of other_ary, truncating or expanding if necessary.
+3.0.0 :065 > a = ['q','r','s','t']
+ => ["q", "r", "s", "t"] 
+3.0.0 :067 > a.replace(['a','b','c','d','e'])
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :068 > a
+ => ["a", "b", "c", "d", "e"] 
+
+# inspect → string
+to_s → string
+Creates a string representation of self, by calling inspect on each element.
+3.0.0 :069 > ['a','b','c','d','e'].to_s
+ => "[\"a\", \"b\", \"c\", \"d\", \"e\"]"
+ 
+# join(separator=$,) → str
+Returns a string created by converting each element of the array to a string, separated by the given separator. If the separator is nil, it uses current $,. If both the separator and $, are nil, it uses an empty string.
+3.0.0 :068 > a
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :069 > ['a','b','c','d','e'].to_s
+ => "[\"a\", \"b\", \"c\", \"d\", \"e\"]" 
+3.0.0 :070 > ['a','b','c','d','e'].join
+ => "abcde" 
+3.0.0 :071 > ['a','b','c','d','e'].join("-")
+ => "a-b-c-d-e" 
+ 
+# rassoc(obj) → element_ary or nil
+Searches through the array whose elements are also arrays.
+Compares obj with the second element of each contained array using obj.==.
+Returns the first contained array that matches obj.
+
+3.0.0 :072 > a = [ [1,'one'], [2,'two'],[3,'three'],[4,'four'], ['ii','two']]
+ => [[1, "one"], [2, "two"], [3, "three"], [4, "four"], ["ii", "two"]] 
+3.0.0 :073 > a.rassoc('two')
+ => [2, "two"] 
+3.0.0 :074 > a.rassoc('ii')
+ => nil 
+3.0.0 :002 > a.rassoc('four')
+ => [4, "four"] 
+ 
+# Repeated_combination(n) {|c| block} → ary
+When invoked with a block, yields all repeated combinations of length n of elements from the array and then returns the array itself.
+The implementation makes no guarantees about the order in which the repeated combinations are yielded.
+
+repeated_combination(n) → Enumerator
+If no block is given, an Enumerator is returned instead.
+
+3.0.0 :003 > a = [1,2,3]
+ => [1, 2, 3] 
+3.0.0 :004 > a.repeated_combination(1).to_a
+ => [[1], [2], [3]] 
+3.0.0 :005 > a.repeated_combination(2).to_a
+ => [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]] 
+3.0.0 :006 > a.repeated_combination(3).to_a
+ => [[1, 1, 1], [1, 1, 2], [1, 1, 3], [1, 2, 2], [1, 2, 3], [1, 3, 3], [2, 2, 2], [2, 2, 3], [2, 3, 3], [3, 3, 3]] 
+3.0.0 :007 > a.repeated_combination(4).to_a
+ => [[1, 1, 1, 1], [1, 1, 1, 2], [1, 1, 1, 3], [1, 1, 2, 2], [1, 1, 2, 3], [1, 1, 3, 3], [1, 2, 2, 2], [1, 2, 2, 3], [1, 2, 3, 3], [1, 3, 3, 3], [2, 2, 2, 2], [2, 2, 2, 3], [2, 2, 3, 3], [2, 3, 3, 3], [3, 3, 3, 3]] 
+3.0.0 :008 > a.repeated_combination(0).to_a
+ => [[]] ; one combination of length zero.
+
+# rindex(obj) → int or nil
+rindex {|item| block} → int or nil
+Returns the index of the last object in self == to obj.
+If a block is given instead of an argument, returns the index of the first object for which the block returns true, starting from the last object.
+Returns nil if no match is found.
+See also Array#index.
+
+rindex → Enumerator
+If neither block nor argument is given, an Enumerator is returned instead.
+
+3.0.0 :017 > a = [ "a","b","b","b","c" ]  
+ => ["a", "b", "b", "b", "c"] 
+3.0.0 :018 > a.rindex ("b")
+ => 3 
+3.0.0 :019 > a.rindex ("c")
+ => 4 
+3.0.0 :020 > a.rindex ("a")
+ => 0 
+3.0.0 :022 > a.rindex { |x| x === "b" }
+ => 3 
+
+# rotate(count=1) → new_ary
+Returns a new array by rotating self so that the element at count is the first element of the new array.
+If count is negative then it rotates in the opposite direction, starting from the end of self where -1 is the last element.
+3.0.0 :023 > a = [ "a","b","c","d" ]  
+ => ["a", "b", "c", "d"] 
+3.0.0 :024 > a.rotate
+ => ["b", "c", "d", "a"] 
+3.0.0 :025 > a.rotate(2)
+ => ["c", "d", "a", "b"] 
+3.0.0 :026 > a.rotate(-3)
+ => ["b", "c", "d", "a"] 
 

@@ -2005,5 +2005,261 @@ to
 Ruby
 Portal
  => "Welcome\nto\nRuby\nPortal" 
+--------------------------------------------------------------------------------------------------------------------------------------------
 
+# Arrays:
+Arrays are ordered, integer-indexed collections of any object.
+Array indexing starts at 0.
+In general, an array is created by listing the elements which will be separated by commas and enclosed between the square brackets[]. 
+Negative indices start counting from the end, with -1 being the last element.
+
+There are several ways to create an array. But there are two ways which mostly used are as follows: 
+1.Using the new class method: new is a method which can be used to create the arrays with the help of dot operator.
+Syntax:
+name_of_array= Array.new
+
+# creating array using new method
+# without passing any parameter
+arr = Array.new()
  
+# creating array using new method
+# passing one parameter i.e. the
+# size of array
+arr2 = Array.new(7)
+ 
+# creating array using new method
+# passing two parameters i.e. the
+# size of array & element of array
+arr3 = Array.new(4, "GFG")
+ 
+# displaying the size of arrays
+# using size and length method
+puts arr.size
+puts arr2.length
+puts arr3.size
+ 
+# displaying array elements
+puts "#{arr3}"
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ irb
+3.0.0 :001 > arr = Array.new()
+ => [] 
+3.0.0 :002 > arr2 = Array.new(7)
+ => [nil, nil, nil, nil, nil, nil, nil] 
+3.0.0 :003 > arr3 = Array.new(4, "Learning Arrays")
+ => ["Learning Arrays", "Learning Arrays", "Learning Arrays", "Learning Ar... 
+3.0.0 :004 > puts arr.size
+0
+ => nil 
+3.0.0 :005 > puts arr2.length
+7
+ => nil 
+3.0.0 :006 > puts arr3.size
+4
+ => nil 
+3.0.0 :007 > puts arr3
+Learning Arrays
+Learning Arrays
+Learning Arrays
+Learning Arrays
+ => nil 
+
+2.Using literal constructor[] In Ruby, [] is known as the literal constructor which can be used to create the arrays. Between [], different or similar type values can be assigned to an array:
+
+3.0.0 :008 > arr = Array['a','b','Hello','hi',2,3]
+ => ["a", "b", "Hello", "hi", 2, 3] 
+3.0.0 :009 > puts "#{arr}"
+["a", "b", "Hello", "hi", 2, 3]
+ => nil 
+3.0.0 :010 > puts "Size of arr is: #{arr.size}"
+Size of arr is: 6
+ => nil 
+3.0.0 :011 > puts "Length of arr is: #{arr.length}"
+Length of arr is: 6
+ => nil 
+ 
+# Retrieving Or Accessing Elements from Array:
+In Ruby, there are several ways to retrieve the elements from the array. Ruby arrays provide a lot of different methods to access the array element. But the most used way is to use the index of an array.
+
+3.0.0 :015 > arr =['a','b','Hello','hi',2,3,"Ruby"]
+ => ["a", "b", "Hello", "hi", 2, 3, "Ruby"] 
+3.0.0 :016 > puts arr[2]
+Hello
+ => nil 
+3.0.0 :017 > puts arr[5]
+3
+ => nil 
+3.0.0 :018 > puts arr[-2]
+3
+ => nil 
+
+# Retrieving Multiple Elements from Array: There can be many situations where the user need to access the multiple elements from the array. So to access the multiple elements, pass the two specified array index into the [].
+
+=> ["a", "b", "Hello", "hi", 2, 3, "Ruby"] 
+3.0.0 :016 > puts arr[2]
+Hello
+ => nil 
+3.0.0 :017 > puts arr[5]
+3
+ => nil 
+3.0.0 :018 > puts arr[-2]
+3
+ => nil 
+3.0.0 :019 > puts arr[3,4]
+hi
+2
+3
+Ruby
+ => nil 
+3.0.0 :020 > puts arr[2,3]
+Hello
+hi
+2
+ => nil 
+3.0.0 :021 > puts arr[9]
+
+ => nil 
+3.0.0 :022 > arr[1..3]
+ => ["b", "Hello", "hi"] 
+
+Note: Another way to access a particular array element is by using the at method.
+3.0.0 :023 > arr.at(2)
+ => "Hello" 
+
+## The special methods first and last will return the first and last elements of an array, respectively.
+3.0.0 :024 > arr.first
+ => "a" 
+3.0.0 :025 > arr.last
+ => "Ruby" 
+
+## To return the first n elements of an array, use take:
+3.0.0 :026 > arr.take(4)
+ => ["a", "b", "Hello", "hi"] 
+
+## drop does the opposite of take, by returning the elements after n elements have been dropped:
+3.0.0 :028 > arr = [1,2,3,4,5,6,7,8]
+ => [1, 2, 3, 4, 5, 6, 7, 8] 
+3.0.0 :029 > arr.take(3)
+ => [1, 2, 3] 
+3.0.0 :030 > arr.drop(3)
+ => [4, 5, 6, 7, 8] 
+
+ ↑
+# Arrays keep track of their own length at all times. To query an array about the number of elements it contains, use length, count or size.
+3.0.0 :031 > browsers = ['Chrome','Firefox','Safari','Opera','IE']
+ => ["Chrome", "Firefox", "Safari", "Opera", "IE"] 
+3.0.0 :032 > browsers.length
+ => 5 
+3.0.0 :033 > browsers.count
+ => 5 
+
+# To check whether an array contains any elements at all:
+3.0.0 :034 > browsers.empty?
+ => false 
+
+# To check whether a particular item is included in the array:
+3.0.0 :035 > browsers.include?("Mini")
+ => false 
+3.0.0 :036
+
+# Adding Items to Arrays:
+Items can be added to the end of an array by using either push or <<.
+3.0.0 :036 > arr = [1,2,3,4,5]
+ => [1, 2, 3, 4, 5] 
+3.0.0 :037 > arr.push(6)
+ => [1, 2, 3, 4, 5, 6] 
+3.0.0 :038 > arr.push(7,8)
+ => [1, 2, 3, 4, 5, 6, 7, 8] 
+3.0.0 :039 > arr << 9
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9] 
+ 
+# 'unshift' will add a new item to the beginning of an array.
+3.0.0 :040 > arr.unshift(0)
+ => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+3.0.0 :041 > arr.unshift("hi")
+ => ["hi", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+3.0.0 :042 > arr.unshift(-1,-2)
+ => [-1, -2, "hi", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+
+# With insert you can add a new element to an array at any position.
+Using the insert method, you can also insert multiple values at once.
+arr = [-1, -2, "hi", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+3.0.0 :043 > arr.insert(3, 'Apple')
+ => [-1, -2, "hi", "Apple", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+3.0.0 :044 > arr.insert(3, 'Apple','pear','grapes')
+ => [-1, -2, "hi", "Apple", "pear", "grapes", "Apple", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+
+# Removing Items from an Array.
+The method pop removes the last element in an array and returns it:
+arr = [-1, -2, "hi", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+3.0.0 :045 > arr.pop
+ => 9 
+
+# To retrieve and at the same time remove the first item, use shift:
+3.0.0 :046 > arr.shift
+ => -1 
+3.0.0 :047 > arr
+ => [-2, "hi", "Apple", "pear", "grapes", "Apple", 0, 1, 2, 3, 4, 5, 6, 7, 8] 
+
+# To delete an element at a particular index:
+To delete a particular element anywhere in an array, use delete:
+ => [-2, "hi", "Apple", "pear", "grapes", "Apple", 0, 1, 2, 3, 4, 5, 6, 7, 8] 
+3.0.0 :048 > arr.delete(2)
+ => 2 
+3.0.0 :049 > arr
+ => [-2, "hi", "Apple", "pear", "grapes", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+3.0.0 :050 > arr.delete("hi")
+ => "hi" 
+3.0.0 :051 > arr
+ => [-2, "Apple", "pear", "grapes", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+3.0.0 :052 > arr.delete_at(0)
+ => -2 
+3.0.0 :053 > arr
+ => ["Apple", "pear", "grapes", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+3.0.0 :054 > 
+
+# A useful method if you need to remove nil values from an array is compact:
+3.0.0 :056 > arr.insert(3,nil,nil)
+ => ["Apple", "pear", "grapes", nil, nil, "nil", "nil", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+3.0.0 :057 > arr.compact
+ => ["Apple", "pear", "grapes", "nil", "nil", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+
+3.0.0 :064 > arr
+ => ["Apple", "pear", "grapes", nil, nil, "nil", "nil", nil, nil, "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+3.0.0 :065 > arr.compact!
+ => ["Apple", "pear", "grapes", "nil", "nil", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+
+# Another common need is to remove duplicate elements from an arrayi.e uniq is used:
+=> ["Apple", "pear", "grapes", "nil", "nil", "Apple", 0, 1, 3, 4, 5, 6, 7, 8] 
+3.0.0 :066 > arr.uniq
+ => ["Apple", "pear", "grapes", "nil", 0, 1, 3, 4, 5, 6, 7, 8] 
+
+
+# Iterating over Arrays:
+Each method is used for iterating over arrays.
+3.0.0 :067 > arr = [1,2,3,4,5]
+ => [1, 2, 3, 4, 5] 
+3.0.0 :068 > arr.each {|a| print a -= 10, " "}
+-9 -8 -7 -6 -5  => [1, 2, 3, 4, 5] 
+
+# reverse_each: used to reverse the order of array.
+words = %w[first second third fourth fifth]
+str = ''
+words.reverse_each { |word| str += "#{word} "}
+p str
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ r
+uby Ruby.rb
+"fifth fourth third second first "
+
+# The map method can be used to create a new array based on the original array, but with the values modified by the supplied block: 
+3.0.0 :067 > arr = [1,2,3,4,5]
+ => [1, 2, 3, 4, 5] 
+3.0.0 :073 > arr.map {|a| 2*a}
+ => [2, 4, 6, 8, 10] 
+ 
+3.0.0 :067 > arr = [1,2,3,4,5]
+3.0.0 :074 > arr.map {|a| 2**a}
+=> [2, 4, 8, 16, 32] 
+
+

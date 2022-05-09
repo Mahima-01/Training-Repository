@@ -1,0 +1,436 @@
+# Date-Time in Ruby:
+-Getting Current Date and Time:
+Time.new and Time.now are used for this purpose.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ irb
+3.0.0 :001 > time1 = Time.new
+ => 2022-05-09 13:19:31.976168727 +0530 
+3.0.0 :002 > time2 = Time.now
+ => 2022-05-09 13:19:48.959517895 +0530 
+ 
+# Getting Components of a Date & Time:
+time = Time.new
+
+# Components of a Time
+puts "Current Time : " + time.inspect
+puts time.year    # => Year of the date 
+puts time.month   # => Month of the date (1 to 12)
+puts time.day     # => Day of the date (1 to 31 )
+puts time.wday    # => 0: Day of week: 0 is Sunday
+puts time.yday    # => 365: Day of year
+puts time.hour    # => 23: 24-hour clock
+puts time.min     # => 59
+puts time.sec     # => 59
+puts time.usec    # => 999999: microseconds
+puts time.zone    # => "UTC": timezone name
+
+3.0.0 :004 > time = Time.new
+3.0.0 :005 > puts 'Current Time : ' + time.inspect
+Current Time : 2022-05-09 13:22:16.998022266 +0530
+3.0.0 :006 > puts time.year
+2022
+3.0.0 :007 > puts time.month
+5
+3.0.0 :008 > puts time.day
+9
+ => nil 
+3.0.0 :009 > puts time.wday
+1
+ => nil 
+3.0.0 :010 > puts time.yday
+129
+ => nil 
+3.0.0 :011 > puts time.hour
+13
+ => nil 
+3.0.0 :012 > puts time.min
+22
+ => nil 
+3.0.0 :013 > puts time.sec
+16
+ => nil 
+3.0.0 :014 > puts time.usec
+998022
+ => nil 
+3.0.0 :015 > puts time.zone
+IST
+ => nil 
+
+# Time.utc, Time.gm and Time.local Functions:
+These two functions can be used to format date in a standard format as follows-
+3.0.0 :017 > Time.local(2008, 7, 8)
+ => 2008-07-08 00:00:00 +0530 
+3.0.0 :018 > Time.local(2008, 7, 8, 9, 10)
+ => 2008-07-08 09:10:00 +0530 
+3.0.0 :019 > Time.utc(2008, 7, 8, 9, 10)
+ => 2008-07-08 09:10:00 UTC 
+3.0.0 :020 > Time.gm(2008, 7, 8, 9, 10, 11)
+ => 2008-07-08 09:10:11 UTC 
+
+Note: Following is the example to get all the components in an array in the following format −
+[sec,min,hour,day,month,year,wday,yday,isdst,zone]
+
+3.0.0 :021 > time = Time.new
+ => 2022-05-09 13:27:07.215263152 +0530 
+3.0.0 :022 > values = time.to_a
+ => [7, 27, 13, 9, 5, 2022, 1, 129, false, "IST"] 
+
+This array could be passed to Time.utc or Time.local functions to get different format of dates as follows −
+3.0.0 :023 > time = Time.new
+ => 2022-05-09 13:27:56.317233947 +0530 
+3.0.0 :024 > values = time.to_a
+ => [56, 27, 13, 9, 5, 2022, 1, 129, false, "IST"] 
+3.0.0 :025 > puts Time.utc(*values)
+2022-05-09 13:27:56 UTC
+
+Following is the way to get time represented internally as seconds since the (platform-dependent) epoch −
+3.0.0 :026 > time = Time.now.to_i
+ => 1652083140 
+3.0.0 :027 > time = Time.at(time)
+ => 2022-05-09 13:29:00 +0530 
+3.0.0 :028 > time = Time.now.to_f
+ => 1652083168.6602967 
+
+# Timezones and Daylight Savings Time:
+time = Time.new
+
+# Here is the interpretation
+time.zone       # => "UTC": return the timezone
+time.utc_offset # => 0: UTC is 0 seconds offset from UTC
+time.zone       # => "PST" (or whatever your timezone is)
+time.isdst      # => false: If UTC does not have DST.
+time.utc?       # => true: if t is in UTC time zone
+time.localtime  # Convert to local timezone.
+time.gmtime     # Convert back to UTC.
+time.getlocal   # Return a new Time object in local zone
+time.getutc     # Return a new Time object in UTC
+
+.0.0 :029 > time = Time.new
+ => 2022-05-09 13:30:27.980174468 +0530 
+3.0.0 :030 > time.zone
+ => "IST" 
+3.0.0 :031 > 
+3.0.0 :032 > time.utc_offset
+3.0.0 :033 > time.zone
+3.0.0 :034 > time.isdst
+3.0.0 :035 > time.utc?
+ => false 
+3.0.0 :036 > time.localtime
+ => 2022-05-09 13:30:27.980174468 +0530 
+3.0.0 :038 > time.gmtime
+ => 2022-05-09 08:00:27.980174468 UTC 
+3.0.0 :039 > time.getlocal
+ => 2022-05-09 13:30:27.980174468 +0530 
+3.0.0 :040 > time.getutc
+ => 2022-05-09 08:00:27.980174468 UTC 
+
+# Formatting Times and Dates:
+This method is strftime, which basically means ‘format time’.
+
+time = Time.new
+puts time.to_s
+puts time.ctime
+puts time.localtime
+puts time.strftime("%Y-%m-%d %H:%M:%S")
+
+3.0.0 :041 > time = Time.new
+ => 2022-05-09 13:33:24.377379045 +0530 
+3.0.0 :042 > puts time.to_s
+2022-05-09 13:33:24 +0530
+ => nil 
+3.0.0 :043 > puts time.ctime
+Mon May  9 13:33:24 2022
+ => nil 
+3.0.0 :044 > puts time.localtime
+2022-05-09 13:33:24 +0530
+ => nil 
+3.0.0 :045 > puts time.strftime("%Y-%m-%d %H:%M:%S")
+2022-05-09 13:33:24
+ => nil 
+
+# Time Formatting Directives:
+1	
+%a
+The abbreviated weekday name (Sun).
+
+2	
+%A
+The full weekday name (Sunday).
+
+3	
+%b
+The abbreviated month name (Jan).
+
+4	
+%B
+The full month name (January).
+
+5	
+%c
+The preferred local date and time representation.
+
+6	
+%d
+Day of the month (01 to 31).
+
+7	
+%H
+Hour of the day, 24-hour clock (00 to 23).
+
+8	
+%I
+Hour of the day, 12-hour clock (01 to 12).
+
+9	
+%j
+Day of the year (001 to 366).
+
+10	
+%m
+Month of the year (01 to 12).
+
+11	
+%M
+Minute of the hour (00 to 59).
+
+12	
+%p
+Meridian indicator (AM or PM).
+
+13	
+%S
+Second of the minute (00 to 60).
+
+14	
+%U
+Week number of the current year, starting with the first Sunday as the first day of the first week (00 to 53).
+
+15	
+%W
+Week number of the current year, starting with the first Monday as the first day of the first week (00 to 53).
+
+16	
+%w
+Day of the week (Sunday is 0, 0 to 6).
+
+17	
+%x
+Preferred representation for the date alone, no time.
+
+18	
+%X
+Preferred representation for the time alone, no date.
+
+19	
+%y
+Year without a century (00 to 99).
+
+20	
+%Y
+Year with century.
+
+21	
+%Z
+Time zone name.
+
+# Time Arithmetic:
+now = Time.now          # Current time
+puts now
+
+past = now - 10         # 10 seconds ago. Time - number => Time
+puts past
+
+future = now + 10  # 10 seconds from now Time + number => Time
+puts future
+
+diff = future - past     # => 10  Time - Time => number of seconds
+puts diff
+
+3.0.0 :046 > now = Time.now
+ => 2022-05-09 13:38:48.598193812 +0530 
+3.0.0 :047 > past = now-10
+ => 2022-05-09 13:38:38.598193812 +0530 
+3.0.0 :048 > past = now + 10
+ => 2022-05-09 13:38:58.598193812 +0530 
+3.0.0 :049 > future = now + 10
+ => 2022-05-09 13:38:58.598193812 +0530 
+3.0.0 :050 > diff = future - past
+ => 0.0 
+3.0.0 :051 > future = now + 20
+ => 2022-05-09 13:39:08.598193812 +0530 
+3.0.0 :052 > diff = future - past
+ => 10.0 
+
+# 3.0.0 :053 > t = Time.now
+ => 2022-05-09 13:44:25.765528098 +0530 
+3.0.0 :054 > puts t.monday?
+true
+ => nil 
+3.0.0 :055 > puts t.sunday?
+false
+ => nil 
+
+# The Date Class:
+To use the Date class you need to require 'date'.
+3.0.0 :062 > require 'date'
+ => true 
+3.0.0 :063 > Date.today
+ => #<Date: 2022-05-09 ((2459709j,0s,0n),+0s,2299161j)> 
+3.0.0 :064 > Date.today + 1
+ => #<Date: 2022-05-10 ((2459710j,0s,0n),+0s,2299161j)> 
+3.0.0 :065 > Date.new
+ => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)> 
+
+# Date & Time Parsing:
+The Date.parse method will try to parse any string that looks like a date.
+3.0.0 :066 > Date.parse("10/10/2010")
+ => #<Date: 2010-10-10 ((2455480j,0s,0n),+0s,2299161j)> 
+3.0.0 :067 > Date.parse('September 3')
+ => #<Date: 2022-09-03 ((2459826j,0s,0n),+0s,2299161j)> 
+3.0.0 :068 > Date.parse("May I have a cup of coffee, please?")
+=> #<Date: 2022-05-01 ((2459701j,0s,0n),+0s,2299161j)> 
+
+# An iso8601 date has the following format:
+year-month-day 
+
+# You can use the Date.strptime method & a set of format specifiers to provide your own custom input format. These are the same specifiers that you can use for strftime.
+3.0.0 :070 > Date.strptime("3 of September", "%d of %B")
+ => #<Date: 2022-09-03 ((2459826j,0s,0n),+0s,2299161j)> 
+ 
+NOTE: You can parse time using the Time class.
+3.0.0 :071 > require 'time'
+ => true 
+3.0.0 :072 > Time.parse("April 28 18:00")
+ => 2022-04-28 18:00:00 +0530 
+3.0.0 :073 > Time.strptime("2 of December 2020", "%d of %B %Y")
+ => 2020-12-02 00:00:00 +0530 
+ 
+# Date Constants:
+For example, there is an array with the months of the year and another with the days of the week.
+Date::MONTHNAMES # (index 0 = nil)
+Date::DAYNAMES
+
+3.0.0 :075 > Date::MONTHNAMES
+ => [nil, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] 
+3.0.0 :076 > Date::DAYNAMES
+ => ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] 
+
+3.0.0 :078 > DateTime.superclass
+ => Date 
+ 
+# Commercial:
+Created a DateTime object denoting the given week date.
+3.0.0 :081 > DateTime.commercial(2001)
+ => #<DateTime: 2001-01-01T00:00:00+00:00 ((2451911j,0s,0n),+0s,2299161j)> 
+3.0.0 :082 > DateTime.commercial(2001,5,6,4,5,6,'+7')
+ => #<DateTime: 2001-02-03T04:05:06+07:00 ((2451943j,75906s,0n),+25200s,2299161j)> 
+
+# httpdate(string='Mon, 01 Jan -4712 00:00:00 GMT'[, start=Date::ITALY]) → datetime
+Creates a new DateTime object by parsing from a string according to some RFC 2616 format.
+
+# Ruby | DateTime jd() function:
+jd() is a DateTime class method which returns a DateTime object denoting the given chronological Julian day number.
+3.0.0 :085 > date_a = DateTime.jd(25351944)
+ => #<DateTime: 64699-03-01T00:00:00+00:00 ((25351944j,0s,0n),+0s,22991... 
+3.0.0 :086 > date_b = DateTime.jd(4678364)
+ => #<DateTime: 8096-10-27T00:00:00+00:00 ((4678364j,0s,0n),+0s,2299161j)> 
+3.0.0 :087 > puts "DateTime jd form : #{date_a}\n\n"
+DateTime jd form : 64699-03-01T00:00:00+00:00
+
+ => nil 
+3.0.0 :088 > puts "DateTime jd form : #{date_b}\n\n"
+DateTime jd form : 8096-10-27T00:00:00+00:00
+
+# xmlschema(string='-4712-01-01T00:00:00+00:00'[, start=Date::ITALY]) → datetime
+Creates a new DateTime object by parsing from a string according to some typical XML Schema formats.
+3.0.0 :004 > require 'date'
+ => true 
+3.0.0 :005 > require 'time'
+ => true 
+3.0.0 :006 > DateTime.xmlschema('2001-02-03T04:05:06+07:00')
+ => #<DateTime: 2001-02-03T04:05:06+07:00 ((2451943j,75906s,0n),+25200s,2299161j)> 
+
+# min → fixnum
+minute → fixnum
+Returns the minute (0-59).
+3.0.0 :007 > DateTime.new(2001,2,3,4,5,6).min
+ => 5 
+
+# new_offset([offset=0]) → date
+Duplicates self and resets its offset.
+3.0.0 :008 > d = DateTime.new(2001,2,3,4,5,6,'-02:00')
+ => #<DateTime: 2001-02-03T04:05:06-02:00 ((2451944j,21906s,0n),-7200s,... 
+3.0.0 :009 > d.new_offset('+09:00')
+ => #<DateTime: 2001-02-03T15:05:06+09:00 ((2451944j,21906s,0n),+32400s,2299161j)> 
+
+3.0.0 :010 > DateTime.parse('04pm+0730').offset
+ => (5/16) 
+ 
+# sec → fixnum
+second → fixnum
+Returns the second (0-59).
+3.0.0 :011 > DateTime.new(2001,2,3,4,5,6).sec
+ => 6 
+3.0.0 :012 > DateTime.new(2001,2,3,4,5,6).sec_fraction
+ => (0/1) 
+
+# to_s → string
+Returns a string in an ISO 8601 format. (This method doesn't use the expanded representations.)
+3.0.0 :013 > DateTime.new(2001,2,3,4,5,6,'-7').to_s
+ => "2001-02-03T04:05:06-07:00" 
+
+# zone → string
+Returns the timezone.
+3.0.0 :014 > DateTime.parse('04pm+0730').zone
+ => "+07:30"
+ 
+# Combination:
+  %c - date and time (%a %b %e %T %Y)
+  %D - Date (%m/%d/%y)
+  %F - The ISO 8601 date format (%Y-%m-%d)
+  %v - VMS date (%e-%b-%Y)
+  %x - Same as %D
+  %X - Same as %T
+  %r - 12-hour time (%I:%M:%S %p)
+  %R - 24-hour time (%H:%M)
+  %T - 24-hour time (%H:%M:%S)
+  %+ - date(1) (%a %b %e %H:%M:%S %Z %Y)
+  
+  
+ Date (Year, Month, Day):
+  %Y - Year with century (can be negative, 4 digits at least)
+          -0001, 0000, 1995, 2009, 14292, etc.
+  %C - year / 100 (round down.  20 in 2009)
+  %y - year % 100 (00..99)
+
+  %m - Month of the year, zero-padded (01..12)
+          %_m  blank-padded ( 1..12)
+          %-m  no-padded (1..12)
+  %B - The full month name (``January'')
+          %^B  uppercased (``JANUARY'')
+  %b - The abbreviated month name (``Jan'')
+          %^b  uppercased (``JAN'')
+  %h - Equivalent to %b
+
+  %d - Day of the month, zero-padded (01..31)
+          %-d  no-padded (1..31)
+  %e - Day of the month, blank-padded ( 1..31)
+
+  %j - Day of the year (001..366)
+  
+ 
+# Write a Ruby program to display the current date and time.
+require 'date'
+current_time = DateTime.now
+cdt = current_time.strftime "%d/%m/%Y %H:%M"
+puts "Current Date and Time: "+cdt
+ 
+ 3.0.0 :016 > require 'date'
+ => false 
+3.0.0 :017 > current_time = DateTime.now
+ => #<DateTime: 2022-05-09T18:33:10+05:30 ((2459709j,46990s,423961286n)... 
+3.0.0 :018 > cdt = current_time.strftime "%d/%m/%Y %H:%M"
+ => "09/05/2022 18:33" 
+3.0.0 :019 > puts "Current Date and Time: "+cdt
+Current Date and Time: 09/05/2022 18:33
+ => nil 
+

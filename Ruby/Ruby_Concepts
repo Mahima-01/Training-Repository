@@ -2682,4 +2682,742 @@ If count is negative then it rotates in the opposite direction, starting from th
  => ["c", "d", "a", "b"] 
 3.0.0 :026 > a.rotate(-3)
  => ["b", "c", "d", "a"] 
+------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Hashes in ruby:
+
+Hash is a data structure that maintains a set of objects which are termed as the keys and each key associates a value with it. 
+A Hash maps each of its unique keys to a specific value.
+A Hash has certain similarities to an Array, but:
+An Array index is always an Integer.
+A Hash key can be (almost) any object.
+
+Hash Literals or Creating Hashes: A hash is created using the hash literal which is a comma-separated list of key/value pairs and it always enclosed within curly braces {}. 
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ irb
+3.0.0 :001 > person = {name: 'Martz', language: 'Ruby'}
+ => {:name=>"Martz", :language=>"Ruby"} 
+3.0.0 :002 > def some_method(hash)
+3.0.0 :003 >   p hash
+3.0.0 :004 > end
+ => :some_method 
+3.0.0 :007 > some_method({foo: 0, bar: 1, baz: 2})
+{:foo=>0, :bar=>1, :baz=>2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+Note: when the last argument in a method call is a Hash, the curly braces may be omitted:
+3.0.0 :008 > some_method(foo: 0, bar: 1, baz: 2)
+{:foo=>0, :bar=>1, :baz=>2}
+ => {:foo=>0, :bar=>1, :baz=>2}
+ 
+# You can use a Hash to initialize an object:
+3.0.0 :016 > class Learn
+3.0.0 :017 >   attr_accessor :name, :language
+3.0.0 :018 >   def initialize(hash)
+3.0.0 :019 >     self.name = hash[:name]
+3.0.0 :020 >     self.language = hash[:language]
+3.0.0 :021 >   end
+3.0.0 :022 > end
+ => :initialize 
+3.0.0 :023 > Mahima = Learn.new(name: 'Mahima', language: 'Ruby')
+ => #<Learn:0x000055dc34e03b00 @name="Mahima", @language="Ruby"> 
+ 
+# Creating a Hash¶ ↑
+Here are three ways to create a Hash:
+Method Hash.new
+Method Hash[]
+Literal form: {}.
+
+--> You can create a Hash by calling method ::new.
+
+Create an empty Hash:
+3.0.0 :024 > h = Hash.new
+ => {} 
+3.0.0 :025 > h.class
+ => Hash 
+
+You can create a Hash by calling method ::[].
+
+Create an empty Hash:
+3.0.0 :026 > h = Hash[]
+ => {} 
+3.0.0 :027 > h = Hash(name: 'Mahima', language: 'Ruby')
+ => {:name=>"Mahima", :language=>"Ruby"} 
+
+You can create a Hash by using its literal form (curly braces).
+
+Create an empty Hash:
+3.0.0 :028 > h = {}
+ => {} 
+3.0.0 :032 > h = {foo: 1, bar: 2, baz: 3}
+ => {:foo=>1, :bar=>2, :baz=>3} 
+
+
+# Hash Value Basics:
+The simplest way to retrieve a Hash value (instance method []):
+3.0.0 :032 > h = {foo: 1, bar: 2, baz: 3}
+ => {:foo=>1, :bar=>2, :baz=>3} 
+Updating a value does not affect the order:
+3.0.0 :033 > h[:bat] = 4
+ => 4 
+3.0.0 :034 > h 
+ => {:foo=>1, :bar=>2, :baz=>3, :bat=>4} 
+3.0.0 :035 > h[:foo] = 5
+ => 5 
+3.0.0 :036 > h
+ => {:foo=>5, :bar=>2, :baz=>3, :bat=>4} 
+ 
+The simplest way to delete a Hash entry (instance method delete):
+But re-creating a deleted entry can affect the order:
+3.0.0 :037 > h.delete(:bar)
+ => 2 
+3.0.0 :038 > h
+ => {:foo=>5, :baz=>3, :bat=>4} 
+
+# Hash Key Equivalence:
+Two objects are treated as the same hash key when their hash value is identical and the two objects are eql? to each other.
+
+# Modifying an Active Hash Key:
+Modifying a Hash key while it is in use damages the hash's index.
+This Hash has keys that are Arrays:
+3.0.0 :039 > a0 = [ :foo, :bar ]
+ => [:foo, :bar] 
+3.0.0 :040 > a1 = [ :baz, :bat ]
+ => [:baz, :bat] 
+3.0.0 :041 > h = {a0 => 0, a1 => 1}
+ => {[:foo, :bar]=>0, [:baz, :bat]=>1} 
+3.0.0 :042 > h.include?(a0)
+ => true 
+3.0.0 :043 > h[a0]
+ => 0 
+3.0.0 :044 > a0.hash
+ => 1589344940556418274 
+ 
+Modifying array element a0[0] changes its hash value:
+3.0.0 :045 > a0[0] = :bam
+ => :bam 
+3.0.0 :046 > a0.hash
+ => 2610535359265828681 
+
+And damages the Hash index:
+3.0.0 :047 > h.include?(a0)
+ => false 
+ 
+# You can repair the hash index using method rehash:
+3.0.0 :048 > h.rehash
+ => {[:bam, :bar]=>0, [:baz, :bat]=>1} 
+3.0.0 :049 > h.include?(a0)
+ => true 
+3.0.0 :050 > h[a0]
+ => 0 
+
+A String key is always safe. That's because an unfrozen String passed as a key will be replaced by a duplicated and frozen String:
+3.0.0 :051 > s = 'foo'
+ => "foo" 
+3.0.0 :052 > s.frozen?
+ => false 
+3.0.0 :053 > h = {s => 0}
+ => {"foo"=>0} 
+3.0.0 :054 > first_key = h.keys.first
+ => "foo" 
+3.0.0 :055 > first_key.frozen?
+ => true 
+
+# User-Defined Hash Keys:
+To be useable as a Hash key, objects must implement the methods hash and eql?. 
+Note: this requirement does not apply if the Hash uses compare_by_id since comparison will then rely on the keys' object id instead of hash and eql?.
+Object defines basic implementation for hash and eq? that makes each object a distinct key.
+
+# You can retrieve the default value with method default:
+3.0.0 :056 > h = Hash.new
+ => {} 
+3.0.0 :057 > h.default
+ => nil 
+
+You can set the default value by passing an argument to method ::new or with method default=
+3.0.0 :058 > h = Hash.new(-1)
+ => {} 
+3.0.0 :059 > h.default
+ => -1 
+3.0.0 :060 > h.default
+ => -1 
+3.0.0 :061 > h.default
+ => -1 
+
+This default value is returned for [], values_at and dig when a key is not found:
+3.0.0 :065 > counts[:foo]
+ => 42 
+3.0.0 :066 > counts[:bar]
+ => nil 
+3.0.0 :067 > counts.default
+ => nil 
+3.0.0 :068 > counts[:bar]
+ => nil 
+3.0.0 :069 > counts.values_at(:foo, :bar, :baz)
+ => [42, nil, nil] 
+3.0.0 :070 > counts.dig(:bar)
+ => nil 
+
+Note that the default value is used without being duplicated. It is not advised to set the default value to a mutable object:
+3.0.0 :071?> synonyms = Hash.new([])
+ => {} 
+3.0.0 :072 > synonyms[:hello]
+ => [] 
+3.0.0 :073 > synonyms[:hello] << :hi
+ => [:hi] 
+3.0.0 :074 > synonyms.default
+ => [:hi] 
+3.0.0 :075 > synonyms[:world] << :universe
+ => [:hi, :universe] 
+3.0.0 :076 > synonyms.keys
+ => [] 
+3.0.0 :077 > synonyms[:world]
+ => [:hi, :universe] 
+3.0.0 :078 > synonyms.keys
+ => [] 
+
+To use a mutable object as default, it is recommended to use a default proc
+
+# Default Proc:
+When the default proc for a Hash is set (i.e., not nil), the default value returned by method [] is determined by the default proc alone.
+You can retrieve the default proc with method default_proc:
+3.0.0 :079 > h = Hash.new
+ => {} 
+3.0.0 :080 > h.default_proc
+ => nil 
+
+You can set the default proc by calling ::new with a block or calling the method default_proc=
+3.0.0 :081 > h = Hash.new{ |hash, key| "Default value for #{key}" }
+ => {} 
+3.0.0 :083 > h.default_proc = proc { |hash, key| "Default value for #{key.inspec
+t}" }
+ => #<Proc:0x000055dc34a5c0b0 (irb):83> 
+3.0.0 :084 > h.default_proc.class
+ => Proc 
+
+# When the single given argument is an Array of 2-element Arrays, returns a new Hash object wherein each 2-element array forms a key-value entry:
+3.0.0 :087 > Hash[ [[:foo, 0], [:bar, 1]]]
+3.0.0 :088 >   
+ => {:foo=>0, :bar=>1} 
+
+When the argument count is an even number; returns a new Hash object wherein each successive pair of arguments has become a key-value entry:
+3.0.0 :089 > Hash[:foo, 0, :bar, 1]
+3.0.0 :090 >   
+ => {:foo=>0, :bar=>1} 
+
+# ruby2_keywords_hash(hash) → hash
+Duplicates a given hash and adds a ruby2_keywords flag. This method is not for casual use; debugging, researching, and some truly necessary cases like deserialization of arguments.
+3.0.0 :091 > h = {k:1}
+ => {:k=>1} 
+3.0.0 :092 > h = Hash.ruby2_keywords_hash(h)
+ => {:k=>1} 
+3.0.0 :093 > def foo(k:42)
+3.0.0 :094 >   k
+3.0.0 :095 > end
+ => :foo 
+3.0.0 :096 > foo(*[h])
+ => 1 
+
+ruby2_keywords_hash?(hash) → true or false
+Checks if a given hash is flagged by Module#ruby2_keywords (or Proc#ruby2_keywords). This method is not for casual use; debugging, researching, and some truly necessary cases like serialization of arguments.
+3.0.0 :097 > ruby2_keywords def foo(*args)
+3.0.0 :098 >   Hash.ruby2_keywords_hash?(args.last)
+3.0.0 :099 > end
+ => nil 
+3.0.0 :100 > foo(k:1)
+ => true 
+3.0.0 :101 > foo({k:1})
+ => false 
+
+# try_convert(obj) → obj, new_hash, or nil
+If obj is a Hash object, returns obj.
+Otherwise if obj responds to :to_hash, calls obj.to_hash and returns the result.
+Returns nil if obj does not respond to :to_hash
+Raises an exception unless obj.to_hash returns a Hash object.
+
+# hash < other_hash → true or false
+Returns true if hash is a proper subset of other_hash, false otherwise:
+3.0.0 :102 > h1 = {foo: 0, bar: 1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :105 > h2 = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :106 > h1 < h2
+ => false 
+3.0.0 :107 > h1 < h2
+ => false 
+3.0.0 :108 > h2 < h1
+ => false 
+3.0.0 :109 > h1 < h1
+ => false 
+
+# hash == object → true or false
+Returns true if all of the following are true:
+object is a Hash object.
+hash and object have the same keys (regardless of order).
+For each key key, hash[key] == object[key].
+Otherwise, returns false.
+3.0.0 :110 > h1 = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :111 > h2 = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :112 > h1 == h2
+ => true 
+3.0.0 :113 > h3 = { baz: 2, bar: 1, foo: 0}
+ => {:baz=>2, :bar=>1, :foo=>0} 
+3.0.0 :114 > h1 == h3
+ => true 
+
+# hash[key] → value
+Returns the value associated with the given key, if found:
+3.0.0 :115 > h[:foo]
+ => nil 
+ 3.0.0 :116 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+If key is not found, returns a default value (see Default Values):
+3.0.0 :117 > h[:nosuch]
+ => nil 
+
+If key does not exist, adds the key and value; the new entry is last in the order.
+3.0.0 :118 > h = {foo: 0, bar: 1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :119 > h[:baz] = 2
+ => 2 
+3.0.0 :120 > h.store(:bat, 3)
+ => 3 
+3.0.0 :121 > h
+ => {:foo=>0, :bar=>1, :baz=>2, :bat=>3} 
+
+# any? → true or false:
+any?(object) → true or false
+any? {|key, value| ... } → true or false
+Returns true if any element satisfies a given criterion; false otherwise.
+With no argument and no block, returns true if self is non-empty; false if empty.
+With argument object and no block, returns true if for any key key h.assoc(key) == object:
+3.0.0 :122 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :123 > h.any?([:bar, 1])
+ => true 
+3.0.0 :124 > h.any?([:bar, 0])
+ => false 
+3.0.0 :125 > h.any?([:baz, 1])
+ => false 
+
+With no argument and a block, calls the block with each key-value pair; returns true if the block returns any truthy value, false otherwise:
+3.0.0 :126 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :127 > h.any? { |key, value| value < 3}
+ => true 
+3.0.0 :128 > h.any? { |key, value| value > 3}
+ => false 
+
+# assoc(key) → new_array or nil
+If the given key is found, returns a 2-element Array containing that key and its value:
+3.0.0 :129 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :130 > h.assoc(:bar)
+ => [:bar, 1] 
+
+# clear → self
+Removes all hash entries; returns self
+
+# compact → new_hash
+Returns a copy of self with all nil-valued entries removed:
+3.0.0 :131 > h = {foo: 0, bar: 1, baz: nil}
+ => {:foo=>0, :bar=>1, :baz=>nil} 
+3.0.0 :132 > h1 = h.compact
+ => {:foo=>0, :bar=>1} 
+ 
+# compare_by_identity → self
+Sets self to consider only identity in comparing keys; two keys are considered the same only if they are the same object; returns self.
+By default, these two object are considered to be the same key, so s1 will overwrite s0:
+3.0.0 :142 > s0 = 'x'
+ => "x" 
+3.0.0 :143 > s1 = 'x'
+ => "x" 
+3.0.0 :144 > h.compare_by_identity?
+ => true 
+3.0.0 :145 > h[s0]
+ => nil 
+3.0.0 :146 > h[s1]
+ => nil 
+ 
+# Delete:
+3.0.0 :152 > h = {foo: 0, bar: 1, baz: nil}
+ => {:foo=>0, :bar=>1, :baz=>nil} 
+3.0.0 :153 > h.delete(:nosuch) { |key| "key #{key} not found"}
+3.0.0 :154 >   
+ => "key nosuch not found" 
+3.0.0 :155 > h
+ => {:foo=>0, :bar=>1, :baz=>nil}
+ 
+# dig(key, *identifiers) → object
+Finds and returns the object in nested objects that is specified by key and identifiers. The nested objects may be instances of various classes. See Dig Methods.
+
+Nested Hashes:
+3.0.0 :156 > h = {foo: { bar: { baz: 2}}}
+ => {:foo=>{:bar=>{:baz=>2}}} 
+3.0.0 :157 > h.dig(:foo)
+ => {:bar=>{:baz=>2}} 
+3.0.0 :158 > h.dig(:foo, :bar)
+ => {:baz=>2} 
+3.0.0 :159 > h.dig(:foo, :bar, :baz)
+ => 2 
+3.0.0 :160 > h.dig(:foo, :bar, :BAZ)
+ => nil 
+
+Nested Hashes and Arrays:
+3.0.0 :161 > h = {foo: {bar: [:a, :b, :c]}}
+ => {:foo=>{:bar=>[:a, :b, :c]}} 
+3.0.0 :162 > h.dig(:foo, :bar, 2)
+ => :c 
+
+This method will use the default values for keys that are not present:
+3.0.0 :163 > h = {foo: {bar: [:a, :b, :c]}}
+ => {:foo=>{:bar=>[:a, :b, :c]}} 
+3.0.0 :164 > h.dig(:hello)
+ => nil 
+3.0.0 :165 > h.default_proc
+ => nil 
+3.0.0 :166 > h.default_proc =
+3.0.0 :167 > h.dig(:hello, :world)
+ => nil 
+3.0.0 :168 > h.default_proc =
+3.0.0 :169 > h.dig(:hello, :world, :foo, :bar , 2)
+ => nil 
+ 
+# each {|key, value| ... } → self
+each_pair {|key, value| ... } → self
+each → new_enumerator
+each_pair → new_enumerator
+#each is an alias for #each_pair.
+Calls the given block with each key-value pair; returns self:
+3.0.0 :170 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :171 > h.each_pair {|key, value| puts "#{key}: #{value}"}
+foo: 0
+bar: 1
+baz: 2
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+# except(*keys) → a_hash
+Returns a new Hash excluding entries for the given keys:
+3.0.0 :172 > h = { a: 100, b: 200, c: 300}
+ => {:a=>100, :b=>200, :c=>300} 
+3.0.0 :173:> h.except(:a)
+ => {:b=>200, :c=>300} 
+
+# fetch(key) → object
+fetch(key, default_value) → object
+fetch(key) {|key| ... } → object
+Returns the value for the given key, if found.
+3.0.0 :174:> h.fetch(:a)
+ => 100 
+3.0.0 :175 > {}.fetch(:nosuch, :default)
+ => :default 
+3.0.0 :176 > {}.fetch(:nosuch)
+
+fetch_values(*keys) → new_array
+fetch_values(*keys) {|key| ... } → new_array
+Returns a new Array containing the values associated with the given keys *keys:
+3.0.0 :177 > h = { a: 100, b: 200, c: 300}
+ => {:a=>100, :b=>200, :c=>300} 
+3.0.0 :178:> h.fetch_values(:a, :b)
+ => [100, 200] 
+
+Returns a new empty Array if no arguments given.
+When a block is given, calls the block with each missing key, treating the block's return value as the value for that key:
+3.0.0 :179 > h = { a: 100, b: 200, c: 300}
+ => {:a=>100, :b=>200, :c=>300} 
+3.0.0 :180 > values = h.fetch_values(:b, :a, :d) {|key| key.to_s}
+ => [200, 100, "d"] 
+3.0.0 :181 > values
+ => [200, 100, "d"] 
+
+# elect {|key, value| ... } → new_hash
+select → new_enumerator
+#filter is an alias for #select.
+Returns a new Hash object whose entries are those for which the block returns a truthy value:
+3.0.0 :185 > h = { a: 100, b: 200, c: 300}
+ => {:a=>100, :b=>200, :c=>300} 
+3.0.0 :186 > e = h.select
+ => #<Enumerator: {:a=>100, :b=>200, :c=>300}:select> 
+3.0.0 :187 > e.each {|key, value| value >100}
+ => {:b=>200, :c=>300} 
+
+# flatten → new_array
+flatten(level) → new_array
+Returns a new Array object that is a 1-dimensional flattening of self.
+By default, nested Arrays are not flattened:
+3.0.0 :188 > h = {foo: 0, bar: [:bat, 3], baz: 2}
+ => {:foo=>0, :bar=>[:bat, 3], :baz=>2} 
+3.0.0 :189 > h.flatten
+ => [:foo, 0, :bar, [:bat, 3], :baz, 2] 
+3.0.0 :190 > h = {foo: 0, bar: [:bat, [:baz, [:bat, ]]]}
+ => {:foo=>0, :bar=>[:bat, [:baz, [:bat]]]} 
+3.0.0 :191 > h.flatten(1)
+ => [:foo, 0, :bar, [:bat, [:baz, [:bat]]]] 
+3.0.0 :192 > h.flatten(2)
+ => [:foo, 0, :bar, :bat, [:baz, [:bat]]] 
+3.0.0 :193 > h.flatten(3)
+ => [:foo, 0, :bar, :bat, :baz, [:bat]] 
+3.0.0 :194 > h.flatten(4)
+ => [:foo, 0, :bar, :bat, :baz, :bat] 
+
+When level is negative, flattens all nested Arrays:
+3.0.0 :195 > h.flatten(-1)
+ => [:foo, 0, :bar, :bat, :baz, :bat] 
+3.0.0 :196 > h.flatten(-2)
+ => [:foo, 0, :bar, :bat, :baz, :bat] 
+ 
+When level is zero, returns the equivalent of to_a :
+3.0.0 :197 > h.flatten(0)
+ => [[:foo, 0], [:bar, [:bat, [:baz, [:bat]]]]] 
+
+# has_key?(key) → true or false
+Methods has_key?, key?, and member? are aliases for #include?.
+Returns true if key is a key in self, otherwise false.
+has_value?(value) → true or false
+Returns true if value is a value in self, otherwise false.
+
+hash → an_integer
+Returns the Integer hash-code for the hash.
+Two Hash objects have the same hash-code if their content is the same (regardless or order):
+
+# replace(other_hash) → self
+Replaces the entire contents of self with the contents of other_hash; returns self:
+3.0.0 :199 > h.replace({b: 400, c: 500})
+ => {:b=>400, :c=>500} 
+3.0.0 :200 > h
+ => {:b=>400, :c=>500} 
+
+# inspect → new_stringclick to toggle source
+Returns a new String containing the hash entries:
+#to_s is an alias for #inspect.
+Also aliased as: to_s
+3.0.0 :201 > h.inspect
+ => "{:b=>400, :c=>500}" 
+
+# invert → new_hash
+Returns a new Hash object with the each key-value pair inverted:
+3.0.0 :202 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :203 > h1 = h.invert
+ => {0=>:foo, 1=>:bar, 2=>:baz} 
+3.0.0 :204 > h = {foo: 0, bar: 1, baz: 1}
+Overwrites any repeated new keys: (see Entry Order):
+ => {:foo=>0, :bar=>1, :baz=>1} 
+3.0.0 :205 > h.invert
+ => {0=>:foo, 1=>:baz} 
+
+# keep_if {|key, value| ... } → self
+keep_if → new_enumerator
+Calls the block for each key-value pair; retains the entry if the block returns a truthy value; otherwise deletes the entry; returns self.
+3.0.0 :207 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :208 > h.keep_if {|key, value| key.start_with?('b')}
+ => {:bar=>1, :baz=>2} 
+
+# key(value)-> key or nill:
+Returns the key for the first-found entry with the given value:
+3.0.0 :210 > h.key(0)
+ => :foo 
+3.0.0 :211 > h.key(1)
+ => nil 
+3.0.0 :212 > h.key(2)
+ => :bar 
+
+Keys returns all key value:
+3.0.0 :213 > h.keys
+ => [:foo, :bar, :baz] 
+
+# merge → copy_of_self
+merge(*other_hashes) → new_hash
+merge(*other_hashes) { |key, old_value, new_value| ... } → new_hash
+Returns the new Hash formed by merging each of other_hashes into a copy of self.
+Each argument in other_hashes must be a Hash.
+With arguments and no block:
+Returns the new Hash object formed by merging each successive Hash in other_hashes into self.
+Each new-key entry is added at the end.
+Each duplicate-key entry's value overwrites the previous value.
+3.0.0 :214 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :215 > h1 = {bat: 3, bar: 4}
+ => {:bat=>3, :bar=>4} 
+3.0.0 :216 > h2 = {bam: 5, bat: 6 }
+ => {:bam=>5, :bat=>6} 
+3.0.0 :217 > h.merge(h1, h2)
+ => {:foo=>0, :bar=>4, :baz=>2, :bat=>6, :bam=>5} 
+
+# merge!:
+3.0.0 :218 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :219 > h1 = {bat: 3, bar: 4}
+ => {:bat=>3, :bar=>4} 
+3.0.0 :220 > h2 = {bam: 5, bat: 6 }
+ => {:bam=>5, :bat=>6} 
+3.0.0 :221 > h.merge!(h1, h2)
+ => {:foo=>0, :bar=>4, :baz=>2, :bat=>6, :bam=>5} 
+
+# rassoc(value) → new_array or nil
+Returns a new 2-element Array consisting of the key and value of the first-found entry whose value is == to value (see Entry Order):
+
+3.0.0 :222 > h = {foo: 0, bar: 1, baz: 1}
+ => {:foo=>0, :bar=>1, :baz=>1} 
+3.0.0 :223 > h.rassoc(1)
+ => [:bar, 1] 
+Returns nil if no such value found.
+
+
+# reject {|key, value| ... } → new_hash
+reject → new_enumerator
+Returns a new Hash object whose entries are all those from self for which the block returns false or nil:
+3.0.0 :224 > h = {foo: 0, bar: 1, baz: 1}
+ => {:foo=>0, :bar=>1, :baz=>1} 
+3.0.0 :225 > h1 = h.reject { |key, value| key.start_with?('b') }
+ => {:foo=>0} 
+ 
+# select {|key, value| ... } → new_hash
+select → new_enumerator
+#filter is an alias for #select.
+Returns a new Hash object whose entries are those for which the block returns a truthy value:
+3.0.0 :226 > h = {foo: 0, bar: 1, baz: 1}
+ => {:foo=>0, :bar=>1, :baz=>1} 
+3.0.0 :227 > h.select {|key, value| value < 2}
+ => {:foo=>0, :bar=>1, :baz=>1} 
+
+# select! {|key, value| ... } → self or nil
+select! → new_enumerator
+#filter! is an alias for #select!.
+Returns self, whose entries are those for which the block returns a truthy value:
+3.0.0 :227 > h.select! {|key, value| value < 2}
+ => {:foo=>0, :bar=>1} 
+Returns nil if no entries were removed.
+Returns a new Enumerator if no block given:
+
+# shift → [key, value] or default_value
+Removes the first hash entry (see Entry Order); returns a 2-element Array containing the removed key and value:
+3.0.0 :231 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :232 > h.shift  
+ => [:foo, 0] 
+3.0.0 :233 > h 
+ => {:bar=>1, :baz=>2} 
+
+Returns the default value if the hash is empty.
+
+# bize → integer
+Returns the count of entries in self:
+3.0.0 :234 > {foo: 0, bar: 1, baz: 2}.length
+ => 3 
+#length is an alias for #size.
+
+# slice(*keys) → new_hashclick to toggle source
+Returns a new Hash object containing the entries for the given keys:
+3.0.0 :235 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :236 > h.slice(:baz, :foo)
+ => {:baz=>2, :foo=>0}
+Any given keys that are not found are ignored.
+
+
+# store(key, value)
+#store is an alias for #[]=.
+Associates the given value with the given key; returns value.
+If the given key exists, replaces its value with the given value; the ordering is not affected (see Entry Order):
+3.0.0 :238 > h = {foo: 0, bar: 1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :239 > h[:foo]
+ => 0 
+3.0.0 :240 > h.store(:bar, 3)
+ => 3 
+3.0.0 :241 > h
+ => {:foo=>0, :bar=>3} 
+3.0.0 :242 > h[:bar]
+ => 3 
+
+# to_a → new_array
+Returns a new Array of 2-element Array objects; each nested Array contains a key-value pair from self:
+3.0.0 :243 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :244 > h.to_a
+ => [[:foo, 0], [:bar, 1], [:baz, 2]] 
+
+# to_h → self or new_hash
+to_h {|key, value| ... } → new_hash
+For an instance of Hash, returns self.
+For a subclass of Hash, returns a new Hash containing the content of self.
+When a block is given, returns a new Hash object whose content is based on the block; the block should return a 2-element Array object specifying the key-value pair to be included in the returned Array:
+3.0.0 :243 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :245 > h1 = h.to_h {|key, value| [value, key]}
+ => {0=>:foo, 1=>:bar, 2=>:baz} 
+ 
+# to_proc → proc
+Returns a Proc object that maps a key to its value:
+3.0.0 :246 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :247 > proc = h.to_proc
+ => #<Proc:0x000055dc34cf3c60 (lambda)> 
+3.0.0 :248 > proc.class
+ => Proc 
+3.0.0 :249 > proc.call(:foo)
+ => 0 
+3.0.0 :250 > proc.call(:bar)
+ => 1 
+3.0.0 :251 > proc.call(:nosuch)
+ => nil 
+
+# transform_keys {|key| ... } → new_hash
+transform_keys(hash2) → new_hash
+transform_keys(hash2) {|other_key| ...} → new_hash
+transform_keys → new_enumerator
+Returns a new Hash object; each entry has:
+A key provided by the block.
+The value from self.
+An optional hash argument can be provided to map keys to new keys. Any key not given will be mapped using the provided block, or remain the same if no block is given.
+
+3.0.0 :252 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :253 > h1 =  h.transform_keys {|key| key.to_s}
+ => {"foo"=>0, "bar"=>1, "baz"=>2} 
+3.0.0 :254 > h1
+ => {"foo"=>0, "bar"=>1, "baz"=>2} 
+
+3.0.0 :261 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :262 > h1 = h.transform_keys {|key| :bat}
+ => {:bat=>2} 
+
+# transform_values {|value| ... } → new_hash
+transform_values → new_enumerator
+Returns a new Hash object; each entry has:
+A key from self.
+A value provided by the block.
+
+Transform values: 
+3.0.0 :263 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :264 > h1 = h.transform_values {|value| value*100}
+ => {:foo=>0, :bar=>100, :baz=>200} 
+
+# has_value?(value) → true or false
+Returns true if value is a value in self, otherwise false.
+
+# values → new_array
+Returns a new Array containing all values in self:
+3.0.0 :265 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :266 > h.values
+ => [0, 1, 2] 
+ 
+# values_at(*keys) → new_array
+Returns a new Array containing values for the given keys:
+
+3.0.0 :267 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :268 > h.values_at(:baz, :foo) 
+ => [2, 0] 
+
+The default values are returned for any keys that are not found:
+3.0.0 :269 > h.values_at(:hello, :foo) 
+ => [nil, 0] 

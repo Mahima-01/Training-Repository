@@ -3814,4 +3814,258 @@ require 'tmpdir'
    tempfile.puts "This is a temporary file"
    tempfile.close
    File.delete(Hello)
+ --------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ # Ruby | Exception handling:
+Exception handling is a process which describes a way to handle the error raised in a program.
+Ruby provides a separate class for an exception that is known as an Exception class which contains different types of methods.
+The code in which an exception is raised, is enclosed between the begin/end block, so you can use a rescue clause to handle this type of exception.
+
+Syntax:
+begin
+    raise
+      # block where exception raise
+
+    rescue
+      # block where exception rescue
+end
+
+
+def raise_and_rescue     
+  begin      
+    puts 'This is Before Exception Arise!'
+     
+    # using raise to create an exception  
+    raise 'Exception Created!'
+    puts 'After Exception' 
    
+  # using Rescue method
+  rescue    
+    puts 'Finally Saved!'    
+     
+end    
+puts 'Outside from Begin Block!'    
+end    
+# calling method
+raise_and_rescue   
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Exceptions.rb 
+This is Before Exception Arise!
+Finally Saved!
+Outside from Begin Block!
+
+In the above program, an exception is raised in the begin block (raise block) which interrupt the flow of execution of the program. To overcome this situation, use the rescue block to handle the raised exception. When rescue block is used, it handles the exception and continues the execution of the program.
+
+Note: Multiple rescue clauses can be used in the same program which means if an exception is not handled by the first rescue clause, then another rescue clause will definitely handle the exception. 
+
+# The statements used in Exceptions are:
+1. retry Statement: This statement is used to execute the rescue block again from the beginning after capturing the exception.
+Syntax:
+
+begin
+    # block where exception raise
+rescue
+    # block where an exception is captured
+retry
+    # this statement restarts the rescue
+    # block from the beginning
+end
+
+# retry statement:
+begin    
+    # using raise to create an exception  
+    raise 'Exception Created!'
+    puts 'After Exception' 
+  # using Rescue method
+  rescue    
+    puts 'Finally Saved!'
+# using retry statement  
+retry
+end    
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Exception.rb
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+Finally Saved!
+will run infinitely.
+
+Note: Be careful while using retry statement because it may result into infinite loop.
+
+2. raise Statement: This statement is used to raise an exception.
+Syntax:
+
+raise
+This syntax is used to re-raise the current exception. It is generally used by the exception handler where an exception is interrupted before passing it on.
+
+This syntax is used to create a RuntimeError exception and it raises up the call stack.
+raise ExceptionType, "Error Message"
+
+In this syntax, the first argument is used to create an exception and then set the message in the second argument.
+raise ExceptionType, "Error Message" condition
+
+# Raise statement:
+begin   
+    puts 'This is Before Exception Arise!'    
+       # using raise to create an exception  
+       raise 'Exception Created!'
+    puts 'After Exception' 
+end
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Exceptions.rb 
+This is Before Exception Arise!
+Exceptions.rb:45:in `<main>': Exception Created! (RuntimeError)
+
+3.ensure Statement: This statement ensures that required instructions will execute at the end of the code, whether the exception raise or raised exception is rescued, or the program terminates due to an uncaught exception. This block always gives output. This block is placed over the rescue block.
+
+Syntax:
+
+begin
+     # exception raise
+
+rescue
+    # exception rescue
+
+ensure
+    # this block always executes
+end
+
+Ex-
+begin
+	raise 'Exception Created!'
+	puts 'After Exception'
+# using Rescue statement
+rescue	
+	puts 'Finally Saved!'
+# using ensure statement
+ensure
+puts 'ensure block execute'
+end	
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Exceptions.rb 
+Finally Saved!
+ensure block execute
+
+4. else Statement: This statement is present in between the rescue block and ensure block. This block only executes when no exception is raised.
+Syntax:
+begin
+  rescue
+    # exception rescue
+  
+  else
+    # this block executes when no exception raise
+
+  ensure
+    # this block always executes
+end
+
+Ex- 
+begin
+  puts 'no Exception raise'
+  rescue	
+  puts 'Finally Saved!'
+else
+  puts 'Else block execute because of no exception raise'
+ensure
+  puts 'ensure block execute'
+end	
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Exceptions.rb 
+no Exception raise
+Else block execute because of no exception raise
+ensure block execute
+
+# Catch and Throw:
+The catch defines a block that is labeled with the given name (which may be a Symbol or a String). The block is executed normally until a throw is encountered.
+Syntax:
+throw :lablename
+#.. this will not be executed
+catch :lablename do
+#.. matching catch will be executed after a throw is encountered.
+end
+
+def promptAndGet(prompt)
+   print prompt
+   res = readline.chomp
+   throw :quitRequested if res == "!"
+   return res
+end
+
+catch :quitRequested do
+   name = promptAndGet("Name: ")
+   age = promptAndGet("Age: ")
+   sex = promptAndGet("Sex: ")
+   # ..
+   # process information
+end
+promptAndGet("Name:")
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Exceptions.rb
+Name: Sam
+Age: 20
+Sex: Male
+Name:Ruby
+
+3.0.0 :023 > def promptAndGet(prompt)   
+3.0.0 :024 >    print prompt   
+3.0.0 :025 >    res = readline.chomp   
+3.0.0 :026 >    throw :quitRequested if res == "!"   
+3.0.0 :027 >    return res   
+3.0.0 :028 > end   
+ => :promptAndGet 
+3.0.0 :029 >   
+ => nil 
+3.0.0 :030 > catch :quitRequested do   
+3.0.0 :031 >    name = promptAndGet("Name: ")   
+3.0.0 :032 >    age = promptAndGet("Occupation: ")   
+3.0.0 :033 >    # ..   
+3.0.0 :034 >    # process information   
+3.0.0 :035 > end   
+Name: Mary
+Occupation: Doctor
+ => "Doctor" 
+
+# Class Exception:
+-Interrupt
+-NoMemoryError
+-SignalException
+-ScriptError
+-StandardError
+-SystemExit
+There is one other exception at this level, Fatal, but the Ruby interpreter only uses this internally.
+The important thing is that if we create our own exception classes, they need to be subclasses of either class Exception or one of its descendants.
+
+3.0.0 :042 > def catch_and_throw(value)
+3.0.0 :043 > 
+3.0.0 :044 > puts value
+3.0.0 :045 > a = readline.chomp
+3.0.0 :048 > throw :value_e if a == "!"
+3.0.0 :049 > return a
+3.0.0 :050 > 
+3.0.0 :051 > end
+ => :catch_and_throw 
+3.0.0 :052 > 
+3.0.0 :054 > catch :value_e do
+3.0.0 :057 > number = catch_and_throw("Enter Number: ")
+3.0.0 :058 > end
+Enter Number: 
+1
+ => "1" 
+

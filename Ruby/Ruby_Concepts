@@ -3421,3 +3421,397 @@ Returns a new Array containing values for the given keys:
 The default values are returned for any keys that are not found:
 3.0.0 :269 > h.values_at(:hello, :foo) 
  => [nil, 0] 
+ ----------------------------------------------------------------------------------------------------------------------
+ 
+# Ruby - File I/O:
+The class IO provides all the basic methods, such as read, write, gets, puts, readline, getc, and printf.
+
+# The puts Statement:
+The puts statement instructs the program to display the value stored in the variable. This will add a new line at the end of each line it writes.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ irb
+3.0.0 :001 > val1 = 'This is variable one'
+ => "This is variable one" 
+3.0.0 :002 > val2 = 'This is variable two'
+ => "This is variable two" 
+3.0.0 :003 > puts val1
+This is variable one
+ => nil 
+3.0.0 :004 > puts val2
+This is variable two
+ => nil 
+
+# The gets Statement:
+The gets statement can be used to take any input from the user from standard screen called STDIN.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Enter a value :
+Hi
+Hi
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Enter a value :
+I am learning Ruby 3.0
+I am learning Ruby 3.0
+
+# The putc Statement:
+Unlike the puts statement, which outputs the entire string onto the screen, the putc statement can be used to output one character at a time.
+3.0.0 :007 > str = 'Hello Ruby!'
+ => "Hello Ruby!" 
+3.0.0 :008 > putc str
+H 
+
+# The print Statement:
+The print statement is similar to the puts statement. 
+The only difference is that the puts statement goes to the next line after printing the contents, whereas with the print statement the cursor is positioned on the same line.
+3.0.0 :010 > print 'Hello World'
+Hello World => nil 
+3.0.0 :011 > puts 'Hello World'
+Hello World
+ => nil 
+
+# Opening and Closing Files:
+1. The File.new Method-
+You can create a File object using File.new method for reading, writing, or both, according to the mode string. Finally, you can use File.close method to close that file.
+3.0.0 :004 > aFile = File.new("Hashes", "r")
+ => #<File:Hashes> 
+3.0.0 :005 > aFile.close
+ => nil 
+
+2. The File.open Method-
+File.open method can be used to create a new file object and assign that file object to a file. 
+
+# Different Modes of opening a File −
+1 r:
+Read-only mode. The file pointer is placed at the beginning of the file. This is the default mode.
+
+2 r+:
+Read-write mode. The file pointer will be at the beginning of the file.
+
+3 w:
+Write-only mode. Overwrites the file if the file exists. 
+If the file does not exist, creates a new file for writing.
+
+4 w+:
+Read-write mode. Overwrites the existing file if the file exists. 
+If the file does not exist, creates a new file for reading and writing.
+
+5 a:
+Write-only mode. The file pointer is at the end of the file if the file exists. 
+That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+
+6 :a+
+Read and write mode. The file pointer is at the end of the file if the file exists. 
+The file opens in the append mode. 
+If the file does not exist, it creates a new file for reading and writing.
+
+
+
+# The sysread Method:
+You can use the method sysread to read the contents of a file. You can open the file in any of the modes when using the method sysread.
+
+In this we have created a "Testfile" and written something into it then we'll be using this function.
+3.0.0 :008 > aFile = File.new("Testfile", "r")
+ => #<File:Testfile> 
+3.0.0 :009 > if aFile
+3.0.0 :010 >   content = aFile.sysread(20)
+3.0.0 :011 >   puts content
+3.0.0 :012 > else
+3.0.0 :013 >   puts "Unable to open file"
+3.0.0 :014 > end
+This is a simple tex
+ => nil 
+This statement will output the first 20 characters of the file. The file pointer will now be placed at the 21st character in the file.
+
+
+# The syswrite Method:
+You can use the method syswrite to write the contents into a file. You need to open the file in write mode when using the method syswrite
+3.0.0 :008 > aFile = File.new("Testfile", "r+")
+ => #<File:Testfile> 
+3.0.0 :009 > if aFile
+3.0.0 :010 >   aFile.syswrite("ABCDE")
+3.0.0 :011 > else
+3.0.0 :012 >   puts "Unable to open file"
+3.0.0 :013 > end
+ => 5  
+This statement will write "ABCDEF" into the file.
+ABCDEng some contentt file for testing purpose.
+
+3.0.0 :014 > if aFile
+3.0.0 :015 >   aFile.syswrite("Editing File")
+3.0.0 :016 > else
+3.0.0 :017 >   puts "Unable to open file"
+3.0.0 :018 > end
+ => 12 
+This statement will write "Editing file" into the file.
+ABCDEEditing Fileentt file for testing purpose.
+
+
+# The each_byte Method-
+This method belongs to the class File. The method each_byte is always associated with a block.
+3.0.0 :024 > aFile = File.new("Testfile", "r+")
+3.0.0 :025 > if aFile
+3.0.0 :026 >   aFile.syswrite("ABCD")
+3.0.0 :027 >   aFile.each_byte {|ch| putc ch; putc ?.}
+3.0.0 :028 > else
+3.0.0 :029 >   puts "Unable to open File"
+3.0.0 :030 > end
+Characters are passed one by one to the variable ch and then displayed on the screen as follows −
+E.E.d.i.t.i.n.g. .F.i.l.e.e.n.t.t. .f.i.l.e. .f.o.r. .t.e.s.t.i.n.g. .p.u.r.p.o.s.e...
+. => #<File:Testfile> 
+
+
+# The IO.readlines Method-
+The class IO also has some methods, which can be used to manipulate files.
+One of the IO class methods is IO.readlines. This method returns the contents of the file line by line.
+3.0.0 :031 > arr = IO.readlines("Testfile")
+ => ["ABCDEEditing Fileentt file for testing purpose.\n"] 
+3.0.0 :032 > puts arr[0]
+ABCDEEditing Fileentt file for testing purpose.
+ => nil 
+3.0.0 :033 > puts arr[1]
+
+ => nil 
+In this code, the variable arr is an array. Each line of the file input.txt will be an element in the array arr. Therefore, arr[0] will contain the first line, whereas arr[1] will contain the second line of the file.
+
+
+# The IO.foreach Method-
+This method also returns output line by line. 
+The difference between the method foreach and the method readlines is that the method foreach is associated with a block. 
+However, unlike the method readlines, the method foreach does not return an array.
+3.0.0 :034 > IO.foreach("Testfile") { |block| puts block}
+ABCDEEditing Fileentt file for testing purpose.
+ => nil 
+This code will pass the contents of the file test line by line to the variable block, and then the output will be displayed on the screen.
+
+
+# Renaming and Deleting Files-
+You can rename and delete files programmatically with Ruby with the rename and delete methods.
+
+3.0.0 :035 > File.rename("Testfile", "Testfile1")
+ => 0 
+ 
+Here I created a new file namely Testfile2 and then delete it.
+3.0.0 :037 > File.delete("Testfile2")
+
+
+# File Modes and Ownership-
+Use the chmod method with a mask to change the mode or permissions/access list of a file-
+3.0.0 :038 > file = File.new("Testfile1", "w")
+ => #<File:Testfile1> 
+3.0.0 :039 > file.chmod(0755)
+ => 0 
+
+Following is the table, which can help you to choose different mask for chmod method −
+1 0700
+rwx mask for owner
+
+2 0400
+r for owner
+
+3 0200
+w for owner
+
+4 0100
+x for owner
+
+5 0070
+rwx mask for group
+
+6 0040
+r for group
+
+7 0020
+w for group
+
+8 0010
+x for group
+
+9 0007
+rwx mask for other
+
+10 0004
+r for other
+
+11 0002
+w for other
+
+12 0001
+x for other
+
+13 4000
+Set user ID on execution
+
+14 2000
+Set group ID on execution
+
+15 1000
+Save swapped text, even after use
+ => 1 
+
+
+# File Inquiries:
+The following command tests whether a file exists before opening it −
+3.0.0 :040 > File.open("new.rb") if File::exists?("new.rb")
+ => #<File:new.rb>
+ 
+The following command inquire whether the file is really a file −
+3.0.0 :042 > File.file?("Testfile1")
+ => true 
+ 
+The following command finds out if the given file name is a directory −
+3.0.0 :043 > File::directory?("/home/itsacheckmate/Training-Repository")
+ => true 
+3.0.0 :044 > File::directory?("new.rb")
+ => false 
+
+The following command finds whether the file is readable, writable or executable −
+3.0.0 :045 > File.readable?("Testfile1")
+ => true 
+3.0.0 :046 > File.writable?("Testfile1")
+ => true 
+3.0.0 :047 > File.executable?("Testfile1")
+ => true 
+
+The following command finds whether the file has zero size or not −
+3.0.0 :050 > File.zero?("Testfile1")
+ => false 
+
+The following command returns size of the file −
+3.0.0 :049 > File.size?("Testfile1")
+ => 23 
+ 
+The following command can be used to find out a type of file −
+The ftype method identifies the type of the file by returning one of the following − file, directory, characterSpecial, blockSpecial, fifo, link, socket, or unknown.
+3.0.0 :051 > File::ftype("Testfile1")
+ => "file" 
+ 
+The following command can be used to find when a file was created, modified, or last accessed −
+3.0.0 :053 > File::ctime("Testfile1")
+ => 2022-05-11 16:27:05.575677881 +0530 
+3.0.0 :054 > File::mtime("Testfile1")
+ => 2022-05-11 16:27:05.571677904 +0530 
+3.0.0 :055 > File::atime("Testfile1")
+ => 2022-05-11 16:27:05.571677904 +0530 
+
+
+# Directories in Ruby:
+File class handles files, directories are handled with the Dir class.
+
+1. Navigating Through Directories:
+To change directory within a Ruby program, use Dir.chdir 
+3.0.0 :058 > Dir.chdir("/usr/bin")
+ => 0 
+ 
+2.You can find out what the current directory is with Dir.pwd −
+3.0.0 :059 > puts Dir.pwd
+/usr/bin
+ => nil 
+3.0.0 :060 > Dir.chdir("/home/itsacheckmate/Training-Repository")
+ => 0 
+3.0.0 :061 > puts Dir.pwd
+/home/itsacheckmate/Training-Repository
+ => nil 
+
+3.You can get a list of the files and directories within a specific directory using Dir.entries −
+3.0.0 :062 > puts Dir.entries("/home/itsacheckmate/Training-Repository").join(' 
+')
+git1 GitPractice Database Git . Rvm_Ruby gitcheatsheet .. new.txt .git linux
+ => nil 
+
+Dir.entries returns an array with all the entries within the specified directory. Dir.foreach provides the same feature −
+3.0.0 :066 > Dir.chdir("/usr/bin")
+ => 0 
+3.0.0 :067 > Dir.foreach("/usr/bin") do |entry|
+3.0.0 :068 >   puts entry
+3.0.0 :069 > end
+.
+..
+codepage
+mdig
+gedit
+hp-setup
+lastb
+sbsiglist
+gdbserver
+less
+fc-validate
+anydesk
+nano
+pydoc3.8
+cut
+gst-device-monitor-1.0
+ln
+ppdc
+systemd-stdio-bridge
+as
+scp-dbus-service
+lexgrog
+toe
+clip
+deb-systemd-helper
+ctest
+xvinfo
+chacl
+gnome-system-monitor
+rgrep
+driverless
+systemd-path
+gpgsm
+automake
+zdiff
+foo2lava
+stty
+hp-pkservice
+curl
+gs
+lessecho
+aspell
+gnome-thumbnail-font
+ssh-keyscan
+pdfattach
+systemd-escape
+ptx
+remmina-file-wrapper
+paste
+foo2hbpl2
+linux-update-symlinks
+tset
+env
+ppdhtml
+strings
+perl5.30-x86_64-linux-gnu
+rdma
+apgbfm
+evince-previewer
+pkcheck
+ionice
+oclock
+gcalccmd
+bsd-write
+aconnect
+x86_64-linux-gnu-cpp
+telnet
+ping6
+
+An even more concise way of getting directory listings is by using Dir's class array method −
+Dir["/usr/bin/*"]
+
+4.Creating a Directory:
+The Dir.mkdir can be used to create directories 
+Dir.mkdir("mynewdir")
+
+NOTE − The mask 755 sets permissions owner, group, world [anyone] to rwxr-xr-x where r = read, w = write, and x = execute.
+Dir.mkdir( "mynewdir", 755 )
+
+5.Deleting a Directory:
+The Dir.delete can be used to delete a directory
+Dir.delete("testdir")
+
+# Creating Files & Temporary Directories:
+Dir.tmpdir provides the path to the temporary directory on the current system, although the method is not available by default. 
+To make Dir.tmpdir available it's necessary to use require 'tmpdir'.
+require 'tmpdir'
+   tempfilename = File.join(Dir.tmpdir, "Hello")
+   tempfile = File.new(Hello, "w")
+   tempfile.puts "This is a temporary file"
+   tempfile.close
+   File.delete(Hello)
+   

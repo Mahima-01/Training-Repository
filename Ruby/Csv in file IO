@@ -1,0 +1,134 @@
+# CSV in File Handling:
+CSV stands for “Comma-Separated Values”.
+It’s a common data format which consist of rows with values separated by commas. It’s used for exporting & importing data.
+
+Ruby comes with a built-in CSV library.
+You can read a file directly:
+require 'csv'
+3.0.0 :005 > CSV.read('Testfile1')
+ => [["Hi", " I am learning ruby"]] 
+Or you can parse a string with CSV data:
+3.0.0 :006 > CSV.parse("1,chocolate\n2,bacon\n3,apple")
+3.0.0 :007 > table = CSV.parse(File.read("Testfile1")heade
+rs: true)
+
+# Csv table:
+A CSV::Table is a two-dimensional data structure for representing CSV documents. Tables allow you to work with the data by row or column, manipulate the data, and even convert the results back to CSV.”
+3.0.0 :008 > table = CSV.parse(File.read("Testfile1"),head
+ers: true)
+ => #<CSV::Table mode:col_or_row row_count:1> 
+ 
+There are two table modes:
+
+by_col
+by_row
+3.0.0 :010 > table.by_col[0]
+ => [] 
+ 
+# The Ruby CSV library implements something called converters.
+A converter will automatically transform values for you.
+3.0.0 :012 > CSV.parse("1,2,3,4,5")
+ => [["1", "2", "3", "4", "5"]] 
+3.0.0 :014 > CSV.parse("1,2,3,4,5", converters: :numeric)
+ => [[1, 2, 3, 4, 5]] 
+
+# There are 6 built-in converters:
+
+Integer
+Float
+Numeric (Float + Integer)
+Date
+DateTime
+All
+
+3.0.0 :015 > CSV::Converters[:symbol] = ->(value) { value.
+to_sym rescue value }
+ => #<Proc:0x000055f1ca77a210 (irb):15 (lambda)> 
+3.0.0 :016 > CSV.parse("a,b,c", headers: false, converters
+: :symbol)
+ => [[:a, :b, :c]] 
+ 
+# Create a New CSV File:
+3.0.0 :017 > cats = [
+3.0.0 :021 > ]
+ => [[:blue, 1], [:white, 2], [:black_and_white, 3]] 
+3.0.0 :022 > 
+3.0.0 :023 > cats.map { |c| c.join(",") }.join("\n")
+ => "blue,1\nwhite,2\nblack_and_white,3" 
+You can also use the generate method:
+3.0.0 :024 >   csv << [:blue, 
+3.0.0 :024 > CSV.generate do |csv|
+3.0.0 :025 >   csv << [:blue, 1]
+3.0.0 :026 >   csv << [:white, 2]
+3.0.0 :027 >   csv << [:black_and_white, 3]
+3.0.0 :028 > end
+ => "blue,1\nwhite,2\nblack_and_white,3\n" 
+ 
+# the smarter_csv gem will convert your CSV data into an array of hashes.
+
+3.0.0 :004 > require 'csv'
+ => true 
+3.0.0 :005 > CSV.parse(string) # => [["foo", "0"], ["bar", "1"], ["baz", "2"]]
+ => [["foo", "0"], ["bar", "1"], ["baz", "2"]] 
+3.0.0 :006 > CSV.parse_line(string) # => ["foo", "0"]
+ => ["foo", "0"] 
+3.0.0 :007 > string.parse_csv
+ => ["foo", "0"] 
+3.0.0 :008 > string = "foo,0\nbar,1\nbaz,2\n"
+ => "foo,0\nbar,1\nbaz,2\n" 
+3.0.0 :009 > path = 't.csv'
+ => "t.csv" 
+3.0.0 :010 > File.write(path, string)
+ => 18 
+3.0.0 :011 > CSV.read('t.csv')
+ => [["foo", "0"], ["bar", "1"], ["baz", "2"]] 
+3.0.0 :012 > File.write(path, string)
+ => 18 
+3.0.0 :013 > CSV.foreach(path) do |row|
+3.0.0 :014 >   p row
+3.0.0 :015 > end
+["foo", "0"]
+["bar", "1"]
+["baz", "2"]
+ => 18 
+ 
+# Filtering” CSV:
+3.0.0 :016 > in_string = "foo,0\nbar,1\nbaz,2\n"
+ => "foo,0\nbar,1\nbaz,2\n" 
+3.0.0 :017 > out_string = ''
+ => "" 
+3.0.0 :018 > CSV.filter(in_string, out_string) do |row|
+3.0.0 :019 >   row[0] = row[0].upcase
+3.0.0 :020 >   row[1] *= 4
+3.0.0 :021 > end
+ => 18 
+3.0.0 :022 > out_string 
+ => "FOO,0000\nBAR,1111\nBAZ,2222\n"
+
+# CSV Objects¶ ↑
+There are three ways to create a CSV object:
+Method CSV.new returns a new CSV object.
+Method CSV.instance returns a new or cached CSV object.
+Method CSV() also returns a new or cached CSV object.
+
+# Created a new csv file "Practise.csv":
+-->Read CSV
+3.0.0 :026 > print CSV.read("Practise.csv")
+[["id", " Name", " Fav Colour"], ["1", " Ram", " Red"], ["2", " Sai", " Green"], ["3", " Mahima", " Black"], ["4", " Robert", " Yellow"], ["5", " Jimmy", " Pink"]] => nil 
+3.0.0 :027 > csvfile = File.new("Practise.csv")
+ => #<File:Practise.csv> 
+3.0.0 :028 > arr_line = []
+ => [] 
+3.0.0 :029 > arr = IO.readlines("Practise.csv", chomp: true)
+ => ["id, Name, Fav Colour", "1, Ram, Red", "2, Sai, Green", "3, Mahima, B... 
+3.0.0 :030 > 
+
+--> Write CSV
+csvfile.write
+3.0.0 :037 > open("Practise.csv", "w") do |f|
+3.0.0 :038 >   f << "Hello world.\n"
+3.0.0 :039 > end
+ => #<File:Practise.csv (closed)> 
+ 
+ 
+

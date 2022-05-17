@@ -1,0 +1,226 @@
+# Lambdas in Ruby:
+Since everything in Ruby is treated as an object, lambdas are also objects in Ruby. 
+Lambdas in Ruby allow us to wrap data and logic in a portable package. 
+
+Syntax to create Lambda function in Ruby:
+lambda = lambda {}  
+
+Alternatively, we can also use literal lambda.  
+lambda = ->() {}  
+lambda keyword is used to create a lambda function. 
+It requires a block and can define zero or more parameters. You call the resulting lambda function by using the call method.
+ 
+3.0.0 :062 > def my_function
+3.0.0 :063 >   puts 'Hello'
+3.0.0 :064 > end
+ => :my_function 
+3.0.0 :065 > my_function
+Hello
+ => nil 
+3.0.0 :066 > my_lambda = lambda { puts 'Hello' }
+ => #<Proc:0x000055ae0e520af0 (irb):66 (lambda)> 
+3.0.0 :067 > my_lambda
+ => #<Proc:0x000055ae0e520af0 (irb):66 (lambda)> 
+3.0.0 :068 > my_lambda.call
+Hello
+ => nil 
+ 
+There is more than one way to call a lambda function:
+my_lambda.call
+my_lambda.()
+my_lambda.[]
+my_lambda.===
+
+3.0.0 :070 > my_lambda = lambda { puts "Hello" }
+ => #<Proc:0x000055ae0e9c3eb8 (irb):70 (lambda)> 
+3.0.0 :071 > my_lambda.()
+Hello
+ => nil 
+3.0.0 :072?> my_lambda.[]
+Hello
+ => nil 
+3.0.0 :073 > my_lambda.===
+Hello
+ => nil 
+ 
+You can also create a lambda with the literal lambda operator, which looks like this and can have zero or more arguments: ->
+3.0.0 :074 > my_lambda= -> { puts "hello" }
+ => #<Proc:0x000055ae0e9c8b48 (irb):74 (lambda)> 
+3.0.0 :075 > my_lambda_with_args = -> (v) { puts "hello"+v }
+ => #<Proc:0x000055ae0e947818 (irb):75 (lambda)> 
+3.0.0 :076 > my_lambda.call
+hello
+ => nil 
+3.0.0 :077 > my_lambda_with_args.call("Mahima")
+helloMahima
+ => nil 
+ 
+3.0.0 :078 > my_lambda = lambda {|name = 'Mahima'| puts "hello" +name}
+ => #<Proc:0x000055ae0ead7f48 (irb):78 (lambda)> 
+3.0.0 :079 > my_lambda.call
+helloMahima
+ => nil 
+3.0.0 :080 > my_lambda.call('Jerry')
+helloJerry
+ => nil 
+ 
+Finally, the block you are passing to a lambda can be either a single line block with curly braces or a multi-line block with do and end
+
+3.0.0 :081 > my_one_line_lambda = lambda { puts "Hello"}
+ => #<Proc:0x000055ae0eb39e00 (irb):81 (lambda)> 
+3.0.0 :082 > my_one_line_lambda.call
+Hello
+ => nil 
+3.0.0 :083 > my_multi_line_lambda = lambda do
+3.0.0 :084 >   puts "How are you?"
+3.0.0 :085 > end
+ => #<Proc:0x000055ae0ea23728 (irb):83 (lambda)> 
+3.0.0 :086 > my_multi_line_lambda.call
+How are you?
+ => nil 
+ 
+3.0.0 :087 > double_it = lambda { |num| num * 2 }
+ => #<Proc:0x000055ae0ea53a40 (irb):87 (lambda)> 
+3.0.0 :088 > triple_it = lambda { |num| num * 3 }
+ => #<Proc:0x000055ae0eaa3bd0 (irb):88 (lambda)> 
+3.0.0 :089 > def apply_lambda(lmbda, number)
+3.0.0 :090 > 
+3.0.0 :091 >   puts lmbda.call(number)
+3.0.0 :092 > 
+3.0.0 :093 > end
+ => :apply_lambda 
+3.0.0 :094 > 
+3.0.0 :095 > apply_lambda(double_it, 10)
+20
+ => nil 
+3.0.0 :096 > apply_lambda(triple_it, 10)
+30
+ => nil 
+3.0.0 :097 > apply_lambda(triple_it, 20)
+60
+ => nil
+ 
+# You can also create an array of lambdas to execute in a pipeline:
+3.0.0 :001 > double_it = lambda { |num| num * 2 }
+ => #<Proc:0x000055aa6e4c3740 (irb):1 (lambda)> 
+3.0.0 :002 > triple_it = lambda { |num| num * 3 }
+ => #<Proc:0x000055aa6ea5f7f8 (irb):2 (lambda)> 
+3.0.0 :003 > half_it = lambda { |num| num / 2 }
+ => #<Proc:0x000055aa6ea0ffa0 (irb):3 (lambda)> 
+3.0.0 :004 > value = 10
+ => 10 
+3.0.0 :005 > lambda_pipeline = [double_it, triple_it, half_it]
+ => [#<Proc:0x000055aa6e4c3740 (irb):1 (lambda)>, #<Proc:0x000055aa6ea5f7f... 
+3.0.0 :006 > lambda_pipeline.each do |lmb|
+3.0.0 :007 >   value = lmb.call(value)
+3.0.0 :008 > end
+ => [#<Proc:0x000055aa6e4c3740 (irb):1 (lambda)>, #<Proc:0x000055aa6ea5f7f8 (irb):2 (lambda)>, #<Proc:0x000055aa6ea0ffa0 (irb):3 (lambda)>] 
+3.0.0 :009 > puts value
+30
+ => nil 
+ 
+# Lambdas can be closures which allow the code in the function to access these captured local variables.
+3.0.0 :010 > def build_lambda
+3.0.0 :011 >   output = "output from function"
+3.0.0 :012 >   return lambda { puts output }
+3.0.0 :013 > end
+ => :build_lambda 
+3.0.0 :014 > output = "Output from top level"
+ => "Output from top level" 
+3.0.0 :015 > my_lambda = build_lambda
+ => #<Proc:0x000055aa6ea27650 (irb):12 (lambda)> 
+3.0.0 :016 > my_lambda.call
+output from function
+ => nil 
+The lambda function retains the local variable values at the time it was defined
+
+3.0.0 :017 > def build_lambda(text)
+3.0.0 :019 >   my_text = text
+3.0.0 :021 >   return lambda { puts my_text }
+3.0.0 :023 > end
+ => :build_lambda 
+3.0.0 :024 > my_lambda = build_lambda("first function")
+ => #<Proc:0x000055aa6ea95e48 (irb):21 (lambda)> 
+3.0.0 :025 > another_lambda = build_lambda("second function")
+ => #<Proc:0x000055aa6ea2ffa8 (irb):21 (lambda)> 
+3.0.0 :026 > my_lambda.call
+first function
+ => nil 
+3.0.0 :027 > another_lambda.call
+second function
+ 
+With a Ruby lambda, you may put logic and pass it to other code as a parameter. You could do the same by creating a class with a method, creating an object, and then passing that object
+
+
+Note: Lambda functions check the number of parameters passed when they are called. If you create a lambda function that accepts one parameter, and you call the lambda with zero parameters, it will fail. If you call it with two or more parameters, it will also fail. The lambda must be called with exactly one parameter. 
+
+Procs, on the other hand, accept any number of arguments. If they are passed too few arguments, the unpassed arguments are set to a value of nil. If they are passed too many arguments, the extraneous arguments are dropped silently. Here’s some example code to illustrate the point:
+3.0.0 :028 > my_proc = Proc.new {|name| puts "proc says hello " + name.to_s }
+ => #<Proc:0x000055aa6e9dd488 (irb):28> 
+3.0.0 :029 > my_lambda = lambda {|name| puts "lambda says hello " + name.to_s }
+ => #<Proc:0x000055aa6e9ff8a8 (irb):29 (lambda)> 
+
+my_lambda
+my_proc
+3.0.0 :030 > my_proc.call("jerry")
+proc says hello jerry
+ => nil 
+3.0.0 :031 > my_lambda.call("jerry")
+lambda says hello jerry
+ => nil 
+3.0.0 :032 > my_proc.call
+ => nil 
+3.0.0 :033 > my_lamda.call
+Traceback (most recent call last):
+        4: from /home/itsacheckmate/.rvm/rubies/
+
+
+# use the splat operator allow a lambda to take multiple arguments:
+3.0.0 :036 > my_lambda = lambda do |*args|
+3.0.0 :037 >   args.each do |arg|
+3.0.0 :038 >     puts "I Saw" +arg
+3.0.0 :039 >   end
+3.0.0 :040 > end
+ => #<Proc:0x000055aa6ed39050 (irb):36 (lambda)> 
+3.0.0 :041 > my_lambda.call("a", "b", "c")
+I Saw a
+I Saw b
+I Saw c
+ => ["a", "b", "c"] 
+
+# Return statement:
+The return statement in a lambda function stops the lambda and returns control to the calling code. The return statement in a Proc, in contrast, returns from both the Proc and the calling code.
+
+
+my_lambda = lambda do |name|
+  puts "lambda says hello " + name
+  return "lambda done"
+end
+3.0.0 :046 > my_proc = Proc.new do |name|
+3.0.0 :047 >   puts "proc says hello " + name
+3.0.0 :048 >   return "proc done"
+3.0.0 :049 > end
+ => #<Proc:0x000055aa6eb7f750 (irb):46> 
+3.0.0 :050 > def call_lambda(lmbda)
+3.0.0 :051 >   value = lmbda.call("jerry")
+3.0.0 :052 >   puts value
+3.0.0 :053 > end
+ => :call_lambda 
+3.0.0 :054 > call_lambda(my_lambda)
+lambda says hello jerry
+lambda done
+ => nil 
+3.0.0 :055 > 
+3.0.0 :056 > def call_proc(prc)
+3.0.0 :057 >   value = prc.call("jerry")
+3.0.0 :058 >   puts value
+3.0.0 :059 > end
+ => :call_proc 
+3.0.0 :060 > call_proc(my_proc)
+proc says hello jerry
+
+You see “lambda done” but not “proc done” because the return statement in the proc terminates the program flow.
+
+
+
+

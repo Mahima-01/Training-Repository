@@ -4068,4 +4068,188 @@ The important thing is that if we create our own exception classes, they need to
 Enter Number: 
 1
  => "1" 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Practise blocks in ruby:
+# Blocks:
+Block Arguments: Arguments can be passed to block by enclosing between the pipes or vertical bars( | | ).
+
+# here india_states is an array and 
+# it is the argument which is to 
+# be passed to block
+india_states = ["Andra Pardesh", "Assam", "Bihar", "Chattisgarh", 
+                "Goa", "Gujrat", "Haryana", "Arunachal Pardesh",
+                "Karnataka", "Manipur", "Punjab", "Uttar Pardesh", 
+                "Uttarakhand"] 
+   
+# passing argument to block
+india_states.each do |india_states|
+ puts india_states
+end
+
+3.0.0 :001 > india_states = ["Andra Pardesh", "Assam", "Bihar", "Chattisgarh", 
+3.0.0 :002 >                 "Goa", "Gujrat", "Haryana", "Arunachal Pardesh",
+3.0.0 :003 >                 "Karnataka", "Manipur", "Punjab", "Uttar Pardesh", 
+
+3.0.0 :004 >                 "Uttarakhand"] 
+ => ["Andra Pardesh", "Assam", "Bihar", "Chattisgarh", "Goa", "Gujrat", "H... 
+3.0.0 :005 > india_states.each do |india_states|
+3.0.0 :006 >   puts india_states
+3.0.0 :007 > end
+Andra Pardesh
+Assam
+Bihar
+Chattisgarh
+Goa
+Gujrat
+Haryana
+Arunachal Pardesh
+Karnataka
+Manipur
+Punjab
+Uttar Pardesh
+Uttarakhand
+ => ["Andra Pardesh", "Assam", "Bihar", "Chattisgarh", "Goa", "Gujrat", "Haryana", "Arunachal Pardesh", "Karnataka", "Manipur", "Punjab", "Uttar Pardesh", "Uttarakhand"] 
+
+
+How block return values: Actually block returns the value which are returned by the method on which it is called.
+3.0.0 :008 > puts [1, 2, 3, 4, 5, 6, 12, 13].select { |num| num.even? }
+2
+4
+6
+12
+ => nil 
+
+
+# The yield statement is used to call a block inside the method using the yield keyword with a value.
+
+# method
+def Practise
+# statement of the method to be executed
+  puts "Inside Method!"
+# using yield statement
+    yield
+# statement of the method to be executed 
+  puts "Again Inside Method!"
+# using yield statement
+  yield
+end
+# block
+Practise{puts "Inside Block!"}
+
+3.0.0 :009 > def Practise
+3.0.0 :010 >       
+3.0.0 :011 >   # statement of the method to be executed
+3.0.0 :012 >   puts "Inside Method!"
+3.0.0 :013 >     
+3.0.0 :014 >     # using yield statement
+3.0.0 :015 >     yield
+3.0.0 :016 >       
+3.0.0 :017 >   # statement of the method to be executed 
+3.0.0 :018 >   puts "Again Inside Method!"
+3.0.0 :019 >     
+3.0.0 :020 >   # using yield statement
+3.0.0 :021 >   yield
+3.0.0 :022 >     
+3.0.0 :023 > end
+ => :Practise 
+3.0.0 :024 >   
+ => nil 
+3.0.0 :025 > # block
+ => nil 
+3.0.0 :026 > Practise{puts "Inside Block!"}
+Inside Method!
+Inside Block!
+Again Inside Method!
+Inside Block!
+ => nil 
+
+In above program, method name is Practise. At first method statements is called which display Inside Method. But as soon as yield statements execute the control goes to block and block will execute its statements. As soon as the block will execute it gives control back to the method and the method will continue to execute from where yield statement called.
+
+Note: Parameters can be passed to the yield statement.
+# Ruby program to demonstrate the yield statement
+
+# method
+def Practise
+# statement of the method to be executed
+puts "Inside Method!"
+# using yield statement
+# p1 is the parameter
+  yield "p1"
+# statement of the method to be executed
+puts "Again Inside Method!"
+# using yield statement
+# p2 is the parameter
+yield "p2"
+end
+# block
+Practise{ |para| puts "Inside Block #{para}"}
+
+3.0.0 :027 > def Practise
+3.0.0 :029 > puts "Inside Method!"
+3.0.0 :032 >   yield "p1"
+3.0.0 :034 > puts "Again Inside Method!"
+3.0.0 :037 > yield "p2"
+3.0.0 :038 > end
+ => :Practise 
+3.0.0 :039 > # block
+ => nil 
+3.0.0 :040 > Practise{ |para| puts "Inside Block #{para}"}
+Inside Method!
+Inside Block p1
+Again Inside Method!
+Inside Block p2
+ => nil 
+
+3.0.0 :041 > x = "Outside the block"
+ => "Outside the block" 
+3.0.0 :042 > 4.times do |x|    
+3.0.0 :043 >   puts "Value Inside the block: #{x}"    
+3.0.0 :044 > end    
+Value Inside the block: 0
+Value Inside the block: 1
+Value Inside the block: 2
+Value Inside the block: 3
+ => 4 
+3.0.0 :045 > puts "Value Outside the block: #{x}"
+Value Outside the block: Outside the block
+ => nil 
+ 
+
+3.0.0 :059 > 5.times do
+3.0.0 :060 >   puts "Practising Blocks"
+3.0.0 :061 > end
+Practising Blocks
+Practising Blocks
+Practising Blocks
+Practising Blocks
+Practising Blocks
+ => 5 
+
+ 
+3.0.0 :047 > [10, 20, 30].each do |n|   
+3.0.0 :048 >  puts n   
+3.0.0 :049 > end  
+10
+20
+30
+ => [10, 20, 30]
+     OR
+[10, 20, 30].each {|n| puts n}  
+
+
+3.0.0 :051 > class Array
+3.0.0 :052 >   def our_own_each
+3.0.0 :053 >     for i in self
+3.0.0 :054 >       yield i
+3.0.0 :055 >     end
+3.0.0 :056 >   end
+3.0.0 :057 > end
+ => :our_own_each 
+3.0.0 :058 > [1, 2, 3].our_own_each { |n| puts n * 2 }
+2
+4
+6
+ => [1, 2, 3] 
+ 
+
 

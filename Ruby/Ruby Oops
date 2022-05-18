@@ -1,0 +1,246 @@
+# Class:
+A class definition starts with the keyword class followed by the class name and is delimited with an end. For example, we defined the Box class using the keyword class as follows −
+class Box
+   code
+end
+
+# Define Ruby Objects
+A class provides the blueprints for objects, so basically an object is created from a class. We declare objects of a class using new keyword. Following statements declare two objects of class Box −
+box1 = Box.new
+box2 = Box.new
+
+# The initialize Method:
+The initialize method is a standard Ruby class method and works almost same way as constructor works in other object oriented programming languages. 
+The initialize method is useful when you want to initialize some class variables at the time of object creation. This method may take a list of parameters and like any other ruby method it would be preceded by def keyword.
+
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ irb
+3.0.0 :001 > class Box
+3.0.0 :002 >   def intialize(w, h)
+3.0.0 :003 >     @width, @height = w, h
+3.0.0 :004 >   end
+3.0.0 :005 > end
+ => :intialize 
+
+# The instance Variables
+The instance variables are kind of class attributes and they become properties of objects once objects are created using the class. 
+They are accessed using the @ operator within the class but to access them outside of the class we use public methods, which are called accessor method
+class Box
+   def initialize(w,h)
+      # assign instance variables
+      @width, @height = w, h
+   end
+end
+
+
+# The accessor & setter Methods:
+To make the variables available from outside the class, they must be defined within accessor methods, these accessor methods are also known as a getter methods.
+
+class Box
+  # constructor method
+  def initialize(w,h)
+    @width, @height = w, h
+  end
+
+  # accessor methods
+  def printWidth
+    @width
+  end
+
+  def printHeight
+    @height
+  end
+end
+
+# create an object
+box = Box.new(10, 20)
+
+# use accessor methods
+x = box.printWidth()
+y = box.printHeight()
+
+puts "Width of the box is : #{x}"
+puts "Height of the box is : #{y}"
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Width of the box is : 10
+Height of the box is : 20
+
+# Ruby provides a way to set the values of those variables from outside of the class using setter methods:
+# define a class
+class Box
+  # constructor method
+  def initialize(w,h)
+    @width, @height = w, h
+  end
+
+  # accessor methods
+  def getWidth
+    @width
+  end
+  def getHeight
+    @height
+  end
+
+  # setter methods
+  def setWidth=(value)
+    @width = value
+  end
+  def setHeight=(value)
+    @height = value
+  end
+end
+
+# create an object
+box = Box.new(10, 20)
+
+# use setter methods
+box.setWidth = 30
+box.setHeight = 50
+
+# use accessor methods
+x = box.getWidth()
+y = box.getHeight()
+
+puts "Width of the box is : #{x}"
+puts "Height of the box is : #{y}"
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Width of the box is : 30
+Height of the box is : 50
+
+# the instance Methods
+The instance methods are also defined in the same way as we define any other method using def keyword and they can be used using a class instance only as shown below. 
+Their functionality is not limited to access the instance variables.
+
+# define a class
+class Box
+  # constructor method
+  def initialize(w,h)
+    @width, @height = w, h
+  end
+  # instance method
+  def getArea
+    @width * @height
+  end
+end
+
+# create an object
+box = Box.new(10, 20)
+
+# call instance methods
+a = box.getArea()
+puts "Area of the box is : #{a}"
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Area of the box is : 200
+
+# The class Methods and Variables
+The class variables is a variable, which is shared between all instances of a class.
+There is one instance of the variable and it is accessed by object instances. 
+Class variables are prefixed with two @ characters (@@). 
+A class variable must be initialized within the class definition.
+A class method is defined using def self.methodname(), which ends with end delimiter and would be called using the class name as classname.methodname 
+
+class Box
+  # Initialize our class variables
+  @@count = 0
+  def initialize(w,h)
+    # assign instance avriables
+    @width, @height = w, h
+
+    @@count += 1
+  end
+
+  def self.printCount
+    puts "Box count is : #@@count"
+  end
+end
+
+# create two object
+box1 = Box.new(10, 20)
+box2 = Box.new(30, 100)
+
+# call class method to print box count
+Box.printCount
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Box count is : 2
+
+# The to_s Method:
+Any class you define should have a to_s instance method to return a string representation of the object.
+class Box
+  # constructor method
+  def initialize(w,h)
+    @width, @height = w, h
+  end
+  # define to_s method
+  def to_s
+    "(w:#{@width},h:#{@height}" # string formatting of the object.
+  end
+end
+
+# create an object
+box = Box.new(10, 20)
+
+# to_s method will be called in reference of string automatically.
+puts "String representation of box is : #{box}"
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+String representation of box is : (w:10,h:20)
+
+
+# Access Control:
+# define a class
+class Box
+  # constructor method
+  def initialize(w,h)
+    @width, @height = w, h
+  end
+
+  # instance method by default it is public
+  def getArea
+    getWidth() * getHeight
+  end
+
+  # define private accessor methods
+  def getWidth
+    @width
+  end
+  def getHeight
+    @height
+  end
+  # make them private
+  private :getWidth, :getHeight
+
+  # instance method to print area
+  def printArea
+    @area = getWidth() * getHeight
+    puts "Big box area is : #@area"
+  end
+  # make it protected
+  protected :printArea
+end
+
+# create an object
+box = Box.new(10, 20)
+
+# call instance methods
+a = box.getArea()
+puts "Area of the box is : #{a}"
+
+# try to call protected or methods
+box.printArea()
+
+Output:
+itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
+Area of the box is : 200
+Ruby.rb:40:in `<main>': protected method `printArea' called for #<Box:0x0000563367dd6ee0 @width=10, @height=20> (NoMethodError)
+Did you mean?  printArea
+
+
+

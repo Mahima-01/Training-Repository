@@ -1,0 +1,157 @@
+itsacheckmate@itsacheckmate:~/Training-s/Airport_System$ cd
+itsacheckmate@itsacheckmate:~$ cd Training-Repository/Rails/
+itsacheckmate@itsacheckmate:~/Training-
+Repository/Rails$ rails db:version
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--skip-namespace], [--no-skip-namespace]              # Skip namespace (affects only isolated engines)
+      [--skip-collision-check], [--no-skip-collision-check]  # Skip collision check
+  -r, [--ruby=PATH]                                          # Path to the Ruby binary of your choice
+                                                             # Default: /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/ruby
+  -m, [--template=TEMPLATE]                                  # Path to some application template (can be a filesystem path or URL)
+  -d, [--database=DATABASE]                                  # Preconfigure for selected database (options: mysql/postgresql/sqlite3/oracle/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                             # Default: sqlite3
+  -G, [--skip-git], [--no-skip-git]                          # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                      # Skip source control .keep files
+  -M, [--skip-action-mailer], [--no-skip-action-mailer]      # Skip Action Mailer files
+      [--skip-action-mailbox], [--no-skip-action-mailbox]    # Skip Action Mailbox gem
+      [--skip-action-text], [--no-skip-action-text]          # Skip Action Text gem
+  -O, [--skip-active-record], [--no-skip-active-record]      # Skip Active Record files
+      [--skip-active-job], [--no-skip-active-job]            # Skip Active Job
+      [--skip-active-storage], [--no-skip-active-storage]    # Skip Active Storage files
+  -C, [--skip-action-cable], [--no-skip-action-cable]        # Skip Action Cable files
+  -A, [--skip-asset-pipeline], [--no-skip-asset-pipeline]    # Indicates when to generate skip asset pipeline
+  -a, [--asset-pipeline=ASSET_PIPELINE]                      # Choose your asset pipeline [options: sprockets (default), propshaft]
+                                                             # Default: sprockets
+  -J, [--skip-javascript], [--no-skip-javascript]            # Skip JavaScript files
+      [--skip-hotwire], [--no-skip-hotwire]                  # Skip Hotwire integration
+      [--skip-jbuilder], [--no-skip-jbuilder]                # Skip jbuilder gem
+  -T, [--skip-test], [--no-skip-test]                        # Skip test files
+      [--skip-system-test], [--no-skip-system-test]          # Skip system test files
+      [--skip-bootsnap], [--no-skip-bootsnap]                # Skip bootsnap gem
+      [--dev], [--no-dev]                                    # Set up the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                                  # Set up the application with Gemfile pointing to Rails repository
+  --master, [--main], [--no-main]                            # Set up the application with Gemfile pointing to Rails repository main branch
+      [--rc=RC]                                              # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                                # Skip loading of extra configuration options from .railsrc file
+      [--api], [--no-api]                                    # Preconfigure smaller stack for API only apps
+      [--minimal], [--no-minimal]                            # Preconfigure a minimal rails app
+  -j, [--javascript=JAVASCRIPT]                              # Choose JavaScript approach [options: importmap (default), webpack, esbuild, rollup]
+                                                             # Default: importmap
+  -c, [--css=CSS]                                            # Choose CSS processor [options: tailwind, bootstrap, bulma, postcss, sass... check https://github.com/rails/cssbundling-rails]
+  -B, [--skip-bundle], [--no-skip-bundle]                    # Don't run bundle install
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory,
+    or in $XDG_CONFIG_HOME/rails/railsrc if XDG_CONFIG_HOME is set.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails$ cd Airport_System/
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:version
+Current version: 20220524143233
+itsacheckmate@itsacheckmaitsacheckmate@itsacheckmate:~/Training-Re
+itsacheckmate@itsacheckmate:~/Training-Re
+pository/Rails/Airport_System$ rails db:create:all
+Database 'Airport_System_development' already exists
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:migrate:up
+rails aborted!
+VERSION is required
+
+db:schema:dump Create a db/schema.rb file that can be portably used against 
+any database supported by ActiveRecord
+db:schema:load Load a schema.rb file into the database
+db:sessions:create Create a sessions table for use with CGI::Sessions::Activ
+eRecordStore
+db:sessions:clear Clear the sessions table
+db:structure:dump Dump database structure to SQL file
+db:reset Drops the database, creates the database and then runs migra- tions against the database. Takes a VERSION argument as well as RAILS_ENV
+db:rollback STEP=4 Takes a STEP argument to determine how many version to rollback, the default being one version
+db:test:prepare Clone your database structure into the test database
+db:version Tells you the current version your database is at
+b:create
+db:create:all
+Creates a single database specified in config/databases.yml for the current RAILS_ENV or creates all the databases
+db:drop
+db:drop:all Drops a single database specified in config/databases.yml for the current RAILS_ENV or drops all the databases
+db:fixtures:load Load fixtures from test/fixtures into the current environments database
+db:migrate Run all unapplied migrations
+db:migrate:up
+db:migrate:down Move forward to the next migration, or back to the previous 
+migration
+db:migrate VERSION=18 Migrate database to specific version
+db:migrate RAILS_
+Tasks: TOP => db:migrate:up
+(See full trace by running task with --trace)
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:migrate:down
+rails aborted!
+VERSION is required - To go down one migration, use db:rollback
+
+Tasks: TOP => db:migrate:down
+(See full trace by running task with --trace)
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:migrate:test
+rails aborted!
+Don't know how to build task 'db:migrate:test' (See the list of available tasks with `rails --tasks`)
+Did you mean?  db:migrate:reset
+               db:migrate:redo
+               db:migrate:up
+               db:migrate:down
+
+(See full trace by running task with --trace)
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:migrate test
+== 20220524154900 AddReversible: migrating ====================================
+-- add_column(:customers, :sku, :integer)
+rails aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+PG::UndefinedTable: ERROR:  relation "customers" does not exist
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:5:in `block (2 levels) in change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:4:in `block in change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:3:in `change'
+
+Caused by:
+ActiveRecord::StatementInvalid: PG::UndefinedTable: ERROR:  relation "customers" does not exist
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:5:in `block (2 levels) in change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:4:in `block in change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:3:in `change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:5:in `block (2 levels) in change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:4:in `block in change'
+/home/itsacheckmate/Training-Repository/Rails/Airport_System/db/migrate/20220524154900_add_reversible.rb:3:in `change'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:test:prepare
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rails db:reset
+Dropped database 'Airport_System_development'
+Created database 'Airport_System_development'
+You have 4 pending migrations:
+  20220524154900 AddReversible
+  20220524155952 RemoveIndex
+  20220524162113 DropTable
+  20220524162702 RevertingToPreviousMigration
+Run `bin/rails db:migrate` to update your database then try again.
+itsacheckmate@itsacheckmate:~/Training-Repository/Rails/Airport_System$ rake db:sessions:create
+rake aborted!
+Don't know how to build task 'db:sessions:create' (See the list of available tasks with `rake --tasks`)
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+(See full trace by running task with --trace)

@@ -1,0 +1,2 @@
+class UuId < ApplicationRecord
+end

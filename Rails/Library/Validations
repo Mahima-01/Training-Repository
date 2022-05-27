@@ -1,0 +1,76 @@
+# Validations:
+Rails validation defines valid states for each of your Active Record model classes. They are used to ensure that only valid details are entered into your database. Rails make it easy to add validations to your model classes and allows you to create your own validation methods as well.
+When an Active Record model class fails a validation, it is considered an error. Each Active Record model class maintains a collection of errors, which display appropriate error information to the users when validation error occurs.
+3.0.0 :002 > person = Person.create(name:'Mahima', gender:'Female')
+  TRANSACTION (0.1ms)  BEGIN
+  Person Create (0.4ms)  INSERT INTO "people" ("name", "gender", "dob", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Mahima"], ["gender", "Female"], ["dob", nil], ["created_at", "2022-05-27 10:06:59.976638"], ["updated_at", "2022-05-27 10:06:59.976638"]]
+  TRANSACTION (6.1ms)  COMMIT                                          
+ =>                                           
+#<Person:0x00007fd2b477cb60 
+
+3.0.0 :003 > person = Person.create(name:'Rishabh', gender:'Male')
+  TRANSACTION (0.2ms)  BEGIN
+  Person Create (0.3ms)  INSERT INTO "people" ("name", "gender", "dob", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Rishabh"], ["gender", "Male"], ["dob", nil], ["created_at", "2022-05-27 10:07:39.948956"], ["updated_at", "2022-05-27 10:07:39.948956"]]
+  TRANSACTION (6.6ms)  COMMIT
+ => 
+#<Person:0x00007fd2b4a45b58
+... 
+
+class Person < ApplicationRecord
+    validates :name, presence: true
+end
+
+# valid? and invalid?:
+3.0.0 :006 > person.name = "Sam"
+ => "Sam" 
+3.0.0 :007 > person.valid?
+ => true 
+ 
+3.0.0 :010 > Person.all
+  Person Load (0.3ms)  SELECT "people".* FROM "people"
+ =>                                                                    
+[#<Person:0x0000555a10dfada8                                           
+  id: 1,                                                      
+  name: "Mahima",                                             
+  gender: "Female",                                           
+  dob: nil,                                                   
+  created_at: Fri, 27 May 2022 10:06:59.976638000 UTC +00:00, 
+  updated_at: Fri, 27 May 2022 10:06:59.976638000 UTC +00:00>,
+ #<Person:0x0000555a10dfac68                                  
+  id: 2,                                                      
+  name: "Rishabh",                                            
+  gender: "Male",                                             
+  dob: nil,                                                   
+  created_at: Fri, 27 May 2022 10:07:39.948956000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 10:07:39.948956000 UTC +00:00>,
+ #<Person:0x0000555a10dfaba0
+  id: 3,
+  name: "Ram",
+  gender: nil,
+  dob: nil,
+  created_at: Fri, 27 May 2022 10:19:36.452118000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 10:19:36.452118000 UTC +00:00>] 
+  
+3.0.0 :012 > person.save
+ => true 
+# Skipping Validations:
+decrement!
+decrement_counter
+increment!
+increment_counter
+toggle!
+touch
+update_all
+update_attribute
+
+--errors[]:
+To verify whether or not a particular attribute of an object is valid, you can use errors[:attribute]. 
+It returns an array of all the error messages for :attribute. If there are no errors on the specified attribute, an empty array is returned.
+This method is only useful after validations have been run, because it only inspects the errors collection and does not trigger validations itself
+3.0.0 :013 > Person.new.errors[:name].any?
+ => false 
+3.0.0 :014 > Person.create.errors[:name].any?
+ => true 
+
+ 
+

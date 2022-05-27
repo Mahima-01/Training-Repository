@@ -1,0 +1,53 @@
+# CRUD Operation:
+CRUD is an acronym for the four verbs we use to operate on data: Create, Read, Update and Delete. Active Record automatically creates methods to allow an application to read and manipulate data stored within its tables.
+
+
+3.0.0 :019 > book1 = Book.create(title: "English")
+  TRANSACTION (0.1ms)  BEGIN
+  Book Create (0.3ms)  INSERT INTO "books" ("title", "author", "created_at", "updated_at", "price", "lock_version") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "English"], ["author", nil], ["created_at", "2022-05-27 08:27:48.661360"], ["updated_at", "2022-05-27 08:27:48.661360"], ["price", nil], ["lock_version", 0]]
+  TRANSACTION (6.5ms)  COMMIT                   
+ =>                                             
+#<Book:0x00005609d7a4ff60  
+
+3.0.0 :023 > book1 = Book.find_by(title: "Maths")
+  Book Load (0.3ms)  SELECT "books".* FROM "books" WHERE "books"."title" = $1 LIMIT $2  [["title", "Maths"], ["LIMIT", 1]]
+ => nil  
+
+3.0.0 :020 > Book.all
+  Book Load (0.5ms)  SELECT "books".* FROM "books"
+ =>                                                
+[#<Book:0x00005609d818c008                         
+  id: 3,                                        
+  title: "English",                             
+  author: nil,                                  
+  created_at: Fri, 27 May 2022 08:27:48.661360000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 08:27:48.661360000 UTC +00:00,
+  price: nil,
+  lock_version: 0>] 
+   
+3.0.0 :021 > book = Book.update(title: 'Hindi')
+  Book Load (0.2ms)  SELECT "books".* FROM "books"
+  TRANSACTION (0.1ms)  BEGIN                       
+  Book Update (0.2ms)  UPDATE "books" SET "title" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "books"."id" = $4 AND "books"."lock_version" = $5  [["title", "Hindi"], ["updated_at", "2022-05-27 08:28:50.464697"], ["lock_version", 1], ["id", 3], ["lock_version", 0]]
+  TRANSACTION (6.5ms)  COMMIT                   
+ =>                                             
+[#<Book:0x00007f2ef8981830
+
+3.0.0 :022 > book1.destroy
+  TRANSACTION (0.4ms)  BEGIN
+  Book Destroy (0.6ms)  DELETE FROM "books" WHERE "books"."id" = $1 AND "books"."lock_version" = $2  [["id", 3], ["lock_version", 0]]
+  TRANSACTION (0.2ms)  ROLLBACK                    
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/locking/optimistic.rb:131:in `destroy_row': Attempted to destroy a stale object: Book. (ActiveRecord::StaleObjectError)            
+3.0.0 :015 > Book.destroy(1)
+  Book Load (0.3ms)  SELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+ id: 1,                                                     
+ title: "Science",                                          
+ author: nil,                                               
+3.0.0 :018 > book1.destroy
+ title: "Maths",                                                    
+ author: nil,                                                       
+ created_at: Fri, 27 May 2022 08:26:12.287755000 UTC +00:00,        
+ updated_at: Fri, 27 May 2022 08:26:12.287755000 UTC +00:00,        
+ price: nil,                                                        
+ lock_version: 0>                        
+ 

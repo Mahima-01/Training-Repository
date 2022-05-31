@@ -1,25 +1,21 @@
 class Person < ApplicationRecord
-  validates :name, :id, :gender, presence: true
+  validates :id, absence: true
 end
 
+
+
 =begin
-# presence:
-This helper validates that the specified attributes are not empty. 
-It uses the blank? method to check if the value is either nil or a blank string, that is, a string that is either empty or consists of whitespace.
-3.0.0 :007 > person.name = 'Manjeet'
- => "Manjeet" 
-3.0.0 :008 > person.valid?
+# absence:
+This helper validates that the specified attributes are absent. 
+It uses the present? method to check if the value is not either nil or a blank string, that is, a string that is either empty or consists of whitespace.
+3.0.0 :004 > person.id = 2
+ => 2 
+3.0.0 :005 > person.valid?
  => false 
- 3.0.0 :014 > person.name = 'Mahima'
- => "Mahima"
- 3.0.0 :015 > person.id = 1
- => 1 
- 3.0.0 :016 > person.gender = 'Female'
- => "Female" 
- 3.0.0 :017 > person.valid?
+3.0.0 :009 > person.id = nil
+ => nil 
+3.0.0 :010 > person.valid?
  => true 
- 3.0.0 :034 > person.id = 1
- => 1 
-3.0.0 :035 > person.id.blank?
- => false 
+3.0.0 :007 > person.errors[:id]
+ => ["must be blank"]
 =end

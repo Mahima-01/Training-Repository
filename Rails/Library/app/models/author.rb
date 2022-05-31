@@ -1,21 +1,19 @@
 class Author < ApplicationRecord
-  validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
+  validates :email, uniqueness: true, on: :create
+  validates :title, presence: true
 end
 
 
 =begin
-# format:
-This helper validates the attributes' values by testing whether they match a given regular expression, which is specified using the :with option.
-Alternatively, you can require that the specified attribute does not match the regular expression by using the :without option
-3.0.0 :005 > author.email = 'raj12@gmail.com'
- => "raj12@gmail.com" 
- 3.0.0 :006 > author.valid?
- => true 
- 3.0.0 :007 > author.email = 'raj12gmail.com'
- => "raj12gmail.com" 
-3.0.0 :008 > author.valid?
- => false 
+3.0.0 :005 > author.save
+  TRANSACTION (0.4ms)  BEGIN
+  Author Exists? (67.1ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."email" = $1 LIMIT $2  [["email", "raj12@1gmail.com"], ["LIMIT", 1]]
+  Author Create (7.5ms)  INSERT INTO "authors" ("title", "created_at", "updated_at", "lock_version", "email") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Mathematics"], ["created_at", "2022-05-31 14:02:16.558081"], ["updated_at", "2022-05-31 14:02:16.558081"], ["lock_version", 0], ["email", "raj12@1gmail.com"]]
+  TRANSACTION (1.0ms)  COMMIT                                 
+ => true   
  3.0.0 :009 > author.email = 'raj12@1gmail.com'
  => "raj12@1gmail.com" 
-3.0.0 :010 > author.valid?
- => true 
+ 3.0.0 :004 > author.errors.messages
+ => {:email=>["has already been taken"], :title=>["can't be blank"]} 
+ =end
+ 

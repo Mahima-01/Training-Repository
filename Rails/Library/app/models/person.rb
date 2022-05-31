@@ -1,21 +1,26 @@
 class Person < ApplicationRecord
-  validates :id, absence: true
+  validates :id, uniqueness: true
 end
 
 
-
 =begin
-# absence:
-This helper validates that the specified attributes are absent. 
-It uses the present? method to check if the value is not either nil or a blank string, that is, a string that is either empty or consists of whitespace.
-3.0.0 :004 > person.id = 2
- => 2 
-3.0.0 :005 > person.valid?
+# uniqueness:
+This helper validates that the attribute's value is unique right before the object gets saved. 
+It does not create a uniqueness constraint in the database, so it may happen that two different database connections create two records with the same value for a column that you intend to be unique. 
+To avoid that, you must create a unique index on that column in your database.
+3.0.0 :008 > person.id = 20
+ => 20 
+3.0.0 :009 > person.valid?
+  Person Exists? (0.8ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" = $1 LIMIT $2  [["id", 20], ["LIMIT", 1]]
+ => false  
+ 3.0.0 :002 > person.id = 30
+ => 30 
+ 3.0.0 :004 > person.valid?
+ Person Exists? (0.3ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" = $1 AND "people"."id" != $2 LIMIT $3  [["id", 30], ["id", 30], ["LIMIT", 1]]
+=> true 
+3.0.0 :002 > person.id = 21
+ => 21 
+3.0.0 :003 > person.valid?
+  Person Exists? (0.4ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" = $1 LIMIT $2  [["id", 21], ["LIMIT", 1]]
  => false 
-3.0.0 :009 > person.id = nil
- => nil 
-3.0.0 :010 > person.valid?
- => true 
-3.0.0 :007 > person.errors[:id]
- => ["must be blank"]
 =end

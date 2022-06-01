@@ -1,26 +1,19 @@
 class Person < ApplicationRecord
-  validates :id, uniqueness: true
+  validate do |person|
+    errors.add :base, :invalid, message: "This person is invalid because ..."
+  end
 end
 
-
 =begin
-# uniqueness:
-This helper validates that the attribute's value is unique right before the object gets saved. 
-It does not create a uniqueness constraint in the database, so it may happen that two different database connections create two records with the same value for a column that you intend to be unique. 
-To avoid that, you must create a unique index on that column in your database.
-3.0.0 :008 > person.id = 20
- => 20 
-3.0.0 :009 > person.valid?
-  Person Exists? (0.8ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" = $1 LIMIT $2  [["id", 20], ["LIMIT", 1]]
- => false  
- 3.0.0 :002 > person.id = 30
- => 30 
- 3.0.0 :004 > person.valid?
- Person Exists? (0.3ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" = $1 AND "people"."id" != $2 LIMIT $3  [["id", 30], ["id", 30], ["LIMIT", 1]]
-=> true 
-3.0.0 :002 > person.id = 21
- => 21 
-3.0.0 :003 > person.valid?
-  Person Exists? (0.4ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" = $1 LIMIT $2  [["id", 21], ["LIMIT", 1]]
+# errors[:base]:
+You can add errors that are related to the object's state as a whole, instead of being related to a specific attribute. 
+You can add errors to :base when you want to say that the object is invalid, no matter the values of its attributes.
+3.0.0 :001 > person = Person.new
+ => #<Person:0x00007fe7789d13d8 id: nil, name: nil, gender: nil, dob: nil, created_at: nil, updated_at: nil> 
+3.0.0 :002 > person.valid?
  => false 
+3.0.0 :003 > person.errors.messages
+ => {:base=>["This person is invalid because ..."]} 
+ 3.0.0 :005 > person.errors.where(:base).first.full_message
+ => "This person is invalid because ..." 
 =end

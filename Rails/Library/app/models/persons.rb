@@ -1,23 +1,18 @@
 class Persons < ApplicationRecord
-  validates :name, exclusion: { in: %w[Mahima Rishabh] }
+  validate do |person|
+    errors.add :name, :too_plain, message: "is not cool enough"
+  end
 end
 
-
 =begin
-# Exclusion:
-With exclusion you can validate the value for the attribute you're specifying doesn't take the value of any of those for the in option.
-
-3.0.0 :005 > person.errors[:name]
- => ["is reserved"] 
- 3.0.0 :006 > person.name = "Lalit"
- => "Lalit" 
-3.0.0 :007 > person.valid?
- => true 
-3.0.0 :008 > person.name = "Rishabh"
- => "Rishabh" 
-3.0.0 :009 > person.valid?
+# error.add:
+The add method creates the error object by taking the attribute, the error type and additional options hash. 
+This is useful for writing your own validator.
+3.0.0 :002 > person.valid?
+  Person Exists? (7.3ms)  SELECT 1 AS one FROM "people" WHERE "people"."id" IS NULL LIMIT $1  [["LIMIT", 1]]                                       
  => false 
- 3.0.0 :010 > person.errors[:name]
- => ["is reserved"] 
+ 3.0.0 :003 > person.errors.full_messages
+ => ["Name is invalid"]
+ 3.0.0 :005 > person.errors.where(:name).first.type
+ => :invalid 
 =end
-

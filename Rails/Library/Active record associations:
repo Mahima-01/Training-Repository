@@ -1,0 +1,43 @@
+# Active Record Associations:
+In Rails, an association is a connection between two Active Record models. 
+Association in Rails defines the relationship between models. 
+It is also the connection between two Active Record models.
+To figure out the relationship between models, we have to determine the types of relationship. 
+Whether it belongs_to, has_many, has_one, has_one:through, has_and_belongs_to_many.
+
+One to One
+This relationship has to do with one instance of another model. 
+One of the models in this relationship will have a has_one method invocation and another will have a belongs_to.
+
+One to Many
+This is one of the most common relationships in Rails. 
+One to many means zero or more instances of another model. 
+This relationship includes two models, has_many and belongs_to.
+
+Has_many: through Association
+Has_many: through association sets up a many-to-many association using another model. 
+It creates direct many-to-many connections with another model. 
+In this association, we need three models to make it work.
+
+has_many: through Association
+The has_many: through association is also useful for setting up “shortcuts” through nested has_many associations.
+This association indicates that each instance of the model has zero or more instances of another model.
+A has_many :through association 
+Is often used to set up a many-to-many connection with another model. 
+This association indicates that the declaring model can be matched with zero or more instances of another model by proceeding through a third model. 
+For example, consider a medical practice where patients make appointments to see physicians.
+
+The belongs_to Association:
+A belongs_to association sets up a connection with another model, such that each instance of the declaring model "belongs to" one instance of the other model. 
+For example, if your application includes authors and books, and each book can be assigned to exactly one author.
+belongs_to associations must use the singular term. 
+If you used the pluralized form in the above example for the author association in the Book model and tried to create the instance by Book.create(authors: @author), you would be told that there was an "uninitialized constant Book::Authors". This is because Rails automatically infers the class name from the association name. If the association name is wrongly pluralized, then the inferred class will be wrongly pluralized too.
+class Book < ApplicationRecord
+  belongs_to :author
+end
+
+The has_one Association:
+A has_one association indicates that one other model has a reference to this model. That model can be fetched through this association.
+A has_one :through association sets up a one-to-one connection with another model. 
+This association indicates that the declaring model can be matched with one instance of another model by proceeding through a third model.
+

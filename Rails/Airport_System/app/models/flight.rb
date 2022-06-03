@@ -1,7 +1,12 @@
 class Flight < ApplicationRecord
   has_one :aircraft
+  has_many :aircrafts
 end
 
-# A has_one association indicates that one other model has a reference to this model. That model can be fetched through this association.
-# A has_one :through association sets up a one-to-one connection with another model.
+=begin
+A has_many :through association 
+Is often used to set up a many-to-many connection with another model. 
+This association indicates that the declaring model can be matched with zero or more instances of another model by proceeding through a third model. 
+=end
+
 

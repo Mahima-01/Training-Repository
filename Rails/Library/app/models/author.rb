@@ -3,37 +3,57 @@ class Author < ApplicationRecord
 end
 
 =begin
-# collection_singular_ids=(ids)
-The collection_singular_ids method returns an array of the ids of the objects in the collection. 
-3.0.0 :109 > book = author.id
- => 1000049 
-3.0.0 :111 > author = book1.id
- => 18 
-3.0.0 :112 > author = book2.id
- => 17 
-s
-# collection.clear
-The collection.clear method removes all objects from the collection according to the strategy specified by the dependent option. 
-If no option is given, it follows the default strategy. 
-The default strategy for has_many :through associations is delete_all, and for has_many associations is to set the foreign keys to NULL.
-3.0.0 :108 > author.books.clear
-  Book Update All (0.7ms)  UPDATE "books" SET "author_id" = $1, "lock_version" = COALESCE("lock_version", 0) + $2 WHERE "books"."author_id" = $3  [["author_id", nil], ["lock_version", 1], ["author_id", 1000049]]                                                                      
- => []
+# collection.size
+The collection.size method returns the number of objects in the collection.
+3.0.0 :134 > author.books.size
+ => 3 
 
-# collection.empty?
-The collection.empty? method returns true if the collection does not contain any associated objects.
+#  collection.find(...)
+The collection.find method finds objects within the collection's table.
+3.0.0 :138 > author.books.find(19)
+  Book Load (0.6ms)  SELECT "books".* FROM "books" WHERE "books"."author_id" = $1 AND "books"."id" = $2 LIMIT $3  [["author_id", 1000046], ["id", 19], ["LIMIT", 1]]
+ =>                                                 
+#<Book:0x00007f05d8541ac0                           
+ id: 19,                                            
+ title: nil,                                        
+ author: nil,                                       
+ created_at: Wed, 08 Jun 2022 07:22:47.938790000 UTC +00:00,
+ updated_at: Wed, 08 Jun 2022 07:23:31.599295000 UTC +00:00,
+ price: nil,                                        
+ lock_version: 1,                                   
+ author_id: 1000046>  
 
-3.0.0 :124 > book.author
-  Author Load (0.2ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2  [["id", 1000045], ["LIMIT", 1]]
- => nil  
-3.0.0 :127 > author = book1.author
+# collection.where(...)
+The collection.where method finds objects within the collection based on the conditions supplied but the objects are loaded lazily 
+meaning that the database is queried only when the object(s) are accessed.
+3.0.0 :145 > author.books.first
  => 
-#<Author:0x0000559289c65b08 
-3.0.0 :129 > author.books.empty?
- => false
-3.0.0 :131 > author = book2.author
- => 
-#<Author:0x0000559289c65b08  
-3.0.0 :132 > author.books.empty?
- => false 
+#<Book:0x0000559289ebe698                                               
+ id: 19,                                                                
+ title: nil,                                                            
+ author: nil,                                                           
+ created_at: Wed, 08 Jun 2022 07:22:47.938790000 UTC +00:00,            
+ updated_at: Wed, 08 Jun 2022 07:23:31.599295000 UTC +00:00,            
+ price: nil,                                                            
+ lock_version: 1,                                                       
+ author_id: 1000046> 
+
+ 3.0.0 :150 > author.books.where(:title == 'Rails')
+  Book Load (0.2ms)  SELECT "books".* FROM "books" WHERE "books"."author_id" = $1  [["author_id", 1000046]]
+ =>                                                       
+[#<Book:0x0000559289fb4bd8                                
+  id: 19,                                                 
+  title: nil,                                             
+  author: nil,                                                                                               
+  created_at: Wed, 08 Jun 2022 07:22:47.938790000 UTC +00:00,                                                
+  updated_at: Wed, 08 Jun 2022 07:23:31.599295000 UTC +00:00,                                                
+  price: nil,                                                                                                
+  lock_version: 1,                                                                                           
+  author_id: 1000046>] 
+
+#  collection.exists?(...)
+The collection.exists? method checks whether an object meeting the supplied conditions exists in the collection's table.
+3.0.0 :152 > author.books.exists?
+  Book Exists? (0.7ms)  SELECT 1 AS one FROM "books" WHERE "books"."author_id" = $1 LIMIT $2  [["author_id", 1000046], ["LIMIT", 1]]
+ => true 
 =end

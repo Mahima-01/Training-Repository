@@ -5,72 +5,314 @@ class User < ApplicationRecord
 end
 
 =begin
-# Selecting Specific Fields
-By default, Model.find selects all the fields from the result set using select *.
-To select only a subset of fields from the result set, you can specify the subset via the select method.
-3.0.0 :003 > student =  User.select(:first_name, :teacher_id)
-  User Load (7.4ms)  SELECT "users"."first_name", "users"."teacher_id" FROM "users"
- =>                                                                                                                                       
-[#<User:0x00005653e9903fb0 id: nil, first_name: "Mary", teacher_id: nil>,                                                                 
-...  
-3.0.0 :04 >  User.select(:first_name).distinct
-  User Load (0.2ms)  SELECT DISTINCT "users"."first_name" FROM "users"
- =>                                     
-[#<User:0x00005653e93f2440 id: nil, first_name: "Raman">,
- #<User:0x00005653e93f2378 id: nil, first_name: "Mahima">,
- #<User:0x00005653e93f22b0 id: nil, first_name: "Mary">,
- #<User:0x00005653e93f21e8 id: nil, first_name: "Nina">,
- #<User:0x00005653e93f2120 id: nil, first_name: "Andy">,
- #<User:0x00005653e93f2030 id: nil, first_name: "Aryan">,
- #<User:0x00005653e93f1f40 id: nil, first_name: "Mridula">,
- #<User:0x00005653e93f1e50 id: nil, first_name: "Mridul">,
- #<User:0x00005653e93f1d88 id: nil, first_name: "Manu">] 
-3.0.0 :005 > student
- => 
-[#<User:0x00005653e9903fb0 id: nil, first_name: "Mary", teacher_id: nil>,                                              
- #<User:0x00005653e9903e20 id: nil, first_name: "Manu", teacher_id: nil>,                                              
- #<User:0x00005653e9903d30 id: nil, first_name: "Mridul", teacher_id: 1>,
- #<User:0x00005653e9903c40 id: nil, first_name: "Mahima", teacher_id: 7>,
- #<User:0x00005653e9903b50 id: nil, first_name: "Mridula", teacher_id: 4>,
- #<User:0x00005653e9903a60 id: nil, first_name: "Andy", teacher_id: nil>,
- #<User:0x00005653e9903970 id: nil, first_name: "Raman", teacher_id: nil>,
- #<User:0x00005653e9903880 id: nil, first_name: "Aryan", teacher_id: nil>,
- #<User:0x00005653e9903768 id: nil, first_name: "Nina", teacher_id: nil>] 
-3.0.0 :009 > student.select(:first_name).distinct
-  User Load (0.3ms)  SELECT DISTINCT "users"."first_name" FROM "users"
+# Ordering
+To retrieve records from the database in a specific order, you can use the order method.
+For example, if you're getting a set of records and want to order them in ascending order by the created_at field in your table:
+3.0.0 :017 > User.order(:created_at)
+  User Load (1.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."created_at" ASC
  =>                                                                               
-[#<User:0x00007f39f4425f60 id: nil, first_name: "Raman">,                         
- #<User:0x00007f39f4425d30 id: nil, first_name: "Mahima">,                        
- #<User:0x00007f39f4425ba0 id: nil, first_name: "Mary">,                          
- #<User:0x00007f39f4425a10 id: nil, first_name: "Nina">,                          
- #<User:0x00007f39f44258d0 id: nil, first_name: "Andy">,                          
- #<User:0x00007f39f4425650 id: nil, first_name: "Aryan">,                         
- #<User:0x00007f39f4425330 id: nil, first_name: "Mridula">,
- #<User:0x00007f39f4425010 id: nil, first_name: "Mridul">,
- #<User:0x00007f39f4424cf0 id: nil, first_name: "Manu">]                         
-...                                                      
-3.0.0 :012 >  User.select(:teacher_id).distinct
-  User Load (0.5ms)  SELECT DISTINCT "users"."teacher_id" FROM "users"
- =>                                                                                 
-[#<User:0x00007f39f48ff1a8 id: nil, teacher_id: nil>,                               
- #<User:0x00007f39f48ff090 id: nil, teacher_id: 4>,                                 
- #<User:0x00007f39f48fef78 id: nil, teacher_id: 7>,                                 
- #<User:0x00007f39f48fee38 id: nil, teacher_id: 1>]
-3.0.0 :015 > query =  User.select(:teacher_id).distinct
-  User Load (0.3ms)  SELECT DISTINCT "users"."teacher_id" FROM "users"
- =>                                                                                         
-[#<User:0x00007f39f44e79f8 id: nil, teacher_id: nil>,
-You can also remove the uniqueness constraint:
-3.0.0 :016 > query.distinct(false)
-  User Load (0.3ms)  SELECT "users"."teacher_id" FROM "users"
- =>                                                                                         
-[#<User:0x00005653e9317b60 id: nil, teacher_id: nil>,                                       
- #<User:0x00005653e9317a70 id: nil, teacher_id: nil>,                                       
- #<User:0x00005653e9317980 id: nil, teacher_id: 1>,                                         
- #<User:0x00005653e9317890 id: nil, teacher_id: 7>,                                         
- #<User:0x00005653e9317778 id: nil, teacher_id: 4>,                                         
- #<User:0x00005653e9317688 id: nil, teacher_id: nil>,                                       
- #<User:0x00005653e9317598 id: nil, teacher_id: nil>,
- #<User:0x00005653e93174a8 id: nil, teacher_id: nil>,
- #<User:0x00005653e9317390 id: nil, teacher_id: nil>] 
+[#<User:0x00005653e6f57180                                                        
+  id: 1,                                                                          
+  first_name: "Mary",                                                             
+  last_name: nil,                                                                 
+  created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,                     
+  updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,                     
+  type: nil,                                                                      
+  teacher_id: nil>,                                                               
+ #<Reader:0x00005653e7787a30                                                      
+  id: 2,                                                                          
+  first_name: "Mridul",                                                           
+  last_name: nil,                                                                 
+  created_at: Thu, 09 Jun 2022 13:37:34.137831000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:19:26.000191000 UTC +00:00,
+  type: "Reader",
+  teacher_id: 1>,
+ #<Admin:0x00005653e7d7ffa0
+  id: 3,
+  first_name: "Mridula",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:38:04.971554000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:32:46.658374000 UTC +00:00,
+  type: "Admin",
+  teacher_id: 4>,
+ #<Reader:0x00005653e7aa9948
+  id: 4,
+  first_name: "Manu",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  type: "Reader",
+  teacher_id: nil>,
+ #<User:0x00005653e7aa9290
+  id: 5,
+  first_name: "Mahima",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 14:20:22.722410000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:21:12.488182000 UTC +00:00,
+  type: nil,
+  teacher_id: 7>,
+ #<User:0x00005653e7aa8c00
+  id: 6,
+  first_name: "Andy",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e7aa8660
+  id: 7,
+  first_name: "Raman",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00007f39f409bf20
+  id: 8,
+  first_name: "Aryan",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00007f39f409bc50
+  id: 9,
+  first_name: "Nina",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>] 
+
+You could specify ASC or DESC as well:
+3.0.0 :019 > User.order(created_at: :asc)
+  User Load (0.5ms)  SELECT "users".* FROM "users" ORDER BY "users"."created_at" ASC
+ =>                                                                                           
+[#<User:0x00005653e98e7388                                                                    
+  id: 1,                                                                                      
+  first_name: "Mary",                                                                         
+  last_name: nil,                                                                             
+  created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,                                 
+  updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,                                 
+  type: nil,                                                                                  
+  teacher_id: nil>,
+ #<Reader:0x00005653e98e7270
+  id: 2,
+  first_name: "Mridul",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:37:34.137831000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:19:26.000191000 UTC +00:00,
+  type: "Reader",
+  teacher_id: 1>,
+ #<Admin:0x00005653e98e7158
+  id: 3,
+  first_name: "Mridula",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:38:04.971554000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:32:46.658374000 UTC +00:00,
+  type: "Admin",
+  teacher_id: 4>,
+ #<Reader:0x00005653e98e7040
+  id: 4,
+  first_name: "Manu",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  type: "Reader",
+  teacher_id: nil>,
+ #<User:0x00005653e98e6f78
+  id: 5,
+  first_name: "Mahima",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 14:20:22.722410000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:21:12.488182000 UTC +00:00,
+  type: nil,
+  teacher_id: 7>,
+ #<User:0x00005653e98e6eb0
+  id: 6,
+  first_name: "Andy",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e98e6de8
+  id: 7,
+  first_name: "Raman",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e98e6d20
+  id: 8,
+  first_name: "Aryan",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e98e6c58
+  id: 9,
+  first_name: "Nina",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>] 
+
+
+3.0.0 :021 > User.order(created_at: :desc)
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC
+ =>                                                                                           
+[#<User:0x00007f39f48fe640                                                                    
+  id: 9,                                                                                      
+  first_name: "Nina",                                                                         
+  last_name: nil,                                                                             
+  created_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,                                 
+  updated_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,                                 
+  type: nil,                                                                                  
+  teacher_id: nil>,                                                                           
+ #<User:0x00007f39f48fe528                                              
+  id: 8,                                                                
+  first_name: "Aryan",                                                  
+  last_name: nil,                                                       
+  created_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00007f39f48fe3e8
+  id: 7,
+  first_name: "Raman",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00007f39f48fe2a8
+  id: 6,
+  first_name: "Andy",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00007f39f48fe1b8
+  id: 5,
+  first_name: "Mahima",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 14:20:22.722410000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:21:12.488182000 UTC +00:00,
+  type: nil,
+  teacher_id: 7>,
+ #<Reader:0x00007f39f48fe000
+  id: 4,
+  first_name: "Manu",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  type: "Reader",
+  teacher_id: nil>,
+ #<Admin:0x00007f39f48fdda8
+  id: 3,
+  first_name: "Mridula",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:38:04.971554000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:32:46.658374000 UTC +00:00,
+  type: "Admin",
+  teacher_id: 4>,
+ #<Reader:0x00007f39f48fdb00
+  id: 2,
+  first_name: "Mridul",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:37:34.137831000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:19:26.000191000 UTC +00:00,
+  type: "Reader",
+  teacher_id: 1>,
+ #<User:0x00007f39f48fd948
+  id: 1,
+  first_name: "Mary",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>] 
+
+Or ordering by multiple fields:
+3.0.0 :022 > User.order(created_at: :desc,teacher_id: :asc)
+  User Load (0.3ms)  SELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC, "users"."teacher_id" ASC
+ =>                                                                                                             
+[#<User:0x00005653e93d1880                                                                                      
+  id: 9,                                                                                                        
+  first_name: "Nina",                                                                                           
+  last_name: nil,                                                                                               
+  created_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,                                                   
+  updated_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,                                                   
+  type: nil,                                                                                                    
+  teacher_id: nil>,                                                                                             
+ #<User:0x00005653e93d17b8                                                                                      
+  id: 8,                                                                                                        
+  first_name: "Aryan",                                                                                          
+  last_name: nil,                                                                                               
+  created_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:27:50.715381000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e93d16f0
+  id: 7,
+  first_name: "Raman",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e93d1628
+  id: 6,
+  first_name: "Andy",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:19:47.704230000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<User:0x00005653e93d1560
+  id: 5,
+  first_name: "Mahima",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 14:20:22.722410000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:21:12.488182000 UTC +00:00,
+  type: nil,
+  teacher_id: 7>,
+ #<Reader:0x00005653e93d1448
+  id: 4,
+  first_name: "Manu",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  type: "Reader",
+  teacher_id: nil>,
+ #<Admin:0x00005653e93d1330
+  id: 3,
+  first_name: "Mridula",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:38:04.971554000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:32:46.658374000 UTC +00:00,
+  type: "Admin",
+  teacher_id: 4>,
+ #<Reader:0x00005653e93d1218
+  id: 2,
+  first_name: "Mridul",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:37:34.137831000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:19:26.000191000 UTC +00:00,
+  type: "Reader",
+  teacher_id: 1>,
+ #<User:0x00005653e93d1150
+  id: 1,
+  first_name: "Mary",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>] 
+
 =end

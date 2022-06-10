@@ -5,48 +5,72 @@ class User < ApplicationRecord
 end
 
 =begin
-#  Existence of Objects:
-If you simply want to check for the existence of the object there's a method called exists?. 
-This method will query the database using the same query as find, but instead of returning an object or collection of objects 
-it will return either true or false.
-
-3.0.0 :029 > User.exists?(1)
-  User Exists? (0.3ms)  SELECT 1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
- => true 
-3.0.0 :030 > User.exists?(8)
-  User Exists? (0.8ms)  SELECT 1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 8], ["LIMIT", 1]]
- => true  
-
-# The exists? method also takes multiple values, but the catch is that it will return true if any one of those records exists.
-3.0.0 :032 > User.exists?(id: [2,4])
-  User Exists? (0.3ms)  SELECT 1 AS one FROM "users" WHERE "users"."id" IN ($1, $2) LIMIT $3  [["id", 2], ["id", 4], ["LIMIT", 1]]
- => true 
-3.0.0 :033 > User.exists?(id: [10,11])
-  User Exists? (0.3ms)  SELECT 1 AS one FROM "users" WHERE "users"."id" IN ($1, $2) LIMIT $3  [["id", 10], ["id", 11], ["LIMIT", 1]]
- => false 
-
-3.0.0 :034 > User.exists?(first_name: 'Mahima')
-  User Exists? (0.3ms)  SELECT 1 AS one FROM "users" WHERE "users"."first_name" = $1 LIMIT $2  [["first_name", "Mahima"], ["LIMIT", 1]]
- => true 
-3.0.0 :035 > User.where(first_name: 'Mridula').exists?
-  User Exists? (0.6ms)  SELECT 1 AS one FROM "users" WHERE "users"."first_name" = $1 LIMIT $2  [["first_name", "Mridula"], ["LIMIT", 1]]
- => true 
-3.0.0 :036 > User.where(first_name: 'Ryan').exists?
-  User Exists? (0.7ms)  SELECT 1 AS one FROM "users" WHERE "users"."first_name" = $1 LIMIT $2  [["first_name", "Ryan"], ["LIMIT", 1]]
- => false 
-3.0.0 :037 > User.exists?
-  User Exists? (0.5ms)  SELECT 1 AS one FROM "users" LIMIT $1  [["LIMIT", 1]]
- => true  
-
-
-# You can also use any? and many? 
-to check for existence on a model or relation. 
-many? will use SQL count to determine if the item exists.
-3.0.0 :038 > User.any?
-  User Exists? (0.3ms)  SELECT 1 AS one FROM "users" LIMIT $1  [["LIMIT", 1]]
- => true 
-3.0.0 :039 > User.many?
-  User Count (0.8ms)  SELECT COUNT(*) FROM (SELECT 1 AS one FROM "users" LIMIT $1) subquery_for_count  [["LIMIT", 2]]
- => true 
-
+# Selecting Specific Fields
+By default, Model.find selects all the fields from the result set using select *.
+To select only a subset of fields from the result set, you can specify the subset via the select method.
+3.0.0 :003 > student =  User.select(:first_name, :teacher_id)
+  User Load (7.4ms)  SELECT "users"."first_name", "users"."teacher_id" FROM "users"
+ =>                                                                                                                                       
+[#<User:0x00005653e9903fb0 id: nil, first_name: "Mary", teacher_id: nil>,                                                                 
+...  
+3.0.0 :04 >  User.select(:first_name).distinct
+  User Load (0.2ms)  SELECT DISTINCT "users"."first_name" FROM "users"
+ =>                                     
+[#<User:0x00005653e93f2440 id: nil, first_name: "Raman">,
+ #<User:0x00005653e93f2378 id: nil, first_name: "Mahima">,
+ #<User:0x00005653e93f22b0 id: nil, first_name: "Mary">,
+ #<User:0x00005653e93f21e8 id: nil, first_name: "Nina">,
+ #<User:0x00005653e93f2120 id: nil, first_name: "Andy">,
+ #<User:0x00005653e93f2030 id: nil, first_name: "Aryan">,
+ #<User:0x00005653e93f1f40 id: nil, first_name: "Mridula">,
+ #<User:0x00005653e93f1e50 id: nil, first_name: "Mridul">,
+ #<User:0x00005653e93f1d88 id: nil, first_name: "Manu">] 
+3.0.0 :005 > student
+ => 
+[#<User:0x00005653e9903fb0 id: nil, first_name: "Mary", teacher_id: nil>,                                              
+ #<User:0x00005653e9903e20 id: nil, first_name: "Manu", teacher_id: nil>,                                              
+ #<User:0x00005653e9903d30 id: nil, first_name: "Mridul", teacher_id: 1>,
+ #<User:0x00005653e9903c40 id: nil, first_name: "Mahima", teacher_id: 7>,
+ #<User:0x00005653e9903b50 id: nil, first_name: "Mridula", teacher_id: 4>,
+ #<User:0x00005653e9903a60 id: nil, first_name: "Andy", teacher_id: nil>,
+ #<User:0x00005653e9903970 id: nil, first_name: "Raman", teacher_id: nil>,
+ #<User:0x00005653e9903880 id: nil, first_name: "Aryan", teacher_id: nil>,
+ #<User:0x00005653e9903768 id: nil, first_name: "Nina", teacher_id: nil>] 
+3.0.0 :009 > student.select(:first_name).distinct
+  User Load (0.3ms)  SELECT DISTINCT "users"."first_name" FROM "users"
+ =>                                                                               
+[#<User:0x00007f39f4425f60 id: nil, first_name: "Raman">,                         
+ #<User:0x00007f39f4425d30 id: nil, first_name: "Mahima">,                        
+ #<User:0x00007f39f4425ba0 id: nil, first_name: "Mary">,                          
+ #<User:0x00007f39f4425a10 id: nil, first_name: "Nina">,                          
+ #<User:0x00007f39f44258d0 id: nil, first_name: "Andy">,                          
+ #<User:0x00007f39f4425650 id: nil, first_name: "Aryan">,                         
+ #<User:0x00007f39f4425330 id: nil, first_name: "Mridula">,
+ #<User:0x00007f39f4425010 id: nil, first_name: "Mridul">,
+ #<User:0x00007f39f4424cf0 id: nil, first_name: "Manu">]                         
+...                                                      
+3.0.0 :012 >  User.select(:teacher_id).distinct
+  User Load (0.5ms)  SELECT DISTINCT "users"."teacher_id" FROM "users"
+ =>                                                                                 
+[#<User:0x00007f39f48ff1a8 id: nil, teacher_id: nil>,                               
+ #<User:0x00007f39f48ff090 id: nil, teacher_id: 4>,                                 
+ #<User:0x00007f39f48fef78 id: nil, teacher_id: 7>,                                 
+ #<User:0x00007f39f48fee38 id: nil, teacher_id: 1>]
+3.0.0 :015 > query =  User.select(:teacher_id).distinct
+  User Load (0.3ms)  SELECT DISTINCT "users"."teacher_id" FROM "users"
+ =>                                                                                         
+[#<User:0x00007f39f44e79f8 id: nil, teacher_id: nil>,
+You can also remove the uniqueness constraint:
+3.0.0 :016 > query.distinct(false)
+  User Load (0.3ms)  SELECT "users"."teacher_id" FROM "users"
+ =>                                                                                         
+[#<User:0x00005653e9317b60 id: nil, teacher_id: nil>,                                       
+ #<User:0x00005653e9317a70 id: nil, teacher_id: nil>,                                       
+ #<User:0x00005653e9317980 id: nil, teacher_id: 1>,                                         
+ #<User:0x00005653e9317890 id: nil, teacher_id: 7>,                                         
+ #<User:0x00005653e9317778 id: nil, teacher_id: 4>,                                         
+ #<User:0x00005653e9317688 id: nil, teacher_id: nil>,                                       
+ #<User:0x00005653e9317598 id: nil, teacher_id: nil>,
+ #<User:0x00005653e93174a8 id: nil, teacher_id: nil>,
+ #<User:0x00005653e9317390 id: nil, teacher_id: nil>] 
 =end

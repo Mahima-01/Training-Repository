@@ -6,44 +6,52 @@ class User < ApplicationRecord
 end
 
 =begin
-# extract_associated(association):
-Extracts a named association from the relation. 
-The named association is first preloaded, then the individual association records are collected from the relation.
-3.0.0 :015 > User.extract_associated(:teacher)
-  User Load (0.6ms)  SELECT "users".* FROM "users"
-  User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)  [["id", 1], ["id", 7], ["id", 4]]
- =>                                                                                            
-[nil,                                                                                          
- nil,                                                                                          
- #<User:0x000055d3d39dfba0                                                                     
-  id: 1,                                                                                       
-  first_name: "Mary",                                                                          
-  last_name: nil,                                                                              
-  created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,        
-  updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,        
-  type: nil,                                                         
-  teacher_id: nil>,                                                  
- #<User:0x000055d3d39df7e0                                           
-  id: 7,
-  first_name: "Raman",
+# references(*table_names):
+Use to indicate that the given table_names are referenced by an SQL string, and should therefore be JOINed in any query rather than loaded separately. 
+This method only works in conjunction with includes.
+3.0.0 :017 > User.includes(:students).where("first_name = 'Mahima'").references(:users)
+  User Load (0.5ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Mahima')
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."teacher_id" = $1  [["teacher_id", 5]]                                   
+ =>                                                                                                                                       
+[#<User:0x000055d3d3896be0                                                                                                                
+  id: 5,                                                                                                                                  
+  first_name: "Mahima",                                                                                                                   
+  last_name: nil,                                                                                                                         
+  created_at: Thu, 09 Jun 2022 14:20:22.722410000 UTC +00:00,                                                                             
+  updated_at: Thu, 09 Jun 2022 14:21:12.488182000 UTC +00:00,                                                                             
+  type: nil,                                                                                                                              
+  teacher_id: 7>]
+
+3.0.0 :019 > User.includes(:students).where("first_name = 'Nina'").references(:users)
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Nina')
+  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE "users"."teacher_id" = $1  [["teacher_id", 9]]
+ => 
+[#<User:0x000055d3d28b1360
+  id: 9,
+  first_name: "Nina",
   last_name: nil,
-  created_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
-  updated_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  created_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
   type: nil,
-  teacher_id: nil>,
- #<Reader:0x000055d3d39df8d0
-  id: 4,
-  first_name: "Manu",
+  teacher_id: nil>] 
+
+3.0.0 :023 > User.includes(:students).where("first_name = 'Jane'").references(:users)
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Jane')
+ => [] 
+
+3.0.0 :025 > User.includes(:students).where("first_name = 'Mridula'").references(:users)
+  User Load (0.7ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Mridula')
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."teacher_id" = $1  [["teacher_id", 3]]
+ => 
+[#<Admin:0x00007fd8988005e8
+  id: 3,
+  first_name: "Mridula",
   last_name: nil,
-  created_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
-  updated_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
-  type: "Reader",
-  teacher_id: nil>,
- nil,
- nil,
- nil,
- nil,
- nil,
- nil] 
+  created_at: Thu, 09 Jun 2022 13:38:04.971554000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 14:32:46.658374000 UTC +00:00,
+  type: "Admin",
+  teacher_id: 4>] 
+
+
 
 =end

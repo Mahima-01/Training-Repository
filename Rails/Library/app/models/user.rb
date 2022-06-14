@@ -6,36 +6,44 @@ class User < ApplicationRecord
 end
 
 =begin
-# annotate:
-Adds an SQL comment to queries generated from this relation.
-3.0.0 :002 > User.annotate("selecting user names").select(:first_name)
-  User Load (7.0ms)  SELECT "users"."first_name" FROM "users" /* selecting user names */
- =>                                                                                                      
-[#<User:0x000055d3d3f5c920 id: nil, first_name: "Mary">,                                                 
- #<User:0x000055d3d3f5c790 id: nil, first_name: "Manu">,                                                 
- #<User:0x000055d3d3f5c6a0 id: nil, first_name: "Mridul">,                                               
- #<User:0x000055d3d3f5c5b0 id: nil, first_name: "Mahima">,                                               
- #<User:0x000055d3d3f5c4c0 id: nil, first_name: "Mridula">,                                              
- #<User:0x000055d3d3f5c3d0 id: nil, first_name: "Andy">,                                                 
- #<User:0x000055d3d3f5c2e0 id: nil, first_name: "Raman">,                                                
- #<User:0x000055d3d3f5c1c8 id: nil, first_name: "Aryan">,                                                
- #<User:0x000055d3d3f5c0d8 id: nil, first_name: "Nina">,                                                 
- #<User:0x000055d3d3f57fd8 id: nil, first_name: nil>,                                                    
- #<User:0x000055d3d3f57ee8 id: nil, first_name: "Larry">] 
-
-3.0.0 :003 > User.annotate("selecting", "user", "names").select(:first_name)
-  User Load (0.6ms)  SELECT "users"."first_name" FROM "users" /* selecting */ /* user */ /* names */
- =>                                                                                                            
-[#<User:0x00007fd8981f0068 id: nil, first_name: "Mary">,                                                       
- #<User:0x000055d3d299bd20 id: nil, first_name: "Manu">,                                                       
- #<User:0x000055d3d299bb40 id: nil, first_name: "Mridul">,                                                     
- #<User:0x000055d3d299b9b0 id: nil, first_name: "Mahima">,                                                     
- #<User:0x000055d3d299b500 id: nil, first_name: "Mridula">,                                                    
- #<User:0x000055d3d299ae48 id: nil, first_name: "Andy">,                                                       
- #<User:0x000055d3d299aa60 id: nil, first_name: "Raman">,                                                      
- #<User:0x000055d3d299a6f0 id: nil, first_name: "Aryan">,                                                      
- #<User:0x000055d3d299a4e8 id: nil, first_name: "Nina">,                                                       
- #<User:0x000055d3d299a178 id: nil, first_name: nil>,                                                          
- #<User:0x000055d3d2999d40 id: nil, first_name: "Larry">] 
+# extract_associated(association):
+Extracts a named association from the relation. 
+The named association is first preloaded, then the individual association records are collected from the relation.
+3.0.0 :015 > User.extract_associated(:teacher)
+  User Load (0.6ms)  SELECT "users".* FROM "users"
+  User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)  [["id", 1], ["id", 7], ["id", 4]]
+ =>                                                                                            
+[nil,                                                                                          
+ nil,                                                                                          
+ #<User:0x000055d3d39dfba0                                                                     
+  id: 1,                                                                                       
+  first_name: "Mary",                                                                          
+  last_name: nil,                                                                              
+  created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,        
+  updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,        
+  type: nil,                                                         
+  teacher_id: nil>,                                                  
+ #<User:0x000055d3d39df7e0                                           
+  id: 7,
+  first_name: "Raman",
+  last_name: nil,
+  created_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:20:16.397939000 UTC +00:00,
+  type: nil,
+  teacher_id: nil>,
+ #<Reader:0x000055d3d39df8d0
+  id: 4,
+  first_name: "Manu",
+  last_name: nil,
+  created_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  updated_at: Thu, 09 Jun 2022 13:41:24.118763000 UTC +00:00,
+  type: "Reader",
+  teacher_id: nil>,
+ nil,
+ nil,
+ nil,
+ nil,
+ nil,
+ nil] 
 
 =end

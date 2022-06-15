@@ -1,57 +1,50 @@
 class User < ApplicationRecord
-  has_many :students, class_name: "User", foreign_key: "teacher_id"
+  #has_many :students, class_name: "User", foreign_key: "teacher_id"
+  #belongs_to :teacher, class_name: "User", optional:true
+  validates :login, :email, presence: true
+  before_validation :ensure_login_has_a_value
 
-  belongs_to :teacher, class_name: "User", optional:true
-
+  def ensure_login_has_a_value
+    if login.nil?
+      self.login = email unless email.blank?
+    end
+  end
 end
 
+
 =begin
-# references(*table_names):
-Use to indicate that the given table_names are referenced by an SQL string, and should therefore be JOINed in any query rather than loaded separately. 
-This method only works in conjunction with includes.
-3.0.0 :017 > User.includes(:students).where("first_name = 'Mahima'").references(:users)
-  User Load (0.5ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Mahima')
-  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."teacher_id" = $1  [["teacher_id", 5]]                                   
- =>                                                                                                                                       
-[#<User:0x000055d3d3896be0                                                                                                                
-  id: 5,                                                                                                                                  
-  first_name: "Mahima",                                                                                                                   
-  last_name: nil,                                                                                                                         
-  created_at: Thu, 09 Jun 2022 14:20:22.722410000 UTC +00:00,                                                                             
-  updated_at: Thu, 09 Jun 2022 14:21:12.488182000 UTC +00:00,                                                                             
-  type: nil,                                                                                                                              
-  teacher_id: 7>]
+# Callback Registration:
+Callbacks are methods that get called at certain moments of an object's life cycle. With callbacks 
+it is possible to write code that will run whenever an Active Record object is created, saved, updated, deleted, validated, or loaded from the database.
 
-3.0.0 :019 > User.includes(:students).where("first_name = 'Nina'").references(:users)
-  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Nina')
-  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE "users"."teacher_id" = $1  [["teacher_id", 9]]
+3.0.0 :001 > user =  User.new
+ => #<User:0x000056256e684e28 id: nil, first_name: nil, last_name: nil, created_at: nil, updated_at: nil, type: nil, teacher_id: nil, login: nil, e... 
+3.0.0 :002 > user = User.find_by(email: 'larry@gmail.com')
+  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "larry@gmail.com"], ["LIMIT", 1]]
+ =>                                                             
+#<User:0x00007fa3609f8638  
+3.0.0 :003 > user.valid?
+ => true 
+
+3.0.0 :004 > user = User.new(email: '')
+ => #<User:0x000056256d274a00 id: nil, first_name: nil, last_name: nil, created_at: nil, updated_at: nil, type: nil, teacher_id: nil, login: nil, e... 
+3.0.0 :005 > user.valid?
+ => false 
+
+3.0.0 :008 > user = User.find_by(email: 'dev@gmail.com')
+  User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "dev@gmail.com"], ["LIMIT", 1]]
+ =>                                                             
+#<User:0x000056256e88a8f8                                       
+...                                                             
+3.0.0 :009 > user.valid?
+ => true 
+
+3.0.0 :010 > user = User.find_by(first_name: 'Nina')
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."first_name" = $1 LIMIT $2  [["first_name", "Nina"], ["LIMIT", 1]]
  => 
-[#<User:0x000055d3d28b1360
-  id: 9,
-  first_name: "Nina",
-  last_name: nil,
-  created_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
-  updated_at: Fri, 10 Jun 2022 12:31:35.940569000 UTC +00:00,
-  type: nil,
-  teacher_id: nil>] 
-
-3.0.0 :023 > User.includes(:students).where("first_name = 'Jane'").references(:users)
-  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Jane')
- => [] 
-
-3.0.0 :025 > User.includes(:students).where("first_name = 'Mridula'").references(:users)
-  User Load (0.7ms)  SELECT "users".* FROM "users" WHERE (first_name = 'Mridula')
-  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."teacher_id" = $1  [["teacher_id", 3]]
- => 
-[#<Admin:0x00007fd8988005e8
-  id: 3,
-  first_name: "Mridula",
-  last_name: nil,
-  created_at: Thu, 09 Jun 2022 13:38:04.971554000 UTC +00:00,
-  updated_at: Thu, 09 Jun 2022 14:32:46.658374000 UTC +00:00,
-  type: "Admin",
-  teacher_id: 4>] 
-
-
-
+#<User:0x000056256e992ca0
+... 
+3.0.0 :011 > user.valid?
+ => false 
+ 
 =end

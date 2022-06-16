@@ -316,6 +316,81 @@ There are two display values: block and inline
 A block-level element always starts on a new line and takes up the full width available
 An inline element does not start on a new line and it only takes up as much width as necessary
 The <div> element is a block-level and is often used as a container for other HTML elements
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# HTML class Attribute:
+The HTML class attribute is used to specify a class for an HTML element.
+Multiple HTML elements can share the same class.
 The <span> element is an inline container used to mark up a part of a text, or a part of a document
+
+# Using The class Attribute:
+The class attribute is often used to point to a class name in a style sheet. It can also be used by a JavaScript to access and manipulate elements with the specific class name.
+In the following example we have three <div> elements with a class attribute with the value of "city". All of the three <div> elements will be styled equally according to the .city style definition in the head section:
+The class attribute can be used on any HTML element.
+Note: The class name is case sensitive!
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# HTML Styles - CSS:
+CSS stands for Cascading Style Sheets.
+CSS saves a lot of work. It can control the layout of multiple web pages all at once.
+
+What is CSS?
+Cascading Style Sheets (CSS) is used to format the layout of a webpage.
+With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
+
+Tip: The word cascading means that a style applied to a parent element will also apply to all children elements within the parent. So, if you set the color of the body text to "blue", all headings, paragraphs, and other text elements within the body will also get the same color (unless you specify something else)!
+
+Using CSS
+CSS can be added to HTML documents in 3 ways:
+Inline - by using the style attribute inside HTML elements
+Internal - by using a <style> element in the <head> section
+External - by using a <link> element to link to an external CSS file
+The most common way to add CSS, is to keep the styles in external CSS files.
+
+# Inline CSS
+An inline CSS is used to apply a unique style to a single HTML element.
+An inline CSS uses the style attribute of an HTML element.
+
+# Internal CSS
+An internal CSS is used to define a style for a single HTML page.
+An internal CSS is defined in the <head> section of an HTML page, within a <style> element.
+
+# External CSS
+An external style sheet is used to define the style for many HTML pages.
+To use an external style sheet, add a link to it in the <head> section of each HTML page:
+The external style sheet can be written in any text editor. The file must not contain any HTML code, and must be saved with a .css extension.
+Tip: With an external style sheet, you can change the look of an entire web site, by changing one file!
+
+# CSS Colors, Fonts and Sizes:
+The CSS color property defines the text color to be used.
+The CSS font-family property defines the font to be used.
+The CSS font-size property defines the text size to be used.
+
+# CSS Border:
+The CSS border property defines a border around an HTML element.
+Tip: You can define a border for nearly all HTML elements.
+
+# CSS Padding:
+The CSS padding property defines a padding (space) between the text and the border.
+
+# CSS Margin:
+The CSS margin property defines a margin (space) outside the border.
+
+# Link to External CSS
+External style sheets can be referenced with a full URL or with a path relative to the current web page.
+
+Use the HTML style attribute for inline styling
+Use the HTML <style> element to define internal CSS
+Use the HTML <link> element to refer to an external CSS file
+Use the HTML <head> element to store <style> and <link> elements
+Use the CSS color property for text colors
+Use the CSS font-family property for text fonts
+Use the CSS font-size property for text sizes
+Use the CSS border property for borders
+Use the CSS padding property for space inside the border
+Use the CSS margin property for space outside the border
+
+
+
 
 

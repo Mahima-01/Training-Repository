@@ -145,6 +145,131 @@ Tag	                Description
 <address>	          Defines contact information for the author/owner of a document
 <bdo>	              Defines the text direction
 <blockquote>	      Defines a section that is quoted from another source
-<cite>	            Defines the title of a work
-<q>	                Defines a short inline quotation
+<cite>	              Defines the title of a work
+<q>	              Defines a short inline quotation
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# HTML Comments:
+HTML comments are not displayed in the browser, but they can help document your HTML source code.
+
+HTML Comment Tag
+You can add comments to your HTML source by using the following syntax:
+<!-- Write your comments here -->
+Notice that there is an exclamation point (!) in the start tag, but not in the end tag.
+
+Note: Comments are not displayed by the browser, but they can help document your HTML source code.
+
+
+# Hide Content
+Comments can be used to hide content.
+Which can be helpful if you hide content temporarily:
+
+Note: You can also hide more than one line, everything between the <!-- and the --> will be hidden from the display.
+
+# Hide Inline Content
+Comments can be used to hide parts in the middle of the HTML code.
+
+
+# HTML Colors:
+HTML colors are specified with predefined color names, or with RGB, HEX, HSL, RGBA, or HSLA values.
+In HTML, a color can be specified by using a color name:
+
+#Text Color:
+You can set the color of text:
+
+# Border Color:
+You can set the color of borders:
+
+# Color Values
+In HTML, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values.
+
+The following three <div> elements have their background color set with RGB, HEX, and HSL values:
+rgb(255, 99, 71)
+#ff6347
+hsl(9, 100%, 64%)
+
+# HTML Lists
+HTML lists allow web developers to group a set of related items in lists.
+Unordered HTML List
+An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.
+The list items will be marked with bullets (small black circles) by default:
+An unordered HTML list:
+.Item
+.Item
+.Item
+.Item
+
+Ordered HTML List
+An ordered list starts with the <ol> tag. Each list item starts with the <li> tag.
+The list items will be marked with numbers by default:
+An ordered HTML list:
+1.First item
+2.Second item
+3.Third item
+4.Fourth item
+
+# HTML Description Lists:
+HTML also supports description lists.
+A description list is a list of terms, with a description of each term.
+The <dl> tag defines the description list, the <dt> tag defines the term (name), and the <dd> tag describes each term:
+
+HTML List Tags:
+Tag	Description
+<ul>	Defines an unordered list
+<ol>	Defines an ordered list
+<li>	Defines a list item
+<dl>	Defines a description list
+<dt>	Defines a term in a description list
+<dd>	Describes the term in a description list
+
+# Nested HTML Lists-
+Lists can be nested (list inside list):
+
+# Unordered HTML List - Choose List Item Marker
+The CSS list-style-type property is used to define the style of the list item marker. It can have one of the following values:
+Value	Description
+disc	Sets the list item marker to a bullet (default)
+circle	Sets the list item marker to a circle
+square	Sets the list item marker to a square
+none	The list items will not be marked
+
+# Use the HTML <ul> element to define an unordered list
+Use the CSS list-style-type property to define the list item marker
+Use the HTML <li> element to define a list item
+Lists can be nested
+List items can contain other HTML elements
+Use the CSS property float:left to display a list horizontally.
+
+# Ordered HTML List - The Type Attribute
+The type attribute of the <ol> tag, defines the type of the list item marker:
+Type	        Description
+type="1"	The list items will be numbered with numbers (default)
+type="A"	The list items will be numbered with uppercase letters
+type="a"	The list items will be numbered with lowercase letters
+type="I"	The list items will be numbered with uppercase roman numbers
+type="i"	The list items will be numbered with lowercase roman numbers
+
+
+# Control List Counting:
+By default, an ordered list will start counting from 1. If you want to start counting from a specified number, you can use the start attribute:
+# Nested HTML Lists
+Lists can be nested (list inside list):
+Note: A list item (<li>) can contain a new list, and other HTML elements, like images and links, etc.
+
+Use the HTML <ol> element to define an ordered list
+Use the HTML type attribute to define the numbering type
+Use the HTML <li> element to define a list item
+Lists can be nested
+List items can contain other HTML elements
+
+# HTML Other Lists
+HTML also supports description lists.
+HTML Description Lists
+A description list is a list of terms, with a description of each term.
+The <dl> tag defines the description list, the <dt> tag defines the term (name), and the <dd> tag describes each term:
+
+Use the HTML <dl> element to define a description list
+Use the HTML <dt> element to define the description term
+Use the HTML <dd> element to describe the term in a description list
 

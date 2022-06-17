@@ -390,7 +390,84 @@ Use the CSS border property for borders
 Use the CSS padding property for space inside the border
 Use the CSS margin property for space outside the border
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# HTML Tables
+HTML tables allow web developers to arrange data into rows and columns.
 
+# Table Cells
+Each table cell is defined by a <td> and a </td> tag.
+td stands for table data.
+Everything between <td> and </td> are the content of the table cell.
+Note: table data elements are the data containers of the table.
+They can contain all sorts of HTML elements; text, images, lists, other tables, etc.
 
+# Table Rows
+Each table row starts with a <tr> and end with a </tr> tag.
+tr stands for table row.
 
+# Table Headers
+Sometimes you want your cells to be headers, in those cases use the <th> tag instead of the <td> tag:
+By default, the text in <th> elements are bold and centered, but you can change that with CSS.
+
+# HTML Table Tags
+Tag	Description
+<table>	Defines a table
+<th>	Defines a header cell in a table
+<tr>	Defines a row in a table
+<td>	Defines a cell in a table
+<caption>	Defines a table caption
+<colgroup>	Specifies a group of one or more columns in a table for formatting
+<col>	Specifies column properties for each column within a <colgroup> element
+<thead>	Groups the header content in a table
+<tbody>	Groups the body content in a table
+<tfoot>	Groups the footer content in a table
+
+# HTML Table Borders
+HTML tables can have borders of different styles and shapes.
+
+# How To Add a Border
+When you add a border to a table, you also add borders around each table cell:	 	 
+To add a border, use the CSS border property on table, th, and td elements:
+
+# Collapsed Table Borders
+To avoid having double borders like in the example above, set the CSS border-collapse property to collapse.
+This will make the borders collapse into a single border:
+
+# Style Table Borders
+If you set a background color of each cell, and give the border a white color (the same as the document background), you get the impression of an invisible border:
+
+# Round Table Borders
+With the border-radius property, the borders get rounded corners:
+Skip the border around the table by leaving out table from the css selector:
+
+# Dotted Table Borders
+With the border-style property, you can set the appereance of the border.
+The following values are allowed:
+dotted     
+dashed     
+solid     
+double     
+groove     
+ridge     
+inset     
+outset     
+none     
+hidden  
+
+# Border Color
+With the border-color property, you can set the color of the border.
+
+# HTML Table Sizes
+HTML tables can have different sizes for each column, row or the entire table.
+Use the style attribute with the width or height properties to specify the size of a table, row or column.
+
+# HTML Table Width
+To set the width of a table, add the style attribute to the <table> element:
+Note: Using a percentage as the size unit for a width means how wide will this element be compared to its parent element, which in this case is the <body> element.
+
+# HTML Table Column Width	 	 
+To set the size of a specific column, add the style attribute on a <th> or <td> element:
+
+# HTML Table Row Height	 	 
+To set the height of a specific row, add the style attribute on a table row element:
 

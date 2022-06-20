@@ -969,4 +969,167 @@ Both will be treated as HTML by any web browser and web server.
 When a URL does not specify a filename at the end (like "https://www.w3schools.com/"), the server just adds a default filename, such as "index.html", "index.htm", "default.html", or "default.htm".
 If your server is configured only with "index.html" as the default filename, your file must be named "index.html", and not "default.html".
 However, servers can be configured with more than one default filename; usually you can set up as many default filenames as you want.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Html Forms:
+An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+
+# The <form> Element
+The HTML <form> element is used to create an HTML form for user input:
+The <form> element is a container for different types of input elements, such as: text fields, checkboxes, radio buttons, submit buttons, etc.
+
+# The <input> Element
+The HTML <input> element is the most used form element.
+An <input> element can be displayed in many ways, depending on the type attribute.
+
+Here are some examples:
+Type	                          Description
+<input type="text">	 Displays a single-line text input field
+<input type="radio">	 Displays a radio button (for selecting one of many choices)
+<input type="checkbox"> Displays a checkbox (for selecting zero or more of many choices)
+<input type="submit">	 Displays a submit button (for submitting the form)
+<input type="button">	 Displays a clickable button
+
+# Text Fields
+The <input type="text"> defines a single-line input field for text input.
+
+# The <label> Element
+The <label> tag defines a label for many form elements.
+The <label> element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focus on the input element.
+The <label> element also help users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the <label> element, it toggles the radio button/checkbox.
+The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together.
+
+# Radio Buttons
+The <input type="radio"> defines a radio button.
+Radio buttons let a user select ONE of a limited number of choices.
+
+# Checkboxes
+The <input type="checkbox"> defines a checkbox.
+Checkboxes let a user select ZERO or MORE options of a limited number of choices.
+
+# The Submit Button
+The <input type="submit"> defines a button for submitting the form data to a form-handler.
+The form-handler is typically a file on the server with a script for processing input data.
+The form-handler is specified in the form's action attribute.
+
+# The Name Attribute for <input>
+Notice that each input field must have a name attribute to be submitted.
+If the name attribute is omitted, the value of the input field will not be sent at all.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Html Form Attributes:
+This chapter describes the different attributes for the HTML <form> element.
+
+# The Action Attribute
+The action attribute defines the action to be performed when the form is submitted.
+Usually, the form data is sent to a file on the server when the user clicks on the submit button.
+This file contains a server-side script that handles the form data:
+Tip: If the action attribute is omitted, the action is set to the current page.
+
+# The Target Attribute
+The target attribute specifies where to display the response that is received after submitting the form.
+The target attribute can have one of the following values:
+
+Value	           Description
+_blank	       The response is displayed in a new window or tab
+_self	       The response is displayed in the current window
+_parent        The response is displayed in the parent frame
+_top	       The response is displayed in the full body of the window
+framename      The response is displayed in a named iframe
+
+The default value is _self which means that the response will open in the current window.
+
+Here, the submitted result will open in a new browser tab:
+<form action="/action_page.php" target="_blank">
+
+# The Method Attribute
+The method attribute specifies the HTTP method to be used when submitting the form data.
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+The default HTTP method when submitting form data is GET. 
+
+Notes on GET:
+Appends the form data to the URL, in name/value pairs
+NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+The length of a URL is limited (2048 characters)
+Useful for form submissions where a user wants to bookmark the result
+GET is good for non-secure data, like query strings in Google
+
+Notes on POST:
+Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+
+Tip: Always use POST if the form data contains sensitive or personal information!
+
+# The Autocomplete Attribute
+The autocomplete attribute specifies whether a form should have autocomplete on or off.
+When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+
+# The Novalidate Attribute
+The novalidate attribute is a boolean attribute.
+When present, it specifies that the form-data (input) should not be validated when submitted.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# HTML Form Elements
+This chapter describes all the different HTML form elements.
+
+The HTML <form> Elements:
+The HTML <form> element can contain one or more of the following form elements:
+
+HTML Form Elements:
+Tag	          Description
+<form>	        Defines an HTML form for user input
+<input>	Defines an input control
+<textarea>	Defines a multiline input control (text area)
+<label>	Defines a label for an <input> element
+<fieldset>	Groups related elements in a form
+<legend>	Defines a caption for a <fieldset> element
+<select>	Defines a drop-down list
+<optgroup>	Defines a group of related options in a drop-down list
+<option>	Defines an option in a drop-down list
+<button>	Defines a clickable button
+<datalist>	Specifies a list of pre-defined options for input controls
+<output>	Defines the result of a calculation
+
+
+# The <input> Element
+One of the most used form element is the <input> element.
+The <input> element can be displayed in several ways, depending on the type attribute.
+
+# The <select> Element
+The <select> element defines a drop-down list.
+
+The <option> elements defines an option that can be selected.
+By default, the first item in the drop-down list is selected.
+To define a pre-selected option, add the selected attribute to the option:
+
+# Visible Values:
+Use the size attribute to specify the number of visible values.
+
+# Allow Multiple Selections:
+Use the multiple attribute to allow the user to select more than one value.
+
+# The <textarea> Element
+The <textarea> element defines a multi-line input field (a text area).
+The rows attribute specifies the visible number of lines in a text area.
+The cols attribute specifies the visible width of a text area.
+
+You can also define the size of the text area by using CSS.
+
+# The <button> Element
+The <button> element defines a clickable button.
+Note: Always specify the type attribute for the button element. Different browsers may use different default types for the button element.
+
+# The <fieldset> and <legend> Elements
+The <fieldset> element is used to group related data in a form.
+The <legend> element defines a caption for the <fieldset> element.
+
+# The <datalist> Element
+The <datalist> element specifies a list of pre-defined options for an <input> element.
+Users will see a drop-down list of the pre-defined options as they input data.
+The list attribute of the <input> element, must refer to the id attribute of the <datalist> element.
+
+# The <output> Element
+The <output> element represents the result of a calculation.
+
+ 
 

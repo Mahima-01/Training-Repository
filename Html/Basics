@@ -1321,5 +1321,74 @@ The src attribute defines the URL of the page to embed
 Always include a title attribute (for screen readers)
 The height and width attributes specifies the size of the iframe
 Use border:none; to remove the border around the iframe
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# HTML Layout Elements and Techniques
+HTML layouts provide a way to arrange web pages in well-mannered, well-structured, and in responsive form or we can say that HTML layout specifies a way in which the web pages can be arranged.
+Websites often display content in multiple columns (like a magazine or a newspaper).
 
+HTML Layout Elements
+HTML has several semantic elements that define the different parts of a web page:
+
+HTML5 Semantic Elements	
+<header> -  Defines a header for a document or a section
+<nav> -     Defines a set of navigation links
+<section> - Defines a section in a document
+<article> - Defines an independent, self-contained content
+<aside> -   Defines content aside from the content (like a sidebar)
+<footer> -  Defines a footer for a document or a section
+<details> - Defines additional details that the user can open and close on demand
+<summary> - Defines a heading for the <details> element
+
+# Description of various Layout elements
+1. HTML <header>
+The <header> element is used to create header section of web pages. The header contains the introductory content, heading element, logo or icon for the webpage, and authorship information.
+
+2. HTML <nav>
+The <nav> elements is a container for the main block of navigation links. It can contain links for the same page or for other pages.
+
+3. HTML <section>
+HTML <section> elements represent a separate section of a web page which contains related element grouped together. It can contain: text, images, tables, videos, etc.
+
+4. HTML <article>
+The HTML tag is used to contain a self-contained article such as big story, huge article, etc.
+
+5. HTML <aside>
+HTML <aside> define aside content related to primary content. The <aside> content must be related to the primary content. It can function as side bar for the main content of web page.
+
+6. HTML <footer>
+HTML <footer> element defines the footer for that document or web page. It mostly contains information about author, copyright, other links, etc
+
+7. HTML <details>
+HTML <details> element is used to add extra details about the web page and use can hide or show the details as per requirement.
+
+8. HTML <summary>
+HTML <summary> element is used with the <details> element in a web page. It is used as summary, captions about the content of <details> element.
+
+
+
+
+
+
+
+
+
+
+
+# HTML Layout Techniques
+NOTE: HTML layouts create an individual space for every part of the web page. So that every element can arrange in a significant order.
+
+There are four different techniques to create multicolumn layouts. Each technique has its pros and cons:
+CSS framework
+CSS float property
+CSS flexbox
+CSS grid
+
+CSS Frameworks
+If you want to create your layout fast, you can use a CSS framework, like W3.CSS or Bootstrap.
+
+CSS Flexbox Layout
+Use of flexbox ensures that elements behave predictably when the page layout must accommodate different screen sizes and different display devices.
+
+CSS Grid Layout
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
 

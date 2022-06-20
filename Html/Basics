@@ -1130,6 +1130,138 @@ The list attribute of the <input> element, must refer to the id attribute of the
 
 # The <output> Element
 The <output> element represents the result of a calculation.
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
+# HTML Input Attributes:
+Describes the different attributes for the HTML <input> element.
+
+1. The value Attribute
+The input value attribute specifies an initial value for an input field.
+
+2. The readonly Attribute
+The input readonly attribute specifies that an input field is read-only.
+A read-only input field cannot be modified (however, a user can tab to it, highlight it, and copy the text from it).
+The value of a read-only input field will be sent when submitting the form.
+
+3. The disabled Attribute
+The input disabled attribute specifies that an input field should be disabled.
+A disabled input field is unusable and un-clickable.
+The value of a disabled input field will not be sent when submitting the form.
+
+4. The size Attribute
+The input size attribute specifies the visible width, in characters, of an input field.
+The default value for size is 20.
+Note: The size attribute works with the following input types: text, search, tel, url, email, and password.
+
+5. The maxlength Attribute
+The input maxlength attribute specifies the maximum number of characters allowed in an input field.
+Note: When a maxlength is set, the input field will not accept more than the specified number of characters. However, this attribute does not provide any feedback. So, if you want to alert the user, you must write JavaScript code.
+
+6. The min and max Attributes
+The input min and max attributes specify the minimum and maximum values for an input field.
+The min and max attributes work with the following input types: number, range, date, datetime-local, month, time and week.
+Tip: Use the max and min attributes together to create a range of legal values.The min and max Attributes
+The input min and max attributes specify the minimum and maximum values for an input field.
+The min and max attributes work with the following input types: number, range, date, datetime-local, month, time and week.
+Tip: Use the max and min attributes together to create a range of legal values.
+
+7. The multiple Attribute
+The input multiple attribute specifies that the user is allowed to enter more than one value in an input field.
+The multiple attribute works with the following input types: email, and file.
+
+8. The pattern Attribute
+The input pattern attribute specifies a regular expression that the input field's value is checked against, when the form is submitted.
+The pattern attribute works with the following input types: text, date, search, url, tel, email, and password.
+Tip: Use the global title attribute to describe the pattern to help the user.
+
+9. The placeholder Attribute
+The input placeholder attribute specifies a short hint that describes the expected value of an input field (a sample value or a short description of the expected format).
+The short hint is displayed in the input field before the user enters a value.
+The placeholder attribute works with the following input types: text, search, url, tel, email, and password.
+
+10. The required Attribute
+The input required attribute specifies that an input field must be filled out before submitting the form.
+The required attribute works with the following input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.
+
+11. The step Attribute
+The input step attribute specifies the legal number intervals for an input field.
+Example: if step="3", legal numbers could be -3, 0, 3, 6, etc.
+Tip: This attribute can be used together with the max and min attributes to create a range of legal values.
+The step attribute works with the following input types: number, range, date, datetime-local, month, time and week.
+
+12. The autofocus Attribute
+The input autofocus attribute specifies that an input field should automatically get focus when the page loads.
+
+13. The height and width Attributes
+The input height and width attributes specify the height and width of an <input type="image"> element.
+ Always specify both the height and width attributes for images. If height and width are set, the space required for the image is reserved when the page is loaded. Without these attributes, the browser does not know the size of the image, and cannot reserve the appropriate space to it. The effect will be that the page layout will change during loading (while the images load).
+ 
+14. The list Attribute
+The input list attribute refers to a <datalist> element that contains pre-defined options for an <input> element.
+
+15. The autocomplete Attribute
+The input autocomplete attribute specifies whether a form or an input field should have autocomplete on or off.
+Autocomplete allows the browser to predict the value. When a user starts to type in a field, the browser should display options to fill in the field, based on earlier typed values.
+The autocomplete attribute works with <form> and the following <input> types: text, search, url, tel, email, password, datepickers, range, and color.
+
+HTML Form and Input Elements
+Tag	      Description
+<form>	      Defines an HTML form for user input
+<input>       Defines an input control
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# HTML Input form* Attributes
+This chapter describes the different form* attributes for the HTML <input> element.
+
+1. The form Attribute
+The input form attribute specifies the form the <input> element belongs to.
+The value of this attribute must be equal to the id attribute of the <form> element it belongs to.
+
+2. The formaction Attribute
+The input formaction attribute specifies the URL of the file that will process the input when the form is submitted.\
+Note: This attribute overrides the action attribute of the <form> element.
+The formaction attribute works with the following input types: submit and image.
+
+3. The formenctype Attribute
+The input formenctype attribute specifies how the form-data should be encoded when submitted (only for forms with method="post").
+Note: This attribute overrides the enctype attribute of the <form> element.
+The formenctype attribute works with the following input types: submit and image.
+
+4. The formmethod Attribute
+The input formmethod attribute defines the HTTP method for sending form-data to the action URL.
+Note: This attribute overrides the method attribute of the <form> element.
+The formmethod attribute works with the following input types: submit and image.
+The form-data can be sent as URL variables (method="get") or as an HTTP post transaction (method="post").
+
+"get" method:
+This method appends the form-data to the URL in name/value pairs
+This method is useful for form submissions where a user want to bookmark the result
+There is a limit to how much data you can place in a URL (varies between browsers), therefore, you cannot be sure that all of the form-data will be correctly transferred
+Never use the "get" method to pass sensitive information! (password or other sensitive information will be visible in the browser's address bar)
+"post" method:
+This method sends the form-data as an HTTP post transaction
+Form submissions with the "post" method cannot be bookmarked
+The "post" method is more robust and secure than "get", and "post" does not have size limitations
+
+5. The formtarget Attribute
+The input formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
+Note: This attribute overrides the target attribute of the <form> element.
+The formtarget attribute works with the following input types: submit and image.
+
+6. The formnovalidate Attribute
+The input formnovalidate attribute specifies that an <input> element should not be validated when submitted.
+Note: This attribute overrides the novalidate attribute of the <form> element.
+The formnovalidate attribute works with the following input types: submit.
+
+7. The novalidate Attribute
+The novalidate attribute is a <form> attribute.
+When present, novalidate specifies that all of the form-data should not be validated when submitted.
+
+# HTML Form and Input Elements
+Tag	        Description
+<form>	        Defines an HTML form for user input
+<input>	Defines an input control
+
+
+
+
 

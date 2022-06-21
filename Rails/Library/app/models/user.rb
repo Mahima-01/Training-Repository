@@ -1,42 +1,27 @@
 class User < ApplicationRecord
-  after_initialize do |user|
-    puts "You have initialized an object!"
-  end
-
-  after_find do |user|
-    puts "You have found an object!"
+  after_touch do |user|
+    puts "You have touched an object"
   end
 end
 
 
 
 =begin
-# after_initialize and after_find:
-The after_initialize callback will be called whenever an Active Record object is instantiated, 
-either by directly using new or when a record is loaded from the database. It can be useful to avoid the need to directly override your Active Record initialize method.
+# after_touch
+The after_touch callback will be called whenever an Active Record object is touched.
 
-The after_find callback will be called whenever Active Record loads a record from the database. 
-after_find is called before after_initialize if both are defined.
-The after_initialize and after_find callbacks have no before_* counterparts, but they can be registered just like the other Active Record callbacks.
+3.0.0 :005 > user = User.create(first_name: 'Ria')
+  TRANSACTION (0.2ms)  BEGIN
+  User Create (2.6ms)  INSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "type", "teacher_id", "login", "email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["first_name", "Ria"], ["last_name", nil], ["created_at", "2022-06-21 12:17:12.399654"], ["updated_at", "2022-06-21 12:17:12.399654"], ["type", nil], ["teacher_id", nil], ["login", nil], ["email", nil]]
+  TRANSACTION (0.5ms)  COMMIT          
+ =>                                    
+#<User:0x00007f07a463dff0   
 
-3.0.0 :005 > user = User.new
-You have initialized an object!
- => #<User:0x00007f0e5c944fc8 id: nil, first_name: nil, last_name: nil, created_at: nil, updated_at: nil, type: nil, teacher_id: nil, login: nil, e... 
-
-3.0.0 :007 > User.first
-  User Load (1.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]
-You have found an object!                                   
-You have initialized an object!                  
- =>                                              
-#<User:0x00007f0e5c8cde28                        
- id: 1,                                          
- first_name: "Mary",                             
- last_name: nil,                                 
- created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,
- updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,
- type: nil,                                      
- teacher_id: nil,                                
- login: nil,                                     
- email: nil>                                                      
-
+3.0.0 :006 > user.touch
+  TRANSACTION (0.1ms)  BEGIN
+  User Update (0.5ms)  UPDATE "users" SET "updated_at" = $1 WHERE "users"."id" = $2  [["updated_at", "2022-06-21 12:17:36.138259"], ["id", 28]]
+You have touched an object                                  
+  TRANSACTION (0.4ms)  COMMIT                               
+ => true  
+ 
 =end

@@ -1569,4 +1569,92 @@ Character	From Windows-1252	From UTF-8
 Ä	            %C4	        %C3%84
 Å	            %C5	        %C3%85
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Using Emojis in HTML:
+Emojis are characters from the UTF-8 character set: 😄 😍 💗
+
+What are Emojis?
+Emojis look like images, or icons, but they are not.
+They are letters (characters) from the UTF-8 (Unicode) character set.
+UTF-8 covers almost all of the characters and symbols in the world.
+
+The HTML charset Attribute
+To display an HTML page correctly, a web browser must know the character set used in the page.
+This is specified in the <meta> tag:
+<meta charset="UTF-8">
+
+Note-If not specified, UTF-8 is the default character set in HTML.
+
+# UTF-8 Characters
+Many UTF-8 characters cannot be typed on a keyboard, but they can always be displayed using numbers (called entity numbers):
+
+A is 65
+B is 66
+C is 67
+
+The <meta charset="UTF-8"> element defines the character set.
+The characters A, B, and C, are displayed by the numbers 65, 66, and 67.
+
+Note- To let the browser understand that you are displaying a character, you must start the entity number with &# and end it with ; (semicolon).
+
+# Emoji Characters
+Emojis are also characters from the UTF-8 alphabet:
+
+😄 is 128516
+😍 is 128525
+💗 is 128151
+
+Note: Since Emojis are characters, they can be copied, displayed, and sized just like any other character in HTML.
+
+# Some Emoji Symbols in UTF-8
+Emoji	Value	Try it
+🗻	&#128507;	
+🗼	&#128508;	
+🗽	&#128509;	
+🗾	&#128510;	
+🗿	&#128511;	
+😀	&#128512;	
+😁	&#128513;	
+😂	&#128514;	
+😃	&#128515;	
+😄	&#128516;	
+😅	&#128517;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# HTML Encoding (Character Sets)
+To display an HTML page correctly, a web browser must know which character set to use.
+
+# From ASCII to UTF-8
+ASCII was the first character encoding standard. ASCII defined 128 different characters that could be used on the internet: numbers (0-9), English letters (A-Z), and some special characters like ! $ + - ( ) @ < > .
+ISO-8859-1 was the default character set for HTML 4. This character set supported 256 different character codes. HTML 4 also supported UTF-8.
+ANSI (Windows-1252) was the original Windows character set. ANSI is identical to ISO-8859-1, except that ANSI has 32 extra characters.
+The HTML5 specification encourages web developers to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!
+
+The HTML charset Attribute
+To display an HTML page correctly, a web browser must know the character set used in the page.
+
+This is specified in the <meta> tag:
+<meta charset="UTF-8">
+
+# The ASCII Character Set
+ASCII uses the values from 0 to 31 (and 127) for control characters.
+ASCII uses the values from 32 to 126 for letters, digits, and symbols.
+ASCII does not use the values from 128 to 255.
+
+# The ANSI Character Set (Windows-1252)
+ANSI is identical to ASCII for the values from 0 to 127.
+ANSI has a proprietary set of characters for the values from 128 to 159.
+ANSI is identical to UTF-8 for the values from 160 to 255.
+
+# The ISO-8859-1 Character Set
+ISO-8859-1 is identical to ASCII for the values from 0 to 127.
+ISO-8859-1 does not use the values from 128 to 159.
+ISO-8859-1 is identical to UTF-8 for the values from 160 to 255.
+
+# The UTF-8 Character Set
+UTF-8 is identical to ASCII for the values from 0 to 127.
+UTF-8 does not use the values from 128 to 159. 
+UTF-8 is identical to both ANSI and 8859-1 for the values from 160 to 255.
+UTF-8 continues from the value 256 with more than 10 000 different characters.
+For a closer look, study our Complete HTML Character Set Reference.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

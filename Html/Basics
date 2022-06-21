@@ -1363,17 +1363,6 @@ HTML <details> element is used to add extra details about the web page and use c
 
 8. HTML <summary>
 HTML <summary> element is used with the <details> element in a web page. It is used as summary, captions about the content of <details> element.
-
-
-
-
-
-
-
-
-
-
-
 # HTML Layout Techniques
 NOTE: HTML layouts create an individual space for every part of the web page. So that every element can arrange in a significant order.
 
@@ -1391,4 +1380,37 @@ Use of flexbox ensures that elements behave predictably when the page layout mus
 
 CSS Grid Layout
 The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# HTML Responsive:
+Responsive Web design
+Responsive web design is used to make your web page look appropriate, good, and well placedon all devices (desktop, tablet, smartphone etc.)
+Responsive web design uses HTML and CSS to resize, hide, shrink, enlarge, or move the content. It makes the content look good on any screen.
+
+# Responsive Images
+Images which can be scaled nicely to fit any browser size are known as responsive images.
+
+How to make Image Responsive?
+By using the width property
+Set the CSS width property to 100% to make the image responsive and scale up and down.
+
+Note: A problem with the above method (width: 100%) is that the image can be scaled up to be larger than its original size. So, it is better to use the max-width property instead.
+
+# By using the max-width Property
+This method is best and most used because it facilitates that the image will scale down if it has to, but never scale up to be larger than its original size.
+
+# Change images according to the browser width
+By using the HTML <picture> element, you can set two or more imagesaccording to the browser width. It will change the picture when you change the browser-size. i.e. desktop and phone.
+
+# Responsive Text-size
+We can make the text size responsive by using the "uv" unit. It means viewport-width. By using this, we can make the text size to follow the browserwindow screen.
+
+# Media Queries
+In addition to resize text and images, it is also common to use media queries in responsive web pages.
+With media queries you can define completely different styles for different browser sizes.
+Example: resize the browser window to see that the three div elements below will display horizontally on large screens and stacked vertically on small screens:
+
+
+
 

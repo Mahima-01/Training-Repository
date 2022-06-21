@@ -1,67 +1,37 @@
 class Book < ApplicationRecord
-  after_destroy :log_destroy_action
+  after_commit :delete_book_from_author, on: :destroy
+  after_destroy_commit :delete_book_from_author
 
-  def log_destroy_action
-    puts 'Article destroyed'
+  def delete_book_from_author
+    if Book.exist?(id)
+      Book.delete(id)
+    end
   end
 end
 
 =begin
-#  Relational Callbacks
-Callbacks work through model relationships, and can even be defined by them. Suppose an example where a user has many articles. A user's articles should be destroyed if the user is destroyed. Let's add an after_destroy callback to the User model by way of its relationship to the Article model:
-3.0.0 :001 > user = User.first
-  User Load (0.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]
- =>                                                                
-#<User:0x0000564b379d5c28
-3.0.0 :002 > user
- => 
-#<User:0x0000564b379d5c28                                          
- id: 1,                                                            
- first_name: "Mary",                                               
- last_name: nil,                                                   
- created_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,       
- updated_at: Thu, 09 Jun 2022 13:33:43.427810000 UTC +00:00,       
- type: nil,                                                        
- teacher_id: nil,                                                  
- login: nil,
- email: nil> 
+# Transaction Callbacks
+There are two additional callbacks that are triggered by the completion of a database transaction: after_commit and after_rollback. 
+These callbacks are very similar to the after_save callback except that they don't execute until after database changes have either been committed or rolled back. 
+They are most useful when your active record models need to interact with external systems which are not part of the database transaction.
 
-3.0.0 :015 > author.save
-  TRANSACTION (0.3ms)  BEGIN
-  Author Create (9.2ms)  INSERT INTO "authors" ("created_at", "updated_at", "lock_version", "email", "name", "books_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2022-06-21 13:37:07.430621"], ["updated_at", "2022-06-21 13:37:07.430621"], ["lock_version", 0], ["email", nil], ["name", nil], ["books_count", 0]]                                                     
-  TRANSACTION (0.6ms)  COMMIT                                                      
- => true  
+Consider, for example, the previous example where the book model needs to delete a file after the corresponding record is destroyed. 
+If anything raises an exception after the after_destroy callback is called and the transaction rolls back, the file will have been deleted and the model will be left in an inconsistent state. 
+For example, suppose that book1.destroy in the code below is not valid and the save! method raises an error.
+By using the after_commit callback we can account for this case.
 
-3.0.0 :016 > author.books.create!
-  TRANSACTION (0.1ms)  BEGIN
-  Book Create (0.6ms)  INSERT INTO "books" ("title", "author", "created_at", "updated_at", "price", "lock_version", "author_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", nil], ["author", nil], ["created_at", "2022-06-21 13:37:26.652119"], ["updated_at", "2022-06-21 13:37:26.652119"], ["price", nil], ["lock_version", 0], ["author_id", 1000053]] 
-  TRANSACTION (0.4ms)  COMMIT                                 
- =>                                                           
-#<Book:0x0000564b3a754758                         
- id: 25,                                          
- title: nil,                                      
- author: nil,                                     
- created_at: Tue, 21 Jun 2022 13:37:26.652119000 UTC +00:00,
- updated_at: Tue, 21 Jun 2022 13:37:26.652119000 UTC +00:00,
- price: nil,                                      
- lock_version: 0,                                 
- author_id: 1000053>
+The :on option specifies when a callback will be fired. If you don't supply the :on option the callback will fire for every action.
 
-3.0.0 :017 > author.destroy
-  TRANSACTION (0.1ms)  BEGIN
-  Book Load (0.2ms)  SELECT "books".* FROM "books" WHERE "books"."author_id" = $1  [["author_id", 1000053]]
-  Book Destroy (0.2ms)  DELETE FROM "books" WHERE "books"."id" = $1 AND "books"."lock_version" = $2  [["id", 25], ["lock_version", 0]]
-Article destroyed                                                                  
-  Author Destroy (0.3ms)  DELETE FROM "authors" WHERE "authors"."id" = $1 AND "authors"."lock_version" = $2  [["id", 1000053], ["lock_version", 0]]
-  TRANSACTION (6.6ms)  COMMIT                                                      
- =>                                                                                
-#<Author:0x0000564b39df4d20                                                        
- id: 1000053,                                                                      
- created_at: Tue, 21 Jun 2022 13:37:07.430621000 UTC +00:00,                       
- updated_at: Tue, 21 Jun 2022 13:37:07.430621000 UTC +00:00,                       
- lock_version: 0,                                                                  
- email: nil,                                                                       
- name: nil,                                                                        
- books_count: 0> 
- 
+Since using the after_commit callback only on create, update, or delete is common, there are aliases for those operations:
+after_create_commit
+after_update_commit
+after_destroy_commit
+
+When a transaction completes, the after_commit or after_rollback callbacks are called for all models created, updated, or destroyed within 
+that transaction. However, if an exception is raised within one of these callbacks, the exception will bubble up and any remaining after_commit or after_rollback methods will not be executed. As such, if your callback code could raise an exception, you'll need to rescue it and handle it within the callback in order to allow other callbacks to run.
+The code executed within after_commit or after_rollback callbacks is itself not enclosed within a transaction.
+Using both after_create_commit and after_update_commit with the same method name will only allow the last callback defined to take effect, 
+as they both internally alias to after_commit which overrides previously defined callbacks with the same method name.
+
+
 =end

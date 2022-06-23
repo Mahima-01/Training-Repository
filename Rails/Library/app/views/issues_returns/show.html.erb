@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @issues_return %>
+
+<div>
+  <%= link_to "Edit this issues return", edit_issues_return_path(@issues_return) %> |
+  <%= link_to "Back to issues returns", issues_returns_path %>
+
+  <%= button_to "Destroy this issues return", @issues_return, method: :delete %>
+</div>

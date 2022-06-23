@@ -1,0 +1,2 @@
+class IssuesReturn < ApplicationRecord
+end

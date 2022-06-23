@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :issues_returns
   root "demo#index"
 
   get 'demo/index'

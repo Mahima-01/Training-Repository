@@ -5,6 +5,7 @@ class DemoController < ApplicationController
   end
 
   def hello
+    @array = [1, 2, 3, 4, 5]
     #render('hello')
     #render('index') # This will return code written in index.
     #redirect_to(:controller=> 'demo', :action=> 'index')

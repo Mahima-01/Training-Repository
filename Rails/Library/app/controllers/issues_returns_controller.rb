@@ -68,3 +68,4 @@ class IssuesReturnsController < ApplicationController
       params.require(:issues_return).permit(:student_id, :book_id, :issue_date, :return_date)
     end
 end
+

@@ -1,0 +1,17 @@
+Web Server vs Application Server:
+A web server handles mainly HTTP protocols, the application server deals with several different protocols, including, but not limited, to HTTP.
+The Web server's main job is to display the site content and the application server is in charge of the logic, 
+the interaction between the user and the displayed content. The application server is working in conjunction with the web server, where one displays and the other one interacts.
+
+A web server accepts and fulfills requests from clients for static content (i.e., HTML pages, files, images, and videos) from a website. 
+Web servers handle HTTP requests and responses only.
+
+An application server exposes business logic to the clients, which generates dynamic content. 
+It is a software framework that transforms data to provide the specialized functionality offered by a business, service, or application. 
+Application servers enhance the interactive parts of a website that can appear differently depending on the context of the request.
+
+Web server only handles Http request and response.i.e serves only web based applications.
+Application Server serves both web(gmail) and enterprise base application(Erp, Crm)
+
+Web Server doesn't support for multi-threading.
+Application server Uses multi-threading to support multiple requests in parallel.

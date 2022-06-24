@@ -9,5 +9,7 @@ class DemoController < ApplicationController
     #render('hello')
     #render('index') # This will return code written in index.
     #redirect_to(:controller=> 'demo', :action=> 'index')
+    @id = params['id']
+    @page = params[:page]
   end
 end

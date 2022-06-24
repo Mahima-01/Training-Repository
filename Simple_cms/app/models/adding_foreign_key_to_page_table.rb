@@ -1,0 +1,2 @@
+class AddingForeignKeyToPageTable < ApplicationRecord
+end

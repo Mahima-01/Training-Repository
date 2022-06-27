@@ -34,6 +34,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destoy
+    @student = Student.find(params[:id]) 
+    @student.destoy
+    redirect_to students_path
+  end
+
   private
   def student_params
     params.require(:student).permit(:first_name, :last_name, :email)

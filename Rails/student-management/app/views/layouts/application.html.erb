@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StudentMgmnt</title>
+    <%= favicon_link_tag '/home/itsacheckmate/Downloads/student.png' %>
+    <title>StudentManagment</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +11,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body style="background-color: Yellow;">
+    <favicon
     <%= yield %>
   </body>
 </html>
+

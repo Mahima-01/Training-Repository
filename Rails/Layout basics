@@ -1,0 +1,30 @@
+# Rails Layout:
+A layout defines the surroundings of an HTML page. 
+An application may have as many layouts as you want.
+Layout files reside in app/views/layouts.
+Rails layouts basically work on Don't Repeat Yourself principle (DRY).
+In Rails, layouts are enabled by default. Whenever you generate a new Rails application, a layout is automatically generated for you in app/views/layouts.
+
+# Creating Responses
+There are three ways to create an HTTP response from the controller's point of view:
+
+Call render to create a full response to send back to the browser
+Call redirect_to to send an HTTP redirect status code to the browser
+Call head to create a response to end back to the browser
+
+# Importance of yield statement
+The yield statement in Rails decides where to render the content for the action in layout. If there is no yield statement in the layout, the layout file itself will be rendered but additional content into the action templates will not be correctly placed within the layout.
+
+Hence, a yield statement is necessory to add in a layout file.
+<%= yield %>     
+
+# Relation between Rails Layouts and Templates
+
+When a request is made in an application, following process occur:
+First of all, Rails find a template for corresponding action to render method in your controllers action.
+Then finds correct layout to use.
+It uses action template to generate a content specific to the action.
+Finally it looks for the layout's yield statement and insert action's template here.
+
+
+

@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: %i[show edit update destroy]
+
   def index
     @students = Student.all
   end
@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
+      CrudNotificationMailer.create_notification(@student).deliver_now
       redirect_to students_path
    else
       render :new
@@ -36,7 +37,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    redirect_to students_path
+    redirect_to students_index_path
   end
 
   private

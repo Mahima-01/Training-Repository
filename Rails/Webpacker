@@ -1,0 +1,17 @@
+# Webpackers in Rails:
+The goal of webpack, or any front-end build system, is to allow you to write your front-end code in a way that is convenient for developers and then package that code in a way that is convenient for browsers. 
+With webpack, you can manage JavaScript, CSS, and static assets like images or fonts. 
+Webpack will allow you to write your code, reference other code in your application, transform your code, and combine your code into easily downloadable packs.
+Webpack is better at integrating with more current JavaScript tools and NPM packages and allows for a wider range of integration.
+
+
+# Sprockets:
+Sprockets is a Ruby library for compiling and serving web assets. Sprockets allows to organize an application’s JavaScript files into smaller more manageable chunks that can be distributed over a number of directories and files. 
+It provides structure and practices on how to include assets in our projects.
+
+Using directives at the start of each JavaScript file, Sprockets can determine which files a JavaScript file depends on. 
+When it comes to deploying your application, Sprockets then uses these directives to turn your multiple JavaScript files into a single file for better performance.
+
+You should choose Sprockets over Webpacker for legacy applications where migration might be costly, if you want to integrate using Gems, or if you have a very small amount of code to package.
+
+

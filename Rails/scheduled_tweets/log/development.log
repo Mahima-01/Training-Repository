@@ -220,3 +220,21 @@ Processing by AboutController#index as HTML
 Completed 200 OK in 110ms (Views: 109.8ms | ActiveRecord: 0.0ms | Allocations: 95999)
 
 
+Started GET "/" for 127.0.0.1 at 2022-06-30 15:09:41 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 365)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 35648)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 40896)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-30 15:10:25 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 13937)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 14708)
+
+

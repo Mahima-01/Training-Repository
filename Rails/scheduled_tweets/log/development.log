@@ -3605,3 +3605,36 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 5262)
 
 
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 19:25:06 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2600)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 566)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 17686)
+Completed 200 OK in 9ms (Views: 8.5ms | Allocations: 18928)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2022-07-01 19:26:49 +0530
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1563)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 4131)
+Completed 200 OK in 4ms (Views: 3.6ms | Allocations: 5159)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2022-07-01 19:34:22 +0530
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1563)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 16608)
+Completed 200 OK in 9ms (Views: 8.6ms | Allocations: 17856)
+
+

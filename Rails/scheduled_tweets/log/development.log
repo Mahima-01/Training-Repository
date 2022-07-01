@@ -3638,3 +3638,77 @@ Processing by PasswordResetsController#new as HTML
 Completed 200 OK in 9ms (Views: 8.6ms | Allocations: 17856)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-01 22:33:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 370)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1441)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 37410)
+Completed 200 OK in 37ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 42815)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-07-01 22:49:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 370)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 1441)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 37234)
+Completed 200 OK in 30ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 42761)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 22:50:14 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 501)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 22:50:14 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4444)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 7013)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 8070)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2022-07-01 22:50:16 +0530
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1563)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 4132)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5155)
+
+
+Started POST "/password/reset" for 127.0.0.1 at 2022-07-01 22:50:24 +0530
+Processing by PasswordResetsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"steve@gmail.in", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "steve@gmail.in"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 3872)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 22:50:24 +0530
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 139)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2578)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 3128)
+
+

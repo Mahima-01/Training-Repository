@@ -3712,3 +3712,142 @@ Processing by MainController#index as TURBO_STREAM
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 3128)
 
 
+Started GET "/password/reset" for 127.0.0.1 at 2022-07-01 22:59:52 +0530
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1562)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 16534)
+Completed 200 OK in 10ms (Views: 9.1ms | Allocations: 17778)
+
+
+Started GET "/password/reset/edit?toekn" for 127.0.0.1 at 2022-07-01 23:00:07 +0530
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"toekn"=>nil}
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2563)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 5032)
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 3.1ms | Allocations: 9237)
+
+
+Started GET "/password/reset/edit?token" for 127.0.0.1 at 2022-07-01 23:00:14 +0530
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2290)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 4759)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 5251)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/password/reset/edit?token" for 127.0.0.1 at 2022-07-01 23:02:11 +0530
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2290)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4759)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5281)
+
+
+Started GET "/password/reset/edit?token" for 127.0.0.1 at 2022-07-01 23:05:21 +0530
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/sign_in
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 1403)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 23:05:21 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2597)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 232)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 16790)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 17840)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 23:11:28 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2596)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 565)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 17666)
+Completed 200 OK in 10ms (Views: 8.8ms | Allocations: 18913)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2022-07-01 23:11:30 +0530
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1559)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 135)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4125)
+Completed 200 OK in 4ms (Views: 3.5ms | Allocations: 5137)
+
+
+Started POST "/password/reset" for 127.0.0.1 at 2022-07-01 23:11:48 +0530
+Processing by PasswordResetsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"steve@gmail.in", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "steve@gmail.in"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 10ms (ActiveRecord: 3.4ms | Allocations: 5073)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 23:11:48 +0530
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 121)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 158)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2787)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3875)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2022-07-01 23:14:44 +0530
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1609)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 468)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5057)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 6237)
+
+
+Started POST "/password/reset" for 127.0.0.1 at 2022-07-01 23:14:48 +0530
+Processing by PasswordResetsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"steve@gmail.in", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "steve@gmail.in"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 865)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 23:14:48 +0530
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 121)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 157)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2786)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3871)
+
+

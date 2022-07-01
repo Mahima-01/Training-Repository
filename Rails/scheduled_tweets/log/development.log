@@ -3099,3 +3099,509 @@ Processing by RegistrationsController#new as HTML
 Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 2.1ms | Allocations: 9678)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:25:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/itsacheckmate/Html_Project/Training-Repository/Rails/scheduled_tweets/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...edirect_to_sign_in_path, alert: "You must be signed in to do...
+...                         ^~~~~~
+):
+  
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/main_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:25:56 +0530
+  
+SyntaxError (/home/itsacheckmate/Html_Project/Training-Repository/Rails/scheduled_tweets/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...edirect_to_sign_in_path, alert: "You must be signed in to do...
+...                         ^~~~~~
+):
+  
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/main_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:27:05 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 126)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 1429)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 37046)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 40599)
+
+
+Started GET "/passwords" for 127.0.0.1 at 2022-07-01 18:27:12 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/passwords"):
+  
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:27:21 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:27:21 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4204)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 135)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 36)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 6776)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 7824)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:32:08 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 122)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 591)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 15137)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 16385)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:33:01 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3617)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4798)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:33:01 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2523)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 3007)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:33:01 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2520)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2997)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:33:02 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2520)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2993)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:38:24 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 490)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3614)
+Completed 200 OK in 5ms (Views: 4.2ms | Allocations: 4775)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:38:25 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2520)
+Completed 200 OK in 3ms (Views: 2.3ms | Allocations: 2993)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:38:25 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2520)
+Completed 200 OK in 2ms (Views: 1.9ms | Allocations: 2996)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:38:25 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2520)
+Completed 200 OK in 3ms (Views: 2.1ms | Allocations: 2992)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:38:26 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2520)
+Completed 200 OK in 2ms (Views: 2.0ms | Allocations: 2994)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:49:21 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 552)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:21 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2547)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 468)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 17541)
+Completed 200 OK in 10ms (Views: 9.0ms | Allocations: 18806)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:23 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2286)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4766)
+Completed 200 OK in 4ms (Views: 3.3ms | Allocations: 5226)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:24 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2286)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4763)
+Completed 200 OK in 3ms (Views: 3.1ms | Allocations: 5239)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:24 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2285)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4764)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 5228)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:25 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 4760)
+Completed 200 OK in 3ms (Views: 3.0ms | Allocations: 5248)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:55 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2544)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 17530)
+Completed 200 OK in 10ms (Views: 9.5ms | Allocations: 18775)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2285)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4762)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 5236)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 4760)
+Completed 200 OK in 4ms (Views: 3.3ms | Allocations: 5232)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4760)
+Completed 200 OK in 3ms (Views: 2.6ms | Allocations: 5232)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 4760)
+Completed 200 OK in 3ms (Views: 2.6ms | Allocations: 5226)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:50:02 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 437)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:50:02 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4765)
+Completed 200 OK in 4ms (Views: 3.3ms | Allocations: 5261)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:51:30 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 370)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:30 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2589)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 468)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 6042)
+Completed 200 OK in 6ms (Views: 5.3ms | Allocations: 7233)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:51:41 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 364)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:41 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2285)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4767)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 5258)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2285)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4768)
+Completed 200 OK in 5ms (Views: 4.9ms | Allocations: 5251)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2284)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 4767)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 5235)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4760)
+Completed 200 OK in 3ms (Views: 2.6ms | Allocations: 5228)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 4760)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 5238)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 4760)
+Completed 200 OK in 3ms (Views: 2.5ms | Allocations: 5235)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:51:45 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2284)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4769)
+Completed 200 OK in 3ms (Views: 2.6ms | Allocations: 5247)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:51:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 370)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 1441)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 37285)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 42814)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:52:01 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 503)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:52:01 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 4390)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 135)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 36)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 6963)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 8000)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:57:18 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2542)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 570)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 17515)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 18760)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:57:22 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 121)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 158)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2732)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3756)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 18:57:24 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2520)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2999)
+
+
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:57:35 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 441)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:57:35 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2283)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 4766)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 5255)
+
+
+Started GET "/passwords" for 127.0.0.1 at 2022-07-01 18:57:43 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/passwords"):
+  
+Started GET "/password" for 127.0.0.1 at 2022-07-01 18:57:46 +0530
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 18:57:46 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2285)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 123)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 4767)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 5262)
+
+

@@ -5,6 +5,7 @@ validates :title, presence: true, on: :update
 #after_save :printing , unless: :title?, if: Proc.new{ self.persisted?}
 after_update :printing, unless: [:title?]
 #before_destroy :printing
+belongs_to :user
   def printing
     print "Callback run here \n "
   end

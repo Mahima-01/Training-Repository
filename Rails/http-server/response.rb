@@ -8,10 +8,10 @@ class Response
   def send(client)
     client.print "HTTP/1.1 #{@code}\r\n"
     @headers.each do |name, value|
-    client.print "#{name}: #{value}\r\n"
+      client.print "#{name}: #{value}\r\n"
     end 
     client.print "\r\n"
-    client.print @body if body.present?
+    client.print @body if @body.present?
 
     puts "-> #{@code}"
   end

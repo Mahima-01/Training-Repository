@@ -4,29 +4,24 @@ require_relative "request"
 require_relative "response"
 require "rack"
 require "rack/lobster"
-
 APP = Rack::Lobster.new
-port = ENV.fetch("PORT", 2002).to_i
+port = ENV.fetch("PORT", 2000).to_i
 server = TCPServer.new port
-
 puts "Listening on port #{port}..."
-
 def render(file:)
   body = File.binread(file)
-    Response.new(
-      code: 200,
-      body: body,
-      headers: {
+  Response.new(
+    code: 200,
+    body: body,
+    headers: {
       "Content-Length" => body.length,
       "Content-Type" => "text/html"
-    }
+      }
   )
 end
-
 def template_exists?(path)
-  File.exists?(path)
+   File.exists?(path)
 end
-
 def route(request)
   path = (request.path == "/") ? "index.html" :request.path
   full_path = File.join(__dir__, "views", path)
@@ -38,15 +33,12 @@ def route(request)
     "PATH_INFO" => request.path,
     "QUERY_STRING" => request.query
   })
-    
     Response.new(code: status, body: body.join, headers: headers)
-end
-
+  end
 rescue => e
-  puts e.message
-  Response.new(code: 500)
+    puts e.message
+    Response.new(code: 500)
 end
-
 loop do
   Thread.start(server.accept) do |client|
     request = Request.new client.readpartial(2048)

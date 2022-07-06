@@ -25,4 +25,10 @@ Rails.application.routes.draw do
   resources :twitter_accounts
   resources :tweets
   root to: "main#index"
+
+  namespace :api do
+    namespace :v1 do
+      resources :twitter_accounts
+    end
+  end
 end

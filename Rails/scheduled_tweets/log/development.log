@@ -11076,3 +11076,67 @@ Processing by TweetsController#index as HTML
 Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.6ms | Allocations: 8104)
 
 
+Started GET "/Api/V1/controller" for ::1 at 2022-07-06 20:26:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/Api/V1/controller"):
+  
+Started GET "/Api/V1/controller" for ::1 at 2022-07-06 20:28:20 +0530
+  
+ArgumentError ('Api/V1/twitter_accounts' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:31:in `block (3 levels) in <main>'
+config/routes.rb:30:in `block (2 levels) in <main>'
+config/routes.rb:29:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/api/v1/twitter_accounts" for ::1 at 2022-07-06 20:31:17 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 7331)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "application_records" does not exist
+LINE 9:  WHERE a.attrelid = '"application_records"'::regclass
+                            ^
+):
+  
+app/controllers/Api/V1/twitter_accounts_controller.rb:4:in `index'
+  [1m[36mTwitterAccount Load (2.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts"[0m
+Started GET "/api/v1/twitter_accounts" for ::1 at 2022-07-06 20:33:01 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 5006)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::TwitterAccountSerializer
+Did you mean?  TwiiterAccountsSerializer):
+  
+app/controllers/Api/V1/twitter_accounts_controller.rb:5:in `index'
+Started GET "/api/v1/twitter_accounts" for ::1 at 2022-07-06 20:33:35 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4958)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::TwitterAccountSerializer
+Did you mean?  TwitterAccountsSerializer):
+  
+app/controllers/Api/V1/twitter_accounts_controller.rb:5:in `index'
+Started GET "/api/v1/twitter_accounts" for ::1 at 2022-07-06 20:34:19 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+[active_model_serializers]   [1m[36mTwitterAccount Load (0.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts"[0m
+[active_model_serializers]   ↳ app/controllers/Api/V1/twitter_accounts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.13ms)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 1.9ms | Allocations: 16561)
+
+
+Started GET "/api/v1/twitter_accounts" for ::1 at 2022-07-06 20:34:47 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+[active_model_serializers]   [1m[36mTwitterAccount Load (0.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts"[0m
+[active_model_serializers]   ↳ app/controllers/Api/V1/twitter_accounts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.67ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.5ms | Allocations: 9458)
+
+

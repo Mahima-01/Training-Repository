@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
+  USERS_PER_PAGE = 3
+  
   def index
-    @users = User.all.order(:id)
+    @page = params.fetch(:page, 0).to_i
     if params[:search]
-      @users = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id)
+      @users_count = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").count
+      @users = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id).offset(@page * USERS_PER_PAGE).limit(USERS_PER_PAGE)
     else
-      @users = User.all.order(:id)
+      @users_count = User.all.count
+      @users = User.all.order(:id).offset(@page * USERS_PER_PAGE).limit(USERS_PER_PAGE)
     end
   end
     
@@ -16,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       #CrudNotificationMailer.create_notification(@user).deliver_now
-      Sidekiq::Client.enqueue_to_in("default", Time.now + 2.seconds, MailWorker, @user.email, @user.first_name)
+      #Sidekiq::Client.enqueue_to_in("default", Time.now + 2.seconds, MailWorker, @user.email, @user.first_name)
       redirect_to users_path
     else
       render :new

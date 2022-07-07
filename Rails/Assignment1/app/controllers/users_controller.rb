@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      CrudNotificationMailer.create_notification(@user).deliver_now
+      #CrudNotificationMailer.create_notification(@user).deliver_now
+      Sidekiq::Client.enqueue_to_in("default", Time.now + 2.seconds, MailWorker, @user.email, @user.first_name)
       redirect_to users_path
     else
       render :new

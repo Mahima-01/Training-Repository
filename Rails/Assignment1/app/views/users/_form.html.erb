@@ -27,26 +27,26 @@
   
   <div>
     <%= form.label :gender %><br>
-    <%= radio_button_tag(:gender, "Male") %>
+    <%= form.radio_button(:gender, "Male") %>
     <%= label_tag(:gender, "Male") %>
-    <%= radio_button_tag(:gender, "Female") %>
+    <%= form.radio_button(:gender, "Female") %>
     <%= label_tag(:gender, "Female") %>
   </div>
 
   <div>
     <%= form.label :country %><br>
-    <%= form.select :Country , ['India',
-                         'China',
-                         'United States',
-                         'Russia',
-                         'Brazil',
-                         'Mexico',
-                         'Germany',
-                         'France',
-                         'Italy',
-                         'Spain',
-                         'Cuba',
-                         'Belgium'] %>
+    <%= form.select :country , ['India',
+                                'China',
+                                'United States',
+                                'Russia',
+                                'Brazil',
+                                'Mexico',
+                                'Germany',
+                                'France',
+                                'Italy',
+                                'Spain',
+                                'Cuba',
+                                'Belgium'] %>
   </div>
   
   <div>

@@ -8479,3 +8479,72 @@ Content-Transfer-Encoding: 7bit
 ----==_mimepart_62c6dc18a67ec_7c913d40-47e--
 
 [ActiveJob] [ActionMailer::MailDeliveryJob] [950ff14c-f87e-44ed-a043-36203da278dd] Performed ActionMailer::MailDeliveryJob (Job ID: 950ff14c-f87e-44ed-a043-36203da278dd) from Async(default) in 9.12ms
+Started GET "/api/v1/users_controller" for ::1 at 2022-07-07 19:08:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users_controller"):
+  
+Started GET "/api/v1/users_controller" for ::1 at 2022-07-07 19:10:36 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users_controller"):
+  
+Started GET "/api/v1/users_controller" for ::1 at 2022-07-07 19:11:36 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users_controller"):
+  
+Started GET "/api/v1/users_controller" for ::1 at 2022-07-07 19:14:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users_controller"):
+  
+Started GET "/api/v1/users" for ::1 at 2022-07-07 19:15:12 +0530
+Processing by Api::V1::UsersController#index as */*
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.0ms | Allocations: 5897)
+
+
+  
+NameError (uninitialized constant Api::V1::UsersController::ActiveModelSerializers):
+  
+app/controllers/api/v1/users_controller.rb:4:in `index'
+Started GET "/api/v1/users" for ::1 at 2022-07-07 19:17:43 +0530
+Processing by Api::V1::UsersController#index as */*
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms | Allocations: 3444)
+
+
+  
+NameError (uninitialized constant Api::V1::UsersController::ActiveModelSerializers):
+  
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Started GET "/api/v1/users" for ::1 at 2022-07-07 19:18:58 +0530
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 2.7ms | Allocations: 10259)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-07-07 19:23:39 +0530
+Processing by Api::V1::UsersController#index as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 3416)
+
+
+  
+NameError (uninitialized constant Api::V1::UsersController::ActiveModelSerializers):
+  
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Started GET "/api/v1/users" for ::1 at 2022-07-07 19:24:16 +0530
+Processing by Api::V1::UsersController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2305)
+
+
+  
+NameError (uninitialized constant Api::V1::UsersController::ActiveModelSerializers):
+  
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Started GET "/api/v1/users" for ::1 at 2022-07-07 19:24:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as */*
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.7ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.76ms)
+Completed 200 OK in 23ms (Views: 10.8ms | ActiveRecord: 2.2ms | Allocations: 22484)
+
+

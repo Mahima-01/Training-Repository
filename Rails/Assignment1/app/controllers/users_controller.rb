@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.order(:id)
   end
     
   def new
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
     
   def create
-    @user = User.new(User_params)
+    @user = User.new(user_params)
     if @user.save
       CrudNotificationMailer.create_notification(@user).deliver_now
       redirect_to users_path
@@ -35,7 +35,17 @@ class UsersController < ApplicationController
   end
     
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_in
+    redirect_to users_path
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :gender, :country)
+  end
+
+  def set_user
+    params.require(:user).permit(:first_name, :last_name, :email, :gender, :country)
   end
 end 

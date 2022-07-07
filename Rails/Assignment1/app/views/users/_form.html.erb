@@ -4,7 +4,7 @@
      <p><%= message %></p>
     <% end %>
   <% end %>
-  
+
   <div>
     <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
@@ -22,17 +22,31 @@
 
   <div>
     <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
   </div>
   
   <div>
     <%= form.label :gender %><br>
-    <%= form.text_field :gender %>
+    <%= radio_button_tag(:gender, "Male") %>
+    <%= label_tag(:gender, "Male") %>
+    <%= radio_button_tag(:gender, "Female") %>
+    <%= label_tag(:gender, "Female") %>
   </div>
 
   <div>
     <%= form.label :country %><br>
-    <%= form.text_field :country %>
+    <%= form.select :Country , ['India',
+                         'China',
+                         'United States',
+                         'Russia',
+                         'Brazil',
+                         'Mexico',
+                         'Germany',
+                         'France',
+                         'Italy',
+                         'Spain',
+                         'Cuba',
+                         'Belgium'] %>
   </div>
   
   <div>

@@ -24,7 +24,18 @@
     <%= form.label :password %><br>
     <%= form.password_field :password %>
   </div>
-  
+
+  <div>
+    <%= form.label :hobbies %><br>
+  </div>
+
+  <div class="mb-3">
+  <% User::HOBBIES.each do |hobby|%>
+    <%= form.check_box :hobbies, { multiple:true }, hobby, nil %>
+    <%= form.label hobby %>
+  <% end %>
+  </div>
+
   <div>
     <%= form.label :gender %><br>
     <%= form.radio_button(:gender, "Male") %>

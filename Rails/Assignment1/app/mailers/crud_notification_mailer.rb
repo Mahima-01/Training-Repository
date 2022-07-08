@@ -12,4 +12,5 @@ class CrudNotificationMailer < ApplicationMailer
   def delete_notification
     mail to: 'mahima@gmail.com', subject: "A new entry has been deleted." 
   end
+
 end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "users#index"
   get '/search',to: "users#search"
+
   resources :users
   
   namespace :api do
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   #  resources :users
   #end
 
+  get "users/api"
 end

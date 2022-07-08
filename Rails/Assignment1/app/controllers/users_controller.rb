@@ -1,3 +1,7 @@
+require 'json'
+require 'rest_client'
+require 'open-uri'
+
 class UsersController < ApplicationController
   USERS_PER_PAGE = 3
   
@@ -32,6 +36,26 @@ class UsersController < ApplicationController
   end
     
   def search
+  end
+  
+  def api
+    url = "https://reqres.in/api/users?page=1"
+    response = RestClient.get(url)
+    data_h = JSON.parse(response)
+    print data_h.keys
+    data_h['data'].each do |user|
+      @email = user['email']
+      @first_name = user['first_name']
+      @last_name = user['last_name']
+      @gender = user['gender']
+      @user = User.new(email: @email, first_name: @first_name, last_name: @last_name, gender: @gender)
+      if @user.save
+        Sidekiq::Client.enqueue_to_in("default", Time.now, MailWorker, @user.email, @user.first_name)
+      else
+        notice "Details incorrect"
+        render :new
+      end
+    end
   end
 
   def edit

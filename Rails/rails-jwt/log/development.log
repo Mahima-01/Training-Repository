@@ -1,0 +1,374 @@
+Started GET "/" for 127.0.0.1 at 2022-07-11 17:47:59 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220711120141_create_users.rb
+
+
+):
+  
+activerecord (7.0.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220711120141)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220711120141"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-11 12:18:16.776893"], ["updated_at", "2022-07-11 12:18:16.776893"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-11 17:48:23 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 635)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 6027)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-11 17:49:27 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 368)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 1200)
+
+
+Started POST "/users" for ::1 at 2022-07-11 17:49:42 +0530
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "username":"Mahi",
+    "password":"123456",
+    "password_confirmation":
+}
+Started POST "/users" for ::1 at 2022-07-11 17:51:53 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant User::AvatarUploader):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "username":"Mahi",
+    "password":"123456",
+    "password_confirmation":
+}
+Started POST "/users" for ::1 at 2022-07-11 17:53:17 +0530
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "name":"Mahima"
+    "username":"Mahi",
+    "password":"123456",
+    "password_confirmation":
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms | Allocations: 12894)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-07-11 17:54:17 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "name":"Mahima"
+    "username":"Mahi",
+    "password":"123456",
+    "password_confirmation":
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms | Allocations: 14984)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-07-11 17:55:16 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "name":"Mahima"
+    "username":"Mahi",
+    "email":"mahi@gmail.com"
+    "password":"123456",
+    "password_confirmation":
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 116)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-07-11 17:56:17 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "name":"Mahima"
+    "username":"Mahi",
+    "email":"mahi@gmail.com",
+    "password":"123456",
+    "password_confirmation":
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 14988)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-07-11 17:58:07 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "id":1,
+    "name":"Mahima",
+    "username":"Mahi",
+    "email":"mahi@gmail.com",
+    "password":"123456",
+    "password_confirmation":
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 123)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2022-07-11 17:59:44 +0530
+Processing by UsersController#create as */*
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 20ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 15139)
+
+
+Started POST "/users" for ::1 at 2022-07-11 18:03:10 +0530
+Processing by UsersController#create as */*
+  Parameters: {"id"=>1, "name"=>"Ravi", "username"=>"ravi", "email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"id"=>1, "name"=>"Ravi", "username"=>"ravi", "email"=>"rav01@gmail.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f34d83dad88>, params: {"id"=>1, "name"=>"Ravi", "username"=>"ravi", "email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"id"=>1, "name"=>"Ravi", "username"=>"ravi", "email"=>"rav01@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ravi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ravi"], ["username", "ravi"], ["email", "rav01@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-11 12:33:10.365223"], ["updated_at", "2022-07-11 12:33:10.365223"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 176ms (Views: 0.6ms | ActiveRecord: 7.6ms | Allocations: 3904)
+
+
+Started POST "/auth/login" for ::1 at 2022-07-11 18:03:32 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"id"=>1, "name"=>"Ravi", "username"=>"ravi", "email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"id"=>1, "name"=>"Ravi", "username"=>"ravi", "email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.2ms | Allocations: 2758)
+
+
+  
+NameError (uninitialized constant JsonWebToken::JWT):
+  
+app/lib/json_web_token.rb:6:in `encode'
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2022-07-11 18:04:09 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rav01@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.1ms | Allocations: 2022)
+
+
+  
+NameError (uninitialized constant JsonWebToken::JWT):
+  
+app/lib/json_web_token.rb:6:in `encode'
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2022-07-11 18:07:06 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rav01@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.1ms | Allocations: 2034)
+
+
+  
+NameError (uninitialized constant JsonWebToken::JWT):
+  
+app/lib/json_web_token.rb:6:in `encode'
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2022-07-11 18:07:47 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rav01@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.1ms | Allocations: 2022)
+
+
+  
+NameError (uninitialized constant JsonWebToken::JWT):
+  
+app/lib/json_web_token.rb:6:in `encode'
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2022-07-11 18:09:18 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rav01@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.6ms | Allocations: 5902)
+
+
+  
+NameError (uninitialized constant JsonWebToken::JWT):
+  
+app/lib/json_web_token.rb:5:in `encode'
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2022-07-11 18:10:22 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rav01@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 200 OK in 175ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 23431)
+
+
+Started GET "/users" for ::1 at 2022-07-11 18:10:55 +0530
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rav01@gmail.com"}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 203)
+
+
+Started POST "/auth/login" for ::1 at 2022-07-11 18:16:11 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rav01@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rav01@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `login'
+Completed 200 OK in 163ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 654)
+
+
+Started GET "/users" for ::1 at 2022-07-11 18:17:17 +0530
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rav01@gmail.com"}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 116)
+
+
+Started GET "/users" for ::1 at 2022-07-11 18:18:23 +0530
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rav01@gmail.com"}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started GET "/users" for ::1 at 2022-07-11 18:19:47 +0530
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rav01@gmail.com"}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 124)
+
+
+Started GET "/users" for ::1 at 2022-07-11 18:21:18 +0530
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"rav01@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rav01@gmail.com"}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 124)
+
+

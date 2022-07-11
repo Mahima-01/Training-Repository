@@ -19,11 +19,21 @@ end
 #https://reqres.in/api/users/2
 url = "https://reqres.in/api/users"
 print url,"\n"
-response1 = RestClient.post url, {
-  "name": "Ria",
-  "job": "Name"
+response1 = RestClient.patch url, {
+  "name": "morpheus",
+  "job": "zion resident"
 }
+
 data_h = JSON.parse(response1)
 url = "https://reqres.in/api/users/#{@id}"
 response2 = RestClient.get url
 print response2.body
+
+data_h = JSON.parse(response1)
+print response1.code
+print response1.body
+print data_h.keys
+url = "https://reqres.in/api/users/#{@id}"
+response2 = RestClient.patch url, {
+  "job": "some"
+}

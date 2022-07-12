@@ -1,0 +1,46 @@
+# Postman practise:
+
+Started GET "/users" for ::1 at 2022-07-12 17:49:33 +0530
+Processing by UsersController#index as */*
+  Parameters: {"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com"}}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started GET "/users" for ::1 at 2022-07-12 17:49:44 +0530
+Processing by UsersController#index as */*
+  Parameters: {"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com"}}
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authorize_request'
+  User Load (0.1ms)  SELECT "users".* FROM "users"
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1793)
+
+
+Started GET "/users" for ::1 at 2022-07-12 17:50:10 +0530
+Processing by UsersController#index as */*
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authorize_request'
+  User Load (0.1ms)  SELECT "users".* FROM "users"
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1420)
+
+
+Started GET "/users/jason" for ::1 at 2022-07-12 17:50:29 +0530
+Processing by UsersController#show as */*
+  Parameters: {"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "_username"=>"jason", "user"=>{"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com"}}
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authorize_request'
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?  [["username", "jason"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `find_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1504)
+
+Started GET "/users/ravi" for ::1 at 2022-07-12 17:52:44 +0530
+Processing by UsersController#show as */*
+  Parameters: {"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "_username"=>"ravi", "user"=>{"id"=>2, "name"=>"Jason", "username"=>"jason", "email"=>"jas01@gmail.com"}}
+  User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authorize_request'
+  User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?  [["username", "ravi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `find_user'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1169)
+

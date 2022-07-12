@@ -1,0 +1,24 @@
+# Difference between json web tokens and session cookies:
+JSON Web Tokens and session cookies both offer user authentication for websites and apps, but they’re not the same thing.
+
+Both JSON web tokens and sessions cookies resolve this issue by keeping certain user data authenticated at each new request.
+
+# Session based authentication:
+Session cookies make use of session-based authentication. A user’s logged in state is saved in the server’s memory.
+With this method, a session, which is a small file that stores information about the user including unique session ID, time of login and expirations, and more, is created by the server and stored in the database after you log in.
+After a user signs in, a session is securely created by the server. Then, that session ID is stored in a session cookie on the user’s browser. While the user remains logged in, the cookie is sent with every subsequent request.
+At each request, the server takes a look at the session cookie to read the session ID. If it matches the data stored in its memory, it sends a response back to the browser letting it know everything’s
+okay and ready to go.
+That’s when the session is authenticated and the user is free to browse the password-protected page. When they click to another protected page, the process repeats.
+
+
+# Json web tokens:
+Is a standarad for generating a hash of a source using it for authentication purpose.
+We are taking json data and encrypting it into tokens.
+The gem used for this is 'jwt'.
+This process is a form of token-based authentication.
+Token-based authentication is a protocol that generates encrypted security tokens. It enables users to verify their identity to websites, which then generates a unique encrypted authentication token.
+JSON web tokens work in a similar way as a bank account number on a cheque, and the signature that’s placed on it to approve the transfer of money with the cheque.
+With JSON web tokens, you can authenticate a user across multiple locations including multiple domains, mobile devices, and APIs to name a few. 
+This is because they’re stored locally in the request header.
+The token generated are bearer i.e, client can't change, modify it and if you do this server will say invalid.

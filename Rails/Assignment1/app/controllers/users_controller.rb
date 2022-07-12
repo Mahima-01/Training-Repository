@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @page = params.fetch(:page, 0).to_i
     if params[:search]
       @users_count = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").count
+      @users_count = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").count.load_async
       @users = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id).offset(@page * USERS_PER_PAGE).limit(USERS_PER_PAGE)
     else
       @users_count = User.all.count
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
       
   def show
     @user = User.find(params[:id])
+    @user = User.find(params[:id]).load_async
   end
     
   def search

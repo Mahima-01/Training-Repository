@@ -14904,3 +14904,99 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 16ms (Views: 9.5ms | ActiveRecord: 2.3ms | Allocations: 10988)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-12 22:16:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 10520)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 45407)
+Completed 200 OK in 52ms (Views: 38.0ms | ActiveRecord: 3.5ms | Allocations: 52772)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-12 22:17:04 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2048)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4243)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 5096)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-07-12 22:17:33 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 8226)
+
+
+  
+NoMethodError (undefined method `load_async' for #<User id: 3, first_name: "Mihir", last_name: "Batra", gender: "Male", about: nil, password: nil, country: "India", created_at: "2022-07-07 08:41:12.181543000 +0000", updated_at: "2022-07-08 07:31:41.087618000 +0000", email: "mihir@gmail.com", hobbies: ["Cooking", "movies", "Gardening"]>):
+  
+app/controllers/users_controller.rb:37:in `show'
+Started GET "/users" for 127.0.0.1 at 2022-07-12 22:20:32 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 4183)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 17972)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.7ms | Allocations: 20508)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2022-07-12 22:20:35 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2082)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4276)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 5114)
+
+
+Started GET "/?page=0" for 127.0.0.1 at 2022-07-12 22:20:36 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2038)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4232)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 5070)
+
+
+Started GET "/?page=0" for 127.0.0.1 at 2022-07-12 22:20:57 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2038)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4233)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 5083)
+
+

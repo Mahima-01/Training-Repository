@@ -1,0 +1,86 @@
+# Installing rails version 5.2.0:
+
+In Linux:
+goto ruby lib folder (in my system ---/.rvm/gems/ruby-2.3.1/bin)
+$ which bundle
+(gives path to find from which ruby your bundler executing( ---/.rvm/gems/ruby-2.3.1/bin/bundler) )
+edit "rails" file with your text editor
+dathu@ubuntu:~/.rvm/gems/ruby-2.3.1/bin$ sudo subl rails
+replace ( verion = ">= 0" ) with ( verion = "4.2.6" ) your specific installed version.
+save and check your current rails version.
+
+itsacheckmate@itsacheckmate:~$ gem install rails -v 5.2.0
+Fetching tzinfo-1.2.9.gem
+Fetching activesupport-5.2.0.gem
+Fetching actionview-5.2.0.gem
+Fetching actionpack-5.2.0.gem
+Fetching mimemagic-0.3.10.gem
+Fetching railties-5.2.0.gem
+Fetching marcel-0.3.3.gem
+Fetching arel-9.0.0.gem
+Fetching rails-5.2.0.gem
+Fetching activemodel-5.2.0.gem
+Fetching activerecord-5.2.0.gem
+Fetching activestorage-5.2.0.gem
+Fetching activejob-5.2.0.gem
+Fetching actionmailer-5.2.0.gem
+Fetching actioncable-5.2.0.gem
+Successfully installed tzinfo-1.2.9
+Successfully installed activesupport-5.2.0
+Successfully installed actionview-5.2.0
+Successfully installed actionpack-5.2.0
+Successfully installed railties-5.2.0
+Building native extensions. This could take a while...
+Successfully installed mimemagic-0.3.10
+Successfully installed marcel-0.3.3
+Successfully installed arel-9.0.0
+Successfully installed activemodel-5.2.0
+Successfully installed activerecord-5.2.0
+Successfully installed activestorage-5.2.0
+Successfully installed activejob-5.2.0
+Successfully installed actionmailer-5.2.0
+Successfully installed actioncable-5.2.0
+Successfully installed rails-5.2.0
+Parsing documentation for tzinfo-1.2.9
+Installing ri documentation for tzinfo-1.2.9
+Parsing documentation for activesupport-5.2.0
+Installing ri documentation for activesupport-5.2.0
+Parsing documentation for actionview-5.2.0
+Installing ri documentation for actionview-5.2.0
+Parsing documentation for actionpack-5.2.0
+Installing ri documentation for actionpack-5.2.0
+Parsing documentation for railties-5.2.0
+Installing ri documentation for railties-5.2.0
+Parsing documentation for mimemagic-0.3.10
+Installing ri documentation for mimemagic-0.3.10
+Parsing documentation for marcel-0.3.3
+Installing ri documentation for marcel-0.3.3
+Parsing documentation for arel-9.0.0
+Installing ri documentation for arel-9.0.0
+Parsing documentation for activemodel-5.2.0
+Installing ri documentation for activemodel-5.2.0
+Parsing documentation for activerecord-5.2.0
+Installing ri documentation for activerecord-5.2.0
+Parsing documentation for activestorage-5.2.0
+Installing ri documentation for activestorage-5.2.0
+Parsing documentation for activejob-5.2.0
+Installing ri documentation for activejob-5.2.0
+Parsing documentation for actionmailer-5.2.0
+Installing ri documentation for actionmailer-5.2.0
+Parsing documentation for actioncable-5.2.0
+Installing ri documentation for actioncable-5.2.0
+Parsing documentation for rails-5.2.0
+Installing ri documentation for rails-5.2.0
+Done installing documentation for tzinfo, activesupport, actionview, actionpack, railties, mimemagic, marcel, arel, activemodel, activerecord, activestorage, activejob, actionmailer, actioncable, rails after 5 seconds
+15 gems installed
+
+itsacheckmate@itsacheckmate:~$ cd .rvm/gems/ruby-3.0.0/bin
+itsacheckmate@itsacheckmate:~/.rvm/gems/ruby-3.0.0/bin$ which bundle
+/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/bundle
+itsacheckmate@itsacheckmate:~/.rvm/gems/ruby-3.0.0/bin$ sudo nano rails
+[sudo] password for itsacheckmate: 
+itsacheckmate@itsacheckmate:~/.rvm/gems/ruby-3.0.0/bin$ rails -v
+Rails 5.2.0
+
+
+

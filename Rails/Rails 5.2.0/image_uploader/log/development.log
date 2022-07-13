@@ -40,3 +40,354 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-07-13 18:50:09 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 657ms (Views: 651.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 18:50:19 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 6.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 18:53:57 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 18:53:59 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 18:55:15 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 18:55:17 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 18:59:11 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 18:59:13 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:11: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:13: syntax error, unexpected local variable or method, expecting ')'
+...ext_field :gender, class: "form-control" );@output_buffer.sa...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:13: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... :gender, class: "form-control" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:16: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:16: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:18: syntax error, unexpected local variable or method, expecting ')'
+...xt_field :address, class: "form-control" );@output_buffer.sa...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...:address, class: "form-control" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:21: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+...xt_field :profile, class: "form-control" );@output_buffer.sa...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...:profile, class: "form-control" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:26: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:27: syntax error, unexpected constant, expecting ')'
+...ffer.append=( form.submit "Sign Up", class: "btn btn-primary...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+...m.submit "Sign Up", class: "btn btn-primary" );@output_buffe...
+...                            ^~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:27: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...n Up", class: "btn btn-primary" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:34: unterminated string meets end of file
+          end
+             ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:34: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/users/sign_up.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:11: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:13: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:13: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:16: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:16: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:18: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:21: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:26: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:27: syntax error, unexpected constant, expecting ')'
+app/views/users/sign_up.html.erb:27: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:27: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:34: unterminated string meets end of file
+app/views/users/sign_up.html.erb:34: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/" for ::1 at 2022-07-13 18:59:19 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:01:15 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 19:01:16 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:10: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:10: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+...ext_field :gender, class: "form-control" );@output_buffer.sa...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:12: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... :gender, class: "form-control" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:15: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:15: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:17: syntax error, unexpected local variable or method, expecting ')'
+...xt_field :address, class: "form-control" );@output_buffer.sa...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:17: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...:address, class: "form-control" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:20: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+...xt_field :profile, class: "form-control" );@output_buffer.sa...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:22: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...:profile, class: "form-control" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+  <div class="mb-3">
+              ^~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:25: syntax error, unexpected string literal, expecting ')'
+  <div class="mb-3">
+                  ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:26: syntax error, unexpected constant, expecting ')'
+...ffer.append=( form.submit "Sign Up", class: "btn btn-primary...
+...                           ^~~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+...m.submit "Sign Up", class: "btn btn-primary" );@output_buffe...
+...                            ^~~
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...n Up", class: "btn btn-primary" );@output_buffer.safe_append...
+...                              ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:33: unterminated string meets end of file
+          end
+             ^
+/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views/users/sign_up.html.erb:33: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/users/sign_up.html.erb:10: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:10: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:12: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:12: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:15: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:15: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:17: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:17: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:20: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:22: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:25: syntax error, unexpected string literal, expecting ')'
+app/views/users/sign_up.html.erb:26: syntax error, unexpected constant, expecting ')'
+app/views/users/sign_up.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/sign_up.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/users/sign_up.html.erb:33: unterminated string meets end of file
+app/views/users/sign_up.html.erb:33: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/users/sign_up" for ::1 at 2022-07-13 19:05:08 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:05:13 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 19:05:27 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/create" for ::1 at 2022-07-13 19:05:53 +0530
+Processing by UsersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kjv8+p2qRdwaPWhMM4FdwbSGsMCUEuy+B7x3RklEkYZ8O/Hymzm+s0SIQz14A6rWxwIfRZh+XaL0vyXBmkCXaA==", "user"=>{"name"=>"Ria", "gender"=>"Female", "address"=>"abc ", "profile"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "gender", "profile", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ria"], ["gender", "Female"], ["profile", ""], ["address", "abc "], ["created_at", "2022-07-13 13:35:53.499779"], ["updated_at", "2022-07-13 13:35:53.499779"]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Redirected to http://localhost:3000/
+Completed 200 OK in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:05:53 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:08:52 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 19:08:55 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:09:20 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 19:09:24 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/create" for ::1 at 2022-07-13 19:09:51 +0530
+Processing by UsersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1k7dnXVlUreUXubuUrFFc0FS6nfngvdaiZbvCBATrHU4TtCVc/ap2MrrzZ8ZM7JkMtZF8uvuRkZ6lb2Pwxeqmw==", "user"=>{"name"=>"Meet", "gender"=>"Male", "address"=>"Delhi", "profile"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "gender", "profile", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Meet"], ["gender", "Male"], ["profile", ""], ["address", "Delhi"], ["created_at", "2022-07-13 13:39:51.787941"], ["updated_at", "2022-07-13 13:39:51.787941"]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Redirected to http://localhost:3000/
+Completed 200 OK in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:09:51 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 19:11:16 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+
+

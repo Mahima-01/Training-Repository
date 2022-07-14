@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  mount_uploader :Profile, ProfileUploader    
+  mount_uploader :profile, ProfileUploader    
 end
 

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root "users#index"
   get "users/sign_up"
   post "users/create"
+
+  resources :users
 end

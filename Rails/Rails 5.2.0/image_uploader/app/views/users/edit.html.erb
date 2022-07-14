@@ -1,0 +1,31 @@
+<h1>Sign Up</h1>
+
+<%= form_with model: @user, url: users_path do |form| %>
+  
+  <div >
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div> 
+  
+  <div >
+    <%= form.label :profile %>
+    <%= form.file_field :profile %>
+  </div>
+  
+  <div >
+    <%= form.label :gender %>
+    <%= form.radio_button :gender, "Male" %>
+    <%= form.label :gender, "Male" %>
+    <%= form.radio_button :gender, "Female" %>
+    <%= form.label :gender, "Female"  %>
+  </div>
+  
+  <div >
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Update Data"%>
+  </div>
+<% end %> 

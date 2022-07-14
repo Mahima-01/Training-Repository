@@ -409,3 +409,285 @@ Processing by UsersController#sign_up as HTML
 Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-07-13 22:20:56 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::TaskfileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:22:10 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::FileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2473061994910372215)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2473061994910372215)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2022-07-13 22:25:31 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::ProfileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:26:28 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 22:26:31 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 22:32:57 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::ProfileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:33:56 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::Profile_Uploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2473061994910372215)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2473061994910372215)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2022-07-13 22:38:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::ProfileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:40:13 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::ProfileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:40:13 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::ProfileUploader):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-14 12:31:28 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 93ms (Views: 86.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2022-07-14 12:31:31 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-14 12:31:32 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (136.5ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f28ecbb7f08>:0x00007f28ecfe4040>):
+    25:   
+    26:   <div class="field">
+    27:     add an image....
+    28:     <%= f.file_field :profile %>
+    29:   </div>
+    30: 
+    31:   <div class="mb-3">
+  
+app/views/users/sign_up.html.erb:28:in `block in _app_views_users_sign_up_html_erb___29803098605941061_14320'
+app/views/users/sign_up.html.erb:3:in `_app_views_users_sign_up_html_erb___29803098605941061_14320'
+Started GET "/users/sign_up" for ::1 at 2022-07-14 12:32:33 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/create" for ::1 at 2022-07-14 12:34:05 +0530
+Processing by UsersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TfE8+iPf3ugYj7YoZ78aT2iKJHXNs/fIdQVSwc5j4uBMHFnmIfiBBgMvzR1Z2Pd0kevUbRlu6LyzjEoVmUNeiQ==", "user"=>{"name"=>"Meera", "gender"=>"Female", "address"=>"Faridabad", "profile"=>#<ActionDispatch::Http::UploadedFile:0x00007f28fd70f6e8 @tempfile=#<Tempfile:/tmp/RackMultipart20220714-5381-1niqfcm.jpeg>, @original_filename="user.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile]\"; filename=\"user.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `Profile`):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/" for ::1 at 2022-07-14 12:34:34 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-14 12:34:37 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-14 12:35:34 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-14 12:40:29 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/create" for ::1 at 2022-07-14 12:41:12 +0530
+Processing by UsersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TwCkYTMGcnQm5TH8hHPGT0QaGsFlx6OHohxpL37FHK0W7VTrGekT5BNmbrR20MET/aXepwqvDjuNgtXIgbKvYA==", "user"=>{"name"=>"Meera", "gender"=>"Female", "address"=>"Faridabad", "profile"=>#<ActionDispatch::Http::UploadedFile:0x00007f28ed736028 @tempfile=#<Tempfile:/tmp/RackMultipart20220714-5381-1xld5h.jpg>, @original_filename="arrow.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile]\"; filename=\"arrow.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `Profile`):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/users/sign_up" for ::1 at 2022-07-14 12:42:18 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/create" for ::1 at 2022-07-14 12:42:41 +0530
+Processing by UsersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHLPTBwt2BzHi05hVUJhBTPm2lKm3Z0uPKPCd2XX4Cdxn6pQHgqH8twrNVRrJYw+yocqSnIAglr6KtqjMvdcTg==", "user"=>{"name"=>"Meera", "gender"=>"Female", "address"=>"Delhi", "profile"=>#<ActionDispatch::Http::UploadedFile:0x00007f28fc2bb7a0 @tempfile=#<Tempfile:/tmp/RackMultipart20220714-5381-lt62k2.jpeg>, @original_filename="user.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile]\"; filename=\"user.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `Profile`):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/users/sign_up" for ::1 at 2022-07-14 12:48:27 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 98ms (Views: 90.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users/create" for ::1 at 2022-07-14 12:48:48 +0530
+Processing by UsersController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ev7+JLwTlYz/iRu5gfMzmOj9klUhpaOzC1IeYhqUUH17E5s4vjTKYuQpYIy/lN6jEZxiTfV4vMfN2wa2TbTsFA==", "user"=>{"name"=>"Meera", "gender"=>"Female", "address"=>"Delhi", "profile"=>#<ActionDispatch::Http::UploadedFile:0x00007f301d0c8f10 @tempfile=#<Tempfile:/tmp/RackMultipart20220714-6571-17wps4b.jpg>, @original_filename="arrow.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile]\"; filename=\"arrow.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `Profile`):
+  
+app/controllers/users_controller.rb:12:in `create'

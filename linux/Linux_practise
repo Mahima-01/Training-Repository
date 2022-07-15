@@ -1075,4 +1075,69 @@ passwd: password updated successfully
 
 # clear : The ‘$ clear’ command is used to clean up the terminal so that you can type with more accuracy 🙂
 $ clear
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Scp: 
+Secure Copy or SCP is a means of securley transferring files between two machines on a network.
+
+# Cp:
+cp is the command entered in a Unix and Linux shell to copy a file from one place to another, possibly on a different filesystem.
+
+# grep command:
+Bascially helps in finding pattern or string.
+itsacheckmate@itsacheckmate:~$ ps -e | grep chrome
+  14809 ?        00:00:00 chrome_crashpad
+  16313 ?        00:00:42 chrome
+  16321 ?        00:00:00 chrome_crashpad
+  16323 ?        00:00:00 chrome_crashpad
+  16329 ?        00:00:00 chrome
+  16330 ?        00:00:00 chrome
+  16334 ?        00:00:00 chrome
+  16358 ?        00:01:08 chrome
+  16359 ?        00:00:20 chrome
+  16381 ?        00:00:00 chrome
+  16551 ?        00:00:04 chrome
+  16578 ?        00:00:08 chrome
+  16617 ?        00:00:01 chrome
+  16630 ?        00:00:00 chrome
+  16665 ?        00:00:10 chrome
+  16676 ?        00:00:00 chrome
+  19055 ?        00:00:07 chrome
+  19680 ?        00:00:00 chrome
+
+
+itsacheckmate@itsacheckmate:~$ ps -e | grep post
+   1020 ?        00:00:00 postgres
+   1030 ?        00:00:00 postgres
+   1031 ?        00:00:00 postgres
+   1032 ?        00:00:00 postgres
+   1033 ?        00:00:00 postgres
+   1034 ?        00:00:00 postgres
+   1035 ?        00:00:00 postgres
+
+# mv : Moving file from one location to another.
+First  write the file name and open the terminal at file location from where you want to move that file. 
+itsacheckmate@itsacheckmate:~/Desktop$ mv Html\ elements /home/itsacheckmate
+
+# VIM Editor:
+itsacheckmate@itsacheckmate:~$ ls
+ 123                hi               Linux            test2.txt
+ ab                 hlo              linux_practise   text
+ abc.txt           'Html elements'   logfile          Training
+ Assignments        Html_Project     Music            Training-Repository
+'carrierwave gem'   index.html       Newfile          Videos
+ d                  index.html.1     new_Nano         wget-log
+ Desktop            index.html.2     new_Nano.save    www.google.com
+ Documents          index.html.3     Pictures         Zip.zip
+ Downloads          index.html.4     Public
+ ersion             linus            snap
+ Exampapers         linux            Templates
+itsacheckmate@itsacheckmate:~$ vim abc.txt
+itsacheckmate@itsacheckmate:~$ head abc.txt
+Hello, I'm using vim.
+
+itsacheckmate@itsacheckmate:~$ vim abc.txt
+itsacheckmate@itsacheckmate:~$ tail abc.txt
+Hello, I'm using vim.
+How are you doing?
+Editing through vim commands.
 

@@ -12,4 +12,10 @@ print check_array([1, 2, 4], [1, 4]),"\n"
 
 print check_array([1, 2, 8], [2, 4]) 
 
+# Output:
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository/Ruby/Programs$ ruby sameelement.rb 
+true
+false
+true
+false
 

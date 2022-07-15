@@ -594,4 +594,387 @@ This is after line1.
 This is line1 in another file..
 This is new line1.
 Here you are.   (This is the new line added with tail -f command)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# PROCESS MANAGEMENT
+# Display your currently running processes
+ps
+itsacheckmate@itsacheckmate:~$ ps
+    PID TTY          TIME CMD
+  16110 pts/0    00:00:00 bash
+  16201 pts/0    00:00:00 ps
+
+# Display all the currently running processes on the system.
+ps -ef
+itsacheckmate@itsacheckmate:~$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 13:16 ?        00:00:02 /sbin/init splash
+root           2       0  0 13:16 ?        00:00:00 [kthreadd]
+root           3       2  0 13:16 ?        00:00:00 [rcu_gp]
+root           4       2  0 13:16 ?        00:00:00 [rcu_par_gp]
+root           6       2  0 13:16 ?        00:00:00 [kworker/0:0H-events_highpri
+root           9       2  0 13:16 ?        00:00:00 [mm_percpu_wq]
+root          10       2  0 13:16 ?        00:00:00 [rcu_tasks_rude_]
+root          11       2  0 13:16 ?        00:00:00 [rcu_tasks_trace]
+root          12       2  0 13:16 ?        00:00:00 [ksoftirqd/0]
+root          13       2  0 13:16 ?        00:00:14 [rcu_sched]
+root          14       2  0 13:16 ?        00:00:00 [migration/0]
+root          15       2  0 13:16 ?        00:00:00 [idle_inject/0]
+root          16       2  0 13:16 ?        00:00:00 [cpuhp/0]
+root          17       2  0 13:16 ?        00:00:00 [cpuhp/1]
+root          18       2  0 13:16 ?        00:00:00 [idle_inject/1]
+root          19       2  0 13:16 ?        00:00:00 [migration/1]
+root          20       2  0 13:16 ?        00:00:00 [ksoftirqd/1]
+root          22       2  0 13:16 ?        00:00:00 [kworker/1:0H-events_highpri
+root          23       2  0 13:16 ?        00:00:00 [cpuhp/2]
+root          24       2  0 13:16 ?        00:00:00 [idle_inject/2]
+root          25       2  0 13:16 ?        00:00:00 [migration/2]
+root          26       2  0 13:16 ?        00:00:00 [ksoftirqd/2]
+root          28       2  0 13:16 ?        00:00:00 [kworker/2:0H-events_highpri
+root          29       2  0 13:16 ?        00:00:00 [cpuhp/3]
+root          30       2  0 13:16 ?        00:00:00 [idle_inject/3]
+root          31       2  0 13:16 ?        00:00:00 [migration/3]
+root          32       2  0 13:16 ?        00:00:00 [ksoftirqd/3]
+root          34       2  0 13:16 ?        00:00:00 [kworker/3:0H-events_highpri
+root          35       2  0 13:16 ?        00:00:00 [cpuhp/4]
+root          36       2  0 13:16 ?        00:00:00 [idle_inject/4]
+root          37       2  0 13:16 ?        00:00:01 [migration/4]
+root          38       2  0 13:16 ?        00:00:00 [ksoftirqd/4]
+root          39       2  0 13:16 ?        00:00:02 [kworker/4:0-cgroup_destroy]
+root          40       2  0 13:16 ?        00:00:00 [kworker/4:0H-kblockd]
+root          41       2  0 13:16 ?        00:00:00 [cpuhp/5]
+root          42       2  0 13:16 ?        00:00:00 [idle_inject/5]
+root          43       2  0 13:16 ?        00:00:00 [migration/5]
+root          44       2  0 13:16 ?        00:00:00 [ksoftirqd/5]
+root          46       2  0 13:16 ?        00:00:00 [kworker/5:0H-events_highpri
+root          47       2  0 13:16 ?        00:00:00 [cpuhp/6]
+root          48       2  0 13:16 ?        00:00:00 [idle_inject/6]
+root          49       2  0 13:16 ?        00:00:00 [migration/6]
+root          50       2  0 13:16 ?        00:00:00 [ksoftirqd/6]
+root          52       2  0 13:16 ?        00:00:00 [kworker/6:0H-kblockd]
+root          53       2  0 13:16 ?        00:00:00 [cpuhp/7]
+root          54       2  0 13:16 ?        00:00:00 [idle_inject/7]
+root          55       2  0 13:16 ?        00:00:00 [migration/7]
+root          56       2  0 13:16 ?        00:00:00 [ksoftirqd/7]
+root          58       2  0 13:16 ?        00:00:00 [kworker/7:0H-events_highpri
+root          59       2  0 13:16 ?        00:00:00 [kdevtmpfs]
+root          60       2  0 13:16 ?        00:00:00 [netns]
+root          61       2  0 13:16 ?        00:00:00 [inet_frag_wq]
+root          62       2  0 13:16 ?        00:00:00 [kauditd]
+root          63       2  0 13:16 ?        00:00:00 [khungtaskd]
+root          64       2  0 13:16 ?        00:00:00 [oom_reaper]
+root          65       2  0 13:16 ?        00:00:00 [writeback]
+root          66       2  0 13:16 ?        00:00:00 [kcompactd0]
+root          67       2  0 13:16 ?        00:00:00 [ksmd]
+root          68       2  0 13:16 ?        00:00:00 [khugepaged]
+root         115       2  0 13:16 ?        00:00:00 [kintegrityd]
+root         116       2  0 13:16 ?        00:00:00 [kblockd]
+root         117       2  0 13:16 ?        00:00:00 [blkcg_punt_bio]
+root         119       2  0 13:16 ?        00:00:00 [tpm_dev_wq]
+root         120       2  0 13:16 ?        00:00:00 [ata_sff]
+root         121       2  0 13:16 ?        00:00:00 [md]
+root         123       2  0 13:16 ?        00:00:00 [edac-poller]
+root         124       2  0 13:16 ?        00:00:00 [devfreq_wq]
+root         125       2  0 13:16 ?        00:00:00 [watchdogd]
+root         127       2  0 13:16 ?        00:00:00 [kworker/0:1H-kblockd]
+root         129       2  0 13:16 ?        00:00:00 [kswapd0]
+root         130       2  0 13:16 ?        00:00:00 [ecryptfs-kthrea]
+root         132       2  0 13:16 ?        00:00:00 [kthrotld]
+root         136       2  0 13:16 ?        00:00:02 [kworker/7:1-events]
+root         137       2  0 13:16 ?        00:00:00 [acpi_thermal_pm]
+root         140       2  0 13:16 ?        00:00:00 [vfio-irqfd-clea]
+root         143       2  0 13:16 ?        00:00:00 [mld]
+root         144       2  0 13:16 ?        00:00:00 [kworker/3:1H-events_highpri
+root         145       2  0 13:16 ?        00:00:00 [ipv6_addrconf]
+root         154       2  0 13:16 ?        00:00:00 [kstrp]
+root         157       2  0 13:16 ?        00:00:00 [zswap-shrink]
+root         158       2  0 13:16 ?        00:00:16 [kworker/u17:0-hci0]
+root         166       2  0 13:16 ?        00:00:00 [charger_manager]
+root         222       2  0 13:16 ?        00:00:00 [kworker/5:1H-kblockd]
+root         223       2  0 13:16 ?        00:00:01 [kworker/6:2-mm_percpu_wq]
+root         224       2  0 13:16 ?        00:00:00 [irq/142-aerdrv]
+root         225       2  0 13:16 ?        00:00:00 [irq/142-pcie-dp]
+root         227       2  0 13:16 ?        00:00:00 [nvme-wq]
+root         228       2  0 13:16 ?        00:00:00 [nvme-reset-wq]
+root         229       2  0 13:16 ?        00:00:00 [nvme-delete-wq]
+root         231       2  0 13:16 ?        00:01:22 [irq/146-ELAN074]
+root         232       2  0 13:16 ?        00:00:00 [irq/147-ELAN251]
+root         234       2  0 13:16 ?        00:00:02 [kworker/3:2-events]
+root         235       2  0 13:16 ?        00:00:17 [kworker/2:2-events]
+root         254       2  0 13:16 ?        00:00:00 [kworker/4:1H-events_highpri
+root         255       2  0 13:16 ?        00:00:00 [kworker/6:1H-kblockd]
+root         257       2  0 13:16 ?        00:00:01 [jbd2/nvme0n1p5-]
+root         258       2  0 13:16 ?        00:00:00 [ext4-rsv-conver]
+root         272       2  0 13:16 ?        00:00:00 [kworker/7:1H-kblockd]
+root         299       2  0 13:16 ?        00:00:00 [kworker/2:1H-events_highpri
+root         301       2  0 13:16 ?        00:00:00 [kworker/1:1H-events_highpri
+root         305       1  0 13:16 ?        00:00:00 /lib/systemd/systemd-journal
+root         326       2  0 13:16 ?        00:00:00 [ipmi-msghandler]
+root         330       1  0 13:16 ?        00:00:00 /lib/systemd/systemd-udevd
+root         336       2  0 13:16 ?        00:00:00 [loop0]
+root         406       2  0 13:16 ?        00:00:00 [loop1]
+root         407       2  0 13:16 ?        00:00:00 [loop2]
+root         408       2  0 13:16 ?        00:00:00 [loop3]
+root         410       2  0 13:16 ?        00:00:00 [loop4]
+root         411       2  0 13:16 ?        00:00:00 [loop5]
+root         412       2  0 13:16 ?        00:00:00 [loop6]
+root         413       2  0 13:16 ?        00:00:00 [loop7]
+root         414       2  0 13:16 ?        00:00:00 [loop8]
+root         430       2  0 13:16 ?        00:00:00 [irq/156-mei_me]
+root         432       2  0 13:16 ?        00:00:00 [cfg80211]
+root         433       2  0 13:16 ?        00:00:00 [loop9]
+root         438       2  0 13:16 ?        00:00:00 [kworker/7:2-events]
+root         441       2  0 13:16 ?        00:00:00 [kworker/u17:1-hci0]
+root         448       2  0 13:16 ?        00:00:00 [loop10]
+root         462       2  0 13:16 ?        00:00:00 [cryptd]
+root         494       2  0 13:16 ?        00:00:00 [card0-crtc0]
+root         496       2  0 13:16 ?        00:00:00 [card0-crtc1]
+root         497       2  0 13:16 ?        00:00:00 [card0-crtc2]
+root         500       2  0 13:16 ?        00:00:00 [card0-crtc3]
+root         502       2  0 13:16 ?        00:00:00 [loop11]
+root         514       2  0 13:16 ?        00:00:46 [napi/phy0-8193]
+root         515       2  0 13:16 ?        00:00:00 [napi/phy0-8194]
+root         516       2  0 13:16 ?        00:00:13 [napi/phy0-8195]
+root         517       2  0 13:16 ?        00:00:00 [loop12]
+root         553       2  0 13:16 ?        00:00:00 [loop13]
+root         575       2  0 13:16 ?        00:00:00 [irq/177-AudioDS]
+root         599       2  0 13:16 ?        00:00:00 [loop14]
+root         641       2  0 13:16 ?        00:00:00 [loop15]
+root         642       2  0 13:16 ?        00:00:00 [loop16]
+root         645       2  0 13:16 ?        00:00:00 [loop17]
+root         649       2  0 13:16 ?        00:00:00 [loop18]
+root         733       2  0 13:16 ?        00:00:00 [loop19]
+root         754       2  0 13:16 ?        00:00:00 [loop20]
+root         758       2  0 13:16 ?        00:00:00 [loop21]
+root         759       2  0 13:16 ?        00:00:00 [loop22]
+root         760       2  0 13:16 ?        00:00:00 [loop23]
+root         761       2  0 13:16 ?        00:00:00 [loop24]
+root         762       2  0 13:16 ?        00:00:00 [loop25]
+root         764       2  0 13:16 ?        00:00:00 [loop27]
+root         765       2  0 13:16 ?        00:00:00 [loop28]
+root         766       2  0 13:16 ?        00:00:00 [loop29]
+root         767       2  0 13:16 ?        00:00:00 [loop30]
+root         768       2  0 13:16 ?        00:00:00 [loop31]
+root         769       2  0 13:16 ?        00:00:04 [mt76-tx phy0]
+root         772       2  0 13:16 ?        00:00:00 [loop32]
+root         773       2  0 13:16 ?        00:00:00 [loop33]
+root         775       2  0 13:16 ?        00:00:00 [loop34]
+root         776       2  0 13:16 ?        00:00:00 [loop35]
+root         777       2  0 13:16 ?        00:00:00 [loop36]
+systemd+     803       1  0 13:16 ?        00:00:01 /lib/systemd/systemd-resolve
+root         855       1  0 13:16 ?        00:00:00 /usr/lib/accountsservice/acc
+root         856       1  0 13:16 ?        00:00:00 /usr/sbin/acpid
+avahi        858       1  0 13:16 ?        00:00:02 avahi-daemon: running [itsac
+root         859       1  0 13:16 ?        00:00:00 /usr/lib/bluetooth/bluetooth
+root         860       1  0 13:16 ?        00:00:00 /usr/sbin/cron -f
+root         861       1  0 13:16 ?        00:00:00 /usr/sbin/cupsd -l
+message+     864       1  0 13:16 ?        00:00:03 /usr/bin/dbus-daemon --syste
+root         867       1  0 13:16 ?        00:00:18 /usr/sbin/NetworkManager --n
+root         872       1  0 13:16 ?        00:00:02 /usr/sbin/iio-sensor-proxy
+root         875       1  0 13:16 ?        00:00:00 /usr/sbin/irqbalance --foreg
+root         879       1  0 13:16 ?        00:00:00 /usr/bin/python3 /usr/bin/ne
+root         883       1  0 13:16 ?        00:00:02 /usr/lib/policykit-1/polkitd
+syslog       888       1  0 13:16 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         896       1  0 13:16 ?        00:00:05 /usr/lib/snapd/snapd
+root         897       1  0 13:16 ?        00:00:00 /usr/libexec/switcheroo-cont
+root         900       1  0 13:16 ?        00:00:00 /lib/systemd/systemd-logind
+root         901       1  0 13:16 ?        00:00:01 /usr/sbin/thermald --systemd
+root         902       1  0 13:16 ?        00:00:00 /usr/lib/udisks2/udisksd
+root         903       1  0 13:16 ?        00:00:00 /sbin/wpa_supplicant -u -s -
+avahi        908     858  0 13:16 ?        00:00:00 avahi-daemon: chroot helper
+root         932       1  0 13:16 ?        00:00:00 /usr/sbin/cups-browsed
+colord       938       1  0 13:16 ?        00:00:00 /usr/libexec/colord
+root         959       1  0 13:16 ?        00:00:00 /usr/sbin/ModemManager
+root         979       1  0 13:16 ?        00:00:01 /usr/bin/anydesk --service
+root         994       1  0 13:16 ?        00:00:00 /usr/sbin/gdm3
+postgres    1020       1  0 13:16 ?        00:00:00 /usr/lib/postgresql/12/bin/p
+postgres    1030    1020  0 13:16 ?        00:00:00 postgres: 12/main: checkpoin
+postgres    1031    1020  0 13:16 ?        00:00:00 postgres: 12/main: backgroun
+postgres    1032    1020  0 13:16 ?        00:00:00 postgres: 12/main: walwriter
+postgres    1033    1020  0 13:16 ?        00:00:00 postgres: 12/main: autovacuu
+postgres    1034    1020  0 13:16 ?        00:00:00 postgres: 12/main: stats col
+postgres    1035    1020  0 13:16 ?        00:00:00 postgres: 12/main: logical r
+root        1036       1  0 13:16 ?        00:00:00 /usr/bin/python3 /usr/share/
+rtkit       1066       1  0 13:16 ?        00:00:00 /usr/libexec/rtkit-daemon
+root        1158       1  0 13:16 ?        00:00:00 /usr/lib/upower/upowerd
+itsache+    1564       1  0 13:16 ?        00:00:00 /lib/systemd/systemd --user
+itsache+    1565    1564  0 13:16 ?        00:00:00 (sd-pam)
+root        1623       2  0 13:16 ?        00:00:00 [krfcommd]
+whoopsie    2747       1  0 13:16 ?        00:00:00 /usr/bin/whoopsie -f
+kernoops    2748       1  0 13:16 ?        00:00:00 /usr/sbin/kerneloops --test
+kernoops    2750       1  0 13:16 ?        00:00:00 /usr/sbin/kerneloops
+root        5527       2  0 13:22 ?        00:00:00 [loop37]
+root        9347       2  0 16:09 ?        00:00:01 [kworker/u16:3-i915]
+root       10295       2  0 16:21 ?        00:00:01 [kworker/1:0-events]
+root       11744       2  0 16:28 ?        00:00:00 [kworker/5:1-inet_frag_wq]
+root       12689       2  0 16:37 ?        00:00:00 [kworker/3:0-events]
+root       12788       2  0 16:40 ?        00:00:00 [kworker/u16:0-events_power_
+root       12789       2  0 16:40 ?        00:00:01 [kworker/0:2-events]
+root       12792       2  0 16:40 ?        00:00:00 [kworker/4:2-events]
+root       13005       2  0 16:45 ?        00:00:00 [kworker/u16:1-events_unboun
+root       13041       2  0 16:47 ?        00:00:00 [kworker/6:1-events]
+root       13047       2  0 16:47 ?        00:00:00 [kworker/1:2-events]
+root       13118       2  0 16:50 ?        00:00:00 [kworker/2:0-events]
+root       13130       2  0 16:50 ?        00:00:00 [kworker/0:0-cgroup_destroy]
+systemd+   13365       1  0 16:52 ?        00:00:00 /lib/systemd/systemd-timesyn
+root       13383       2  0 16:52 ?        00:00:00 [kworker/5:0-events]
+root       13414       2  0 16:54 ?        00:00:00 [kworker/1:1-cgroup_destroy]
+root       13443       2  0 16:54 ?        00:00:00 [kworker/3:1-events]
+root       13478       2  0 16:56 ?        00:00:00 [kworker/4:1-events]
+root       13490       2  0 16:57 ?        00:00:00 [kworker/u17:2-i915_flip]
+root       13494       2  0 16:57 ?        00:00:00 [kworker/u16:2-ext4-rsv-conv
+root       13515       2  0 16:57 ?        00:00:00 [kworker/u16:4-events_unboun
+root       13519       2  0 16:57 ?        00:00:00 [kworker/6:0-events]
+itsache+   13536    1564  0 16:57 ?        00:00:00 /usr/bin/pulseaudio --daemon
+root       13543       2  0 16:57 ?        00:00:00 [kworker/7:0-events]
+root       13574       2  0 16:57 ?        00:00:00 [kworker/0:1-cgroup_destroy]
+root       13771       1  1 16:57 ?        00:00:01 /usr/lib/packagekit/packagek
+itsache+   13922    1564  0 16:57 ?        00:00:00 /usr/bin/dbus-daemon --sessi
+root       13955     994  0 16:57 ?        00:00:00 gdm-session-worker [pam/gdm-
+itsache+   13962       1  0 16:57 ?        00:00:00 /usr/bin/gnome-keyring-daemo
+itsache+   13966   13955  0 16:57 tty2     00:00:00 /usr/lib/gdm3/gdm-x-session 
+itsache+   13968   13966  2 16:57 tty2     00:00:02 /usr/lib/xorg/Xorg vt2 -disp
+root       13969       2  0 16:57 ?        00:00:00 [kworker/2:1-events]
+itsache+   13978   13966  0 16:57 tty2     00:00:00 /usr/libexec/gnome-session-b
+itsache+   14100    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfsd
+itsache+   14105    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfsd-fuse /run
+itsache+   14115    1564  0 16:57 ?        00:00:00 /usr/libexec/at-spi-bus-laun
+itsache+   14120   14115  0 16:57 ?        00:00:00 /usr/bin/dbus-daemon --confi
+itsache+   14126    1564  0 16:57 ?        00:00:00 /usr/libexec/gnome-session-c
+itsache+   14133    1564  0 16:57 ?        00:00:00 /usr/libexec/gnome-session-b
+itsache+   14147    1564  6 16:57 ?        00:00:06 /usr/bin/gnome-shell
+itsache+   14173   14147  0 16:57 ?        00:00:00 ibus-daemon --panel disable 
+itsache+   14177   14173  0 16:57 ?        00:00:00 /usr/libexec/ibus-dconf
+itsache+   14178   14173  0 16:57 ?        00:00:00 /usr/libexec/ibus-extension-
+itsache+   14180    1564  0 16:57 ?        00:00:00 /usr/libexec/ibus-x11 --kill
+itsache+   14182    1564  0 16:57 ?        00:00:00 /usr/libexec/ibus-portal
+itsache+   14196    1564  0 16:57 ?        00:00:00 /usr/libexec/at-spi2-registr
+itsache+   14200    1564  0 16:57 ?        00:00:00 /usr/libexec/xdg-permission-
+itsache+   14202    1564  0 16:57 ?        00:00:00 /usr/libexec/gnome-shell-cal
+itsache+   14211    1564  0 16:57 ?        00:00:00 /usr/libexec/evolution-sourc
+itsache+   14219    1564  0 16:57 ?        00:00:00 /usr/libexec/goa-daemon
+itsache+   14222    1564  0 16:57 ?        00:00:00 /usr/libexec/evolution-calen
+itsache+   14230    1564  0 16:57 ?        00:00:00 /usr/libexec/goa-identity-se
+itsache+   14242    1564  0 16:57 ?        00:00:00 /usr/libexec/dconf-service
+itsache+   14249    1564  0 16:57 ?        00:00:00 /usr/libexec/evolution-addre
+itsache+   14252    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfs-udisks2-vo
+itsache+   14266    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfs-gphoto2-vo
+itsache+   14270    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfs-goa-volume
+itsache+   14274    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfs-mtp-volume
+itsache+   14278    1564  0 16:57 ?        00:00:00 /usr/libexec/gvfs-afc-volume
+itsache+   14286    1564  0 16:57 ?        00:00:00 /usr/bin/gjs /usr/share/gnom
+itsache+   14298   14100  0 16:57 ?        00:00:00 /usr/libexec/gvfsd-trash --s
+itsache+   14310    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-a11y-settin
+itsache+   14311    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-color
+itsache+   14312    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-datetime
+itsache+   14313    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-housekeepin
+itsache+   14316    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-keyboard
+itsache+   14317    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-media-keys
+itsache+   14318    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-power
+itsache+   14321    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-print-notif
+itsache+   14323    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-rfkill
+itsache+   14330    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-screensaver
+itsache+   14332   14133  0 16:57 ?        00:00:00 /usr/bin/anydesk --tray
+itsache+   14336    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-sharing
+itsache+   14338   14133  0 16:57 ?        00:00:00 /usr/libexec/evolution-data-
+itsache+   14341    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-smartcard
+itsache+   14343    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-sound
+itsache+   14345    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-usb-protect
+itsache+   14346    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-wacom
+itsache+   14348    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-wwan
+itsache+   14351    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-xsettings
+itsache+   14384   14173  0 16:57 ?        00:00:00 /usr/libexec/ibus-engine-sim
+itsache+   14391   14133  0 16:57 ?        00:00:00 /usr/libexec/gsd-disk-utilit
+itsache+   14429    1564  0 16:57 ?        00:00:00 /usr/libexec/gsd-printer
+itsache+   14450    1564  1 16:57 ?        00:00:01 /snap/skype/217/usr/share/sk
+itsache+   14455    1564  2 16:57 ?        00:00:02 /snap/snap-store/558/usr/bin
+itsache+   14525    1564  0 16:57 ?        00:00:00 /usr/libexec/xdg-document-po
+root       14556       2  0 16:57 ?        00:00:00 [kworker/1:3-events]
+itsache+   14727    1564  2 16:57 ?        00:00:02 /snap/slack/64/usr/lib/slack
+itsache+   14729    1564  0 16:57 ?        00:00:00 /usr/libexec/xdg-desktop-por
+itsache+   14731   14450  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   14732   14450  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   14736   14727  0 16:57 ?        00:00:00 /snap/slack/64/usr/lib/slack
+itsache+   14739   14727  0 16:57 ?        00:00:00 /snap/slack/64/usr/lib/slack
+itsache+   14740   14732  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   14747    1564  0 16:57 ?        00:00:00 /usr/libexec/xdg-desktop-por
+itsache+   14769    1564  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   14796   14731  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   14798   14450  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   14809    1564  0 16:57 ?        00:00:00 /snap/slack/64/usr/lib/slack
+root       14838       1  0 16:57 ?        00:00:00 /usr/libexec/fwupd/fwupd
+itsache+   14840   14450 10 16:57 ?        00:00:10 /snap/skype/217/usr/share/sk
+itsache+   14874   14736  0 16:57 ?        00:00:00 /snap/slack/64/usr/lib/slack
+itsache+   14882   14727  1 16:57 ?        00:00:01 /snap/slack/64/usr/lib/slack
+itsache+   14914    1564  0 16:57 ?        00:00:00 /usr/bin/snap userd
+itsache+   14934   14739  8 16:57 ?        00:00:08 /snap/slack/64/usr/lib/slack
+itsache+   15221   14450  0 16:57 ?        00:00:00 /snap/skype/217/usr/share/sk
+itsache+   15350    1564  5 16:58 ?        00:00:04 /opt/google/chrome/chrome --
+itsache+   15356   15350  0 16:58 ?        00:00:00 cat
+itsache+   15357   15350  0 16:58 ?        00:00:00 cat
+itsache+   15359    1564  0 16:58 ?        00:00:00 /opt/google/chrome/chrome_cr
+itsache+   15361    1564  0 16:58 ?        00:00:00 /opt/google/chrome/chrome_cr
+itsache+   15367   15350  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15368   15350  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15369   15368  0 16:58 ?        00:00:00 /opt/google/chrome/nacl_help
+itsache+   15372   15368  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15394   15367  2 16:58 ?        00:00:01 /opt/google/chrome/chrome --
+itsache+   15395   15350  1 16:58 ?        00:00:01 /opt/google/chrome/chrome --
+itsache+   15417   15372  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15565   15372  1 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15608    1564  1 16:58 ?        00:00:00 /usr/bin/nautilus --gapplica
+itsache+   15626   15372  1 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15645    1564  3 16:58 ?        00:00:01 /usr/bin/gedit --gapplicatio
+itsache+   15737   15372  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15744   15372  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15796   15372  1 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15803   15372  3 16:58 ?        00:00:01 /opt/google/chrome/chrome --
+itsache+   15862   15372 10 16:58 ?        00:00:05 /opt/google/chrome/chrome --
+itsache+   15926   15372  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15954   15350  0 16:58 ?        00:00:00 /opt/google/chrome/chrome --
+itsache+   15977    1564  0 16:58 ?        00:00:00 /usr/libexec/gvfsd-metadata
+itsache+   15980   14133  0 16:58 ?        00:00:00 update-notifier
+root       16078       2  0 16:58 ?        00:00:00 [kworker/5:2-events]
+itsache+   16099    1564  1 16:59 ?        00:00:00 /usr/libexec/gnome-terminal-
+itsache+   16110   16099  0 16:59 pts/0    00:00:00 -bash
+itsache+   16203   16110  0 16:59 pts/0    00:00:00 ps -ef
+
+# Display process information for processname
+ps -ef | grep processname
+
+# Display and manage the top processes
+top
+itsacheckmate@itsacheckmate:~$ top
+
+top - 17:00:25 up  3:44,  1 user,  load average: 0.48, 0.55, 0.45
+Tasks: 330 total,   1 running, 329 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.2 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.2 si,  0.0 st
+MiB Mem :  15772.3 total,   9073.8 free,   1999.1 used,   4699.4 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  12987.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  
+    231 root     -51   0       0      0      0 S   2.0   0.0   1:23.39 irq/146+ 
+  13968 itsache+  20   0  534028  82156  47852 S   1.7   0.5   0:04.57 Xorg     
+  14147 itsache+  20   0 4435928 281808 105440 S   1.0   1.7   0:07.98 gnome-s+ 
+  16099 itsache+  20   0  963508  54132  39912 S   0.7   0.3   0:00.75 gnome-t+ 
+    514 root      20   0       0      0      0 S   0.3   0.0   0:47.09 napi/ph+ 
+  13515 root      20   0       0      0      0 I   0.3   0.0   0:00.20 kworker+ 
+  14450 itsache+  20   0   22.9g 148564 107856 S   0.3   0.9   0:01.25 skypefo+ 
+  14840 itsache+  20   0   28.5g 279792 132952 S   0.3   1.7   0:10.21 skypefo+ 
+  15350 itsache+  20   0   16.5g 257684 167440 S   0.3   1.6   0:04.74 chrome   
+  15395 itsache+  20   0   16.3g 108892  83468 S   0.3   0.7   0:01.53 chrome   
+  15862 itsache+  20   0   28.5g 197676  91524 S   0.3   1.2   0:05.17 chrome   
+  16243 itsache+  20   0   11992   3960   3196 R   0.3   0.0   0:00.02 top      
+      1 root      20   0  169256  13064   8012 S   0.0   0.1   0:02.39 systemd  
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd 
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp   
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+ 
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+
+# Kill process with process ID of pid
+kill pid
+itsacheckmate@itsacheckmate:~$ kill 15350
+
+# Kill all processes named processname
+killall processname
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

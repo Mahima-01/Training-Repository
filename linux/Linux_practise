@@ -1,0 +1,597 @@
+#  USER INFORMATION AND MANAGEMENT:
+# Display the user and group ids of your current user.
+id
+
+# Display the last users who have logged onto the system.
+last
+
+# Show who is logged into the system.
+who
+
+# Show who is logged in and what they are doing.
+w
+
+itsacheckmate@itsacheckmate:~$ who
+itsacheckmate :0           2022-07-15 09:57 (:0)
+itsacheckmate@itsacheckmate:~$ w
+ 16:31:10 up  3:14,  1 user,  load average: 0.42, 0.64, 0.53
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+itsachec :0       :0               09:57   ?xdm?  14:32   0.01s /usr/lib/gdm3/g
+itsacheckmate@itsacheckmate:~$ id
+uid=1000(itsacheckmate) gid=1000(itsacheckmate) groups=1000(itsacheckmate),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
+itsacheckmate@itsacheckmate:~$ last
+itsachec :0           :0               Fri Jul 15 09:57    gone - no logout
+reboot   system boot  5.13.0-52-generi Fri Jul 15 09:57   still running
+itsachec :0           :0               Thu Jul 14 21:40 - down   (00:32)
+reboot   system boot  5.13.0-52-generi Thu Jul 14 21:39 - 22:12  (00:33)
+itsachec :0           :0               Thu Jul 14 12:17 - down   (08:16)
+reboot   system boot  5.13.0-52-generi Thu Jul 14 12:16 - 20:33  (08:16)
+itsachec :0           :0               Thu Jul 14 10:44 - down   (00:18)
+reboot   system boot  5.13.0-52-generi Thu Jul 14 10:44 - 11:03  (00:19)
+itsachec :0           :0               Thu Jul 14 08:55 - down   (00:00)
+reboot   system boot  5.13.0-52-generi Thu Jul 14 08:55 - 08:56  (00:00)
+itsachec :0           :0               Wed Jul 13 21:28 - down   (01:23)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 21:28 - 22:52  (01:23)
+itsachec :0           :0               Wed Jul 13 21:25 - down   (00:02)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 21:25 - 21:28  (00:02)
+itsachec :0           :0               Wed Jul 13 17:02 - down   (03:25)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 17:02 - 20:28  (03:25)
+itsachec :0           :0               Wed Jul 13 12:19 - down   (04:42)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 12:19 - 17:02  (04:43)
+itsachec :0           :0               Wed Jul 13 11:02 - down   (00:45)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 11:01 - 11:47  (00:45)
+itsachec :0           :0               Wed Jul 13 10:21 - down   (00:21)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 10:21 - 10:43  (00:21)
+itsachec :0           :0               Wed Jul 13 08:35 - down   (00:06)
+reboot   system boot  5.13.0-52-generi Wed Jul 13 08:35 - 08:42  (00:06)
+itsachec :0           :0               Tue Jul 12 20:27 - down   (02:06)
+reboot   system boot  5.13.0-52-generi Tue Jul 12 18:55 - 22:33  (03:37)
+itsachec :0           :0               Tue Jul 12 12:04 - crash  (06:51)
+reboot   system boot  5.13.0-52-generi Tue Jul 12 12:03 - 22:33  (10:29)
+itsachec :0           :0               Tue Jul 12 10:31 - down   (00:33)
+reboot   system boot  5.13.0-52-generi Tue Jul 12 10:30 - 11:04  (00:33)
+itsachec :0           :0               Mon Jul 11 21:35 - down   (00:10)
+reboot   system boot  5.13.0-52-generi Mon Jul 11 21:35 - 21:46  (00:11)
+itsachec :0           :0               Mon Jul 11 12:30 - down   (07:52)
+reboot   system boot  5.13.0-52-generi Mon Jul 11 12:29 - 20:22  (07:52)
+itsachec :0           :0               Mon Jul 11 11:20 - down   (00:01)
+reboot   system boot  5.13.0-52-generi Mon Jul 11 11:20 - 11:22  (00:01)
+itsachec :0           :0               Sun Jul 10 18:44 - down   (00:13)
+reboot   system boot  5.13.0-52-generi Sun Jul 10 18:43 - 18:57  (00:13)
+itsachec :0           :0               Sun Jul 10 14:27 - down   (03:16)
+reboot   system boot  5.13.0-52-generi Sun Jul 10 14:27 - 17:43  (03:16)
+itsachec :0           :0               Sun Jul 10 08:50 - down   (00:00)
+reboot   system boot  5.13.0-52-generi Sun Jul 10 08:49 - 08:50  (00:01)
+itsachec :0           :0               Sat Jul  9 21:28 - down   (01:07)
+reboot   system boot  5.13.0-52-generi Sat Jul  9 21:28 - 22:36  (01:08)
+itsachec :0           :0               Sat Jul  9 20:27 - down   (00:01)
+reboot   system boot  5.13.0-52-generi Sat Jul  9 20:27 - 20:28  (00:01)
+itsachec :0           :0               Sat Jul  9 15:03 - down   (01:24)
+reboot   system boot  5.13.0-52-generi Sat Jul  9 15:03 - 16:28  (01:24)
+itsachec :0           :0               Fri Jul  8 11:49 - down   (10:02)
+reboot   system boot  5.13.0-52-generi Fri Jul  8 11:49 - 21:52  (10:03)
+itsachec :0           :0               Thu Jul  7 22:23 - down   (00:25)
+reboot   system boot  5.13.0-52-generi Thu Jul  7 22:23 - 22:49  (00:25)
+itsachec :0           :0               Thu Jul  7 12:27 - down   (08:19)
+reboot   system boot  5.13.0-52-generi Thu Jul  7 12:27 - 20:46  (08:19)
+itsachec :0           :0               Wed Jul  6 12:27 - down   (09:36)
+reboot   system boot  5.13.0-52-generi Wed Jul  6 12:27 - 22:04  (09:37)
+itsachec :0           :0               Wed Jul  6 09:57 - down   (00:00)
+reboot   system boot  5.13.0-52-generi Wed Jul  6 09:57 - 09:58  (00:01)
+itsachec :0           :0               Tue Jul  5 11:45 - down   (11:54)
+reboot   system boot  5.13.0-52-generi Tue Jul  5 11:44 - 23:40  (11:55)
+itsachec :0           :0               Mon Jul  4 21:10 - down   (01:15)
+reboot   system boot  5.13.0-52-generi Mon Jul  4 21:10 - 22:26  (01:16)
+itsachec :0           :0               Mon Jul  4 20:45 - down   (00:04)
+reboot   system boot  5.13.0-52-generi Mon Jul  4 20:45 - 20:49  (00:04)
+itsachec :0           :0               Mon Jul  4 15:15 - down   (03:26)
+reboot   system boot  5.13.0-52-generi Mon Jul  4 15:14 - 18:41  (03:26)
+itsachec :0           :0               Mon Jul  4 09:32 - down   (00:15)
+reboot   system boot  5.13.0-52-generi Mon Jul  4 09:32 - 09:47  (00:15)
+itsachec :0           :0               Mon Jul  4 08:40 - down   (00:01)
+reboot   system boot  5.13.0-52-generi Mon Jul  4 08:39 - 08:41  (00:01)
+itsachec :0           :0               Sun Jul  3 20:25 - down   (02:00)
+reboot   system boot  5.13.0-52-generi Sun Jul  3 20:25 - 22:26  (02:00)
+itsachec :0           :0               Sun Jul  3 18:05 - 20:22  (02:17)
+reboot   system boot  5.13.0-52-generi Sun Jul  3 18:04 - 22:26  (04:21)
+itsachec :0           :0               Sun Jul  3 10:06 - down   (05:49)
+reboot   system boot  5.13.0-51-generi Sun Jul  3 10:05 - 15:55  (05:50)
+itsachec :0           :0               Sat Jul  2 13:01 - crash  (21:03)
+reboot   system boot  5.13.0-51-generi Sat Jul  2 13:01 - 15:55 (1+02:53)
+itsachec :0           :0               Fri Jul  1 21:50 - down   (02:07)
+reboot   system boot  5.13.0-51-generi Fri Jul  1 21:49 - 23:57  (02:07)
+itsachec :0           :0               Fri Jul  1 18:16 - down   (01:51)
+reboot   system boot  5.13.0-51-generi Fri Jul  1 18:16 - 20:08  (01:51)
+itsachec :0           :0               Fri Jul  1 11:59 - down   (05:36)
+reboot   system boot  5.13.0-51-generi Fri Jul  1 11:58 - 17:35  (05:37)
+itsachec :0           :0               Thu Jun 30 21:24 - down   (02:41)
+reboot   system boot  5.13.0-51-generi Thu Jun 30 21:24 - 00:05  (02:41)
+itsachec :0           :0               Thu Jun 30 13:37 - down   (05:56)
+reboot   system boot  5.13.0-51-generi Thu Jun 30 13:37 - 19:34  (05:57)
+itsachec :0           :0               Thu Jun 30 11:06 - crash  (02:31)
+reboot   system boot  5.13.0-51-generi Thu Jun 30 11:06 - 19:34  (08:28)
+itsachec :0           :0               Wed Jun 29 21:19 - down   (00:49)
+reboot   system boot  5.13.0-51-generi Wed Jun 29 21:19 - 22:09  (00:50)
+itsachec :0           :0               Wed Jun 29 13:21 - down   (06:16)
+reboot   system boot  5.13.0-51-generi Wed Jun 29 13:20 - 19:37  (06:16)
+itsachec :0           :0               Tue Jun 28 17:51 - down   (01:07)
+reboot   system boot  5.13.0-51-generi Tue Jun 28 17:50 - 18:59  (01:08)
+itsachec :0           :0               Tue Jun 28 15:55 - down   (01:19)
+reboot   system boot  5.13.0-51-generi Tue Jun 28 15:54 - 17:14  (01:19)
+itsachec :0           :0               Tue Jun 28 10:33 - down   (00:12)
+reboot   system boot  5.13.0-51-generi Tue Jun 28 10:33 - 10:46  (00:12)
+itsachec :0           :0               Mon Jun 27 13:00 - down   (08:50)
+reboot   system boot  5.13.0-51-generi Mon Jun 27 13:00 - 21:50  (08:50)
+itsachec :0           :0               Sun Jun 26 16:35 - down   (00:43)
+reboot   system boot  5.13.0-51-generi Sun Jun 26 16:34 - 17:19  (00:45)
+itsachec :0           :0               Sat Jun 25 15:10 - down   (00:45)
+reboot   system boot  5.13.0-51-generi Sat Jun 25 15:10 - 15:55  (00:45)
+itsachec :0           :0               Fri Jun 24 22:04 - down   (00:26)
+reboot   system boot  5.13.0-51-generi Fri Jun 24 22:03 - 22:31  (00:27)
+itsachec :0           :0               Fri Jun 24 12:53 - down   (07:13)
+reboot   system boot  5.13.0-51-generi Fri Jun 24 12:53 - 20:07  (07:14)
+itsachec :0           :0               Thu Jun 23 12:45 - down   (09:58)
+reboot   system boot  5.13.0-51-generi Thu Jun 23 12:45 - 22:43  (09:58)
+itsachec :0           :0               Wed Jun 22 20:56 - down   (02:25)
+reboot   system boot  5.13.0-51-generi Wed Jun 22 20:56 - 23:22  (02:25)
+itsachec :0           :0               Wed Jun 22 12:16 - down   (05:59)
+reboot   system boot  5.13.0-51-generi Wed Jun 22 12:15 - 18:15  (06:00)
+itsachec :0           :0               Tue Jun 21 21:25 - down   (01:21)
+reboot   system boot  5.13.0-51-generi Tue Jun 21 21:24 - 22:46  (01:21)
+itsachec :0           :0               Tue Jun 21 12:09 - down   (08:21)
+reboot   system boot  5.13.0-51-generi Tue Jun 21 12:08 - 20:30  (08:21)
+itsachec :0           :0               Mon Jun 20 21:04 - down   (00:53)
+reboot   system boot  5.13.0-51-generi Mon Jun 20 21:03 - 21:58  (00:54)
+itsachec :0           :0               Mon Jun 20 12:14 - down   (06:43)
+reboot   system boot  5.13.0-51-generi Mon Jun 20 12:14 - 18:57  (06:43)
+itsachec :0           :0               Mon Jun 20 11:00 - down   (00:03)
+reboot   system boot  5.13.0-51-generi Mon Jun 20 11:00 - 11:04  (00:04)
+itsachec :0           :0               Sun Jun 19 20:10 - down   (01:43)
+reboot   system boot  5.13.0-51-generi Sun Jun 19 20:09 - 21:54  (01:44)
+itsachec :0           :0               Sun Jun 19 16:59 - down   (01:49)
+reboot   system boot  5.13.0-51-generi Sun Jun 19 16:59 - 18:49  (01:49)
+itsachec :0           :0               Sun Jun 19 16:57 - down   (00:01)
+reboot   system boot  5.13.0-51-generi Sun Jun 19 16:57 - 16:59  (00:02)
+itsachec :0           :0               Sat Jun 18 13:33 - down   (02:40)
+reboot   system boot  5.13.0-51-generi Sat Jun 18 13:33 - 16:14  (02:41)
+itsachec :0           :0               Sat Jun 18 09:06 - down   (00:01)
+reboot   system boot  5.13.0-51-generi Sat Jun 18 09:05 - 09:07  (00:01)
+itsachec :0           :0               Fri Jun 17 21:26 - down   (01:28)
+reboot   system boot  5.13.0-51-generi Fri Jun 17 21:25 - 22:54  (01:28)
+itsachec :0           :0               Fri Jun 17 13:26 - down   (05:54)
+reboot   system boot  5.13.0-51-generi Fri Jun 17 13:25 - 19:20  (05:54)
+itsachec :0           :0               Thu Jun 16 21:27 - down   (02:18)
+reboot   system boot  5.13.0-51-generi Thu Jun 16 21:27 - 23:46  (02:18)
+itsachec :0           :0               Thu Jun 16 12:03 - down   (07:49)
+reboot   system boot  5.13.0-44-generi Thu Jun 16 12:03 - 19:52  (07:49)
+itsachec :0           :0               Wed Jun 15 21:32 - down   (04:08)
+reboot   system boot  5.13.0-44-generi Wed Jun 15 21:32 - 01:41  (04:08)
+itsachec :0           :0               Wed Jun 15 12:09 - down   (07:39)
+reboot   system boot  5.13.0-44-generi Wed Jun 15 12:09 - 19:49  (07:39)
+itsachec :0           :0               Tue Jun 14 21:51 - down   (00:15)
+reboot   system boot  5.13.0-44-generi Tue Jun 14 21:50 - 22:06  (00:16)
+itsachec :0           :0               Tue Jun 14 12:22 - down   (07:47)
+reboot   system boot  5.13.0-44-generi Tue Jun 14 12:21 - 20:09  (07:47)
+itsachec :0           :0               Tue Jun 14 12:12 - down   (00:09)
+reboot   system boot  5.13.0-44-generi Tue Jun 14 12:11 - 12:21  (00:09)
+itsachec :0           :0               Mon Jun 13 21:28 - down   (00:24)
+reboot   system boot  5.13.0-44-generi Mon Jun 13 21:27 - 21:52  (00:24)
+itsachec :0           :0               Mon Jun 13 12:35 - down   (07:37)
+reboot   system boot  5.13.0-44-generi Mon Jun 13 12:35 - 20:13  (07:37)
+itsachec :0           :0               Mon Jun 13 12:27 - down   (00:07)
+reboot   system boot  5.13.0-44-generi Mon Jun 13 12:27 - 12:34  (00:07)
+itsachec :0           :0               Sun Jun 12 17:23 - down   (01:02)
+reboot   system boot  5.13.0-44-generi Sun Jun 12 17:23 - 18:25  (01:02)
+itsachec :0           :0               Sun Jun 12 10:33 - down   (01:30)
+reboot   system boot  5.13.0-44-generi Sun Jun 12 10:33 - 12:04  (01:30)
+itsachec :0           :0               Fri Jun 10 21:24 - down   (01:24)
+reboot   system boot  5.13.0-44-generi Fri Jun 10 21:23 - 22:49  (01:25)
+itsachec :0           :0               Fri Jun 10 12:26 - down   (08:07)
+reboot   system boot  5.13.0-44-generi Fri Jun 10 12:26 - 20:34  (08:07)
+itsachec :0           :0               Thu Jun  9 22:09 - down   (00:05)
+reboot   system boot  5.13.0-44-generi Thu Jun  9 22:09 - 22:15  (00:06)
+itsachec :0           :0               Thu Jun  9 11:41 - down   (08:39)
+reboot   system boot  5.13.0-44-generi Thu Jun  9 11:40 - 20:20  (08:39)
+itsachec :0           :0               Wed Jun  8 21:49 - down   (01:27)
+reboot   system boot  5.13.0-44-generi Wed Jun  8 21:49 - 23:17  (01:27)
+itsachec :0           :0               Wed Jun  8 12:12 - down   (08:12)
+reboot   system boot  5.13.0-44-generi Wed Jun  8 12:12 - 20:24  (08:12)
+itsachec :0           :0               Tue Jun  7 21:32 - down   (01:53)
+reboot   system boot  5.13.0-44-generi Tue Jun  7 21:32 - 23:26  (01:53)
+itsachec :0           :0               Tue Jun  7 11:43 - down   (08:54)
+reboot   system boot  5.13.0-44-generi Tue Jun  7 11:42 - 20:37  (08:55)
+itsachec :0           :0               Mon Jun  6 21:55 - down   (00:32)
+reboot   system boot  5.13.0-44-generi Mon Jun  6 21:55 - 22:28  (00:33)
+itsachec :0           :0               Mon Jun  6 11:59 - down   (08:29)
+reboot   system boot  5.13.0-44-generi Mon Jun  6 11:58 - 20:28  (08:29)
+itsachec :0           :0               Sun Jun  5 20:52 - down   (00:54)
+reboot   system boot  5.13.0-44-generi Sun Jun  5 20:49 - 21:47  (00:57)
+itsachec :0           :0               Sun Jun  5 13:31 - down   (02:19)
+reboot   system boot  5.13.0-44-generi Sun Jun  5 13:31 - 15:51  (02:19)
+itsachec :0           :0               Fri Jun  3 20:46 - down   (02:22)
+reboot   system boot  5.13.0-44-generi Fri Jun  3 20:45 - 23:08  (02:22)
+itsachec :0           :0               Fri Jun  3 13:32 - down   (06:00)
+reboot   system boot  5.13.0-44-generi Fri Jun  3 13:32 - 19:33  (06:00)
+itsachec :0           :0               Fri Jun  3 12:20 - down   (01:11)
+reboot   system boot  5.13.0-44-generi Fri Jun  3 12:20 - 13:32  (01:11)
+itsachec :0           :0               Fri Jun  3 10:04 - down   (00:06)
+reboot   system boot  5.13.0-44-generi Fri Jun  3 10:04 - 10:11  (00:06)
+itsachec :0           :0               Thu Jun  2 21:31 - down   (01:38)
+reboot   system boot  5.13.0-44-generi Thu Jun  2 21:31 - 23:10  (01:39)
+itsachec :0           :0               Thu Jun  2 18:29 - down   (01:28)
+reboot   system boot  5.13.0-44-generi Thu Jun  2 18:29 - 19:57  (01:28)
+itsachec :0           :0               Thu Jun  2 11:27 - down   (07:00)
+reboot   system boot  5.13.0-44-generi Thu Jun  2 11:27 - 18:28  (07:00)
+itsachec :0           :0               Wed Jun  1 21:15 - down   (01:38)
+reboot   system boot  5.13.0-44-generi Wed Jun  1 21:15 - 22:54  (01:39)
+itsachec :0           :0               Wed Jun  1 13:15 - down   (06:46)
+reboot   system boot  5.13.0-44-generi Wed Jun  1 13:14 - 20:01  (06:47)
+itsachec :0           :0               Tue May 31 21:31 - down   (01:08)
+reboot   system boot  5.13.0-44-generi Tue May 31 21:30 - 22:39  (01:08)
+itsachec :0           :0               Tue May 31 12:03 - down   (08:01)
+reboot   system boot  5.13.0-44-generi Tue May 31 12:02 - 20:04  (08:01)
+itsachec :0           :0               Sat May 28 11:24 - down   (00:01)
+reboot   system boot  5.13.0-44-generi Sat May 28 11:23 - 11:25  (00:01)
+itsachec :0           :0               Fri May 27 20:55 - down   (02:00)
+reboot   system boot  5.13.0-44-generi Fri May 27 20:55 - 22:56  (02:00)
+itsachec :0           :0               Fri May 27 12:16 - down   (07:29)
+reboot   system boot  5.13.0-44-generi Fri May 27 12:15 - 19:45  (07:29)
+itsachec :0           :0               Fri May 27 10:32 - down   (00:08)
+reboot   system boot  5.13.0-44-generi Fri May 27 10:32 - 10:40  (00:08)
+itsachec :0           :0               Thu May 26 21:21 - down   (01:56)
+reboot   system boot  5.13.0-44-generi Thu May 26 21:21 - 23:18  (01:56)
+itsachec :0           :0               Thu May 26 16:08 - down   (04:17)
+reboot   system boot  5.13.0-44-generi Thu May 26 16:08 - 20:25  (04:17)
+itsachec :0           :0               Thu May 26 11:37 - down   (04:30)
+reboot   system boot  5.13.0-44-generi Thu May 26 11:37 - 16:07  (04:30)
+itsachec :0           :0               Thu May 26 10:37 - down   (00:00)
+reboot   system boot  5.13.0-44-generi Thu May 26 10:37 - 10:38  (00:01)
+itsachec :0           :0               Thu May 26 08:43 - down   (00:01)
+reboot   system boot  5.13.0-44-generi Thu May 26 08:43 - 08:45  (00:02)
+itsachec :0           :0               Wed May 25 21:30 - down   (02:18)
+reboot   system boot  5.13.0-44-generi Wed May 25 21:30 - 23:49  (02:18)
+itsachec :0           :0               Wed May 25 12:10 - down   (08:12)
+reboot   system boot  5.13.0-44-generi Wed May 25 12:10 - 20:22  (08:12)
+itsachec :0           :0               Wed May 25 10:44 - down   (00:47)
+reboot   system boot  5.13.0-44-generi Wed May 25 10:44 - 11:32  (00:47)
+itsachec :0           :0               Tue May 24 21:14 - down   (03:36)
+reboot   system boot  5.13.0-44-generi Tue May 24 21:14 - 00:51  (03:36)
+itsachec :0           :0               Tue May 24 20:46 - down   (00:06)
+reboot   system boot  5.13.0-44-generi Tue May 24 20:46 - 20:53  (00:06)
+itsachec :0           :0               Tue May 24 14:45 - down   (05:33)
+reboot   system boot  5.13.0-44-generi Tue May 24 14:45 - 20:18  (05:33)
+itsachec :0           :0               Tue May 24 13:20 - down   (01:24)
+reboot   system boot  5.13.0-44-generi Tue May 24 13:20 - 14:44  (01:24)
+itsachec :0           :0               Tue May 24 11:28 - down   (01:51)
+reboot   system boot  5.13.0-41-generi Tue May 24 11:28 - 13:20  (01:52)
+itsachec :0           :0               Tue May 24 10:42 - down   (00:00)
+reboot   system boot  5.13.0-41-generi Tue May 24 10:42 - 10:43  (00:01)
+itsachec :0           :0               Tue May 24 09:22 - down   (00:03)
+reboot   system boot  5.13.0-41-generi Tue May 24 09:22 - 09:25  (00:03)
+itsachec :0           :0               Mon May 23 20:54 - down   (05:11)
+reboot   system boot  5.13.0-41-generi Mon May 23 20:54 - 02:05  (05:11)
+itsachec :0           :0               Mon May 23 18:07 - down   (02:28)
+reboot   system boot  5.13.0-41-generi Mon May 23 18:07 - 20:35  (02:28)
+itsachec :0           :0               Mon May 23 16:45 - down   (01:21)
+reboot   system boot  5.13.0-41-generi Mon May 23 16:45 - 18:06  (01:21)
+itsachec :0           :0               Mon May 23 12:29 - down   (04:14)
+reboot   system boot  5.13.0-40-generi Mon May 23 12:29 - 16:44  (04:15)
+itsachec :0           :0               Sun May 22 21:28 - down   (00:29)
+reboot   system boot  5.13.0-40-generi Sun May 22 21:28 - 21:58  (00:29)
+itsachec :0           :0               Sun May 22 16:29 - down   (01:03)
+reboot   system boot  5.13.0-40-generi Sun May 22 16:29 - 17:32  (01:03)
+itsachec :0           :0               Fri May 20 20:40 - down   (00:45)
+reboot   system boot  5.13.0-40-generi Fri May 20 20:40 - 21:26  (00:45)
+itsachec :0           :0               Fri May 20 16:02 - down   (03:41)
+reboot   system boot  5.13.0-40-generi Fri May 20 15:58 - 19:43  (03:44)
+itsachec :0           :0               Fri May 20 10:55 - down   (01:31)
+reboot   system boot  5.13.0-40-generi Fri May 20 10:55 - 12:27  (01:32)
+itsachec :0           :0               Fri May 20 09:39 - down   (00:43)
+reboot   system boot  5.13.0-40-generi Fri May 20 09:38 - 10:23  (00:44)
+itsachec :0           :0               Thu May 19 21:29 - down   (01:27)
+reboot   system boot  5.13.0-40-generi Thu May 19 21:28 - 22:56  (01:27)
+itsachec :0           :0               Thu May 19 12:58 - down   (06:26)
+reboot   system boot  5.13.0-40-generi Thu May 19 12:57 - 19:24  (06:26)
+itsachec :0           :0               Thu May 19 12:00 - down   (00:50)
+reboot   system boot  5.13.0-40-generi Thu May 19 12:00 - 12:51  (00:50)
+itsachec :0           :0               Wed May 18 11:44 - down   (10:18)
+reboot   system boot  5.13.0-40-generi Wed May 18 11:44 - 22:03  (10:18)
+itsachec :0           :0               Tue May 17 20:57 - down   (00:26)
+reboot   system boot  5.13.0-40-generi Tue May 17 20:57 - 21:23  (00:26)
+itsachec :0           :0               Tue May 17 13:02 - down   (06:24)
+reboot   system boot  5.13.0-40-generi Tue May 17 13:02 - 19:26  (06:24)
+itsachec :0           :0               Tue May 17 12:19 - down   (00:03)
+reboot   system boot  5.13.0-40-generi Tue May 17 12:19 - 12:22  (00:03)
+itsachec :0           :0               Mon May 16 12:07 - down   (06:19)
+reboot   system boot  5.13.0-40-generi Mon May 16 12:07 - 18:26  (06:19)
+itsachec :0           :0               Mon May 16 08:35 - down   (00:28)
+reboot   system boot  5.13.0-40-generi Mon May 16 08:34 - 09:03  (00:28)
+itsachec :0           :0               Sun May 15 20:14 - down   (03:49)
+reboot   system boot  5.13.0-40-generi Sun May 15 20:13 - 00:03  (03:49)
+itsachec :0           :0               Sun May 15 18:20 - down   (00:22)
+reboot   system boot  5.13.0-40-generi Sun May 15 18:20 - 18:42  (00:22)
+itsachec :0           :0               Sun May 15 15:33 - down   (01:38)
+reboot   system boot  5.13.0-40-generi Sun May 15 15:32 - 17:11  (01:38)
+itsachec :0           :0               Sun May 15 11:31 - down   (00:51)
+reboot   system boot  5.13.0-40-generi Sun May 15 11:31 - 12:23  (00:52)
+itsachec :0           :0               Sat May 14 22:30 - down   (02:00)
+reboot   system boot  5.13.0-40-generi Sat May 14 22:29 - 00:31  (02:01)
+itsachec :0           :0               Sat May 14 18:53 - down   (00:24)
+reboot   system boot  5.13.0-40-generi Sat May 14 18:53 - 19:17  (00:24)
+itsachec :0           :0               Sat May 14 17:44 - down   (00:09)
+reboot   system boot  5.13.0-40-generi Sat May 14 17:43 - 17:53  (00:09)
+itsachec :0           :0               Sat May 14 14:16 - down   (00:37)
+reboot   system boot  5.13.0-40-generi Sat May 14 14:16 - 14:53  (00:37)
+itsachec :0           :0               Fri May 13 21:13 - down   (01:34)
+reboot   system boot  5.13.0-40-generi Fri May 13 21:13 - 22:48  (01:35)
+itsachec :0           :0               Fri May 13 14:57 - down   (04:35)
+reboot   system boot  5.13.0-40-generi Fri May 13 14:57 - 19:33  (04:36)
+itsachec :0           :0               Fri May 13 13:50 - down   (01:06)
+reboot   system boot  5.13.0-40-generi Fri May 13 13:50 - 14:56  (01:06)
+itsachec :0           :0               Fri May 13 12:00 - down   (01:48)
+reboot   system boot  5.13.0-40-generi Fri May 13 11:59 - 13:49  (01:49)
+itsachec :0           :0               Thu May 12 21:27 - down   (00:50)
+reboot   system boot  5.13.0-40-generi Thu May 12 21:27 - 22:17  (00:50)
+itsachec :0           :0               Thu May 12 16:06 - down   (03:54)
+reboot   system boot  5.13.0-40-generi Thu May 12 16:06 - 20:01  (03:54)
+itsachec :0           :0               Thu May 12 11:39 - down   (00:42)
+reboot   system boot  5.13.0-40-generi Thu May 12 11:39 - 12:22  (00:42)
+itsachec :0           :0               Thu May 12 11:27 - down   (00:09)
+reboot   system boot  5.13.0-40-generi Thu May 12 11:27 - 11:36  (00:09)
+itsachec :0           :0               Wed May 11 21:26 - down   (00:35)
+reboot   system boot  5.13.0-40-generi Wed May 11 21:25 - 22:01  (00:35)
+itsachec :0           :0               Wed May 11 11:37 - down   (07:23)
+reboot   system boot  5.13.0-40-generi Wed May 11 11:36 - 19:00  (07:23)
+itsachec :0           :0               Tue May 10 12:49 - down   (07:10)
+reboot   system boot  5.13.0-40-generi Tue May 10 12:48 - 20:00  (07:11)
+itsachec :0           :0               Mon May  9 11:15 - down   (08:44)
+reboot   system boot  5.13.0-40-generi Mon May  9 11:15 - 20:00  (08:45)
+itsachec :0           :0               Sat May  7 17:00 - down   (02:09)
+reboot   system boot  5.13.0-40-generi Sat May  7 17:00 - 19:10  (02:10)
+itsachec :0           :0               Sat May  7 11:31 - crash  (05:28)
+reboot   system boot  5.13.0-40-generi Sat May  7 11:30 - 19:10  (07:40)
+itsachec :0           :0               Fri May  6 14:57 - down   (04:44)
+reboot   system boot  5.13.0-40-generi Fri May  6 14:57 - 19:42  (04:44)
+itsachec :0           :0               Fri May  6 11:51 - down   (03:05)
+reboot   system boot  5.13.0-40-generi Fri May  6 11:51 - 14:57  (03:06)
+itsachec :0           :0               Thu May  5 21:51 - down   (00:19)
+reboot   system boot  5.13.0-40-generi Thu May  5 21:51 - 22:11  (00:19)
+itsachec :0           :0               Thu May  5 12:06 - down   (08:14)
+reboot   system boot  5.13.0-40-generi Thu May  5 12:06 - 20:20  (08:14)
+itsachec :0           :0               Wed May  4 20:32 - down   (01:04)
+reboot   system boot  5.13.0-40-generi Wed May  4 20:32 - 21:37  (01:04)
+itsachec :0           :0               Wed May  4 11:46 - down   (07:07)
+reboot   system boot  5.13.0-40-generi Wed May  4 11:46 - 18:54  (07:08)
+itsachec :0           :0               Tue May  3 12:12 - down   (08:04)
+reboot   system boot  5.13.0-40-generi Tue May  3 12:11 - 20:16  (08:05)
+itsachec :0           :0               Mon May  2 11:49 - down   (07:39)
+reboot   system boot  5.13.0-40-generi Mon May  2 11:49 - 19:29  (07:40)
+itsachec :0           :0               Fri Apr 29 12:13 - down   (07:56)
+reboot   system boot  5.13.0-40-generi Fri Apr 29 12:13 - 20:10  (07:57)
+itsachec :0           :0               Thu Apr 28 20:59 - down   (00:24)
+reboot   system boot  5.13.0-40-generi Thu Apr 28 20:59 - 21:24  (00:25)
+itsachec :0           :0               Thu Apr 28 19:54 - down   (00:10)
+reboot   system boot  5.13.0-40-generi Thu Apr 28 19:54 - 20:05  (00:10)
+itsachec :0           :0               Thu Apr 28 12:33 - down   (07:05)
+reboot   system boot  5.13.0-40-generi Thu Apr 28 12:32 - 19:39  (07:06)
+itsachec :0           :0               Thu Apr 28 10:43 - down   (00:25)
+reboot   system boot  5.13.0-40-generi Thu Apr 28 10:42 - 11:08  (00:25)
+itsachec :0           :0               Wed Apr 27 11:58 - down   (08:12)
+reboot   system boot  5.13.0-39-generi Wed Apr 27 11:58 - 20:11  (08:12)
+itsachec :0           :0               Tue Apr 26 14:20 - down   (06:01)
+reboot   system boot  5.13.0-39-generi Tue Apr 26 14:19 - 20:21  (06:01)
+itsachec :0           :0               Tue Apr 26 12:02 - down   (02:17)
+reboot   system boot  5.13.0-39-generi Tue Apr 26 12:01 - 14:19  (02:17)
+itsachec :0           :0               Mon Apr 25 16:57 - down   (03:11)
+reboot   system boot  5.13.0-39-generi Mon Apr 25 16:57 - 20:09  (03:11)
+itsachec :0           :0               Mon Apr 25 16:53 - down   (00:03)
+reboot   system boot  5.13.0-39-generi Mon Apr 25 16:53 - 16:57  (00:03)
+itsachec :0           :0               Mon Apr 25 11:49 - down   (05:03)
+reboot   system boot  5.13.0-39-generi Mon Apr 25 11:49 - 16:53  (05:04)
+itsachec :0           :0               Sun Apr 24 21:12 - down   (00:41)
+reboot   system boot  5.13.0-39-generi Sun Apr 24 21:11 - 21:53  (00:42)
+itsachec :0           :0               Sun Apr 24 15:50 - down   (01:44)
+reboot   system boot  5.13.0-39-generi Sun Apr 24 15:49 - 17:34  (01:44)
+itsachec :0           :0               Sat Apr 23 18:03 - down   (00:40)
+reboot   system boot  5.13.0-39-generi Sat Apr 23 18:03 - 18:44  (00:41)
+itsachec :0           :0               Sat Apr 23 11:59 - down   (02:31)
+reboot   system boot  5.13.0-39-generi Sat Apr 23 11:58 - 14:30  (02:31)
+itsachec :0           :0               Fri Apr 22 11:55 - down   (07:26)
+reboot   system boot  5.13.0-39-generi Fri Apr 22 11:53 - 19:21  (07:27)
+itsachec :0           :0               Fri Apr 22 10:37 - down   (00:16)
+reboot   system boot  5.13.0-39-generi Fri Apr 22 10:36 - 10:53  (00:16)
+itsachec :0           :0               Thu Apr 21 21:06 - down   (02:57)
+reboot   system boot  5.13.0-39-generi Thu Apr 21 21:06 - 00:03  (02:57)
+itsachec :0           :0               Thu Apr 21 12:08 - down   (07:34)
+reboot   system boot  5.13.0-39-generi Thu Apr 21 12:08 - 19:43  (07:34)
+itsachec :0           :0               Wed Apr 20 21:50 - down   (00:32)
+reboot   system boot  5.13.0-39-generi Wed Apr 20 21:50 - 22:22  (00:32)
+itsachec :0           :0               Wed Apr 20 16:42 - down   (03:23)
+reboot   system boot  5.13.0-39-generi Wed Apr 20 16:42 - 20:06  (03:24)
+itsachec :0           :0               Wed Apr 20 12:23 - down   (04:18)
+reboot   system boot  5.13.0-39-generi Wed Apr 20 12:23 - 16:41  (04:18)
+itsachec :0           :0               Tue Apr 19 18:00 - down   (01:10)
+reboot   system boot  5.13.0-39-generi Tue Apr 19 18:00 - 19:10  (01:10)
+itsachec :0           :0               Tue Apr 19 14:10 - down   (03:49)
+reboot   system boot  5.13.0-39-generi Tue Apr 19 14:09 - 18:00  (03:50)
+itsachec :0           :0               Tue Apr 19 11:23 - down   (02:45)
+reboot   system boot  5.13.0-39-generi Tue Apr 19 11:23 - 14:09  (02:45)
+itsachec :0           :0               Mon Apr 18 20:35 - down   (00:05)
+reboot   system boot  5.13.0-39-generi Mon Apr 18 20:34 - 20:40  (00:06)
+itsachec :0           :0               Mon Apr 18 15:02 - down   (04:10)
+reboot   system boot  5.13.0-39-generi Mon Apr 18 15:01 - 19:13  (04:11)
+itsachec :0           :0               Mon Apr 18 14:23 - down   (00:00)
+itsachec :0           :0               Mon Apr 18 13:29 - 14:23  (00:54)
+reboot   system boot  5.13.0-39-generi Mon Apr 18 13:28 - 14:24  (00:55)
+itsachec :0           :0               Mon Apr 18 13:25 - down   (00:03)
+reboot   system boot  5.13.0-39-generi Mon Apr 18 13:25 - 13:28  (00:03)
+itsachec :0           :0               Mon Apr 18 22:49 - down   (-9:25)
+reboot   system boot  5.11.0-27-generi Mon Apr 18 22:47 - 13:24  (-9:22)
+itsachec :0           :0               Fri Apr 15 00:10 - down   (00:00)
+reboot   system boot  5.11.0-27-generi Fri Apr 15 00:10 - 00:11  (00:00)
+
+wtmp begins Fri Apr 15 00:10:20 2022
+
+# FILE AND DIRECTORY COMMANDS:
+# List all files in a long listing (detailed) format
+ls -al
+itsacheckmate@itsacheckmate:~$ ls -al
+total 512
+drwxr-xr-x 39 itsacheckmate Students        4096 Jul 15 15:56  .
+drwxr-xr-x  4 root          root            4096 Jul  3 20:37  ..
+drwxrwxr--  2 itsacheckmate Students        4096 Apr 29 12:29  123
+drwxrwxr-x  2 itsacheckmate Students        4096 Apr 19 18:52  ab
+drwxr-xr-x  2 itsacheckmate itsacheckmate   4096 Apr 28 21:16  .anydesk
+drwxrwxr-x  2 itsacheckmate Students        4096 Apr 21 19:13  Assignments
+-rw-------  1 itsacheckmate itsacheckmate  43329 Jul 15 15:56  .bash_history
+-rw-r--r--  1 itsacheckmate Students         220 Apr 14 18:39  .bash_logout
+-rw-rw-r--  1 itsacheckmate itsacheckmate    311 Jul  3 20:53  .bash_profile
+-rw-rw-r--  1 itsacheckmate itsacheckmate   4007 May  5 14:50  .bashrc
+drwxrwxr-x  3 itsacheckmate itsacheckmate   4096 May 19 12:19  .bundle
+drwxrwxr-x 26 itsacheckmate Students        4096 Jul  6 20:35  .cache
+-rw-rw-r--  1 itsacheckmate itsacheckmate    435 Jul 14 17:45 'carrierwave gem'
+-rw-rw-r--  1 itsacheckmate Students           0 Apr 18 18:24  commands
+drwx------ 22 itsacheckmate Students        4096 Jun 29 21:25  .config
+drwxrwxr-x  3 itsacheckmate Students        4096 Apr 19 18:53  d
+drwx------  3 itsacheckmate itsacheckmate   4096 Apr 28 21:17  .dbus
+drwxr-xr-x  2 itsacheckmate Students        4096 Jul  6 15:15  Desktop
+drwxr-xr-x  2 itsacheckmate Students        4096 Jul 11 13:50  Documents
+drwxr-xr-x  6 itsacheckmate Students        4096 Jul 15 13:38  Downloads
+-rw-rw-r--  1 itsacheckmate Students       12288 Apr 20 15:45  ersion
+drwxrwxr-x  2 itsacheckmate Students        4096 Apr 21 13:42  Exampapers
+drwxrwxr-x  3 itsacheckmate itsacheckmate   4096 Jul 13 15:34  .gem
+-rw-rw-r--  1 itsacheckmate itsacheckmate    134 Apr 22 12:17  .gitconfig
+drwx------  3 itsacheckmate Students        4096 Jul 12 13:08  .gnupg
+drwxrwxr-x  3 itsacheckmate Students        4096 Apr 19 18:52  hi
+dr-xr-xr-x  2 itsacheckmate Students        4096 Apr 19 18:53  hlo
+drwxrwxr-x  4 itsacheckmate itsacheckmate   4096 Jul  5 13:04  Html_Project
+-rw-rw-r--  1 itsacheckmate Students       16285 Apr 20 14:59  index.html
+-rw-rw-r--  1 itsacheckmate Students       16275 Apr 20 15:00  index.html.1
+-rw-rw-r--  1 itsacheckmate Students       16320 Apr 20 15:01  index.html.2
+-rw-rw-r--  1 itsacheckmate Students       16311 Apr 20 15:06  index.html.3
+-rw-rw-r--  1 itsacheckmate Students       16300 Apr 20 15:07  index.html.4
+-rw-------  1 itsacheckmate itsacheckmate   3892 Jul 14 14:48  .irb-history
+drwxrwxr-x  2 itsacheckmate Students        4096 Apr 19 18:51  linus
+-rw-rw-r--  1 itsacheckmate Students      116852 Apr 21 13:32  linux
+drwxrwxr-x  2 itsacheckmate Students        4096 Apr 18 18:24  Linux
+drwxr-xr-x  4 itsacheckmate Students        4096 Apr 21 18:20  .local
+-rw-rw-r--  1 itsacheckmate Students       16257 Apr 20 15:04  logfile
+-rw-rw-r--  1 itsacheckmate itsacheckmate    236 May  5 14:50  .mkshrc
+drwx------  5 itsacheckmate Students        4096 Apr 18 22:51  .mozilla
+drwxr-xr-x  2 itsacheckmate Students        4096 Apr 15 00:10  Music
+-rw-------  1 itsacheckmate itsacheckmate    210 Jul  5 13:37  .netrc
+-rw-rw-r--  1 root          Students          63 Apr 20 16:28  Newfile
+-rw-rw-r--  1 itsacheckmate Students         441 Apr 20 20:02  new_Nano
+-rw-rw-r--  1 itsacheckmate Students          24 Apr 20 16:41  new_Nano.save
+drwxr-xr-x  2 itsacheckmate Students        4096 Jun 21 20:09  Pictures
+drwx------  3 itsacheckmate Students        4096 Apr 19 12:12  .pki
+-rw-rw-r--  1 itsacheckmate itsacheckmate   1161 May  5 14:50  .profile
+-rw-------  1 itsacheckmate itsacheckmate     12 Jun  1 17:54  .psql_history
+drwxr-xr-x  2 itsacheckmate Students        4096 Apr 15 00:10  Public
+drwxrwxr-x 26 itsacheckmate itsacheckmate   4096 May  5 14:50  .rvm
+drwx------ 11 itsacheckmate Students        4096 Jul  6 19:57  snap
+drwx------  2 itsacheckmate Students        4096 Apr 18 18:22  .ssh
+-rw-r--r--  1 itsacheckmate Students           0 Apr 18 13:18  .sudo_as_admin_successful
+drwxr-xr-x  2 itsacheckmate Students        4096 Apr 15 00:10  Templates
+-rw-rw-r--  1 itsacheckmate Students         109 Apr 21 13:27  test1.txt
+-rw-rw-r--  1 itsacheckmate Students         109 Apr 21 13:29  test2.txt
+drwxrwxr-x  2 itsacheckmate Students        4096 Apr 19 18:52  text
+drwx------  6 itsacheckmate itsacheckmate   4096 Apr 29 18:52  .thunderbird
+drwxrwxr-x  9 itsacheckmate itsacheckmate   4096 Jul  5 12:45  Training
+drwxrwxr-x 10 itsacheckmate Students        4096 Jun 16 00:51  Training-Repository
+drwxr-xr-x  3 itsacheckmate Students        4096 Apr 28 21:17  Videos
+-rw-------  1 itsacheckmate itsacheckmate  11016 Jul  5 12:45  .viminfo
+drwxrwxr-x  3 itsacheckmate itsacheckmate   4096 Apr 29 18:10  .vscode
+-rw-rw-r--  1 itsacheckmate Students         464 Apr 20 15:06  wget-log
+drwxrwxr-x  4 itsacheckmate Students        4096 Apr 20 15:10  www.google.com
+-rw-rw-r--  1 itsacheckmate Students         362 Apr 20 19:34  Zip.zip
+-rw-rw-r--  1 itsacheckmate itsacheckmate    119 May  5 14:50  .zlogin
+-rw-rw-r--  1 itsacheckmate itsacheckmate    236 May  5 14:50  .zshrc
+
+# Display the present working directory
+pwd
+itsacheckmate@itsacheckmate:~$ pwd
+/home/itsacheckmate
+
+# Create a directory
+mkdir directory
+itsacheckmate@itsacheckmate:~$ mkdir Linux_practise
+
+# Remove (delete) file
+rm file
+itsacheckmate@itsacheckmate:~$ rm commands 
+
+# Remove the directory and its contents recursively
+rm -r directory
+itsacheckmate@itsacheckmate:~$ rm -r Linux_practise
+
+# Force removal of file without prompting for confirmation
+rm -f file
+
+# Forcefully remove directory recursively
+rm -rf directory
+
+# Copy file1 to file2
+cp file1 file2
+itsacheckmate@itsacheckmate:~$ cp test1.txt test2.txt
+
+# Copy source_directory recursively to destination. If destination exists, copy source_directory into destination, otherwise create destination with the contents of source_directory.
+cp -r source_directory destination
+
+# Rename or move file1 to file2. If file2 is an existing directory, move file1 into directory file2
+mv file1 file2
+itsacheckmate@itsacheckmate:~$ mv test1.txt test2.txt
+
+# Create symbolic link to linkname
+ln -s /path/to/file linkname
+
+# Create an empty file or update the access and modification times of file.
+touch file
+itsacheckmate@itsacheckmate:~$ touch linux_practise
+
+# View the contents of file
+cat file
+itsacheckmate@itsacheckmate:~$ cat test2.txt
+This is line1.
+This is before line1.
+This is after line1.
+This is line1 in another file..
+This is new line1.
+
+# Browse through a text file
+less file
+
+# Display the first 10 lines of file
+head file
+itsacheckmate@itsacheckmate:~$ less test2.txt
+itsacheckmate@itsacheckmate:~$ head linux
+Client Server Architecture:
+The Client-server model is a distributed application structure that partitions task or workload between the providers of a resource or service, called servers, and service requesters called clients. In the client-server architecture, when the client computer sends a request for data to the server through the internet, the server accepts the requested process and deliver the data packets requested back to the client. Clients do not share any of their resources. Examples of Client-Server Model are Email, World Wide Web, etc.
+Linux:
+Linux is an open-source operating system. It is like Windows, Mac, Android, etc.
+Terminal in Linux is case sensitive to two file Test.txt and test.txt are different.
+To see hidden folder in linux ctrl+h.
+Directory Structure:
+Create Folder
+
+# Display the last 10 lines of file
+tail file
+itsacheckmate@itsacheckmate:~$ tail linux
+Press Ctrl+w
+It will ask for a word to search for.
+Enter the word
+It will search for the word and will place the cursor in the first letter of the first occurrence of the word.
+5. To enable spell check in nano. First, install the spell check package.
+$sudo apt install spell
+It will then ask for the password then enter the password. Then press y and then press enter.
+
+# Display the last 10 lines of file and "follow" the file as it grows.
+tail -f file
+itsacheckmate@itsacheckmate:~$ tail -f test2.txt
+This is line1.
+This is before line1.
+This is after line1.
+This is line1 in another file..
+This is new line1.
+Here you are.   (This is the new line added with tail -f command)
+

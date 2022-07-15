@@ -977,4 +977,23 @@ itsacheckmate@itsacheckmate:~$ kill 15350
 
 # Kill all processes named processname
 killall processname
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#DIRECTORY NAVIGATION
+# To go up one level of the directory tree.  (Change into the parent directory.)
+cd ..
+itsacheckmate@itsacheckmate:~$ cd Html_Project/
+itsacheckmate@itsacheckmate:~/Html_Project$ 
+itsacheckmate@itsacheckmate:~/Html_Project$ cd ..
+itsacheckmate@itsacheckmate:~$ 
+
+# Go to the $HOME directory
+cd
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository/linux$ cd
+itsacheckmate@itsacheckmate:~$ 
+
+# Change to the /etc directory
+cd /etc
+itsacheckmate@itsacheckmate:~$ cd Html_Project/Training-Repository/
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

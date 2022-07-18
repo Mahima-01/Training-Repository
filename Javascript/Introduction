@@ -277,6 +277,109 @@ There is no directive like "no use strict" that reverts the engine to old behavi
 Once we enter strict mode, there’s no going back.
 
 Modern JavaScript supports “classes” and “modules.So we don’t need to add the "use strict" directive, if we use them.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Variables:
+Variables are used to store this information.
+A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+To create a variable in JavaScript, use the let keyword.
 
+# 4 Ways to Declare a JavaScript Variable:
+Using var
+Using let
+Using const
+Using nothing
+
+The statement below creates (in other words: declares) a variable with the name “message”:
+let message;
+
+Now, we can put some data into it by using the assignment operator =:
+let message;
+message = 'Hello'; // store the string 'Hello' in the variable named message
+
+We can also declare multiple variables in one line:
+let user = 'John', age = 25, message = 'Hello';
+
+Some people also define multiple variables in this multiline style:
+let user = 'John',
+  age = 25,
+  message = 'Hello';
+
+Or even in the “comma-first” style:
+let user = 'John'
+  , age = 25
+  , message = 'Hello';
+  
+When the value is changed, the old data is removed from the variable:
+let message;
+message = 'Hello!';
+message = 'World!'; // value changed
+alert(message);
+
+We can also declare two variables and copy data from one into the other.
+
+Note: Declaring twice triggers an error
+A variable should be declared only once.
+A repeated declaration of the same variable is an error
+
+# Variable naming
+There are two limitations on variable names in JavaScript:
+-The name must contain only letters, digits, or the symbols $ and _.
+-The first character must not be a digit.
+
+Examples of valid names:
+let userName;
+let test123;
+
+Note: the dollar sign '$' and the underscore '_' can also be used in names. They are regular symbols, just like letters, without any special meaning.
+let $ = 1; // declared a variable with the name "$"
+let _ = 2; // and now a variable with the name "_"
+alert($ + _); // 3
+
+# Examples of incorrect variable names:
+let 1a; // cannot start with a digit
+let my-name; // hyphens '-' aren't allowed in the name
+
+# Case matters
+Variables named apple and APPLE are two different variables.
+
+# Non-Latin letters are allowed, but not recommended
+It is possible to use any language, including cyrillic letters or even hieroglyphs, like this:
+let имя = '...';
+let 我 = '...';
+
+# Reserved names
+There is a list of reserved words, which cannot be used as variable names because they are used by the language itself.
+For example: let, class, return, and function are reserved.
+
+The code below gives a syntax error:
+let let = 5; // can't name a variable "let", error!
+let return = 5; // also can't name it "return", error!
+
+# An assignment without use strict.
+// note: no "use strict" in this example
+num = 5; // the variable "num" is created if it didn't exist
+alert(num); // 5
+
+This is a bad practice and would cause an error in strict mode:
+"use strict";
+num = 5; // error: num is not defined
+
+# Constants
+To declare a constant (unchanging) variable, use const instead of let:
+const myBirthday = '18.04.1982';
+
+Variables declared using const are called “constants”. They cannot be reassigned. An attempt to do so would cause an error:
+const myBirthday = '18.04.1982';
+myBirthday = '01.01.2001'; // error, can't reassign the constant!
+
+When a programmer is sure that a variable will never change, they can declare it with const to guarantee and clearly communicate that fact to everyone.
+
+Use const when you declare:
+A new Array
+A new Object
+A new Function
+A new RegExp
+
+const – is like let, but the value of the variable can’t be changed.
 
 

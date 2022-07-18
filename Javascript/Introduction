@@ -1,0 +1,52 @@
+# JAVASCRIPT:
+
+JavaScript was initially created to “make web pages alive”.
+The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.
+Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called the JavaScript engine.
+The browser has an embedded engine sometimes called a “JavaScript virtual machine”.
+
+Scripts are provided and executed as plain text. They don’t need special preparation or compilation to ru
+JavaScript is an object-based scripting language which is lightweight and cross-platform.
+JavaScript is not a compiled language, but it is a translated language. 
+The JavaScript Translator (embedded in the browser) is responsible for translating the JavaScript code for the web browser.
+
+JavaScript (js) is a light-weight object-oriented programming language which is used by several websites for scripting the webpages. 
+It is an interpreted, full-fledged programming language that enables dynamic interactivity on websites when applied to an HTML document.
+
+# There are following features of JavaScript:
+All popular web browsers support JavaScript as they provide built-in execution environments.
+JavaScript follows the syntax and structure of the C programming language. Thus, it is a structured programming language.
+JavaScript is a weakly typed language, where certain types are implicitly cast (depending on the operation).
+JavaScript is an object-oriented programming language that uses prototypes rather than using classes for inheritance.
+It is a light-weighted and interpreted language.
+It is a case-sensitive language.
+JavaScript is supportable in several operating systems including, Windows, macOS, etc.
+It provides good control to the users over the web browsers.
+
+# JavaScript’s capabilities greatly depend on the environment it’s running in. For instance, Node.js supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+
+For instance, in-browser JavaScript is able to:
+Add new HTML to the page, change the existing content, modify styles.
+React to user actions, run on mouse clicks, pointer movements, key presses.
+Send requests over the network to remote servers, download and upload files (so-called AJAX and COMET technologies).
+Get and set cookies, ask questions to the visitor, show messages.
+Remember the data on the client-side (“local storage”).
+
+# What CAN’T in-browser JavaScript do?
+JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
+Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. 
+But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+This is called the “Same Origin Policy”. To work around that, both pages must agree for data exchange and contain a special JavaScript code that handles it.
+Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+
+# What makes JavaScript unique?
+There are at least three great things about JavaScript:
+
+Full integration with HTML/CSS.
+Simple things are done simply.
+Supported by all major browsers and enabled by default.
+
+JavaScript is the only browser technology that combines these three things.
+JavaScript provides 3 places to put the JavaScript code: within body tag, within head tag and external JavaScript file.
+

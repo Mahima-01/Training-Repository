@@ -606,5 +606,42 @@ All these methods are modal: they pause script execution and don’t allow the v
 There are two limitations shared by all the methods above:
 The exact location of the modal window is determined by the browser. Usually, it’s in the center.
 The exact look of the window also depends on the browser. We can’t modify it.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Type Conversions:
 
+The three most widely used type conversions are to string, to number, and to boolean.
 
+1.String Conversion – Occurs when we output something. Can be performed with String(value). The conversion to string is usually obvious for primitive values.
+value = String(value); // now value is a string "true"
+alert(typeof value); // string
+
+2.Numeric Conversion – Occurs in math operations. Can be performed with Number(value).
+
+The conversion follows the rules:
+let str = "123";
+alert(typeof str); // string
+let num = Number(str); // becomes a number 123
+alert(typeof num); // number
+
+Value	                               Becomes…
+undefined	                         NaN
+null	                                  0
+true / false	                        1 / 0
+string	                               The string is read “as is”, whitespaces from both sides are ignored. An empty string becomes 0. An error gives NaN.
+
+3.Boolean Conversion –Occurs in logical operations. Can be performed with Boolean(value).
+alert( Boolean(1) ); // true
+alert( Boolean(0) ); // false
+
+alert( Boolean("hello") ); // true
+alert( Boolean("") ); // false
+
+Follows the rules:
+Value
+0, null, undefined, NaN, ""
+any other value	
+
+Most of these rules are easy to understand and memorize. The notable exceptions where people usually make mistakes are:
+-undefined is NaN as a number, not 0.
+-"0" and space-only strings like " " are true as a boolean.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -49,4 +49,42 @@ Supported by all major browsers and enabled by default.
 
 JavaScript is the only browser technology that combines these three things.
 JavaScript provides 3 places to put the JavaScript code: within body tag, within head tag and external JavaScript file.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Code editors:
+
+A source-code editor is a text editor program designed specifically for editing source code of computer programs. 
+It may be a standalone application or it may be built into an integrated development environment (IDE) or web browser
+A code editor is the place where programmers spend most of their time.
+
+There are two main types of code editors: 
+IDEs and 
+lightweight editors. 
+Many people use one tool of each type.
+
+# IDE:
+An integrated development environment (IDE) is a software suite that consolidates basic tools required to write and test software.
+An IDE typically contains a code editor, a compiler or interpreter, and a debugger, accessed through a single graphical user interface (GUI). 
+The user writes and edits source code in the code editor. The compiler translates the source code into a readable language that is executable for a computer. And the debugger tests the software to solve any issues or bugs.
+The term IDE (Integrated Development Environment) refers to a powerful editor with many features that usually operates on a “whole project.” 
+As the name suggests, it’s not just an editor, but a full-scale “development environment.”
+
+An IDE loads the project (which can be many files), allows navigation between files, provides autocompletion based on the whole project (not just the open file), and integrates with a version management system (like git), a testing environment, and other “project-level” stuff.
+
+If you haven’t selected an IDE yet, consider the following options:
+Visual Studio Code (cross-platform, free).
+WebStorm (cross-platform, paid).
+Netbeans
+
+# Lightweight editors:
+“Lightweight editors” are not as powerful as IDEs, but they’re fast, elegant and simple.
+They are mainly used to open and edit a file instantly.
+The main difference between a “lightweight editor” and an “IDE” is that an IDE works on a project-level, so it loads much more data on start, analyzes the project structure if needed and so on. A lightweight editor is much faster if we need only one file.
+In practice, lightweight editors may have a lot of plugins including directory-level syntax analyzers and autocompleters, so there’s no strict border between a lightweight editor and an IDE.
+
+The following options deserve your attention:
+Sublime Text (cross-platform, shareware).
+Notepad++ (Windows, free).
+Vim and Emacs are also cool if you know how to use them.
+Pycharm
+
 

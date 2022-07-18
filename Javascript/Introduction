@@ -954,3 +954,60 @@ The equality check (3) returns false because undefined only equals null, undefin
 -When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
 -The values null and undefined equal == each other and do not equal any other value.
 -Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Conditional branching: if, '?'
+Sometimes, we need to perform different actions based on different conditions.
+To do that, we can use the if statement and the conditional operator ?, that’s also called a “question mark” operator.
+
+# The “if” statement
+The if(...) statement evaluates a condition in parentheses and, if the result is true, executes a block of code.
+
+For example:
+let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+if (year == 2015) alert( 'You are right!' );
+In the example above, the condition is a simple equality check (year == 2015), but it can be much more complex.
+
+If we want to execute more than one statement, we have to wrap our code block inside curly braces:
+if (year == 2015) {
+  alert( "That's correct!" );
+  alert( "You're so smart!" );
+}
+We recommend wrapping your code block with curly braces {} every time you use an if statement, even if there is only one statement to execute.
+
+# Boolean conversion
+The if (…) statement evaluates the expression in its parentheses and converts the result to a boolean.
+Let’s recall the conversion rules from the chapter Type Conversions:
+A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called “falsy” values.
+Other values become true, so they are called “truthy”.
+
+# The “else” clause
+The if statement may contain an optional “else” block. It executes when the condition is falsy.
+
+# Several conditions: “else if”
+Sometimes, we’d like to test several variants of a condition. The else if clause lets us do that.
+
+# Conditional operator ‘?’
+Sometimes, we need to assign a variable depending on a condition.
+
+The operator is represented by a question mark ?. Sometimes it’s called “ternary”, because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+
+The syntax is:
+let result = condition ? value1 : value2;
+
+The condition is evaluated: if it’s truthy then value1 is returned, otherwise – value2.
+For example:
+let accessAllowed = (age > 18) ? true : false;
+
+# Multiple ‘?’
+A sequence of question mark operators ? can return a value that depends on more than one condition.
+
+# Non-traditional use of ‘?’
+Sometimes the question mark ? is used as a replacement for if:
+
+let company = prompt('Which company created JavaScript?', '');
+
+(company == 'Netscape') ?
+   alert('Right!') : alert('Wrong.');
+
+The purpose of the question mark operator ? is to return one value or another depending on its condition. Please use it for exactly that. Use if when you need to execute different branches of code.
+

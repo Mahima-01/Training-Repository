@@ -193,5 +193,90 @@ Such code will die with an error:
   /* nested comment ?!? */
 */
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# "use strict":
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+With strict mode, you can not, for example, use undeclared variables.
+
+You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.
+"use strict" is just a string, so IE 9 will not throw an error even if it does not understand it.
+
+# Declaring Strict Mode
+Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode):
+
+Ex- "use strict";
+x = 3.14;       // This will cause an error because x is not declared
+
+Declared inside a function, it has local scope (only the code inside the function is in strict mode):
+x = 3.14;       // This will not cause an error.
+myFunction();
+
+function myFunction() {
+  "use strict";
+  y = 3.14;   // This will cause an error
+}
+
+# Why Strict Mode?
+Strict mode makes it easier to write "secure" JavaScript.
+Strict mode changes previously accepted "bad syntax" into real errors.
+As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
+# Things not Allowed in Strict Mode:
+1.Using a variable, without declaring it, is not allowed:
+"use strict";
+x = 3.14;                // This will cause an error
+
+2.Objects are variables too.
+Using an object, without declaring it, is not allowed:
+
+"use strict";
+x = {p1:10, p2:20};      // This will cause an error
+
+3.Deleting a variable (or object) is not allowed.
+
+"use strict";
+let x = 3.14;
+delete x;                // This will cause an error
+
+4.Deleting a function is not allowed.
+
+"use strict";
+function x(p1, p2) {};
+delete x;                // This will cause an error 
+
+5.Duplicating a parameter name is not allowed:
+
+"use strict";
+function x(p1, p1) {};   // This will cause an error
+
+6.Octal numeric literals are not allowed:
+
+"use strict";
+let x = 010;             // This will cause an error
+
+7.Octal escape characters are not allowed:
+
+"use strict";
+let x = "\010";            // This will cause an error
+
+8.Writing to a read-only property is not allowed:
+The readOnly property sets or returns whether a text field is read-only, or not
+"use strict";
+const obj = {};
+Object.defineProperty(obj, "x", {value:0, writable:false});
+
+obj.x = 3.14;            // This will cause an error
+
+Note: Ensure that “use strict” is at the top
+Please make sure that "use strict" is at the top of your scripts, otherwise strict mode may not be enabled.
+There’s no way to cancel use strict
+
+There is no directive like "no use strict" that reverts the engine to old behavior.
+Once we enter strict mode, there’s no going back.
+
+Modern JavaScript supports “classes” and “modules.So we don’t need to add the "use strict" directive, if we use them.
+
 
 

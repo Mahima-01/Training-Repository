@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <script>
+   function showMessage() {
+    let message = "Hello, I'm JavaScript!"; // local variable
+    alert( 'Hello everyone!' );
+  }
+    showMessage();
+    showMessage();
+  </script>
+  
+  <script>
+    let userName = 'John';
+    function showMessage() {
+    let message = 'Hello, ' + userName;
+    alert(message);
+    }
+  showMessage(); // Hello, John
+  </script>
+
+  <script>
+    function showMessage(from, text) { // parameters: from, text
+    alert(from + ': ' + text);
+  }
+  showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+  showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+  </script>
+
+  <script>
+    function sum(a, b) {
+    return a + b;
+  }
+   let result = sum(1, 2);
+   alert( result ); // 3
+  </script>
+
+</body>
+</html>
+

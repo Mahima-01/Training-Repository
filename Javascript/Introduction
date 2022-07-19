@@ -1418,4 +1418,126 @@ For 0, 1, the first alert runs.
 For 2 the second alert runs.
 But for 3, the result of the prompt is a string "3", which is not strictly equal === to the number 3. So we’ve got a dead code in case 3! The default variant will execute.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Functions:
+Functions are the main “building blocks” of the program. 
+They allow the code to be called many times without repetition.
+We’ve already seen examples of built-in functions, like alert(message), prompt(message, default) and confirm(question). But we can create functions of our own as well.
 
+# Function Declaration
+To create a function we can use a function declaration.
+function showMessage() {
+  alert( 'Hello everyone!' );
+}
+
+The function keyword goes first, then goes the name of the function, then a list of parameters between the parentheses (comma-separated, empty in the example above, we’ll see examples later) and finally the code of the function, also named “the function body”, between curly braces.
+
+function name(parameter1, parameter2, ... parameterN) {
+  ...body...
+}
+
+Our new function can be called by its name: showMessage().
+For instance:
+function showMessage() {
+  alert( 'Hello everyone!' );
+}
+showMessage();
+showMessage();
+
+The call showMessage() executes the code of the function. Here we will see the message two times.
+This example clearly demonstrates one of the main purposes of functions: to avoid code duplication.
+If we ever need to change the message or the way it is shown, it’s enough to modify the code in one place: the function which outputs it.
+
+# Local variables
+A variable declared inside a function is only visible inside that function.
+
+# Outer variables:
+A function can access an outer variable as well, for example:
+
+let userName = 'John';
+function showMessage() {
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+showMessage(); // Hello, John
+
+The outer variable is only used if there’s no local one.
+If a same-named variable is declared inside the function then it shadows the outer one.
+
+# Global variables
+Variables declared outside of any function, such as the outer userName in the code above, are called global.
+Global variables are visible from any function (unless shadowed by locals).
+
+Parameters
+We can pass arbitrary data to functions using parameters.
+In the example below, the function has two parameters: from and text.
+
+function showMessage(from, text) { // parameters: from, text
+  alert(from + ': ' + text);
+}
+showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+When the function is called in lines (*) and (**), the given values are copied to local variables from and text. Then the function uses them.
+
+A parameter is the variable listed inside the parentheses in the function declaration (it’s a declaration time term).
+An argument is the value that is passed to the function when it is called (it’s a call time term).
+We declare functions listing their parameters, then call them passing arguments.
+
+# Default values
+If a function is called, but an argument is not provided, then the corresponding value becomes undefined.
+For instance, the aforementioned function showMessage(from, text) can be called with a single argument:
+showMessage("Ann");
+That’s not an error. Such a call would output "*Ann*: undefined". As the value for text isn’t passed, it becomes undefined.
+We can specify the so-called “default” (to use if omitted) value for a parameter in the function declaration, using =:
+
+# Returning a value
+A function can return a value back into the calling code as the result.
+The simplest example would be a function that sums two values.
+function sum(a, b) {
+  return a + b;
+}
+let result = sum(1, 2);
+alert( result ); // 3
+
+The directive return can be in any place of the function. When the execution reaches it, the function stops, and the value is returned to the calling code (assigned to result above).
+
+Note: A function with an empty return or without it returns undefined
+If a function does not return a value, it is the same as if it returns undefined:
+An empty return is also the same as return undefined.
+Never add a newline between return and the value
+
+# Naming a function
+Functions are actions. So their name is usually a verb. It should be brief, as accurate as possible and describe what the function does, so that someone reading the code gets an indication of what the function does.
+
+Function starting with…
+
+"get…" – return a value,
+"calc…" – calculate something,
+"create…" – create something,
+"check…" – check something and return a boolean, etc.
+Examples of such names:
+
+showMessage(..)     // shows a message
+getAge(..)          // returns the age (gets it somehow)
+calcSum(..)         // calculates a sum and returns the result
+createForm(..)      // creates a form (and usually returns it)
+checkPermission(..) // checks a permission, returns true/false
+
+One function – one action
+getAge – would be bad if it shows an alert with the age (should only get).
+
+Summary:
+A function declaration looks like this:
+function name(parameters, delimited, by, comma) {
+  /* code */
+}
+
+Values passed to a function as parameters are copied to its local variables.
+A function may access outer variables. But it works only from inside out. The code outside of the function doesn’t see its local variables.
+A function can return a value. If it doesn’t, then its result is undefined.
+To make the code clean and easy to understand, it’s recommended to use mainly local variables and parameters in the function, not outer variables.
+It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side effect.
+
+Function naming:
+A name should clearly describe what the function does. When we see a function call in the code, a good name instantly gives us an understanding what it does and returns.
+A function is an action, so function names are usually verbal.
+There exist many well-known function prefixes like create…, show…, get…, check… and so on. Use them to hint what a function does.

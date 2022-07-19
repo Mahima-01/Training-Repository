@@ -1541,3 +1541,127 @@ Function naming:
 A name should clearly describe what the function does. When we see a function call in the code, a good name instantly gives us an understanding what it does and returns.
 A function is an action, so function names are usually verbal.
 There exist many well-known function prefixes like create…, show…, get…, check… and so on. Use them to hint what a function does.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Coding Style:
+1. Syntax:
+- No space between the function name and parentheses between the parentheses and the parameter
+-Indentation 2 spaces
+- A space after for/if/while…
+} else { without a line break
+- Spaces around a nested call
+- An empty line between logical blocks
+- Lines are not very long
+- A semicolon ; is mandatory
+- Spaces around operators
+- Curly brace { on the same line, after a space
+- A space between arguments
+- A space between parameters
+
+2. Curly Braces
+In most JavaScript projects curly braces are written in “Egyptian” style with the opening brace on the same line as the corresponding keyword – not on a new line. There should also be a space before the opening bracket, like this:
+if (condition) {
+  // do this
+  // ...and that
+  // ...and that
+}
+
+The best variant:
+if (n < 0) {
+  alert(`Power ${n} is not supported`);
+}
+
+3. Line Length
+No one likes to read a long horizontal line of code. It’s best practice to split them.
+
+For example:
+// backtick quotes ` allow to split the string into multiple lines
+let str = `
+  ECMA International's TC39 is a group of JavaScript developers,
+  implementers, academics, and more, collaborating with the community
+  to maintain and evolve the definition of JavaScript.
+`;
+
+4. Indents
+There are two types of indents:
+Horizontal indents: 2 or 4 spaces.
+A horizontal indentation is made using either 2 or 4 spaces or the horizontal tab symbol (key Tab). Which one to choose is an old holy war. Spaces are more common nowadays.
+One advantage of spaces over tabs is that spaces allow more flexible configurations of indents than the tab symbol.
+
+Vertical indents: empty lines for splitting code into logical blocks.
+Even a single function can often be divided into logical blocks. In the example below, the initialization of variables, the main loop and returning the result are split vertically
+function pow(x, n) {
+  let result = 1;
+  //              <--
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+  //              <--
+  return result;
+}
+
+5. Semicolons
+A semicolon should be present after each statement, even if it could possibly be skipped.
+
+6. Nesting Levels
+Try to avoid nesting code too many levels deep.
+For example, in the loop, it’s sometimes a good idea to use the continue directive to avoid extra nesting.
+
+7. Function Placement
+If you are writing several “helper” functions and the code that uses them, there are three ways to organize the functions.
+Declare the functions above the code that uses them:
+
+// function declarations
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}
+
+// the code which uses them
+let elem = createElement();
+setHandler(elem);
+walkAround();
+Code first, then functions
+
+// the code which uses the functions
+let elem = createElement();
+setHandler(elem);
+walkAround();
+
+// --- helper functions ---
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}
+
+Mixed: a function is declared where it’s first used.
+Most of time, the second variant is preferred.
+That’s because when reading code, we first want to know what it does. If the code goes first, then it becomes clear from the start. 
+
+# Style Guides
+A style guide contains general rules about “how to write” code, e.g. which quotes to use, how many spaces to indent, the maximal line length, etc. A lot of minor things.
+When all members of a team use the same style guide, the code looks uniform, regardless of which team member wrote it.
+
+# Automated Linters
+Linters are tools that can automatically check the style of your code and make improving suggestions.
+The great thing about them is that style-checking can also find some bugs, like typos in variable or function names.
+
+Here are some well-known linting tools:
+
+JSLint – one of the first linters.
+JSHint – more settings than JSLint.
+ESLint – probably the newest one.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

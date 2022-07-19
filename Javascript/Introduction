@@ -1090,3 +1090,57 @@ A double NOT !! is sometimes used for converting a value to boolean type:
 
 Note: The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Nullish coalescing operator '??':
+The nullish coalescing operator is written as two question marks ??.
+As it treats null and undefined similarly, we’ll use a special term here, in this article. For brevity, we’ll say that a value is “defined” when it’s neither null nor undefined.
+
+The result of a ?? b is:
+if a is defined, then a,
+if a isn’t defined, then b.
+
+In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+
+We can rewrite result = a ?? b using the operators that we already know, like this:
+result = (a !== null && a !== undefined) ? a : b;
+
+For example, here we show user if its value isn’t null/undefined, otherwise Anonymous:
+let user;
+alert(user ?? "Anonymous"); // Anonymous (user not defined)
+
+
+Here’s the example with user assigned to a name:
+let user = "John";
+alert(user ?? "Anonymous"); // John (user defined)
+
+# Comparison with ||(or) and ?? :
+The important difference between them is that:
+|| returns the first truthy value.
+?? returns the first defined value.
+
+let height = 0;
+alert(height || 100); // 100
+alert(height ?? 100); // 0
+
+The height || 100 checks height for being a falsy value, and it’s 0, falsy indeed.
+so the result of || is the second argument, 100.
+The height ?? 100 checks height for being null/undefined, and it’s not,
+so the result is height “as is”, that is 0.
+
+Note: The precedence of the ?? operator is the same as ||
+
+
+# Using ?? with && or ||:
+let x = 1 && 2 ?? 3; // Syntax error
+
+Use explicit parentheses to work around it:
+let x = (1 && 2) ?? 3; // Works
+alert(x); // 2
+
+Important:
+The nullish coalescing operator ?? provides a short way to choose the first “defined” value from a list.
+It’s used to assign default values to variables:
+// set height=100, if height is null or undefined
+height = height ?? 100;
+The operator ?? has a very low precedence, only a bit higher than ? and =, so consider adding parentheses when using it in an expression.
+It’s forbidden to use it with || or && without explicit parentheses.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

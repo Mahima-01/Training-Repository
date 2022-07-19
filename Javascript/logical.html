@@ -23,6 +23,15 @@
     alert( 1 && 2 && null && 3 ); // null
     alert( !true ); // false
   </script>
+  
+  <script>
+    let firstName = null;
+    let lastName = null;
+    let nickName = "Ruchi";
+
+    // shows the first defined value:
+    alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Ruchi
+  </script>
 
 </body>
 </html>

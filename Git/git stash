@@ -1,0 +1,98 @@
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git log
+commit 2db57f34f8f477f61ff1149f18c086825932e3b8 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 19:39:18 2022 +0530
+
+    Power of a number using function.
+
+commit 462a88905b41db7e72c09bf25b6eec36a6371bef
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 19:36:26 2022 +0530
+
+    Prime number using function.
+
+commit ba1f3d66209d001261fcdc75091825db61a13dca
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 19:00:18 2022 +0530
+
+    Add two numbers using function.
+
+commit 3a3e438191eff90cb1e9e439acb8353167322d27
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 18:30:17 2022 +0530
+
+    Functions in javascript
+
+commit da7d32c31f48bac09edfb908a382106cf6922271
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 16:58:52 2022 +0530
+
+    Assignment questions answers
+
+commit 2171beaa93cbe3253a20208ca2515b5580ce0972
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 15:11:55 2022 +0530
+
+    Learnned about Switch statement in js
+
+commit 937278b5d3695a8500eb5f0603627c68df944cdb
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 15:10:33 2022 +0530
+
+    Switch statement in js
+
+commit c0bee944b458d65ec0349b7d40b018e03cd1500c
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 14:28:35 2022 +0530
+
+    Write the code which outputs prime numbers in the interval from 2 to n
+
+commit 1262f29dc6bdef23690c5cd62bca254baedfba5c
+Author: Mahima Tewatia <mahima.tewatia@itsacheckmate.com>
+Date:   Tue Jul 19 14:11:29 2022 +0530
+
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git stash list
+stash@{0}: WIP on main: 5d903150 Ruby program to sort element of an array
+stash@{1}: WIP on main: aae05ce Tried api authentication with json web token and knock but not able to implement it correctly.
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git stash show stash@{1}
+ Rails/Assignment1/Gemfile                          |   4 +-
+ Rails/Assignment1/Gemfile.lock                     |   2 +
+ Rails/Assignment1/log/development.log              |  99 +++++++++++++++++++++
+ .../Assignment1/tmp/cache/bootsnap/load-path-cache | Bin 170167 -> 170696 bytes
+ Rails/Assignment1/tmp/pids/server.pid              |   1 -
+ 5 files changed, 104 insertions(+), 2 deletions(-)
+
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git stash pop
+Removing Rails/rails-jwt/tmp/pids/server.pid
+Removing Rails/Rails 5.2.0/image_uploader/tmp/pids/server.pid
+Removing Rails/Assignment1/tmp/pids/server.pid
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Rails/facebook_login/.ruby-version
+	new file:   Rails/facebook_login/Gemfile
+	new file:   Rails/facebook_login/Gemfile.lock
+	new file:   Rails/facebook_login/README.md
+	new file:   Rails/facebook_login/Rakefile
+	new file:   Rails/facebook_login/app/assets/config/manifest.js
+	new file:   Rails/facebook_login/app/assets/images/.keep
+	new file:   Rails/facebook_login/app/assets/stylesheets/application.css
+	new file:   Rails/facebook_login/app/channels/application_cable/channel.rb
+	new file:   Rails/facebook_login/app/channels/application_cable/connection.rb
+	new file:   Rails/facebook_login/app/controllers/application_controller.rb
+	new file:   Rails/facebook_login/app/controllers/concerns/.keep
+	new file:   Rails/facebook_login/app/helpers/application_helper.rb
+	new file:   Rails/facebook_login/app/javascript/application.js
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git stash 
+Saved working directory and index state WIP on main: 2db57f34 Power of a number using function.
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository$ git stash clear
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <script>
+    let hour = 9;
+
+    if (hour < 10 || hour > 18) {
+      alert( 'The office is closed.' );
+    }
+    alert( 1 || 0 );
+    true || alert("not printed");
+    false || alert("printed");
+  </script>
+
+  <script>
+    let hours = 12;
+    let minute = 30;
+
+    if (hours == 12 && minute == 30) {
+      alert( 'The time is 12:30' );
+    }
+    alert( 1 && 2 && null && 3 ); // null
+    alert( !true ); // false
+  </script>
+
+</body>
+</html>

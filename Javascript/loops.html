@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<p> Hello! </p>
+  <script>
+    let i = 0;
+    
+    while (i < 3) { // shows 0, then 1, then 2
+      alert( i );
+      i++;
+    }
+  </script> 
+
+  <script>
+    let a = 0;
+    do {
+      alert( a );
+      a++;
+    } while (a < 3);
+  </script>
+  
+  <script>
+    for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+      alert(i);
+    }
+  </script>
+  
+  <script>
+    let sum = 0;
+
+    while (true) {
+    let value = +prompt("Enter a number", '');
+    if (!value) break; // (*)
+      sum += value;
+    }
+alert( 'Sum: ' + sum );
+  </script>
+
+</body>
+</html>

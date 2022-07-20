@@ -1,0 +1,56 @@
+<script>
+  function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+  }
+
+  let user = new User("Jack");
+
+  alert(user.name); // Jack
+  alert(user.isAdmin); // false
+</script>
+
+<!-- When a function is executed with new, it does the following steps: -->
+<!-- A new empty object is created and assigned to this. -->
+<!-- The function body executes. Usually it modifies this, adds new properties to it. -->
+<!-- The value of this is returned. -->
+
+<!-- Constructor mode test: new.target -->
+<script>
+  function User() {
+  alert(new.target);
+}
+
+// without "new":
+User(); // undefined
+
+// with "new":
+new User(); // function User { ... }
+</script>
+
+<!-- Return from constructors -->
+<script>
+  function BigUser() {
+
+this.name = "John";
+
+return { name: "Godzilla" };  // <-- returns this object
+}
+
+alert( new BigUser().name );  // Godzilla, got that object
+</script>
+
+<!-- Methods in constructor -->
+<script>
+  function User(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    alert( "My name is: " + this.name );
+  };
+}
+
+let john = new User("John");
+
+john.sayHi(); // My name is: John
+</script>

@@ -1734,4 +1734,86 @@ Two interesting polyfill libraries are:
 -core js that supports a lot, allows to include only needed features.
 -polyfill.io service that provides a script with polyfills, depending on the features and user’s browser.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Objects:
+Objects are used to store keyed collections of various data and more complex entities.
+An object can be created with figure brackets {…} with an optional list of properties. 
+A property is a “key: value” pair, where key is a string (also called a “property name”), and value can be anything.
+
+An empty object (“empty cabinet”) can be created using one of two syntaxes:
+let user = new Object(); // "object constructor" syntax
+let user = {};  // "object literal" syntax
+
+Usually, the figure brackets {...} are used. That declaration is called an object literal.
+
+# Literals and properties:
+We can immediately put some properties into {...} as “key: value” pairs:
+let user = {     // an object
+  name: "John",  // by key "name" store value "John"
+  age: 30        // by key "age" store value 30
+};
+
+A property has a key (also known as “name” or “identifier”) before the colon ":" and a value to the right of it.
+In the user object, there are two properties:
+The first property has the name "name" and the value "John".
+The second one has the name "age" and the value 30.
+
+Property values are accessible using the dot notation:
+// get property values of the object:
+alert( user.name ); // John
+alert( user.age ); // 30
+
+The value can be of any type. Let’s add a boolean one:
+user.isAdmin = true;
+
+To remove a property, we can use the delete operator:
+delete user.age;
+
+# Computed properties
+We can use square brackets in an object literal, when creating an object. That’s called computed properties.
+let fruit = 'apple';
+let bag = {
+  [fruit + 'Computers']: 5 // bag.appleComputers = 5
+};
+
+# Property names limitations
+As we already know, a variable cannot have a name equal to one of the language-reserved words like “for”, “let”, “return” etc.
+But for an object property, there’s no such restriction
+
+Reading a non-existing property just returns undefined. So we can easily test whether the property exists:
+There’s also a special operator "in" for that.
+
+The syntax is:
+"key" in object
+
+For instance:
+let user = { name: "John", age: 30 };
+alert( "age" in user ); // true, user.age exists
+alert( "blabla" in user ); // false, user.blabla doesn't exist
+
+# The "for..in" loop:
+The syntax:
+
+for (key in object) {
+  // executes the body for each key among object properties
+}
+
+-Objects are associative arrays with several special features.
+-They store properties (key-value pairs), where:
+-Property keys must be strings or symbols (usually strings).
+-Values can be of any type.
+-To access a property, we can use:
+-The dot notation: obj.property.
+-Square brackets notation obj["property"]. Square brackets allow taking the key from a variable, like obj[varWithKey].
+
+Additional operators:
+-To delete a property: delete obj.prop.
+-To check if a property with the given key exists: "key" in obj.
+-To iterate over an object: for (let key in obj) loop.
+
+There are many other kinds of objects in JavaScript:
+Array to store ordered data collections,
+Date to store the information about the date and time,
+Error to store the information about an error.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 

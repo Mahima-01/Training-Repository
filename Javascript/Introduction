@@ -1815,5 +1815,48 @@ Array to store ordered data collections,
 Date to store the information about the date and time,
 Error to store the information about an error.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Garbage collection:
+Garbage collection (GC) is a form of automatic memory management. The garbage collector, or just collector, attempts to reclaim garbage, or memory occupied by objects that are no longer in use by the program. 
+The majority of memory management issues occur when we try to release the allocated memory. The main concern that arises is the determination of unused memory resources. 
+In case of the low-level languages where the developer has to manually decide when the memory is no longer needed, high-level languages such as JavaScript use an automated form of memory management known as Garbage Collection(GC).
+The general problem of automatically finding whether some memory "is not needed anymore" is undecidable.
+The main concept of the algorithms designed for garbage collection is the concept of reference. 
 
+Here’s the simplest example:
 
+// user has a reference to the object
+let user = {
+  name: "John"
+};
+Here the arrow depicts an object reference. The global variable "user" references the object {name: "John"}
+If the value of user is overwritten, the reference is lost:
+i.e user = null;
+Now John becomes unreachable. There’s no way to access it, no references to it. Garbage collector will junk the data and free the memory.
+
+# Two references:
+Now let’s imagine we copied the reference from user to admin:
+
+// user has a reference to the object
+let user = {
+  name: "John"
+};
+let admin = user;
+
+Now if we do the same:
+user = null;
+Then the object is still reachable via admin global variable, so it must stay in memory. If we overwrite admin too, then it can be removed.
+
+# Internal algorithms
+The basic garbage collection algorithm is called “mark-and-sweep”.
+The following “garbage collection” steps are regularly performed:
+The garbage collector takes roots and “marks” (remembers) them.
+Then it visits and “marks” all references from them.
+Then it visits marked objects and marks their references. All visited objects are remembered, so as not to visit the same object twice in the future.
+…And so on until every reachable (from the roots) references are visited.
+All objects except marked ones are removed.
+
+The main things to know:
+Garbage collection is performed automatically. We cannot force or prevent it.
+Objects are retained in memory while they are reachable.
+Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole, as we’ve seen in the example above.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

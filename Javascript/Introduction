@@ -1860,3 +1860,56 @@ Garbage collection is performed automatically. We cannot force or prevent it.
 Objects are retained in memory while they are reachable.
 Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole, as we’ve seen in the example above.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# “this” in methods:
+
+It’s common that an object method needs to access the information stored in the object to do its job.
+For instance, the code inside user.sayHi() may need the name of the user.
+To access the object, a method can use the this keyword.
+The value of this is the object “before dot”, the one used to call the method.
+
+# “this” is not bound
+In JavaScript, keyword this behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object.
+
+There’s no syntax error in the following example:
+function sayHi() {
+  alert( this.name );
+}
+The value of this is evaluated during the run-time, depending on the context. 
+Calling without an object: this == undefined
+We can even call the function without an object at all:
+
+function sayHi() {
+  alert(this);
+}
+sayHi(); // undefined
+
+In this case this is undefined in strict mode. If we try to access this.name, there will be an error.
+
+The consequences of unbound this
+If you come from another programming language, then you are probably used to the idea of a "bound this", where methods defined in an object always have this referencing that object.
+In JavaScript this is “free”, its value is evaluated at call-time and does not depend on where the method was declared, but rather on what object is “before the dot”.
+
+# Arrow functions have no “this”
+Arrow functions are special: they don’t have their “own” this. If we reference this from such a function, it’s taken from the outer “normal” function.
+
+For instance, here arrow() uses this from the outer user.sayHi() method:
+
+let user = {
+  firstName: "Ilya",
+  sayHi() {
+    let arrow = () => alert(this.firstName);
+    arrow();
+  }
+};
+user.sayHi(); // Ilya
+
+Functions that are stored in object properties are called “methods”.
+Methods allow objects to “act” like object.doSomething().
+Methods can reference the object as this.
+The value of this is defined at run-time.
+When a function is declared, it may use this, but that this has no value until the function is called.
+A function can be copied between objects.
+When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+Please note that arrow functions are special: they have no this. When this is accessed inside an arrow function, it is taken from outside.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

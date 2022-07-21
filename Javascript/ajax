@@ -1,0 +1,30 @@
+Ajax:
+- AJAX = Asynchronous JavaScript And XML.
+- AJAX is not a programming language.
+- AJAX just uses a combination of
+
+A browser built-in XMLHttpRequest object (to request data from a web server)
+JavaScript and HTML DOM (to display or use the data)
+
+- Ajax is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications. 
+- With Ajax, web applications can send and retrieve data from a server asynchronously without interfering with the display and behaviour of the existing page.
+- Update a web page without reloading the page
+- Request data from a server - after the page has loaded
+- Receive data from a server - after the page has loaded
+- Send data to a server - in the background
+
+# Working of ajax:
+1. An event occurs in a web page (the page is loaded, a button is clicked)
+2. An XMLHttpRequest object is created by JavaScript
+3. The XMLHttpRequest object sends a request to a web server
+4. The server processes the request
+5. The server sends a response back to the web page
+6. The response is read by JavaScript
+7. Proper action (like page update) is performed by JavaScript
+
+# AJAX - Examples:
+Here is a list of some famous web applications that make use of AJAX
+- Google maps
+- Google Suggest
+- Gmail
+

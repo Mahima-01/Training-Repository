@@ -2359,3 +2359,181 @@ Make sure to remember there’s a loss of precision when working with fractions.
 -More mathematical functions:
 See the Math object when you need them. The library is very small, but can cover basic needs.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Strings:
+In JavaScript, the textual data is stored as strings. There is no separate type for a single character.
+The internal format for strings is always UTF-16, it is not tied to the page encoding.
+
+Quotes:
+Strings can be enclosed within either single quotes, double quotes or backticks:
+let single = 'single-quoted';
+let double = "double-quoted";
+let backticks = `backticks`;
+
+-> Single and double quotes are essentially the same. Backticks, however, allow us to embed any expression into the string, by wrapping it in ${…}:
+ex- 
+function sum(a, b) {
+  return a + b;
+}
+
+alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+
+-> Another advantage of using backticks is that they allow a string to span multiple lines:
+let guestList = `Guests:
+ * John
+ * Pete
+ * Mary
+`;
+alert(guestList); // a list of guests, multiple lines
+
+
+Character	        Description
+\n	                New line
+\r	                In Windows text files a combination of two characters \r\n represents a new break, while on non-Windows OS it’s just \n. That’s for historical reasons, most Windows  software                also understands \n.
+\', \"	                Quotes
+\\	                Backslash
+\t	                Tab
+\b, \f, \v	        Backspace, Form Feed, Vertical Tab – kept for compatibility, not used nowadays.
+\xXX	                Unicode character with the given hexadecimal Unicode XX, e.g. '\x7A' is the same as 'z'.
+\uXXXX	                A Unicode symbol with the hex code XXXX in UTF-16 encoding, for instance \u00A9 – is a Unicode for the copyright symbol ©. It must be exactly 4 hex digits.
+\u{X…XXXXXX} (1 to 6 hex characters)	A Unicode symbol with the given UTF-32 encoding. Some rare characters are encoded with two Unicode symbols, taking 4 bytes. This way we can insert long codes.
+
+# Examples with Unicode:
+alert( "\u00A9" ); // ©
+alert( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long Unicode)
+alert( "\u{1F60D}" ); // 😍, a smiling face symbol (another long Unicode)
+All special characters start with a backslash character \. It is also called an “escape character”.
+We might also use it if we wanted to insert a quote into the string.
+
+For instance:
+alert( 'I\'m the Walrus!' ); // I'm the Walrus!
+
+Note that the backslash \ serves for the correct reading of the string by JavaScript, then disappears. The in-memory string has no \.
+
+# String length:
+The length property has the string length:
+alert( `My\n`.length ); // 3
+Note that \n is a single “special” character, so the length is indeed 3.
+
+-> length is a property
+People with a background in some other languages sometimes mistype by calling str.length() instead of just str.length. That doesn’t work.
+Please note that str.length is a numeric property, not a function. There is no need to add parenthesis after it.
+
+# Accessing characters
+To get a character at position pos, use square brackets [pos] or call the method str.charAt(pos). 
+The first character starts from the zero position
+The square brackets are a modern way of getting a character, while charAt exists mostly for historical reasons.
+
+The only difference between them is that if no character is found, [] returns undefined, and charAt returns an empty string:
+ex let str = `Hello`;
+
+alert( str[1000] ); // undefined
+alert( str.charAt(1000) ); // '' (an empty string)
+
+# We can also iterate over characters using for..of:
+
+for (let char of "Hello") {
+  alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc)
+}
+
+# Strings are immutable
+Strings can’t be changed in JavaScript. It is impossible to change a character.
+
+The usual workaround is to create a whole new string and assign it to str instead of the old one.
+let str = 'Hi';
+str = 'h' + str[1]; // replace the string
+alert( str ); // hi
+
+Instead of this we can write as :
+let str = 'Hi';
+str = 'h' + str[1]; // replace the string
+alert( str ); // hi
+
+# Changing the case
+Methods toLowerCase() and toUpperCase() change the case:
+alert( 'Interface'.toUpperCase() ); // INTERFACE
+alert( 'Interface'.toLowerCase() ); // interface
+
+Or, if we want a single character lowercased:
+alert( 'Interface'[0].toLowerCase() ); // 'i'
+
+# Searching for a substring
+There are multiple ways to look for a substring within a string.
+
+1. str.indexOf
+The first method is str.indexOf(substr, pos).
+It looks for the substr in str, starting from the given position pos, and returns the position where the match was found or -1 if nothing can be found.
+let str = 'Widget with id';
+alert( str.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+alert( str.indexOf('widget') ); // -1, not found, the search is case-sensitive
+alert( str.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+
+The optional second parameter allows us to start searching from a given position.
+For instance, the first occurrence of "id" is at position 1. To look for the next occurrence, let’s start the search from position 2
+let str = 'Widget with id';
+alert( str.indexOf('id', 2) ) // 12
+
+If we’re interested in all occurrences, we can run indexOf in a loop. Every new call is made with the position after the previous match.
+let str = "As sly as a fox, as strong as an ox";
+let target = "as";
+let pos = -1;
+while ((pos = str.indexOf(target, pos + 1)) != -1) {
+  alert( pos );
+}
+
+# str.lastIndexOf(substr, position)
+There is also a similar method str.lastIndexOf(substr, position) that searches from the end of a string to its beginning.
+It would list the occurrences in the reverse order.
+
+So, we should actually check for -1, like this:
+let str = "Widget with id";
+if (str.indexOf("Widget") != -1) {
+    alert("We found it"); // works now!
+}
+
+# The bitwise NOT trick:
+One of the old tricks used here is the bitwise NOT ~ operator. It converts the number to a 32-bit integer (removes the decimal part if exists) and then reverses all bits in its binary representation.
+In practice, that means a simple thing: for 32-bit integers ~n equals -(n+1).
+
+For instance:
+alert( ~2 ); // -3, the same as -(2+1)
+alert( ~1 ); // -2, the same as -(1+1)
+alert( ~-1 ); // 0, the same as -(-1+1)
+As we can see, ~n is zero only if n == -1 (that’s for any 32-bit signed integer n).
+So, the test if ( ~str.indexOf("...") ) is truthy only if the result of indexOf is not -1. In other words, when there is a match.
+People use it to shorten indexOf checks:
+let str = "Widget";
+if (~str.indexOf("Widget")) {
+  alert( 'Found it!' ); // works
+}
+
+# includes, startsWith, endsWith:
+The more modern method str.includes(substr, pos) returns true/false depending on whether str contains substr within.
+It’s the right choice if we need to test for the match, but don’t need its position.
+
+alert( "Widget with id".includes("Widget") ); // true
+alert( "Hello".includes("Bye") ); // false
+
+-> The optional second argument of str.includes is the position to start searching from:
+alert( "Widget".includes("id") ); // true
+alert( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"
+
+-> The methods str.startsWith and str.endsWith do exactly what they say:
+alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
+alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"
+
+
+# Getting a substring
+There are 3 methods in JavaScript to get a substring: substring, substr and slice.
+
+1. str.slice(start [, end])
+Returns the part of the string from start to (but not including) end.
+For instance:
+let str = "stringify";
+alert( str.slice(0, 5) ); // 'strin', the substring from 0 to 5 (not including 5)
+alert( str.slice(0, 1) ); // 's', from 0 to 1, but not including 1, so only character at 0
+
+If there is no second argument, then slice goes till the end of the string:
+let str = "stringify";
+alert( str.slice(2) ); // 'ringify', from the 2nd position till the end
+
+

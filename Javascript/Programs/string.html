@@ -1,0 +1,76 @@
+<script>
+  function sum(a, b) {
+    return a + b;
+  }
+  alert( ~1 ); // -2, the same as -(1+1)
+  alert( ~0 ); // -1, the same as -(0+1)
+  alert( ~-1 ); // 0, the same as -(-1+1)
+  alert( 'Interface'.toUpperCase() ); // INTERFACE
+  alert( 'Interface'.toLowerCase() ); // interface
+  alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+</script>
+
+<!-- Another advantage of using backticks is that they allow a string to span multiple lines: -->
+<script>
+  let guestList = `Guests:
+   * John
+   * Pete
+   * Mary
+  `;
+
+  alert(guestList); // a list of guests, multiple lines
+  alert( "\u00A9" ); // ©
+  alert( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long Unicode)
+  alert( "\u{1F60D}" ); // 😍, a smiling face symbol (another long Unicode)
+  alert( `The backslash: \\` ); // The backslash: \
+  alert( `My\name\is`.length ); 
+</script>
+
+<!-- Accessing characters -->
+<script>
+let str = `Hello`;
+
+// the first character
+alert( str[0] ); // H
+alert( str.charAt(0) ); // H
+
+// the last character
+alert( str[str.length - 1] ); // o
+</script>
+
+<!-- We can also iterate over characters using for..of -->
+<script>
+  for (let char of "Javascript") {
+  alert(char); // J,a,v,a,s,c,r,i,p,t (char becomes "J", then "a", then "v" etc)
+  }
+</script>
+
+<!-- str.indexOf -->
+<script>
+let str1 = 'Widget with id';
+
+alert( str1.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+alert( str1.indexOf('widget') ); // -1, not found, the search is case-sensitive
+alert( str1.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+alert( str1.indexOf('id', 2) ) // 12
+</script>
+
+<script>
+  let str2 = 'As sly as a fox, as strong as an ox';
+  let target = 'as'; // let's look for it
+  let pos = 0;
+  while (true) {
+    let foundPos = str2.indexOf(target, pos);
+    if (foundPos == -1) break;
+    alert( `Found at ${foundPos}` );
+    pos = foundPos + 1; // continue the search from the next position
+}
+</script>
+
+<!-- includes, startsWith, endsWith -->
+<script>
+  alert( "Widget with id".includes("Widget") ); // true
+  alert( "Hello".includes("Bye") ); // false
+  alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
+  alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"
+</script>

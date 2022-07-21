@@ -74,3 +74,19 @@ alert( str1.indexOf('id', 2) ) // 12
   alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
   alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"
 </script>
+
+<!-- str.substring(start [, end]) -->
+<script>
+let str3 = "stringify";
+
+// these are same for substring
+alert( str3.substring(2, 6) ); // "ring"
+alert( str3.substring(6, 2) ); // "ring"
+
+// ...but not for slice:
+alert( str3.slice(2, 6) ); // "ring" (the same)
+alert( str3.slice(6, 2) ); // "" (an empty string)
+alert( str3.substr(2, 4) );
+// The first argument may be negative, to count from the end:
+alert( str3.substr(-4, 2) ); // 'gi', from the 4th position get 2 characters
+</script>

@@ -2536,4 +2536,99 @@ If there is no second argument, then slice goes till the end of the string:
 let str = "stringify";
 alert( str.slice(2) ); // 'ringify', from the 2nd position till the end
 
+# Negative values for start/end are also possible. They mean the position is counted from the string end:
+let str = "stringify";
+// start at the 4th position from the right, end at the 1st from the right
+alert( str.slice(-4, -1) ); // 'gif'
 
+# str.substring(start [, end])
+Returns the part of the string between start and end.
+This is almost the same as slice, but it allows start to be greater than end.
+Negative arguments are (unlike slice) not supported, they are treated as 0.
+
+# str.substr(start [, length])
+Returns the part of the string from start, with the given length.
+In contrast with the previous methods, this one allows us to specify the length instead of the ending position
+
+Let’s recap these methods to avoid any confusion:
+
+method	                                selects…	              negatives
+slice(start, end)	from start to end (not including end)	     allows negatives
+substring(start, end)	between start and end	negative values mean      0
+substr(start, length)	from start get length characters	      allows negative start
+
+# Comparing strings
+As we know from the chapter Comparisons, strings are compared character-by-character in alphabetical order
+
+Although, there are some oddities.
+
+1. A lowercase letter is always greater than the uppercase:
+alert( 'a' > 'Z' ); // true
+
+2. Letters with diacritical marks are “out of order”:
+alert( 'Österreich' > 'Zealand' ); // true
+This may lead to strange results if we sort these country names. Usually people would expect Zealand to come after Österreich in the list.
+
+# str.codePointAt(pos)
+Returns the code for the character at position pos:
+// different case letters have different codes
+alert( "z".codePointAt(0) ); // 122
+alert( "Z".codePointAt(0) ); // 90
+
+# String.fromCodePoint(code)
+Creates a character by its numeric code
+alert( String.fromCodePoint(90) ); // Z
+We can also add Unicode characters by their codes using \u followed by the hex code:
+// 90 is 5a in hexadecimal system
+alert( '\u005a' ); // Z
+
+# Correct comparisons
+The “right” algorithm to do string comparisons is more complex than it may seem, because alphabets are different for different languages
+
+It provides a special method to compare strings in different languages, following their rules.
+
+The call str.localeCompare(str2) returns an integer indicating whether str is less, equal or greater than str2 according to the language rules:
+Returns a negative number if str is less than str2.
+Returns a positive number if str is greater than str2.
+Returns 0 if they are equivalent.
+
+# Surrogate pairs
+All frequently used characters have 2-byte codes. Letters in most european languages, numbers, and even most hieroglyphs, have a 2-byte representation.
+But 2 bytes only allow 65536 combinations and that’s not enough for every possible symbol. So rare symbols are encoded with a pair of 2-byte characters called “a surrogate pair”.
+The length of such symbols is 2.
+alert( '𝒳'.length ); // 2, MATHEMATICAL SCRIPT CAPITAL X
+alert( '😂'.length ); // 2, FACE WITH TEARS OF JOY
+alert( '𩷶'.length ); // 2, a rare Chinese hieroglyph
+
+We actually have a single symbol in each of the strings above, but the length shows a length of 2.
+String.fromCodePoint and str.codePointAt are few rare methods that deal with surrogate pairs right.
+
+# Diacritical marks and normalization:
+In many languages, there are symbols that are composed of the base character with a mark above/under it.
+For instance, the letter a can be the base character for: àáâäãåā.
+
+For instance, if we have S followed by the special “dot above” character (code \u0307), it is shown as Ṡ.
+alert( 'S\u0307' ); // Ṡ
+
+For instance, if we append a character “dot below” (code \u0323), then we’ll have “S with dots above and below”: Ṩ.
+
+For example:
+alert( 'S\u0307\u0323' ); // Ṩ
+
+There exists a “Unicode normalization” algorithm that brings each string to the single “normal” form.
+It is implemented by str.normalize().
+alert( "S\u0307\u0323".normalize() == "S\u0323\u0307".normalize() ); // true
+
+# Summary
+There are 3 types of quotes. Backticks allow a string to span multiple lines and embed expressions ${…}.
+Strings in JavaScript are encoded using UTF-16.
+We can use special characters like \n and insert letters by their Unicode using \u....
+To get a character, use: [].
+To get a substring, use: slice or substring.
+To lowercase/uppercase a string, use: toLowerCase/toUpperCase.
+To look for a substring, use: indexOf, or includes/startsWith/endsWith for simple checks.
+To compare strings according to the language, use: localeCompare, otherwise they are compared by character codes.
+There are several other helpful methods in strings:
+str.trim() – removes (“trims”) spaces from the beginning and end of the string.
+str.repeat(n) – repeats the string n times
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

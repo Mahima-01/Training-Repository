@@ -1,0 +1,30 @@
+<script>
+  alert( 0 == [] ); // true
+  alert('0' == [] ); // false
+  let fruits = ["Apple", "Orange", "Plum"];
+
+  alert( fruits[0] ); // Apple
+  alert( fruits[1] ); // Orange
+  alert( fruits[2] );
+  fruits[2] = 'Pear'; // now ["Apple", "Orange", "Pear"]
+  fruits[3] = 'Lemon'; // now ["Apple", "Orange", "Pear", "Lemon"]
+  alert( fruits[fruits.length-1] ); 
+  // same as fruits[fruits.length-1]
+  alert( fruits.at(-1) ); // Plum
+  alert( fruits.pop() ); // remove "Pear" and alert it
+  alert( fruits ); // Apple, Orange
+  fruits.push("Pear");
+  alert( fruits.shift() ); // remove Apple and alert it
+  fruits.unshift('Apple');
+</script>
+
+<!-- Multidimensional arrays -->
+<script>
+  let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+alert( matrix[1][1] ); // 5, the central element
+</script>

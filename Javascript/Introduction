@@ -2632,3 +2632,218 @@ There are several other helpful methods in strings:
 str.trim() – removes (“trims”) spaces from the beginning and end of the string.
 str.repeat(n) – repeats the string n times
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Arrays
+Objects allow you to store keyed collections of values.
+There exists a special data structure named Array, to store ordered collections.
+
+# Declaration
+There are two syntaxes for creating an empty array:
+let arr = new Array();
+let arr = [];
+
+Almost all the time, the second syntax is used. We can supply initial elements in the brackets:
+let fruits = ["Apple", "Orange", "Plum"];
+Array elements are numbered, starting with zero.
+
+We can get an element by its number in square brackets:
+let fruits = ["Apple", "Orange", "Plum"];
+alert( fruits[0] ); // Apple
+alert( fruits[1] ); // Orange
+alert( fruits[2] ); // Plum
+
+We can replace an element:
+fruits[2] = 'Pear'; // now ["Apple", "Orange", "Pear"]
+
+Or add a new one to the array:
+fruits[3] = 'Lemon'; // now ["Apple", "Orange", "Pear", "Lemon"]
+
+# The total count of the elements in the array is its length:
+let fruits = ["Apple", "Orange", "Plum"];
+alert( fruits.length ); // 3
+
+We can also use alert to show the whole array.
+let fruits = ["Apple", "Orange", "Plum"];
+alert( fruits ); // Apple,Orange,Plum
+
+# An array can store elements of any type.
+
+For instance:
+// mix of values
+let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+// get the object at index 1 and then show its name
+alert( arr[1].name ); // John
+// get the function at index 3 and run it
+arr[3](); // hello
+
+# Trailing comma
+An array, just like an object, may end with a comma:
+
+let fruits = [
+  "Apple",
+  "Orange",
+  "Plum",
+];
+The “trailing comma” style makes it easier to insert/remove items, because all lines become alike.
+
+Get last elements with “at”
+
+Let’s say we want the last element of the array.
+Some programming languages allow to use negative indexes for the same purpose, like fruits[-1].
+Although, in JavaScript it won’t work. The result will be undefined, because the index in square brackets is treated literally.
+
+We can explicitly calculate the last element index and then access it: fruits[fruits.length - 1].
+let fruits = ["Apple", "Orange", "Plum"];
+alert( fruits[fruits.length-1] ); // Plum
+
+Luckily, there’s a shorter syntax: fruits.at(-1):
+
+let fruits = ["Apple", "Orange", "Plum"];
+// same as fruits[fruits.length-1]
+alert( fruits.at(-1) ); // Plum
+
+In other words, arr.at(i):
+is exactly the same as arr[i], if i >= 0.
+for negative values of i, it steps back from the end of the array.
+
+# Methods pop/push, shift/unshift
+A queue is one of the most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
+push appends an element to the end.
+shift get an element from the beginning, advancing the queue, so that the 2nd element becomes the 1st.
+Arrays support both operations.
+In practice we need it very often. For example, a queue of messages that need to be shown on-screen.
+
+There’s another use case for arrays – the data structure named stack.
+It supports two operations:
+push adds an element to the end.
+pop takes an element from the end.
+So new elements are added or taken always from the “end”.
+A stack is usually illustrated as a pack of cards: new cards are added to the top or taken from the top:
+For stacks, the latest pushed item is received first, that’s also called LIFO (Last-In-First-Out) principle. For queues, we have FIFO (First-In-First-Out).
+Arrays in JavaScript can work both as a queue and as a stack. They allow you to add/remove elements, both to/from the beginning or the end.
+In computer science, the data structure that allows this, is called deque.
+
+# Methods that work with the end of the array:
+pop:
+Extracts the last element of the array and returns it:
+let fruits = ["Apple", "Orange", "Pear"];
+alert( fruits.pop() ); // remove "Pear" and alert it
+alert( fruits ); // Apple, Orange
+Both fruits.pop() and fruits.at(-1) return the last element of the array, but fruits.pop() also modifies the array by removing it.
+
+# push
+Append the element to the end of the array:
+let fruits = ["Apple", "Orange"];
+fruits.push("Pear");
+alert( fruits ); // Apple, Orange, Pear
+The call fruits.push(...) is equal to fruits[fruits.length] = ...
+
+# Methods that work with the beginning of the array:
+shift
+Extracts the first element of the array and returns it:
+let fruits = ["Apple", "Orange", "Pear"];
+alert( fruits.shift() ); // remove Apple and alert it
+alert( fruits ); // Orange, Pear
+
+# unshift
+Add the element to the beginning of the array:
+let fruits = ["Orange", "Pear"];
+fruits.unshift('Apple');
+alert( fruits ); // Apple, Orange, Pear
+
+# Methods push and unshift can add multiple elements at once:
+let fruits = ["Apple"];
+fruits.push("Orange", "Peach");
+fruits.unshift("Pineapple", "Lemon");
+// ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]
+alert( fruits );
+
+# Performance
+Methods push/pop run fast, while shift/unshift are slow.
+
+Why is it faster to work with the end of an array than with its beginning? Let’s see what happens during the execution:
+fruits.shift(); // take 1 element from the start
+It’s not enough to take and remove the element with the index 0. Other elements need to be renumbered as well.
+
+The shift operation must do 3 things:
+- Remove the element with the index 0.
+- Move all elements to the left, renumber them from the index 1 to 0, from 2 to 1 and so on.
+- Update the length property.
+The more elements in the array, the more time to move them, more in-memory operations.
+
+The similar thing happens with unshift: to add an element to the beginning of the array, we need first to move existing elements to the right, increasing their indexes.
+And what’s with push/pop? They do not need to move anything. To extract an element from the end, the pop method cleans the index and shortens length.
+
+# Loops
+One of the oldest ways to cycle array items is the for loop over indexes:
+let arr = ["Apple", "Orange", "Pear"];
+for (let i = 0; i < arr.length; i++) {
+  alert( arr[i] );
+}
+
+# The simplest way to clear the array is: arr.length = 0;
+
+# new Array()
+There is one more syntax to create an array:
+let arr = new Array("Apple", "Pear", "etc");
+
+If new Array is called with a single argument which is a number, then it creates an array without items, but with the given length.
+
+# Multidimensional arrays
+Arrays can have items that are also arrays. We can use it for multidimensional arrays, for example to store matrices:
+
+# toString
+Arrays have their own implementation of toString method that returns a comma-separated list of elements.
+let arr = [1, 2, 3];
+alert( arr ); // 1,2,3
+alert( String(arr) === '1,2,3' ); // true
+
+# Arrays do not have Symbol.toPrimitive, neither a viable valueOf, they implement only toString conversion, so here [] becomes an empty string, [1] becomes "1" and [1,2] becomes "1,2".
+When the binary plus "+" operator adds something to a string, it converts it to a string as well.
+
+# Don’t compare arrays with ==
+Arrays in JavaScript, unlike some other programming languages, shouldn’t be compared with operator ==.
+This operator has no special treatment for arrays, it works with them as with any objects.
+
+- Two objects are equal == only if they’re references to the same object.
+- If one of the arguments of == is an object, and the other one is a primitive, then the object gets converted to primitive, as explained in the chapter Object to primitive conversion.
+- …With an exception of null and undefined that equal == each other and nothing else.
+
+# So, if we compare arrays with ==, they are never the same, unless we compare two variables that reference exactly the same array.
+
+For example:
+alert( [] == [] ); // false
+alert( [0] == [0] ); // false
+These arrays are technically different objects. So they aren’t equal. The == operator doesn’t do item-by-item comparison.
+
+Comparison with primitives may give seemingly strange results as well:
+alert( 0 == [] ); // true
+alert('0' == [] ); // false
+
+# Summary
+Array is a special kind of object, suited to storing and managing ordered data items.
+
+The declaration:
+// square brackets (usual)
+let arr = [item1, item2...];
+// new Array (exceptionally rare)
+let arr = new Array(item1, item2...);
+
+The call to new Array(number) creates an array with the given length, but without elements.
+The length property is the array length or, to be precise, its last numeric index plus one. It is auto-adjusted by array methods.
+If we shorten length manually, the array is truncated.
+
+Getting the elements:
+we can get element by its index, like arr[0]
+also we can use at(i) method that allows negative indexes. For negative values of i, it steps back from the end of the array. If i >= 0, it works same as arr[i].
+
+We can use an array as a deque with the following operations:
+push(...items) adds items to the end.
+pop() removes the element from the end and returns it.
+shift() removes the element from the beginning and returns it.
+unshift(...items) adds items to the beginning.
+
+To loop over the elements of the array:
+for (let i=0; i<arr.length; i++) – works fastest, old-browser-compatible.
+for (let item of arr) – the modern syntax for items only,
+for (let i in arr) – never use.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

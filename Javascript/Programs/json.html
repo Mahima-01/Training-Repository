@@ -1,0 +1,69 @@
+<!-- # JSON methods, toJSON -->
+<!-- <script>
+let user = {
+  name: "John",
+  age: 30,
+
+  toString() {
+    return `{name: "${this.name}", age: ${this.age}}`;
+  }
+};
+
+alert(user); // {name: "John", age: 30}
+</script> -->
+
+<!-- JSON.stringify -->
+<!-- <script>
+let student = {
+  name: 'John',
+  age: 30,
+  isAdmin: false,
+  courses: ['html', 'css', 'js'],
+  spouse: null
+};
+
+let json = JSON.stringify(student);
+
+alert(typeof json); // we've got a string!
+alert( JSON.stringify(1) ) // 1
+alert(json);
+</script> -->
+
+<!-- Formatting: space -->
+<!-- <script>
+let user = {
+  name: "John",
+  age: 25,
+  roles: {
+    isAdmin: false,
+    isEditor: true
+  }
+};
+
+alert(JSON.stringify(user, null, 2));
+</script>
+
+<!-- Custom “toJSON” --> 
+<script>
+let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  date: new Date(Date.UTC(2017, 0, 1)),
+  room
+};
+
+alert( JSON.stringify(meetup) );
+</script>
+
+<!-- JSON.parse -->
+<script>
+// stringified array
+let numbers = "[0, 1, 2, 3]";
+
+numbers = JSON.parse(numbers);
+
+alert( numbers[1] ); // 1
+</script>

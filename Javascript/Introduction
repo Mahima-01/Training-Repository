@@ -3170,7 +3170,7 @@ alert(+date); // the number of milliseconds, same as date.getTime()
 The important side effect: dates can be subtracted, the result is their difference in ms.
 
 # Date.now()
-If we only want to measure time, we don’t need the Date object.
+If we only want to measure time, we don’t need the Date oject.
 There’s a special method Date.now() that returns the current timestamp.
 
 # Benchmarking:
@@ -3194,4 +3194,57 @@ Days of week in getDay() are also counted from zero (that’s Sunday).
 Date auto-corrects itself when out-of-range components are set. Good for adding/subtracting days/months/hours.
 Dates can be subtracted, giving their difference in milliseconds. That’s because a Date becomes the timestamp when converted to a number.
 Use Date.now() to get the current timestamp fast.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# JSON methods, toJSON:
 
+-> JSON.stringify:
+-JSON.stringify to convert objects into JSON.
+-JSON.parse to convert JSON back into an object.
+
+The method JSON.stringify(student) takes the object and converts it into a string.
+
+JSON.stringify can be applied to primitives as well.
+JSON supports following data types:
+Objects { ... }
+Arrays [ ... ]
+Primitives:
+strings,
+numbers,
+boolean values true/false,
+null.
+
+# Excluding and transforming: replacer
+The full syntax of JSON.stringify is:
+let json = JSON.stringify(value[, replacer, space])
+value
+A value to encode.
+replacer
+Array of properties to encode or a mapping function function(key, value).
+space
+Amount of space to use for formatting
+Most of the time, JSON.stringify is used with the first argument only. But if we need to fine-tune the replacement process, like to filter out circular references, we can use the second argument of JSON.stringify.
+If we pass an array of properties to it, only these properties will be encoded.
+
+# Formatting spaces:
+The third argument of JSON.stringify(value, replacer, space) is the number of spaces to use for pretty formatting.
+Previously, all stringified objects had no indents and extra spaces.
+
+# Custom “toJSON”:
+Like toString for string conversion, an object may provide method toJSON for to-JSON conversion. JSON.stringify automatically calls it if available
+
+# JSON.parse
+To decode a JSON-string, we need another method named JSON.parse.
+
+The syntax:
+let value = JSON.parse(str, [reviver]);
+str
+JSON-string to parse.
+reviver
+Optional function(key,value) that will be called for each (key, value) pair and can transform the value.
+
+JSON is a data format that has its own independent standard and libraries for most programming languages.
+JSON supports plain objects, arrays, strings, numbers, booleans, and null.
+JavaScript provides methods JSON.stringify to serialize into JSON and JSON.parse to read from JSON.
+Both methods support transformer functions for smart reading/writing.
+If an object has toJSON, then it is called by JSON.stringify.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

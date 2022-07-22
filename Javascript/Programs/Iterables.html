@@ -1,0 +1,53 @@
+<!-- Iterables -->
+<!-- A range object that represents an interval of numbers: -->
+<!-- <script>
+  let range = {
+  from: 1,
+  to: 5
+};
+
+// 1. call to for..of initially calls this
+range[Symbol.iterator] = function() {
+
+  // ...it returns the iterator object:
+  // 2. Onward, for..of works only with the iterator object below, asking it for next values
+  return {
+    current: this.from,
+    last: this.to,
+
+    // 3. next() is called on each iteration by the for..of loop
+    next() {
+      // 4. it should return the value as an object {done:.., value :...}
+      if (this.current <= this.last) {
+        return { done: false, value: this.current++ };
+      } else {
+        return { done: true };
+      }
+    }
+  };
+};
+
+// now it works!
+for (let num of range) {
+  alert(num); // 1, then 2, 3, 4, 5
+} -->
+</script>
+
+<!-- String is iterable -->
+<!-- <script>
+  for (let char of "test") {
+  // triggers 4 times: once for each character
+  alert( char ); // t, then e, then s, then t
+ }
+</script> -->
+
+<!-- Array.from that takes an iterable or array-like value and makes a “real” Array from it. 
+The full syntax for Array.from also allows us to provide an optional “mapping” function:
+Array.from(obj[, mapFn, thisArg])
+The optional second argument mapFn can be a function that will be applied to each element before adding it to the array, and thisArg allows us to set this for it.-->
+
+
+<script>
+  document.write(Array.from("This is JavaScript Array "+
+                            "from() Method"));
+</script>

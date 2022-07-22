@@ -1,0 +1,10 @@
+# Write a function sumTo(n) that calculates the sum of numbers 1 + 2 + ... + n.
+
+<script>
+function sumTo(n) {
+  if (n == 1) return 1;
+  return n + sumTo(n - 1);
+}
+
+alert( sumTo(100) );
+</script>

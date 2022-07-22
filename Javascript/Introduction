@@ -3445,4 +3445,102 @@ enumerable – same as for data properties,
 configurable – same as for data properties.
 For instance, to create an accessor fullName with defineProperty, we can pass a descriptor with get and set.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# DOM:
+With the HTML DOM, JavaScript can access and change all the elements of an HTML document.
 
+The HTML DOM (Document Object Model)
+When a web page is loaded, the browser creates a Document Object Model of the page.
+The HTML DOM model is constructed as a tree of Objects.
+
+# With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+JavaScript can change all the HTML elements in the page
+JavaScript can change all the HTML attributes in the page
+JavaScript can change all the CSS styles in the page
+JavaScript can remove existing HTML elements and attributes
+JavaScript can add new HTML elements and attributes
+JavaScript can react to all existing HTML events in the page
+JavaScript can create new HTML events in the page
+
+The DOM defines a standard for accessing document.
+
+The W3C DOM standard is separated into 3 different parts:
+Core DOM - standard model for all document types
+XML DOM - standard model for XML documents
+HTML DOM - standard model for HTML documents
+
+# JavaScript - HTML DOM Methods:
+HTML DOM methods are actions you can perform (on HTML Elements).
+HTML DOM properties are values (of HTML Elements) that you can set or change.
+
+The DOM Programming Interface
+The HTML DOM can be accessed with JavaScript (and with other programming languages).
+In the DOM, all HTML elements are defined as objects.
+The programming interface is the properties and methods of each object.
+A property is a value that you can get or set (like changing the content of an HTML element).
+A method is an action you can do (like add or deleting an HTML element).
+
+Example
+The following example changes the content (the innerHTML) of the <p> element with id="demo":
+
+Example:
+<html>
+<body>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+</script>
+</body>
+</html>
+
+# The getElementById Method
+The most common way to access an HTML element is to use the id of the element.
+In the example above the getElementById method used id="demo" to find the element.
+
+# The innerHTML Property
+The easiest way to get the content of an element is by using the innerHTML property.
+The innerHTML property is useful for getting or replacing the content of HTML elements.
+The innerHTML property can be used to get or change any HTML element, including <html> and <body>.
+
+# JavaScript HTML DOM Document
+The HTML DOM document object is the owner of all other objects in your web page.
+
+Below are some examples of how you can use the document object to access and manipulate HTML.
+
+-> Finding HTML Elements
+  Method	                                                Description
+document.getElementById(id)	                      Find an element by element id
+document.getElementsByTagName(name)	              Find elements by tag name
+document.getElementsByClassName(name)	              Find elements by class name
+
+-> Changing HTML Elements
+Property	                                        Description
+element.innerHTML =  new html content	           Change the inner HTML of an element
+element.attribute = new value	                   Change the attribute value of an HTML element
+element.style.property = new style	           Change the style of an HTML element
+   Method	                                        Description
+element.setAttribute(attribute, value)	    Change the attribute value of an HTML element
+
+-> Adding and Deleting Elements
+Method	                                                   Description
+document.createElement(element)	            Create an HTML element
+document.removeChild(element)	                    Remove an HTML element
+document.appendChild(element)	                    Add an HTML element
+document.replaceChild(new, old)	            Replace an HTML element
+document.write(text)	                           Write into the HTML output stream
+
+-> Adding Events Handlers
+Method	                                                              Description
+document.getElementById(id).onclick = function(){code}	Adding event handler code to an onclick event
+
+# JavaScript HTML DOM Elements
+This page teaches you how to find and access HTML elements in an HTML page.
+
+Finding HTML Elements:
+Often, with JavaScript, you want to manipulate HTML elements.
+To do so, you have to find the elements first. There are several ways to do this:
+Finding HTML elements by id
+Finding HTML elements by tag name
+Finding HTML elements by class name
+Finding HTML elements by CSS selectors
+Finding HTML elements by HTML object collections
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

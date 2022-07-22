@@ -1,0 +1,43 @@
+<script>
+// let now = new Date();
+// alert( now ); // shows current date/time
+
+// // new Date(milliseconds)
+// // 0 means 01.01.1970 UTC+0
+// let Jan01_1970 = new Date(0);
+// alert( Jan01_1970 );
+
+// // now add 24 hours, get 02.01.1970 UTC+0
+// let Jan02_1970 = new Date(24 * 3600 * 1000);
+// alert( Jan02_1970 );
+
+// new Date(datestring)
+// let date = new Date("2017-01-26");
+// alert(date);
+// alert( new Date().getTimezoneOffset() );
+
+// Autocorrection
+// let date = new Date(2013, 0, 32); // 32 Jan 2013 ?!?
+// alert(date); // ...is 1st Feb 2013!
+
+// Benchmarking
+function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}
+
+function bench(f) {
+  let date1 = new Date(0);
+  let date2 = new Date();
+
+  let start = Date.now();
+  for (let i = 0; i < 100000; i++) f(date1, date2);
+  return Date.now() - start;
+}
+
+alert( 'Time of diffSubtract: ' + bench(diffSubtract) + 'ms' );
+alert( 'Time of diffGetTime: ' + bench(diffGetTime) + 'ms' );
+</script>

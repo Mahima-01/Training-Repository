@@ -1,0 +1,24 @@
+<script>
+// let user = {
+//   name: "John"
+// };
+
+// let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+// alert( JSON.stringify(descriptor, null, 2 ) );
+// Object.defineProperties(user, {
+//   name: { value: "John", writable: false },
+//   surname: { value: "Smith", writable: false },
+//   // ...
+// });
+let user = {
+  name: "John"
+};
+
+Object.defineProperty(user, "name", {
+  configurable: false
+});
+
+user.name = "Pete"; // works fine
+delete user.name; // Error
+</script>

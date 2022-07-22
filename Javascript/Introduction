@@ -3248,3 +3248,67 @@ JavaScript provides methods JSON.stringify to serialize into JSON and JSON.parse
 Both methods support transformer functions for smart reading/writing.
 If an object has toJSON, then it is called by JSON.stringify.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Scheduling: setTimeout and setInterval:
+There are two methods for it:
+
+- setTimeout allows us to run a function once after the interval of time.
+- setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+
+1. setTimeout
+The syntax:
+let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)
+
+Parameters:
+func|code
+
+Function or a string of code to execute. Usually, that’s a function. For historical reasons, a string of code can be passed, but that’s not recommended.
+
+delay
+The delay before run, in milliseconds (1000 ms = 1 second), by default 0.
+
+arg1, arg2…
+Arguments for the function (not supported in IE9-)
+
+For instance, this code calls sayHi() after one second:
+function sayHi() {
+  alert('Hello');
+}
+
+setTimeout(sayHi, 1000);
+
+# Canceling with clearTimeout
+A call to setTimeout returns a “timer identifier” timerId that we can use to cancel the execution.
+
+The syntax to cancel:
+let timerId = setTimeout(...);
+clearTimeout(timerId);
+
+# setInterval
+The setInterval method has the same syntax as setTimeout:
+let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
+
+All arguments have the same meaning. But unlike setTimeout it runs the function not only once, but regularly after the given interval of time.
+To stop further calls, we should call clearInterval(timerId).
+
+The following example will show the message every 2 seconds. After 5 seconds, the output is stopped:
+// repeat with the interval of 2 seconds
+let timerId = setInterval(() => alert('tick'), 2000);
+// after 5 seconds stop
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+
+Note: Nested setTimeout allows to set the delay between the executions more precisely than setInterval.
+
+# Zero delay setTimeout:
+This schedules the execution of func as soon as possible. But the scheduler will invoke it only after the currently executing script is complete.
+So the function is scheduled to run “right after” the current script.
+
+For instance, this outputs “Hello”, then immediately “World”:
+setTimeout(() => alert("World"));
+alert("Hello");
+
+- Methods setTimeout(func, delay, ...args) and setInterval(func, delay, ...args) allow us to run the func once/regularly after delay milliseconds.
+- To cancel the execution, we should call clearTimeout/clearInterval with the value returned by setTimeout/setInterval.
+- Nested setTimeout calls are a more flexible alternative to setInterval, allowing us to set the time between executions more precisely.
+- Zero delay scheduling with setTimeout(func, 0) (the same as setTimeout(func)) is used to schedule the call “as soon as possible, but after the current script is complete”.
+- The browser limits the minimal delay for five or more nested calls of setTimeout or for setInterval (after 5th call) to 4ms. That’s for historical reasons.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

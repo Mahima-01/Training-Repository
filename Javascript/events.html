@@ -1,0 +1,78 @@
+<!-- HTML-attribute
+A handler can be set in HTML with an attribute named on<event>.
+For instance, to assign a click handler for an input, we can use onclick
+Please note that inside onclick we use single quotes, because the attribute itself is in double quotes.-->
+<!-- <input value="Click me" onclick="alert('Click!')" type="button"> -->
+
+<!-- Here a click runs the function countRabbits(): -->
+<!-- <script>
+  function countUsers() {
+    for(let i=1; i<=3; i++) {
+      alert("User number " + i);
+    }
+  }
+</script>
+
+<input type="button" onclick="countUsers()" value="Count users!"> -->
+
+<!-- Note: As we know, HTML attribute names are not case-sensitive, so ONCLICK works as well as onClick and onCLICK… 
+But usually attributes are lowercased: onclick. -->
+
+<!-- DOM property
+We can assign a handler using a DOM property on<event>.
+For instance, elem.onclick: 
+As there’s only one onclick property, we can’t assign more than one event handler.-->
+<!-- <input id="elem" type="button" value="Click me">
+<script>
+  elem.onclick = function() {
+    alert('Thank you');
+  };
+</script> -->
+
+<!-- Accessing the element: this
+The value of this inside a handler is the element. The one which has the handler on it.
+In the code below button shows its contents using this.innerHTML 
+Note: Assign a handler to elem.onclick, not elem.ONCLICK, because DOM properties are case-sensitive.-->
+
+<!-- addEventListener
+The syntax to add a handler:
+element.addEventListener(event, handler, [options]);
+
+event
+Event name, e.g. "click".
+
+handler
+The handler function.
+
+options
+An additional optional object with properties:
+once: if true, then the listener is automatically removed after it triggers.
+capture: the phase where to handle the event, to be covered later in the chapter Bubbling and capturing. For historical reasons, options can also be false/true, that’s the same as {capture: false/true}.
+passive: if true, then the handler will not call preventDefault() 
+
+To remove the handler, use removeEventListener:
+element.removeEventListener(event, handler, [options])-->
+
+<!-- Multiple calls to addEventListener allow to add multiple handlers, like this: -->
+<input id="elem" type="button" value="Click me"/>
+
+<script>
+  function handler1() {
+    alert('Thanks!');
+  };
+
+  function handler2() {
+    alert('Thanks again!');
+  }
+
+  elem.onclick = () => alert("Hello");
+  elem.addEventListener("click", handler1); // Thanks!
+  elem.addEventListener("click", handler2); // Thanks again!
+  
+</script>
+
+<!-- There are 3 ways to assign event handlers:
+HTML attribute: onclick="...".
+DOM property: elem.onclick = function.
+Methods: elem.addEventListener(event, handler[, phase]) to add, removeEventListener to remove.
+ -->

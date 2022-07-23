@@ -54,7 +54,7 @@ To remove the handler, use removeEventListener:
 element.removeEventListener(event, handler, [options])-->
 
 <!-- Multiple calls to addEventListener allow to add multiple handlers, like this: -->
-<input id="elem" type="button" value="Click me"/>
+<!-- <input id="elem" type="button" value="Click me"/>
 
 <script>
   function handler1() {
@@ -69,10 +69,13 @@ element.removeEventListener(event, handler, [options])-->
   elem.addEventListener("click", handler1); // Thanks!
   elem.addEventListener("click", handler2); // Thanks again!
   
-</script>
+</script> -->
 
 <!-- There are 3 ways to assign event handlers:
 HTML attribute: onclick="...".
 DOM property: elem.onclick = function.
 Methods: elem.addEventListener(event, handler[, phase]) to add, removeEventListener to remove.
  -->
+
+<!-- Create a button that hides itself on click. -->
+<input type="button" onclick="this.hidden=true" value="Click to hide">

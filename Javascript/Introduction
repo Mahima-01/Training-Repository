@@ -3743,4 +3743,27 @@ But for DOM elements they are different:
 console.log(elem) shows the element DOM tree.
 console.dir(elem) shows the element as a DOM object, good to explore its properties.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Introduction to browser events:
+An event is a signal that something has happened.
+
+1. Mouse events:
+click – when the mouse clicks on an element (touchscreen devices generate it on a tap).
+contextmenu – when the mouse right-clicks on an element.
+mouseover / mouseout – when the mouse cursor comes over / leaves an element.
+mousedown / mouseup – when the mouse button is pressed / released over an element.
+mousemove – when the mouse is moved.
+
+2. Keyboard events:
+keydown and keyup – when a keyboard key is pressed and released.
+
+3. Form element events:
+submit – when the visitor submits a <form>.
+focus – when the visitor focuses on an element, e.g. on an <input>.
+
+4. Document events:
+DOMContentLoaded – when the HTML is loaded and processed, DOM is fully built.
+
+5. CSS events:
+transitionend – when a CSS-animation finishes.
+
 

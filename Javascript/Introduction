@@ -3804,4 +3804,29 @@ The onmouseover and onmouseout events can be used to trigger a function when the
 
 # The onmousedown, onmouseup and onclick Events
 The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is triggered, finally, when the mouse-click is completed, the onclick event is triggered.
+-------------------------------------------------------------------------------------------------------------------------------
 
+# JavaScript HTML DOM EventListener:
+-> The addEventListener() method
+Example
+Add an event listener that fires when a user clicks a button:
+document.getElementById("myBtn").addEventListener("click", displayDate);
+The addEventListener() method attaches an event handler to the specified element.
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+You can easily remove an event listener by using the removeEventListener() method.
+
+Syntax
+element.addEventListener(event, function, useCapture);
+The first parameter is the type of the event (like "click" or "mousedown" or any other HTML DOM Event.)
+The second parameter is the function we want to call when the event occurs.
+The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.
+Note that you don't use the "on" prefix for the event; use "click" instead of "onclick".
+
+Add Many Event Handlers to the Same Element
+The addEventListener() method allows you to add many events to the same element, without overwriting existing events.
+
+Add an Event Handler to the window Object
+The addEventListener() method allows you to add event listeners on any HTML DOM object such as HTML elements, the HTML document, the window object, or other objects that support events, like the xmlHttpRequest object.
+
+The removeEventListener() method
+The removeEventListener() method removes event handlers that have been attached with the addEventListener() method.

@@ -1,0 +1,21 @@
+
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Gender </th>
+      <th> Address </th>
+      <th> Profile </th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.address %></td>
+        <td><%= image_tag(user.profile_url(:thumb).to_s) %></td>
+        <td><%= link_to "edit", edit_user_path(user.id) %>
+      </tr>
+    <% end %>
+  </tbody>

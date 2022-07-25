@@ -5,4 +5,5 @@ class HomeController < ApplicationController
   def ajax
      #render json: {key: "value"}
   end
+
 end

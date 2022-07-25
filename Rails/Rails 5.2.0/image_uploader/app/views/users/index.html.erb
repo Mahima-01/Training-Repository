@@ -1,8 +1,13 @@
 <h1> Listing Users </h1>
+<%= form_tag(searching_users_path, method: :get, remote: true) do %>
+  User <%= text_field_tag :name, params[:name] %>
+  <%= submit_tag 'Search'%>
+<% end %>
+
 <%= link_to "New User", users_sign_up_path %>
 <br>
 
-<table>
+<table id = 'table'>
   <thead>
     <tr>
       <th> Name </th>
@@ -20,6 +25,7 @@
         <td><%= user.address %></td>
         <td><%= image_tag(user.profile_url(:thumb).to_s) %></td>
         <td><%= link_to "edit", edit_user_path(user.id) %>
+        
       </tr>
     <% end %>
   </tbody>

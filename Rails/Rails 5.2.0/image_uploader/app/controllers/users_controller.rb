@@ -20,6 +20,16 @@ class UsersController < ApplicationController
     end
   end
    
+
+  def searching
+    if params[:name]
+      @users = User.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @users= User.all
+    end
+    
+  end
+  
   def update
     @user = User.find(params[:id])
     @user.update(user_params)

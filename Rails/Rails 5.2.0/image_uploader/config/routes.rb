@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/ajax', as: 'ajax'
-
+  get 'users/search'
 
   resources :users do
     collection do
-      get :states
+      get 'searching'
     end
   end
 end

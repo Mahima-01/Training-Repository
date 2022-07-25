@@ -2689,3 +2689,1413 @@ Processing by HomeController#ajax as JS
 Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/home/ajax" for ::1 at 2022-07-25 12:40:02 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/ajax.js.erb (0.3ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 12:48:25 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/ajax.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 14:59:11 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:03:08 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:03:19 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:17:36 +0530
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:9:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2022-07-25 15:19:37 +0530
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:9:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2022-07-25 15:22:29 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 15:22:32 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/ajax.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:29:01 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:29:05 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:30:16 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:32:21 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:32:52 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Guest&commit=Search" for ::1 at 2022-07-25 15:33:03 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Guest", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:34:29 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18:     </tr>
+    19:   </thead>
+    20:   <tbody>
+    21:     <% @users.each do |user| %>
+    22:       <tr>
+    23:         <td><%= user.name %></td>
+    24:         <td><%= user.gender %></td>
+  
+app/views/users/index.html.erb:21:in `_app_views_users_index_html_erb___3705280169207860457_28000'
+Started GET "/" for ::1 at 2022-07-25 15:34:56 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18:     </tr>
+    19:   </thead>
+    20:   <tbody>
+    21:     <% @users.each do |user| %>
+    22:       <tr>
+    23:         <td><%= user.name %></td>
+    24:         <td><%= user.gender %></td>
+  
+app/views/users/index.html.erb:21:in `_app_views_users_index_html_erb___3705280169207860457_31540'
+Started GET "/" for ::1 at 2022-07-25 15:35:59 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18:     </tr>
+    19:   </thead>
+    20:   <tbody>
+    21:     <% @users.each do |user| %>
+    22:       <tr>
+    23:         <td><%= user.name %></td>
+    24:         <td><%= user.gender %></td>
+  
+app/views/users/index.html.erb:21:in `_app_views_users_index_html_erb___3705280169207860457_32060'
+Started GET "/" for ::1 at 2022-07-25 15:36:12 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 15:40:55 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/_partial.html.erb:1
+  Rendered home/_partial.html.erb (7.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/_partial.html.erb:1
+  Rendered home/_partial.html.erb (0.6ms)
+  Rendered home/ajax.js.erb (11.8ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2022-07-25 15:47:47 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Ria&commit=Search" for ::1 at 2022-07-25 15:48:03 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Ria&commit=Search" for ::1 at 2022-07-25 15:52:14 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Meet&commit=Search" for ::1 at 2022-07-25 15:52:27 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Meet", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Meet&commit=Search" for ::1 at 2022-07-25 15:55:34 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Meet", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Geena&commit=Search" for ::1 at 2022-07-25 16:00:25 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Geena", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&username=Geena&commit=Search" for ::1 at 2022-07-25 16:01:19 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Geena", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:01:32 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:02:17 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:02:29 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 16:02:38 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/ajax.js.erb (3.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial home/_indextable, application/_indextable with {:locale=>[:en], :formats=>[:js, :html, :text, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views"
+):
+    1: alert("Hello");
+    2: document.getElementById('table').innerHTML = ' <%= j render "indextable" %> '; 
+  
+app/views/home/ajax.js.erb:2:in `_app_views_home_ajax_js_erb__1100467476674545574_42660'
+Started GET "/home/ajax" for ::1 at 2022-07-25 16:02:41 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/ajax.js.erb (3.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial home/_indextable, application/_indextable with {:locale=>[:en], :formats=>[:js, :html, :text, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views"
+):
+    1: alert("Hello");
+    2: document.getElementById('table').innerHTML = ' <%= j render "indextable" %> '; 
+  
+app/views/home/ajax.js.erb:2:in `_app_views_home_ajax_js_erb__1100467476674545574_42840'
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:02:53 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:03:27 +0530
+  
+SyntaxError (/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/config/routes.rb:13: syntax error, unexpected end-of-input, expecting `end'):
+  
+config/routes.rb:13: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:03:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:03:41 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 16:06:32 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 16:06:53 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 16:07:26 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/ajax.js.erb (2.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial home/_indextable, application/_indextable with {:locale=>[:en], :formats=>[:js, :html, :text, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views"
+):
+    1: alert("Hello");
+    2: document.getElementById('table').innerHTML = ' <%= j render "indextable" %> '; 
+  
+app/views/home/ajax.js.erb:2:in `_app_views_home_ajax_js_erb__1100467476674545574_46780'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 16:08:00 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 16:08:02 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:13:07 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 17:14:13 +0530
+Processing by HomeController#ajax as JS
+  Rendering home/ajax.js.erb
+  Rendered home/_partial.html.erb (2.3ms)
+  Rendered home/ajax.js.erb (4.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/home/_partial.html.erb:12:in `_app_views_home__partial_html_erb___1189819015602478213_47240'
+app/views/home/ajax.js.erb:1:in `_app_views_home_ajax_js_erb__1100467476674545574_47220'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:23:19 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:23:22 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:25:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:27:55 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:27:58 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-25 17:29:08 +0530
+Processing by HomeController#ajax as JS
+No template found for HomeController#ajax, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:29:10 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:29:12 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:29:14 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:30:00 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2022-07-25 17:30:03 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:32:11 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:32:13 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:48:36 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendered users/index.html.erb within layouts/application (136.9ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `searching_users' for #<#<Class:0x00007fdb5ca87de0>:0x00007fdb5ca33f88>
+Did you mean?  searching_users_url):
+    1: <h1> Listing Users </h1>
+    2: <%= form_tag(searching_users, method: :get) do %>
+    3:   User <%= text_field_tag :name, params[:name] %>
+    4:   <%= submit_tag 'Search'%>
+    5: <% end %>
+  
+app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb___3705280169207860457_57700'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:49:04 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:49:08 +0530
+Processing by UsersController#searching as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#searching is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:49:59 +0530
+Processing by UsersController#searching as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#searching is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:08 +0530
+Processing by UsersController#searching as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#searching is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:25 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:26 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:26 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:26 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:27 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/searching.js.erb (3.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/_form, application/_form with {:locale=>[:en], :formats=>[:js, :html, :text, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views"
+):
+    1: document.getElementById('table').innerHTML = ' <%= j render "form" %> '; 
+  
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___4208792900133692442_60220'
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:50:29 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/searching.js.erb (4.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/_form, application/_form with {:locale=>[:en], :formats=>[:js, :html, :text, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/itsacheckmate/Html_Project/Training-Repository/Rails/Rails 5.2.0/image_uploader/app/views"
+):
+    1: document.getElementById('table').innerHTML = ' <%= j render "form" %> '; 
+  
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___4208792900133692442_60400'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:51:13 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:51:15 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/searching.js.erb (3.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb___1782793668085996704_60680'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___4208792900133692442_60660'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:53:23 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:53:24 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/searching.js.erb (5.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb___1782793668085996704_63980'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___4208792900133692442_63960'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:55:03 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:55:04 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/searching.js.erb (4.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb___1782793668085996704_67280'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___4208792900133692442_67260'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:56:07 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:56:09 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `blank' for "Ria":String
+Did you mean?  blank?):
+  
+app/controllers/users_controller.rb:26:in `searching'
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:56:26 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `blank' for "Ria":String
+Did you mean?  blank?):
+  
+app/controllers/users_controller.rb:26:in `searching'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:56:33 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:56:34 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (user LIKE '%{params[:username]}%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  Rendering users/searching.js.erb
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:58:37 +0530
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/searching.js.erb (5.5ms)
+Completed 500 Internal Server Error in 122779ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb___1782793668085996704_77000'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___4208792900133692442_76960'
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:58:41 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 125ms (Views: 116.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:58:42 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/searching.js.erb (4.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb__776736619690667118_15840'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___2737607840434959603_15820'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:59:09 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:59:10 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/searching.js.erb (4.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb__776736619690667118_19220'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___2737607840434959603_19200'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:59:43 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 17:59:44 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/searching.js.erb (7.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb__776736619690667118_22560'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb___2737607840434959603_22540'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:00:13 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:00:14 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (name LIKE 'Ria') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (name LIKE '%Ria%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (name LIKE '%Ria%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (name LIKE '%Ria%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:02:23 +0530
+Completed 500 Internal Server Error in 128435ms (ActiveRecord: 1.7ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `searching'
+app/controllers/users_controller.rb:32:in `searching'
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 210ms (Views: 197.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:02:28 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 112ms (Views: 103.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:02:29 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/searching.js.erb (4.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb___69221114168360948_15840'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb__1137404462983949085_15820'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:02:53 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:02:54 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/searching.js.erb (3.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.gender %></td>
+  
+app/views/users/_form.html.erb:12:in `_app_views_users__form_html_erb___69221114168360948_19220'
+app/views/users/searching.js.erb:1:in `_app_views_users_searching_js_erb__1137404462983949085_19200'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:03:51 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:03:52 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (name LIKE '%Ria%') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:32
+Completed 500 Internal Server Error in 119030ms (ActiveRecord: 0.9ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `searching'
+app/controllers/users_controller.rb:32:in `searching'
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:05:57 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 129ms (Views: 120.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:05:59 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name LIKE '%Ria%')[0m
+  ↳ app/views/users/_form.html.erb:12
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/searching.js.erb (4.4ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Meet&commit=Search" for ::1 at 2022-07-25 18:08:29 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Meet", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name LIKE '%Meet%')[0m
+  ↳ app/views/users/_form.html.erb:12
+  Rendered users/_form.html.erb (1.4ms)
+  Rendered users/searching.js.erb (4.1ms)
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:09:47 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Geena&commit=Search" for ::1 at 2022-07-25 18:09:53 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Geena", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name LIKE '%Geena%')[0m
+  ↳ app/views/users/_form.html.erb:12
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/searching.js.erb (4.8ms)
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=g&commit=Search" for ::1 at 2022-07-25 18:10:07 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"g", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name LIKE '%g%')[0m
+  ↳ app/views/users/_form.html.erb:12
+  Rendered users/_form.html.erb (1.6ms)
+  Rendered users/searching.js.erb (4.9ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&name=Ria&commit=Search" for ::1 at 2022-07-25 18:10:31 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Ria", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/searching?utf8=%E2%9C%93&name=Nishant&commit=Search" for ::1 at 2022-07-25 18:10:45 +0530
+Processing by UsersController#searching as JS
+  Parameters: {"utf8"=>"✓", "name"=>"Nishant", "commit"=>"Search"}
+  Rendering users/searching.js.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name LIKE '%Nishant%')[0m
+  ↳ app/views/users/_form.html.erb:12
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/searching.js.erb (3.1ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+

@@ -4,5 +4,13 @@ Rails.application.routes.draw do
   get "users/sign_up"
   post "users/create"
 
-  resources :users
+  get 'home/index'
+  get 'home/ajax', as: 'ajax'
+
+
+  resources :users do
+    collection do
+      get :states
+    end
+  end
 end

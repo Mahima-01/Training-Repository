@@ -16,7 +16,7 @@ if (confirm("Go to Wikipedia?")) {
 
 <!-- Children: childNodes, firstChild, lastChild -->
 
-<html>
+<!-- <html>
 <body>
   <div>Begin</div>
 
@@ -25,5 +25,46 @@ if (confirm("Go to Wikipedia?")) {
       <b>Information</b>
     </li>
   </ul>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML Events</h2>
+Enter your name: <input type="text" id="fname" onchange="upperCase()">
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<script>
+function upperCase() {
+  const x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script>
+
+</body>
+</html> -->
+
+
+<!-- The onmouseover and onmouseout Events -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+Mouse Over Me</div>
+
+<script>
+function mOver(obj) {
+  obj.innerHTML = "Thank You"
+}
+
+function mOut(obj) {
+  obj.innerHTML = "Mouse Over Me"
+}
+</script>
+
 </body>
 </html>

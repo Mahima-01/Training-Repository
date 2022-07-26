@@ -3858,3 +3858,23 @@ cut/copy/paste	   Cut/copy/paste actions.	                      The action can b
                                                            The event.clipboardData property gives access to the clipboard. 
                                                             All browsers except Firefox also support navigator.clipboard.
 -----------------------------------------------------------------------------------------------------------------------------
+
+# Forms: event and method submit:
+The submit event triggers when the form is submitted, it is usually used to validate the form before sending it to the server or to abort the submission and process it in JavaScript.
+The method form.submit() allows to initiate form sending from JavaScript. 
+We can use it to dynamically create and send our own forms to server.
+
+1. Event: submit
+There are two main ways to submit a form:
+The first – to click <input type="submit"> or <input type="image">.
+The second – press Enter on an input field.
+
+In the form below:
+Go into the text field and press Enter.
+Click <input type="submit">.
+Both actions show alert and the form is not sent anywhere due to return false.
+<form onsubmit="alert('submit!');return false">
+  First: Enter in the input field <input type="text" value="text"><br>
+  Second: Click "submit": <input type="submit" value="Submit">
+</form>
+-----------------------------------------------------------------------------------------------------------------------------

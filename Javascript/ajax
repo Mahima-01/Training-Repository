@@ -2,9 +2,10 @@ Ajax:
 - AJAX = Asynchronous JavaScript And XML.
 - AJAX is not a programming language.
 - AJAX just uses a combination of
-
 A browser built-in XMLHttpRequest object (to request data from a web server)
 JavaScript and HTML DOM (to display or use the data)
+
+AJAX, which stands for asynchronous JavaScript and XML, is a technique that allows web pages to be updated asynchronously, which means that the browser doesn't need to reload the entire page when only a small bit of data on the page has changed. AJAX passes only the updated information to and from the server.
 
 - Ajax is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications. 
 - With Ajax, web applications can send and retrieve data from a server asynchronously without interfering with the display and behaviour of the existing page.
@@ -27,4 +28,17 @@ Here is a list of some famous web applications that make use of AJAX
 - Google maps
 - Google Suggest
 - Gmail
+
+# AJAX: Synchronous or Asynchronous
+AJAX can access the server both synchronously and asynchronously:
+- Synchronously, in which the script stops and waits for the server to send back a reply before continuing.
+Processing your request synchronously is similar to reloading the page, but only the requested information is downloaded instead of the entire page. 
+Therefore, using AJAX synchronously is faster than not using it at all — but it still requires your visitor to wait for the download to occur before any further interaction with the page can proceed.
+
+- - Asynchronously, in which the script allows the page to continue to be processed and handles the reply if and when it arrives.
+Processing your request asynchronously avoids the delay while the retrieval from the server takes place because your visitor can continue to interact with the web page; the requested information will be processed in the background and the response will update the page as and when it arrives. 
+Further, even if a response is delayed — for example, in the case of very large data — site visitors may not realize it because they are occupied elsewhere on the page.
+
+Therefore, the preferred way to use AJAX is to use asynchronous calls wherever possible. This is the default setting in AJAX. 
+
 

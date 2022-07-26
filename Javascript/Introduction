@@ -3830,3 +3830,31 @@ The addEventListener() method allows you to add event listeners on any HTML DOM 
 
 The removeEventListener() method
 The removeEventListener() method removes event handlers that have been attached with the addEventListener() method.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+# Events: change, input, cut, copy, paste:
+The change event triggers when the element has finished changing.
+For other elements: select, input type=checkbox/radio it triggers right after the selection changes.
+
+-> Event: input
+The input event triggers every time after a value is modified by the user.
+Unlike keyboard events, it triggers on any value change, even those that does not involve keyboard actions: pasting with a mouse or using speech recognition to dictate the text.
+Can’t prevent anything in oninput
+The input event occurs after the value is modified.
+
+-> Events: cut, copy, paste
+These events occur on cutting/copying/pasting a value.
+They belong to ClipboardEvent class and provide access to the data that is cut/copied/pasted.
+We also can use event.preventDefault() to abort the action, then nothing gets copied/pasted.
+
+Please note: inside cut and copy event handlers a call to event.clipboardData.getData(...) returns an empty string. That’s because technically the data isn’t in the clipboard yet. If we use event.preventDefault() it won’t be copied at all.
+
+Data change events:
+
+Event	                Description	                                         Specials
+change	             A value was changed.	                        For text inputs triggers on focus loss.
+input	             For text inputs on every change.	              Triggers immediately unlike change.
+cut/copy/paste	   Cut/copy/paste actions.	                      The action can be prevented. 
+                                                           The event.clipboardData property gives access to the clipboard. 
+                                                            All browsers except Firefox also support navigator.clipboard.
+-----------------------------------------------------------------------------------------------------------------------------

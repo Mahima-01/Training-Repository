@@ -1,0 +1,14 @@
+<!-- <select onchange="alert(this.value)">
+  <option value="">Select something</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</select> -->
+
+<!-- Event: input -->
+<input type="text" id="input"> oninput: <span id="result"></span>
+<script>
+  input.oninput = function() {
+    result.innerHTML = input.value;
+  };
+</script>

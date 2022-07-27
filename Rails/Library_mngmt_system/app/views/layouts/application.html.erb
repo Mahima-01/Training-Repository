@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag 'student.png'%>
     <title>LibraryMngmtSystem</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -9,6 +10,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+
+  <body style="background-color: pink;">
 
   <body>
     <%= yield %>

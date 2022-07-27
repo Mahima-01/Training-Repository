@@ -1,0 +1,2 @@
+  [1m[35m (57.6ms)[0m  [1m[35mCREATE DATABASE "Library_mngmt_system_development" ENCODING = 'unicode'[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE DATABASE "Library_mngmt_system_test" ENCODING = 'unicode'[0m

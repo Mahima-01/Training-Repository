@@ -1,0 +1,8 @@
+<h1> Student Details </h1>
+
+<p><strong>name: </strong><%= @student.name %></p>
+<p><strong>Address: </strong><%= @student.address %></p>
+<p><strong>Phone_no: </strong><%= @student.phone_no %></p>
+
+<%= link_to "Back:", students_path %> | <%= link_to 'Edit', edit_student_path(@student) %>
+

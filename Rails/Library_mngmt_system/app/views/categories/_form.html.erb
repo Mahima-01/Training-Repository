@@ -1,6 +1,6 @@
 <%= form_with model: category do |form| %>
-  <% if @Category.errors.any? %>
-    <% @Category.errors.full_messages.each do |message| %>
+  <% if @category.errors.any? %>
+    <% @category.errors.full_messages.each do |message| %>
      <p><%= message %></p>
     <% end %>
   <% end %>

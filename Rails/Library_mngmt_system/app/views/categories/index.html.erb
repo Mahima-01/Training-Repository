@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @cateogries.each do |category| %>
+    <% @category.each do |category| %>
       <tr>
-        <td><%= author.name %></td>
+        <td><%= category.name %></td>
         <td><%= link_to 'View', category %></td>
-        <td><%= link_to 'Edit', edit_category_path %></td>
-         <td><%= link_to('Delete', category_path, :method => 'delete') %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+         <td><%= link_to('Delete', category_path(category), :method => 'delete') %></td>
       </tr>
     <% end %>
   </tbody>

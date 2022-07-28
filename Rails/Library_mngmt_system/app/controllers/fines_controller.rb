@@ -1,6 +1,6 @@
 class FinesController < ApplicationController
   def index
-    @fine = Fine.all
+    @fines = Fine.all
   end
             
   def new

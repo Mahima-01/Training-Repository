@@ -13,4 +13,12 @@
 #     address: "address #{i+1}"
 #   )
 # end
+require 'faker'
 
+8.times do |authors|
+  auth = Author.create(name: Faker::Name.name)
+  
+  3.times do |x|
+    auth.books.create(title: Faker::Book.title )
+  end
+end

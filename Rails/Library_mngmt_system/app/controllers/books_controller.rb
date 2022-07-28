@@ -8,8 +8,8 @@ class BooksController < ApplicationController
   end
           
   def create
-    @book = book .new(book_params)
-    if @book .save
+    @book = Book.new(book_params)
+    if @book.save
       CrudNotificationMailer.create_notification(@book).deliver_now
       redirect_to books_path
     else
@@ -19,15 +19,15 @@ class BooksController < ApplicationController
             
       
   def show
-    @book  = book .find(params[:id])
+    @book  = Book.find(params[:id])
   end
           
   def edit
-    @book  = book .find(params[:id])
+    @book  = Book.find(params[:id])
   end
           
   def update
-    @book  = book .find(params[:id])
+    @book  = Book.find(params[:id])
     if @book .update(book _params)
       redirect_to books_path(@book)
     else
@@ -36,13 +36,13 @@ class BooksController < ApplicationController
   end
           
   def destroy
-    @book .destroy
+    @book.destroy
     redirect_to books_index_path
   end
           
   private
-  def book _params
-    params.require(:book ).permit(:title, :language, :author_id, :subcategory_id)
+  def book_params
+    params.require(:book).permit(:title, :language, :author_id, :subcategory_id)
   end
           
   def set_book 

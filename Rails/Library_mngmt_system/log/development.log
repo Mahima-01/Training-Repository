@@ -1220,3 +1220,247 @@ Processing by BooksController#new as HTML
 Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5143)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (6.9ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Monty Marquardt"], ["created_at", "2022-07-28 07:43:52.761698"], ["updated_at", "2022-07-28 07:43:52.761698"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tyisha Yundt V"], ["created_at", "2022-07-28 07:48:47.985245"], ["updated_at", "2022-07-28 07:48:47.985245"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Beneath the Bleeding"], ["language", nil], ["created_at", "2022-07-28 07:48:47.997782"], ["updated_at", "2022-07-28 07:48:47.997782"], ["author_id", 2], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Alone on a Wide, Wide Sea"], ["language", nil], ["created_at", "2022-07-28 07:48:48.000671"], ["updated_at", "2022-07-28 07:48:48.000671"], ["author_id", 2], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "When the Green Woods Laugh"], ["language", nil], ["created_at", "2022-07-28 07:48:48.002518"], ["updated_at", "2022-07-28 07:48:48.002518"], ["author_id", 2], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Shizuko Champlin CPA"], ["created_at", "2022-07-28 07:48:48.004406"], ["updated_at", "2022-07-28 07:48:48.004406"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cover Her Face"], ["language", nil], ["created_at", "2022-07-28 07:48:48.006108"], ["updated_at", "2022-07-28 07:48:48.006108"], ["author_id", 3], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time of our Darkness"], ["language", nil], ["created_at", "2022-07-28 07:48:48.007893"], ["updated_at", "2022-07-28 07:48:48.007893"], ["author_id", 3], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Frequent Hearses"], ["language", nil], ["created_at", "2022-07-28 07:48:48.009591"], ["updated_at", "2022-07-28 07:48:48.009591"], ["author_id", 3], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wilson Doyle"], ["created_at", "2022-07-28 07:48:48.011388"], ["updated_at", "2022-07-28 07:48:48.011388"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Moving Toyshop"], ["language", nil], ["created_at", "2022-07-28 07:48:48.013125"], ["updated_at", "2022-07-28 07:48:48.013125"], ["author_id", 4], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Glass of Blessings"], ["language", nil], ["created_at", "2022-07-28 07:48:48.014852"], ["updated_at", "2022-07-28 07:48:48.014852"], ["author_id", 4], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Wings of the Dove"], ["language", nil], ["created_at", "2022-07-28 07:48:48.016532"], ["updated_at", "2022-07-28 07:48:48.016532"], ["author_id", 4], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lawrence Schamberger Ret."], ["created_at", "2022-07-28 07:48:48.018360"], ["updated_at", "2022-07-28 07:48:48.018360"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Daffodil Sky"], ["language", nil], ["created_at", "2022-07-28 07:48:48.020043"], ["updated_at", "2022-07-28 07:48:48.020043"], ["author_id", 5], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mother Night"], ["language", nil], ["created_at", "2022-07-28 07:48:48.021750"], ["updated_at", "2022-07-28 07:48:48.021750"], ["author_id", 5], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Oh! To be in England"], ["language", nil], ["created_at", "2022-07-28 07:48:48.023433"], ["updated_at", "2022-07-28 07:48:48.023433"], ["author_id", 5], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bernadette Wintheiser"], ["created_at", "2022-07-28 07:48:48.025210"], ["updated_at", "2022-07-28 07:48:48.025210"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Curious Incident of the Dog in the Night-Time"], ["language", nil], ["created_at", "2022-07-28 07:48:48.026866"], ["updated_at", "2022-07-28 07:48:48.026866"], ["author_id", 6], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Things Fall Apart"], ["language", nil], ["created_at", "2022-07-28 07:48:48.028595"], ["updated_at", "2022-07-28 07:48:48.028595"], ["author_id", 6], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Such, Such Were the Joys"], ["language", nil], ["created_at", "2022-07-28 07:48:48.030274"], ["updated_at", "2022-07-28 07:48:48.030274"], ["author_id", 6], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Noel Rodriguez"], ["created_at", "2022-07-28 07:48:48.032068"], ["updated_at", "2022-07-28 07:48:48.032068"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Tender Is the Night"], ["language", nil], ["created_at", "2022-07-28 07:48:48.033719"], ["updated_at", "2022-07-28 07:48:48.033719"], ["author_id", 7], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "No Longer at Ease"], ["language", nil], ["created_at", "2022-07-28 07:48:48.035456"], ["updated_at", "2022-07-28 07:48:48.035456"], ["author_id", 7], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "His Dark Materials"], ["language", nil], ["created_at", "2022-07-28 07:48:48.037186"], ["updated_at", "2022-07-28 07:48:48.037186"], ["author_id", 7], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Antionette Johnston"], ["created_at", "2022-07-28 07:48:48.039100"], ["updated_at", "2022-07-28 07:48:48.039100"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "In a Glass Darkly"], ["language", nil], ["created_at", "2022-07-28 07:48:48.040826"], ["updated_at", "2022-07-28 07:48:48.040826"], ["author_id", 8], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Alone on a Wide, Wide Sea"], ["language", nil], ["created_at", "2022-07-28 07:48:48.042607"], ["updated_at", "2022-07-28 07:48:48.042607"], ["author_id", 8], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Bury My Heart at Wounded Knee"], ["language", nil], ["created_at", "2022-07-28 07:48:48.044300"], ["updated_at", "2022-07-28 07:48:48.044300"], ["author_id", 8], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kenny Quitzon"], ["created_at", "2022-07-28 07:48:48.046166"], ["updated_at", "2022-07-28 07:48:48.046166"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cabbages and Kings"], ["language", nil], ["created_at", "2022-07-28 07:48:48.047905"], ["updated_at", "2022-07-28 07:48:48.047905"], ["author_id", 9], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Scanner Darkly"], ["language", nil], ["created_at", "2022-07-28 07:48:48.049656"], ["updated_at", "2022-07-28 07:48:48.049656"], ["author_id", 9], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "language", "created_at", "updated_at", "author_id", "subcategory_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Time of Gifts"], ["language", nil], ["created_at", "2022-07-28 07:48:48.051358"], ["updated_at", "2022-07-28 07:48:48.051358"], ["author_id", 9], ["subcategory_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumnsFromBook (20220728075429)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "books" DROP COLUMN "language"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220728075429"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToBook (20220728075631)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "books" ADD "book_count" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220728075631"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:41:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 9546)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 44984)
+Completed 200 OK in 61ms (Views: 53.6ms | ActiveRecord: 2.0ms | Allocations: 52618)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-07-28 13:41:32 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 451)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/books_controller.rb:44:in `book'
+app/controllers/books_controller.rb:22:in `show'
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:41:47 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3651)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 6459)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 6736)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:42:12 +0530
+Processing by BooksController#index as HTML
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5402)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 19811)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 1.8ms | Allocations: 22219)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-07-28 13:42:13 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3457)
+
+
+  
+NameError (undefined local variable or method `book' for #<BooksController:0x00000000014618>):
+  
+app/controllers/books_controller.rb:22:in `show'
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:42:22 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3643)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 6459)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 6734)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:43:27 +0530
+Processing by BooksController#index as HTML
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5375)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 19796)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.6ms | Allocations: 22198)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2022-07-28 13:43:29 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3450)
+
+
+  
+NameError (undefined local variable or method `book' for #<BooksController:0x0000000001a400>):
+  
+app/controllers/books_controller.rb:22:in `show'
+Started GET "/books/1" for 127.0.0.1 at 2022-07-28 13:46:53 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 14703)
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 1.7ms | Allocations: 21017)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:46:57 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3642)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 6445)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 6714)
+
+

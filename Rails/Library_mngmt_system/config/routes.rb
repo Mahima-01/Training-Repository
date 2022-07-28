@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :students
   resources :books
   resources :authors
+  resources :issue_returns
 
   scope module: :admin do
     resources :students

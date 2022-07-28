@@ -2078,3 +2078,190 @@ Processing by AuthorsController#index as HTML
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4782)
 
 
+Started GET "/authors/2" for 127.0.0.1 at 2022-07-28 16:42:38 +0530
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 286)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 14701)
+Completed 200 OK in 22ms (Views: 13.6ms | ActiveRecord: 2.1ms | Allocations: 21468)
+
+
+Started GET "/issues_returns" for 127.0.0.1 at 2022-07-28 17:06:03 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/issues_returns"):
+  
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:06:17 +0530
+Processing by IssueReturnsController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 2375)
+
+
+  
+NameError (uninitialized constant IssueReturnsController::Issue_returns):
+  
+app/controllers/issue_returns_controller.rb:3:in `index'
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:07:05 +0530
+Processing by IssueReturnsController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 2337)
+
+
+  
+NameError (uninitialized constant IssueReturnsController::Issue_Returns):
+  
+app/controllers/issue_returns_controller.rb:3:in `index'
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:07:41 +0530
+Processing by IssueReturnsController#index as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 2337)
+
+
+  
+NameError (uninitialized constant IssueReturnsController::Issue_Return):
+  
+app/controllers/issue_returns_controller.rb:3:in `index'
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:09:44 +0530
+Processing by IssueReturnsController#index as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 2363)
+
+
+  
+NameError (uninitialized constant IssueReturnsController::Issue_Return):
+  
+app/controllers/issue_returns_controller.rb:3:in `index'
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:11:41 +0530
+Processing by IssueReturnsController#index as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 2337)
+
+
+  
+NameError (uninitialized constant IssueReturnsController::Issue_return):
+  
+app/controllers/issue_returns_controller.rb:3:in `index'
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:13:01 +0530
+Processing by IssueReturnsController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 2363)
+
+
+  
+NameError (uninitialized constant IssueReturnsController::Issue_return):
+  
+app/controllers/issue_returns_controller.rb:3:in `index'
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:14:44 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 4848)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4922)
+Completed 500 Internal Server Error in 11ms (Allocations: 6065)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_issue_return' for #<ActionView::Base:0x0000000003e0a8>
+Did you mean?  new_issue_return_url):
+    1: <h1> Issue_returns Details </h1>
+    2: <%= link_to "New Issue_return", new_issue_return %>
+    3: 
+    4: <table>
+    5:   <thead>
+  
+app/views/issue_returns/index.html.erb:2
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:15:47 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4931)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5005)
+Completed 500 Internal Server Error in 11ms (Allocations: 5914)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_IssueReturn' for #<ActionView::Base:0x0000000003e3f0>
+Did you mean?  new_issue_return_url):
+    1: <h1> Issue_returns Details </h1>
+    2: <%= link_to "New Issue_return", new_IssueReturn %>
+    3: 
+    4: <table>
+    5:   <thead>
+  
+app/views/issue_returns/index.html.erb:2
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:16:09 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4928)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5002)
+Completed 500 Internal Server Error in 11ms (Allocations: 5911)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_IssueReturn' for #<ActionView::Base:0x0000000003e710>
+Did you mean?  new_issue_return_url):
+    1: <h1> Issue_returns Details </h1>
+    2: <%= link_to "New Issue_return", new_IssueReturn %>
+    3: 
+    4: <table>
+    5:   <thead>
+  
+app/views/issue_returns/index.html.erb:2
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:17:41 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4928)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5002)
+Completed 500 Internal Server Error in 11ms (Allocations: 5911)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_IssueReturn' for #<ActionView::Base:0x0000000003ea58>
+Did you mean?  new_issue_return_url):
+    1: <h1> Issue_returns Details </h1>
+    2: <%= link_to "New Issue_return", new_IssueReturn %>
+    3: 
+    4: <table>
+    5:   <thead>
+  
+app/views/issue_returns/index.html.erb:2
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:18:25 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 4953)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 5027)
+Completed 500 Internal Server Error in 14ms (Allocations: 5936)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_issue_returns_path' for #<ActionView::Base:0x0000000003eda0>
+Did you mean?  new_issue_return_path
+               new_issue_return_url):
+    1: <h1> Issue_returns Details </h1>
+    2: <%= link_to "New Issue_return", new_issue_returns_path %>
+    3: 
+    4: <table>
+    5:   <thead>
+  
+app/views/issue_returns/index.html.erb:2
+Started GET "/issue_returns" for 127.0.0.1 at 2022-07-28 17:18:59 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  [1m[36mIssueReturn Load (7.4ms)[0m  [1m[34mSELECT "issue_returns".* FROM "issue_returns"[0m
+  ↳ app/views/issue_returns/index.html.erb:15
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3724)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 18415)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 9.4ms | Allocations: 19350)
+
+
+Started GET "/issue_returns/new" for 127.0.0.1 at 2022-07-28 17:19:03 +0530
+Processing by IssueReturnsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/new.html.erb within layouts/application
+  Rendered issue_returns/_form.html.erb (Duration: 12.4ms | Allocations: 5533)
+  Rendered issue_returns/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 5789)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 8444)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 2.1ms | Allocations: 12597)
+
+

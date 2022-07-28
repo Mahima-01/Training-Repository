@@ -1,0 +1,27 @@
+<h1> Issue_returns Details </h1>
+<%= link_to "New Issue_return", new_issue_return_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th> Book_id </th>
+      <th> student_id </th>
+      <th> Issue_time </th>
+      <th> Return_time </th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @issue_returns.each do |issue_returns| %>
+      <tr>
+        <td><%= issue_returns.book_id %></td>
+        <td><%= issue_returns.student_id %></td>
+        <td><%= issue_returns.issue_time %></td>
+        <td><%= issue_returns.return_time %></td>
+        <td><%= link_to 'View', IssueReturn %></td>
+        <td><%= link_to 'Edit', edit_issue_return_path %></td>
+         <td><%= link_to('Delete', issue_returns_path, :method => 'delete') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

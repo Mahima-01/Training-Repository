@@ -1,0 +1,2 @@
+module FineHelper
+end

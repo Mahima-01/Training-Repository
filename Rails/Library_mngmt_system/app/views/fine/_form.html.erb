@@ -1,0 +1,32 @@
+<%= form_with model: fine do |form| %>
+  <% if @fine.errors.any? %>
+    <% @fine.errors.full_messages.each do |message| %>
+     <p><%= message %></p>
+    <% end %>
+  <% end %>
+  
+  <div>
+    <%= form.label :issue_returns_id %><br>
+    <%= form.text_field :issue_returns_id %>
+  </div>
+
+  <div>
+    <%= form.label :student_id %><br>
+    <%= form.text_field :student_id%>
+  </div>
+
+  <div>
+    <%= form.label :amount %><br>
+    <%= form.number_field :amount %>
+  </div>
+
+   <div>
+    <%= form.label :payment_status %><br>
+    <%= form.select :payment_status , ['True',
+                                'False'] %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

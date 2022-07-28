@@ -1,0 +1,25 @@
+<h1> Listing Books </h1>
+<%= link_to "New Book", new_book_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th> Title </th>
+      <th> Author_id </th>
+      <th> Subcategory_id </th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author_id %></td>
+        <td><%= book.subcategory_id %></td>
+        <td><%= link_to 'View', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+         <td><%= link_to('Delete', book_path(book), :method => 'delete') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1145,3 +1145,78 @@ Migrating to AddColumnToStudentTable (20220727164739)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-28 13:07:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 572)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 5268)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:07:57 +0530
+Processing by BooksController#index as HTML
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 966)
+  Rendered layout layouts/application.html.erb (Duration: 49.2ms | Allocations: 36158)
+Completed 200 OK in 55ms (Views: 48.9ms | ActiveRecord: 1.2ms | Allocations: 40287)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-07-28 13:08:01 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 714.7ms | Allocations: 1021274)
+  Rendered books/new.html.erb within layouts/application (Duration: 715.1ms | Allocations: 1021528)
+  Rendered layout layouts/application.html.erb (Duration: 715.2ms | Allocations: 1021603)
+Completed 500 Internal Server Error in 725ms (ActiveRecord: 3.6ms | Allocations: 1027189)
+
+
+  
+ActionView::Template::Error (undefined method `text' for #<ActionView::Helpers::FormBuilder:0x00007f51f0f66dc0>):
+    17: 
+    18:   <div>
+    19:     <%= form.label :author_id %><br>
+    20:     <%= form.text :author_id %>
+    21:   </div>
+    22: 
+    23:   <div>
+  
+app/views/books/_form.html.erb:20
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:08:08 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 576)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3422)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 3697)
+
+
+Started GET "/books" for 127.0.0.1 at 2022-07-28 13:08:50 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 865)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3902)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 4835)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2022-07-28 13:08:52 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.5ms | Allocations: 1906)
+  Rendered books/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2157)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4810)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+

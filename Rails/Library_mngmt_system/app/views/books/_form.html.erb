@@ -1,0 +1,31 @@
+<%= form_with model: book do |form| %>
+  <% if @book.errors.any? %>
+    <% @book.errors.full_messages.each do |message| %>
+     <p><%= message %></p>
+    <% end %>
+  <% end %>
+  
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :language %><br>
+    <%= form.text_field :language%>
+  </div>
+
+  <div>
+    <%= form.label :author_id %><br>
+    <%= form.text_field :author_id %>
+  </div>
+
+  <div>
+    <%= form.label :subcategory_id %><br>
+    <%= form.text_field :subcategory_id %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

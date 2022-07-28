@@ -2788,3 +2788,75 @@ puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.4) lib/puma/server.rb:441:in `process_client'
 puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-28 22:11:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 572)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 5334)
+
+
+Started GET "/cateogries" for 127.0.0.1 at 2022-07-28 22:11:11 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/cateogries"):
+  
+Started GET "/categories" for 127.0.0.1 at 2022-07-28 22:11:25 +0530
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1801)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1876)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 4750)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @Category.each do |category| %>
+    13:       <tr>
+    14:         <td><%= author.name %></td>
+    15:         <td><%= link_to 'View', category %></td>
+  
+app/views/categories/index.html.erb:12
+Started GET "/categories" for 127.0.0.1 at 2022-07-28 22:12:12 +0530
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1842)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2753)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @cateogries.each do |category| %>
+    13:       <tr>
+    14:         <td><%= author.name %></td>
+    15:         <td><%= link_to 'View', category %></td>
+  
+app/views/categories/index.html.erb:12
+Started GET "/categories" for 127.0.0.1 at 2022-07-28 22:12:13 +0530
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1501)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 1575)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1822)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @cateogries.each do |category| %>
+    13:       <tr>
+    14:         <td><%= author.name %></td>
+    15:         <td><%= link_to 'View', category %></td>
+  
+app/views/categories/index.html.erb:12

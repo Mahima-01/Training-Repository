@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :authors
   resources :issue_returns
   resources :fines
+  resources :categories
 
   scope module: :admin do
     resources :students

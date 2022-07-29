@@ -7473,3 +7473,111 @@ Started POST "/categories/5/edit" for 127.0.0.1 at 2022-07-29 15:48:27 +0530
   
 ActionController::RoutingError (No route matches [POST] "/categories/5/edit"):
   
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropUsers (20220729114828)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220729114828"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20220729115843)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+Started GET "/categories" for 127.0.0.1 at 2022-07-29 17:33:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:13
+  Rendered categories/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 6437)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 9536)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 3.9ms | Allocations: 11692)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToStudents (20220729120705)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "students" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+Started GET "/" for 127.0.0.1 at 2022-07-29 18:33:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220729120705_add_devise_to_students.rb
+
+
+):
+  
+activerecord (7.0.3.1) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3.1) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3.1) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.3.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToStudents (20220729120705)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "students" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToStudents (20220729120705)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "students" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m

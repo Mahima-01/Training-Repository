@@ -240,7 +240,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
-  devise (~> 4.8)
+  devise
   faker
   importmap-rails
   jbuilder

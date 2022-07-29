@@ -36,16 +36,18 @@ class BooksController < ApplicationController
   end
           
   def destroy
-    @book.destroy
-    redirect_to books_index_path
+    @book = ook.find(params[:id])
+    if @book.destroy
+      redirect_to(books_path)
+    end
   end
           
   private
   def book_params
-    params.require(:book).permit(:title, :author_id, :subcategory_id)
+    params.require(:book).permit(:title, :author_id)
   end
           
   def set_book 
-    params.require(:book).permit(:title, :author_id, :subcategory_id)
+    params.require(:book).permit(:title, :author_id)
   end
 end

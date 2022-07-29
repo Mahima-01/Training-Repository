@@ -19,8 +19,8 @@
         <td><%= issue_returns.issue_time %></td>
         <td><%= issue_returns.return_time %></td>
         <td><%= link_to 'View', IssueReturn %></td>
-        <td><%= link_to 'Edit', edit_issue_return_path %></td>
-         <td><%= link_to('Delete', issue_returns_path, :method => 'delete') %></td>
+        <td><%= link_to 'Edit', edit_issue_return_path(issue_returns) %></td>
+        <td><%=  button_to "delete", issue_return_path(issue_returns.id), method: :delete  %></td>
       </tr>
     <% end %>
   </tbody>

@@ -9,7 +9,7 @@ class IssueReturnsController < ApplicationController
           
   def create
     @issue_returns = IssueReturn.new(issue_returns_params)
-    if @Issue_returns.save
+    if @issue_returns.save
       redirect_to issue_returns_path
     else
       render :new
@@ -34,17 +34,19 @@ class IssueReturnsController < ApplicationController
   end
           
   def destroy
-    @issue_returns.destroy
-    redirect_to issue_returns_path
-  end
+    @issue_returns = Issue_returns.find(params[:id])
+    if @issue_returns.destroy
+    redirect_to(issue_returns_path)
+    end
+  end 
           
   private
   def issue_returns_params
-    params.require(:issue_returns).permit(:book_id, :student_id, :issue_time, :return_time)
+    params.require(:issue_return).permit(:book_id, :student_id, :issue_time, :return_time)
   end
           
   def set_issue_returns
-    params.require(:issue_returns).permit(:book_id, student_id, issue_time, :return_time)
+    params.require(:issue_return).permit(:book_id, student_id, issue_time, :return_time)
   end
        
 end

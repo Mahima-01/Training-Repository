@@ -34,10 +34,11 @@ class FinesController < ApplicationController
   end
             
   def destroy
-    @fine.destroy
-    redirect_to fines_index_path
-  end
-            
+    @fine = Fine.find(params[:id])
+    if @fine.destroy
+    redirect_to(fines_index_path)
+    end
+  end          
   private
   def fine_params
     params.require(:fine).permit(:issue_return_id, :student_id, :amount, :payment_status)

@@ -28,7 +28,7 @@ class AuthorsController < ApplicationController
                 
   def update
     @author  = Author.find(params[:id])
-    if @auhtor.update(author_params)
+    if @author.update(author_params)
       redirect_to root_path
     else
       render :edit
@@ -36,18 +36,18 @@ class AuthorsController < ApplicationController
   end
                 
   def destroy
-    @auhtor = Author.find(params[:id])
+    @author = Author.find(params[:id])
     @auhtor.destroy
     redirect_to authors_path
   end
                 
   private
   def author_params
-    params.require(:auhtor).permit(:name, :email, :gender)
+    params.require(:author).permit(:id, :name, :email, :gender)
   end
                 
   def set_author 
-    params.require(:author).permit(:name, :email, :gender)
+    params.require(:author).permit(:id, :name, :email, :gender)
   end
       
 end

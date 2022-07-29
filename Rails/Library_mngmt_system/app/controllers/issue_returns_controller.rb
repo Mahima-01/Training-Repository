@@ -27,9 +27,9 @@ class IssueReturnsController < ApplicationController
   def update
     @issue_returns = IssueReturn.find(params[:id])
     if @issue_returns.update(issue_returns_params)
-      redirect_to issue_returns_path(@issue_returns)
+      redirect_to(issue_returns_path(@issue_returns))
     else
-      render :edit
+      render('edit')
     end
   end
           

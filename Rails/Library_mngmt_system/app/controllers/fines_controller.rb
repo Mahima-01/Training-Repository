@@ -27,9 +27,9 @@ class FinesController < ApplicationController
   def update
     @fine = Fine.find(params[:id])
     if @fine.update(fine_params)
-      redirect_to fines_path(@fine)
+      redirect_to(fines_path(@fine))
     else
-      render :edit
+      render('edit')
     end
   end
             

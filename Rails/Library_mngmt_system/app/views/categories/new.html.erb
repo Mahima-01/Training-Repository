@@ -1,3 +1,45 @@
 <h1> New Category </h1>
 
-<%= render "form", category: @category %>
+<%= form_with model: @category do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %><br />
+    <%= form.select :name, ["Select"]+Category.pluck(:name) %>
+  </div>
+  <div class="mb-3" id="subcategory-div" style="block:none;">
+    <%= form.label :subcategory_name, class: 'form-label' %><br />
+    <%= form.select :subcategory_name, ["select"] %>
+  </div>
+<% end %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+
+category_name = document.getElementById("category_name");   
+
+$('#category_name').change(function(){
+        console.log("Category Selected or changed");
+        $('#subcategory-div').show();
+
+        category_subcategory_name = document.getElementById('category_subcategory_name');
+       
+       let category = category_name.options[category_name.selectedIndex].text;
+
+
+        category_subcategory_name.innerHTML = "";
+          <%Subcategory.all.each do |subcategory|%>
+            if (category == '<%= subcategory.category.name %>')
+ {            option = document.createElement("option");
+             option.value = '<%= subcategory.id %>';
+             option.text = '<%= subcategory.name %>';
+             category_subcategory_name.appendChild(option);
+}
+          <% end %>
+          option = document.createElement("option");
+          option.value = option.text = 'SELECT';
+          category_subcategory_name.appendChild(option);
+          category_subcategory_name.value = "SELECT";
+      });
+
+</script>

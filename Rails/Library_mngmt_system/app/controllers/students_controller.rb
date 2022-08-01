@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   STUDENTS_PER_PAGE = 3
+  
   def index
     @page = params.fetch(:page, 0).to_i
     if params[:search]

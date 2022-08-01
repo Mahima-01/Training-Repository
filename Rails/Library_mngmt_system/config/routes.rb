@@ -9,10 +9,15 @@ Rails.application.routes.draw do
   resources :students
   resources :books
   resources :authors
-  resources :issue_returns
   resources :fines
   resources :categories
 
+  resources :issue_returns do
+    collection do
+      get 'search'
+    end
+  end
+  
   scope module: :admin do
     resources :students
   end

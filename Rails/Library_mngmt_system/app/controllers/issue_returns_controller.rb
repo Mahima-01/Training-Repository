@@ -24,6 +24,14 @@ class IssueReturnsController < ApplicationController
     @issue_returns = IssueReturn.find(params[:id])
   end
           
+  def search
+    if params[:student_id]
+      @student = Student.where('student_id ILIKE ?', "%#{params[:id]}%")
+    else
+      @student = Student.all
+    end
+  end
+
   def update
     @issue_returns = IssueReturn.find(params[:id])
     if @issue_returns.update(issue_returns_params)

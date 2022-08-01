@@ -8514,3 +8514,83 @@ Processing by StudentsController#index as */*
 Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 6297)
 
 
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToStudents (20220801080017)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "students" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "students" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "students" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "students" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_email" ON "students" ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_reset_password_token" ON "students" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220801080017"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8669836530077905980)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students/sign_in" for 127.0.0.1 at 2022-08-01 13:32:29 +0530
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007feea494d140>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/books/sign_in" for 127.0.0.1 at 2022-08-01 13:34:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/books/sign_in"):
+  
+Started GET "/students/sign_in" for 127.0.0.1 at 2022-08-01 13:34:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/students/sign_in"):
+  
+Started GET "/students/sign_in" for 127.0.0.1 at 2022-08-01 13:35:18 +0530
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007feea4199e80>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/students/sign_in" for 127.0.0.1 at 2022-08-01 13:36:07 +0530
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007feea8d0cc00>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-08-01 13:39:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 13579)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 38329)
+Completed 200 OK in 43ms (Views: 34.3ms | ActiveRecord: 3.1ms | Allocations: 46939)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-01 13:39:05 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 7647)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 10303)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 10578)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-08-01 13:39:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  
+Started GET "/students/sign_in" for 127.0.0.1 at 2022-08-01 13:40:03 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 840)
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 136.3ms | Allocations: 350452)
+  Rendered layout layouts/application.html.erb (Duration: 137.8ms | Allocations: 353135)
+Completed 200 OK in 152ms (Views: 138.8ms | ActiveRecord: 1.4ms | Allocations: 361217)
+
+

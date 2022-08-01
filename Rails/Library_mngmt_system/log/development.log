@@ -12007,3 +12007,787 @@ Processing by CategoriesController#new as HTML
 Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 9165)
 
 
+Started GET "/issue_returns" for 127.0.0.1 at 2022-08-01 19:51:47 +0530
+Processing by IssueReturnsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering issue_returns/index.html.erb within layouts/application
+  [1m[36mIssueReturn Load (0.2ms)[0m  [1m[34mSELECT "issue_returns".* FROM "issue_returns"[0m
+  ↳ app/views/issue_returns/index.html.erb:15
+  Rendered issue_returns/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 10936)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 14049)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 4.2ms | Allocations: 15247)
+
+
+Started GET "/students" for 127.0.0.1 at 2022-08-01 19:52:07 +0530
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/students/index.html.erb:31
+  Rendered students/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 7570)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 10225)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 2.4ms | Allocations: 12308)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-01 20:00:11 +0530
+Processing by BooksController#index as HTML
+Enum element 'not_available' in Book uses the prefix 'not_'. This has caused a conflict with auto generated negative scopes. Avoid using enum elements starting with 'not' where the positive form is also an element.
+  [1m[36mBook Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3635)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 6290)
+Completed 200 OK in 14ms (Views: 5.6ms | ActiveRecord: 2.6ms | Allocations: 13012)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-01 20:00:13 +0530
+Processing by BooksController#index as HTML
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1850)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4496)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 5267)
+
+
+Started GET "/students" for 127.0.0.1 at 2022-08-01 20:00:16 +0530
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/students/index.html.erb:31
+  Rendered students/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1890)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4545)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 5316)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:00:17 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4974)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 7638)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 2.4ms | Allocations: 9500)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2022-08-01 20:00:33 +0530
+Processing by AuthorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (Duration: 9.1ms | Allocations: 2370)
+  Rendered authors/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2620)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5284)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 5604)
+
+
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:01:25 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:31:25.621579"], ["updated_at", "2022-08-01 14:31:25.621579"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 4982)
+
+
+  
+NameError (uninitialized constant AuthorsController::CrudNotificationMailer):
+  
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:02:35 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:32:35.645095"], ["updated_at", "2022-08-01 14:32:35.645095"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 6.8ms | Allocations: 4352)
+
+
+  
+NameError (uninitialized constant AuthorsController::CrudNotificationMailer):
+  
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:02:41 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:32:41.018654"], ["updated_at", "2022-08-01 14:32:41.018654"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms | Allocations: 4368)
+
+
+  
+NameError (uninitialized constant AuthorsController::CrudNotificationMailer):
+  
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:09:40 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:39:40.206078"], ["updated_at", "2022-08-01 14:39:40.206078"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 8.9ms | Allocations: 7146)
+
+
+  
+NameError (uninitialized constant AuthorsController::CrudNotificationMailer):
+  
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:09:44 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:39:44.180933"], ["updated_at", "2022-08-01 14:39:44.180933"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms | Allocations: 4347)
+
+
+  
+NameError (uninitialized constant AuthorsController::CrudNotificationMailer):
+  
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:13:42 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:43:42.402063"], ["updated_at", "2022-08-01 14:43:42.402063"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+CrudNotificationMailer#create_notification: processed outbound mail in 1.7ms
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.9ms | Allocations: 34134)
+
+
+  
+ActionView::MissingTemplate (Missing template crud_notification_mailer/create_notification with "mailer".
+
+Searched in:
+  * "crud_notification_mailer"
+):
+  
+app/mailers/crud_notification_mailer.rb:11:in `create_notification'
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:14:47 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:44:47.185141"], ["updated_at", "2022-08-01 14:44:47.185141"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+CrudNotificationMailer#create_notification: processed outbound mail in 1.8ms
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 8.9ms | Allocations: 10073)
+
+
+  
+ActionView::MissingTemplate (Missing template crud_notification_mailer/create_notification with "mailer".
+
+Searched in:
+  * "crud_notification_mailer"
+):
+  
+app/mailers/crud_notification_mailer.rb:11:in `create_notification'
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:15:33 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:45:33.114097"], ["updated_at", "2022-08-01 14:45:33.114097"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+  Rendering layout layouts/mailer.html.erb
+  Rendering crud_notification_mailer/create_notification.html.erb within layouts/mailer
+  Rendered crud_notification_mailer/create_notification.html.erb within layouts/mailer (Duration: 1.1ms | Allocations: 1741)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 1815)
+CrudNotificationMailer#create_notification: processed outbound mail in 3.0ms
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 7.1ms | Allocations: 6522)
+
+
+  
+ActionView::Template::Error (undefined method `attributes' for nil:NilClass):
+    4:   A new <%= @author.class.to_s %> has been created. Below is the details of the object created:
+    5: </p>
+    6: 
+    7: <% @author.attributes.each do |attr_key, attr_value| %>
+    8: <p><strong><%= attr_key %>:</strong> <%= attr_value%></p>
+    9: <% end %>
+   10: 
+  
+app/views/crud_notification_mailer/create_notification.html.erb:7
+app/mailers/crud_notification_mailer.rb:11:in `create_notification'
+app/controllers/authors_controller.rb:14:in `create'
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:16:47 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 6006)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 9149)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 10085)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2022-08-01 20:16:49 +0530
+Processing by AuthorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (Duration: 1.5ms | Allocations: 1755)
+  Rendered authors/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2005)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4670)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4990)
+
+
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:16:55 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"monty@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:46:55.189913"], ["updated_at", "2022-08-01 14:46:55.189913"], ["email", "monty@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+  Rendering layout layouts/mailer.html.erb
+  Rendering crud_notification_mailer/create_notification.html.erb within layouts/mailer
+  Rendered crud_notification_mailer/create_notification.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 1716)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 1790)
+CrudNotificationMailer#create_notification: processed outbound mail in 2.8ms
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 6395)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:   A new <%= @author.class.to_s %> has been created. Below is the details of the object created:
+    5: </p>
+    6: 
+    7: <% @author.each do |author| %>
+    8: <p><strong><%= author.name %>: Created </strong></p>
+    9: <% end %>
+   10: 
+  
+app/views/crud_notification_mailer/create_notification.html.erb:7
+app/mailers/crud_notification_mailer.rb:11:in `create_notification'
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:17:35 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"monty@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:47:35.385224"], ["updated_at", "2022-08-01 14:47:35.385224"], ["email", "monty@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+  Rendering layout layouts/mailer.html.erb
+  Rendering crud_notification_mailer/create_notification.html.erb within layouts/mailer
+  Rendered crud_notification_mailer/create_notification.html.erb within layouts/mailer (Duration: 2.3ms | Allocations: 3422)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.4ms | Allocations: 3496)
+CrudNotificationMailer#create_notification: processed outbound mail in 3.9ms
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.2ms | Allocations: 8159)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Author:0x00007f7f1df7ebf0>):
+    4:   A new <%= @author.class.to_s %> has been created. Below is the details of the object created:
+    5: </p>
+    6: 
+    7: <% @object.each do |author| %>
+    8: <p><strong><%= author.name %>: Created </strong></p>
+    9: <% end %>
+   10: 
+  
+app/views/crud_notification_mailer/create_notification.html.erb:7
+app/mailers/crud_notification_mailer.rb:11:in `create_notification'
+app/controllers/authors_controller.rb:14:in `create'
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:18:15 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"monty@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:48:15.478832"], ["updated_at", "2022-08-01 14:48:15.478832"], ["email", "monty@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+  Rendering layout layouts/mailer.html.erb
+  Rendering crud_notification_mailer/create_notification.html.erb within layouts/mailer
+  Rendered crud_notification_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.8ms | Allocations: 530)
+CrudNotificationMailer#create_notification: processed outbound mail in 6.7ms
+Delivered mail 62e7e7af78ff6_85ea472c73ab@itsacheckmate.mail (3.7ms)
+Date: Mon, 01 Aug 2022 20:18:15 +0530
+From: from@example.com
+To: mahima@gamil.com
+Cc: asd@gmail.com
+Message-ID: <62e7e7af78ff6_85ea472c73ab@itsacheckmate.mail>
+Subject: A new entry for Author has been created
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>CrudNotification#create_notification</h1>
+<p>
+  Hi
+  A new Author has been create .Detaisl as follows
+  <p><strong>id</strong>20 </p>
+  <p><strong>name</strong>Ruskin Bond </p>
+  <p><strong>created_at</strong>2022-08-01 14:48:15 UTC </p>
+  <p><strong>updated_at</strong>2022-08-01 14:48:15 UTC </p>
+  <p><strong>email</strong>monty@gmail.com </p>
+  <p><strong>gender</strong>Male </p>
+</p>
+<h4>Now the Author has total of 20 records.</h4>
+  </body>
+</html>
+
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 20ms (ActiveRecord: 7.1ms | Allocations: 10775)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:15 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 6831)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 9974)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 10851)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2022-08-01 20:18:17 +0530
+Processing by AuthorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (Duration: 1.7ms | Allocations: 1764)
+  Rendered authors/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2014)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4678)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4998)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:30 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 6520)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 9174)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 9440)
+
+
+Started DELETE "/authors/10" for 127.0.0.1 at 2022-08-01 20:18:35 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.4ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 11ms (ActiveRecord: 7.2ms | Allocations: 2768)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:35 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 6225)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 8879)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 9144)
+
+
+Started DELETE "/authors/11" for 127.0.0.1 at 2022-08-01 20:18:36 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"11"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 9ms (ActiveRecord: 6.9ms | Allocations: 2155)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:36 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 5948)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 8602)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 8867)
+
+
+Started DELETE "/authors/12" for 127.0.0.1 at 2022-08-01 20:18:36 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"12"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 9ms (ActiveRecord: 6.8ms | Allocations: 2173)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:36 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 5647)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 8301)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 8566)
+
+
+Started DELETE "/authors/13" for 127.0.0.1 at 2022-08-01 20:18:37 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"13"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 10ms (ActiveRecord: 6.9ms | Allocations: 2163)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:37 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 5358)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 8012)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 8277)
+
+
+Started DELETE "/authors/14" for 127.0.0.1 at 2022-08-01 20:18:37 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"14"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 9ms (ActiveRecord: 6.9ms | Allocations: 2175)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:37 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 5075)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 7729)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 7994)
+
+
+Started DELETE "/authors/15" for 127.0.0.1 at 2022-08-01 20:18:37 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"15"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 10ms (ActiveRecord: 7.0ms | Allocations: 2159)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:37 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 4782)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 7436)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 7701)
+
+
+Started DELETE "/authors/16" for 127.0.0.1 at 2022-08-01 20:18:38 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"16"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 10ms (ActiveRecord: 6.9ms | Allocations: 2169)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:38 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4487)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 7141)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 7406)
+
+
+Started DELETE "/authors/17" for 127.0.0.1 at 2022-08-01 20:18:38 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"17"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 2157)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:38 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 4204)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6858)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 7123)
+
+
+Started DELETE "/authors/18" for 127.0.0.1 at 2022-08-01 20:18:38 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"18"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 10ms (ActiveRecord: 7.0ms | Allocations: 2169)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:38 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3911)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 6565)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 6830)
+
+
+Started DELETE "/authors/19" for 127.0.0.1 at 2022-08-01 20:18:39 +0530
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"19"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 10ms (ActiveRecord: 7.0ms | Allocations: 2163)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:18:39 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3639)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6293)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 6558)
+
+
+Started DELETE "/authors/20" for 127.0.0.1 at 2022-08-01 20:19:36 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"20"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mAuthor Destroy (0.3ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 20]]
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 19ms (ActiveRecord: 9.1ms | Allocations: 12669)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:19:36 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3880)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 28686)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.1ms | Allocations: 31266)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2022-08-01 20:19:37 +0530
+Processing by AuthorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (Duration: 130.0ms | Allocations: 349093)
+  Rendered authors/new.html.erb within layouts/application (Duration: 130.6ms | Allocations: 349345)
+  Rendered layout layouts/application.html.erb (Duration: 132.5ms | Allocations: 352042)
+Completed 200 OK in 133ms (Views: 132.9ms | ActiveRecord: 0.0ms | Allocations: 352379)
+
+
+Started POST "/authors" for 127.0.0.1 at 2022-08-01 20:19:47 +0530
+Processing by AuthorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "author"=>{"name"=>"Ruskin Bond", "email"=>"ruskin@gmail.com", "gender"=>"Male"}, "commit"=>"Create Author"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("name", "created_at", "updated_at", "email", "gender") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruskin Bond"], ["created_at", "2022-08-01 14:49:47.882014"], ["updated_at", "2022-08-01 14:49:47.882014"], ["email", "ruskin@gmail.com"], ["gender", "Male"]]
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:13:in `create'
+  [1m[36mAuthor Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/mailers/crud_notification_mailer.rb:9:in `create_notification'
+  Rendering layout layouts/mailer.html.erb
+  Rendering crud_notification_mailer/create_notification.html.erb within layouts/mailer
+  Rendered crud_notification_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.4ms | Allocations: 311)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.6ms | Allocations: 542)
+CrudNotificationMailer#create_notification: processed outbound mail in 3.5ms
+Delivered mail 62e7e80be206c_a09b47f4286e@itsacheckmate.mail (16.2ms)
+Date: Mon, 01 Aug 2022 20:19:47 +0530
+From: from@example.com
+To: mahima@gamil.com
+Cc: asd@gmail.com
+Message-ID: <62e7e80be206c_a09b47f4286e@itsacheckmate.mail>
+Subject: A new entry for Author has been created
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>CrudNotification#create_notification</h1>
+<p>
+  Hi
+  A new Author has been create .Detaisl as follows
+  <p><strong>id</strong>21 </p>
+  <p><strong>name</strong>Ruskin Bond </p>
+  <p><strong>created_at</strong>2022-08-01 14:49:47 UTC </p>
+  <p><strong>updated_at</strong>2022-08-01 14:49:47 UTC </p>
+  <p><strong>email</strong>ruskin@gmail.com </p>
+  <p><strong>gender</strong>Male </p>
+</p>
+<h4>Now the Author has total of 10 records.</h4>
+  </body>
+</html>
+
+Redirected to http://127.0.0.1:3000/authors
+Completed 302 Found in 61ms (ActiveRecord: 1.0ms | Allocations: 74268)
+
+
+Started GET "/authors" for 127.0.0.1 at 2022-08-01 20:19:47 +0530
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:14
+  Rendered authors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 3643)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6338)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6606)
+
+

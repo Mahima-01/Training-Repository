@@ -1,5 +1,20 @@
 <h1> Listing Students </h1>
 <%= link_to "New Student", new_student_path %>
+<%= form_tag students_path, :method => "get" do %>
+  <%= label_tag(:search, "Please search") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :first_name => nil) %>
+<% end %>
+
+<% if params[:search] %>
+<%= link_to "Previous Page", students_path(page: @page - 1, search: params[:search])  if @page!= 0 %>
+|
+<%= link_to "Next Page", students_path(page: @page + 1, search: params[:search])  if @page < (@students_count/3) %>
+<% else %>
+<%= link_to "Previous Page", students_path(page: @page - 1)  if @page!= 0 %>
+|
+<%= link_to "Next Page", students_path(page: @page + 1)  if @page < (@students_count/3) %>
+<% end %>
 
 <table>
   <thead>

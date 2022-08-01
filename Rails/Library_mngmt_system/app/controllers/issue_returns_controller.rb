@@ -25,7 +25,7 @@ class IssueReturnsController < ApplicationController
   end
           
   def search
-    if params[:student_id]
+    if params[:id]
       @student = Student.where('student_id ILIKE ?', "%#{params[:id]}%")
     else
       @student = Student.all

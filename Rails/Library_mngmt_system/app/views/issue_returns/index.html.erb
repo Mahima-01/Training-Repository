@@ -1,12 +1,6 @@
 <h1> Issue_returns Details </h1>
 <%= link_to "New Issue_return", new_issue_return_path %>
 
-<%= form_tag(search_issue_returns_path, method: :get,turbo: false) do%>
-  Student_id
-  <%= text_field_tag :student_id, params[:student_id] %>
-  <%= submit_tag 'Search',turbo: false %>
-<% end %>
-
 <table>
   <thead>
     <tr>

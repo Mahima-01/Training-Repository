@@ -3,9 +3,8 @@ class StudentsController < ApplicationController
   def index
     @page = params.fetch(:page, 0).to_i
     if params[:search]
-      @students_count = Student.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").count
-      @students_count = Student.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").count.load_async
-      @students = Student.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id).offset(@page * STUDENTS_PER_PAGE).limit(STUDENTS_PER_PAGE)
+      @students_count = Student.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").count
+      @students = Student.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").order(:id).offset(@page * STUDENTS_PER_PAGE).limit(STUDENTS_PER_PAGE)
     else
       @students_count = Student.all.count
       @students = Student.all.order(:id).offset(@page * STUDENTS_PER_PAGE).limit(STUDENTS_PER_PAGE)

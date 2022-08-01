@@ -1,5 +1,20 @@
 <h1> Listing Books </h1>
 <%= link_to "New Book", new_book_path %>
+<%= form_tag books_path, :method => "get" do %>
+  <%= label_tag(:search, "Please search") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :name => nil) %>
+<% end %>
+
+<% if params[:search] %>
+<%= link_to "Previous Page", books_path(page: @page - 1, search: params[:search])  if @page!= 0 %>
+|
+<%= link_to "Next Page", books_path(page: @page + 1, search: params[:search])  if @page < (@books_count/3) %>
+<% else %>
+<%= link_to "Previous Page", books_path(page: @page - 1)  if @page!= 0 %>
+|
+<%= link_to "Next Page", books_path(page: @page + 1)  if @page < (@books_count/3) %>
+<% end %>
 
 <table>
   <thead>

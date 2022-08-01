@@ -10,7 +10,6 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      CrudNotificationMailer.create_notification(@student).deliver_now
       redirect_to students_path
     else
       render :new
@@ -43,11 +42,11 @@ class StudentsController < ApplicationController
       
   private
   def student_params
-    params.require(:student).permit(:name, :id, :address, :phone_no)
+    params.require(:student).permit(:name, :id, :address, :phone_no, :email)
   end
       
   def set_student
-    params.require(:student).permit(:name, :id, :address, :phone_no)
+    params.require(:student).permit(:name, :id, :address, :phone_no, :email)
   end
    
 end

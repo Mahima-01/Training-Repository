@@ -50,11 +50,11 @@ class IssueReturnsController < ApplicationController
           
   private
   def issue_returns_params
-    params.require(:issue_return).permit(:book_id, :student_id, :issue_time, :return_time)
+    params.require(:issue_return).permit(:id, :book_id, :student_id, :issue_time, :return_time)
   end
           
   def set_issue_returns
-    params.require(:issue_return).permit(:book_id, student_id, issue_time, :return_time)
+    params.require(:issue_return).permit(:id, :book_id, student_id, issue_time, :return_time)
   end
        
 end

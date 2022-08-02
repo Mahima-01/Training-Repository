@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <th> Issue_return_id </th>
       <th> Book_id </th>
       <th> student_id </th>
       <th> Issue_time </th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @issue_returns.each do |issue_returns| %>
       <tr>
+        <td><%= issue_returns.id %></td>
         <td><%= issue_returns.book_id %></td>
         <td><%= issue_returns.student_id %></td>
         <td><%= issue_returns.issue_time %></td>

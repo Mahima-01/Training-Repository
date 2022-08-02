@@ -2,8 +2,11 @@ class BooksController < ApplicationController
   BOOKS_PER_PAGE = 3
 
   def index
-    @book = Book.all.paginate(page: params[:page], per_page: 3)
-  end
+    if params[:search]
+      @book = Book.where('lower(title) LIKE ?', "%#{params[:search].downcase}%").paginate(page: params[:page], per_page: 3)
+    else
+      @book = Book.all.paginate(page: params[:page], per_page: 3)
+    end  end
           
   def new
     @book = Book.new

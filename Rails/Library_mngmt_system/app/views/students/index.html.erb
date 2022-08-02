@@ -6,15 +6,6 @@
   <%= submit_tag("Search", :name => nil) %>
 <% end %>
 
-<% if params[:search] %>
-<%= link_to "Previous Page", students_path(page: @page - 1, search: params[:search])  if @page!= 0 %>
-|
-<%= link_to "Next Page", students_path(page: @page + 1, search: params[:search])  if @page < (@students_count/3) %>
-<% else %>
-<%= link_to "Previous Page", students_path(page: @page - 1)  if @page!= 0 %>
-|
-<%= link_to "Next Page", students_path(page: @page + 1)  if @page < (@students_count/3) %>
-<% end %>
 
 <table>
   <thead>
@@ -28,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @students.each do |student| %>
+    <% @student.each do |student| %>
       <tr>
         <td><%= student.name %></td>
         <td><%= student.id %></td>
@@ -42,3 +33,4 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @student %>

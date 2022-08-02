@@ -34,18 +34,18 @@ class FinesController < ApplicationController
   end
             
   def destroy
-    @fine = Fine.find(params[:id])
-    if @fine.destroy
-    redirect_to(fines_index_path)
+    @fines = Fine.find(params[:id])
+    if @fines.destroy
+    redirect_to(fines_path)
     end
   end          
   private
   def fine_params
-    params.require(:fine).permit(:issue_return_id, :student_id, :amount, :payment_status)
+    params.require(:fine).permit(:student_id, :amount, :payment_status)
   end
             
   def set_fine
-    params.require(:fine).permit(:issue_return_id, :student_id, :amount, :payment_status)
+    params.require(:fine).permit(:student_id, :amount, :payment_status)
   end
              
 end

@@ -5,18 +5,16 @@
   <thead>
     <tr>
       <th> Student_id </th>
-      <th> Issue_return_id </th>
       <th> Amount </th>
       <th> Payment_status </th>
       <th colspan="3">Action</th>
     </tr>
   </thead>
   <tbody>
-   <% if @fine %>
-    <% @fine.each do |fine| %>
+   <% if @fines %>
+    <% @fines.each do |fine| %>
       <tr>
         <td><%= fine.student_id %></td>
-        <td><%= fine.issue_returns_id %></td>
         <td><%= fine.amount %></td>
         <td><%= fine.payment_status %></td>
         <td><%= link_to 'View', fine %></td>

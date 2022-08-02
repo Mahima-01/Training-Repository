@@ -5,10 +5,7 @@
     <% end %>
   <% end %>
   
-  <div>
-    <%= form.label :issue_returns_id %><br>
-    <%= form.text_field :issue_returns_id %>
-  </div>
+
 
   <div>
     <%= form.label :student_id %><br>
@@ -22,8 +19,8 @@
 
    <div>
     <%= form.label :payment_status %><br>
-    <%= form.select :payment_status , ['True',
-                                'False'] %>
+    <%= form.select :payment_status , [true,
+                                false] %>
   </div>
   
   <div>

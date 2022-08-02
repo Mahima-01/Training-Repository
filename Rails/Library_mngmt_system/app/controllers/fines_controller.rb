@@ -41,11 +41,11 @@ class FinesController < ApplicationController
   end          
   private
   def fine_params
-    params.require(:fine).permit(:student_id, :amount, :payment_status)
+    params.require(:fine).permit(:issue_returns_id, :student_id, :amount, :payment_status)
   end
             
   def set_fine
-    params.require(:fine).permit(:student_id, :amount, :payment_status)
+    params.require(:fine).permit(:issue_returns_id, :amount, :payment_status)
   end
              
 end

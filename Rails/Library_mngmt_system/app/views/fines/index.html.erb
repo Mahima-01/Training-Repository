@@ -2,16 +2,6 @@
 <%= link_to "New Fine", new_fine_path %>
 <br>
 
-<% if params[:search] %>
-<%= link_to "Previous Page", fines_path(page: @page - 1, search: params[:search])  if @page!= 0 %>
-|
-<%= link_to "Next Page", fines_path(page: @page + 1, search: params[:search])  if @page < (@fines_count/2) %>
-<% else %>
-<%= link_to "Previous Page", fines_path(page: @page - 1)  if @page!= 0 %>
-|
-<%= link_to "Next Page", fines_path(page: @page + 1)  if @page < (@fines_count/3) %>
-<% end %>
-
 <table>
   <thead>
     <tr>
@@ -23,8 +13,8 @@
     </tr>
   </thead>
   <tbody>
-   <% if @fines %>
-    <% @fines.each do |fine| %>
+   <% if @fine %>
+    <% @fine.each do |fine| %>
       <tr>
         <td><%= fine.issue_returns_id %></td>
         <td><%= fine.student_id %></td>
@@ -38,3 +28,4 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @fine %>

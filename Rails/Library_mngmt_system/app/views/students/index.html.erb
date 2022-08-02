@@ -3,9 +3,8 @@
 <%= form_tag students_path, :method => "get" do %>
   <%= label_tag(:search, "Please search") %>
   <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag("Search", :name => nil) %>
+  <%= submit_tag("Search", :name => nil, :address => nil) %>
 <% end %>
-
 
 <table>
   <thead>

@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   def index
     if params[:search]
       @student = Student.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").paginate(page: params[:page], per_page: 3)
+      @student = Student.where('lower(address) LIKE ?', "%#{params[:search].downcase}%").paginate(page: params[:page], per_page: 3)
     else
       @student = Student.all.paginate(page: params[:page], per_page: 3)
     end

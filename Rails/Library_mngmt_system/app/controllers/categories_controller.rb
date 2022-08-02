@@ -17,7 +17,8 @@ class CategoriesController < ApplicationController
       end
             
       def show
-        @category = Category.find(params[:id])
+        @category = Category.includes(:subcategories).find(params[:id])
+        @subcategories = @category.subcategories
       end
           
       def edit
@@ -34,8 +35,10 @@ class CategoriesController < ApplicationController
       end
           
       def destroy
-        @category.destroy
-        redirect_to categories_index_path
+        @category = Student.find(params[:id])
+        if @category.destroy
+          redirect_to(categories_index_path)
+        end
       end
           
       private

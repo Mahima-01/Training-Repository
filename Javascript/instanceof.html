@@ -1,0 +1,54 @@
+<!-- Class checking: "instanceof"
+The instanceof operator allows to check whether an object belongs to a certain class. 
+It also takes inheritance into account.
+
+The instanceof operator:
+The syntax is:
+obj instanceof Class
+It returns true if obj belongs to the Class or a class inheriting from it.-->
+
+<!-- <script>
+class Rabbit {}
+let rabbit = new Rabbit();
+
+// is it an object of Rabbit class?
+alert( rabbit instanceof Rabbit ); // true
+</script> -->
+
+<!-- It also works with constructor functions
+function Rabbit() {}
+alert( new Rabbit() instanceof Rabbit ); // true -->
+
+<!-- And with built-in classes like Array: -->
+<!-- <script>
+let arr = [1, 2, 3];
+alert( arr instanceof Array ); // true
+alert( arr instanceof Object ); // true
+</script> -->
+
+<!-- Bonus: Object.prototype.toString for the type
+We already know that plain objects are converted to string as [object Object]
+By specification, the built-in toString can be extracted from the object and executed in the context of any other value. And its result depends on that value.
+
+For a number, it will be [object Number]
+For a boolean, it will be [object Boolean]
+For null: [object Null]
+For undefined: [object Undefined]
+For arrays: [object Array] 
+ex- let arr = [];
+alert( objectToString.call(arr) ); // [object Array]-->
+
+<!-- Symbol.toStringTag
+The behavior of Object toString can be customized using a special object property Symbol.toStringTag -->
+<script>
+let user = {
+  [Symbol.toStringTag]: "User"
+};
+alert( {}.toString.call(user) ); // [object User]
+</script>
+
+<!-- 
+                     works for	                                                   returns
+typeof	            primitives	                                                    string
+{}.toString	        primitives, built-in objects, objects with Symbol.toStringTag	string
+instanceof	        objects	                                                       true/false  -->

@@ -6,16 +6,6 @@
   <%= submit_tag("Search", :name => nil) %>
 <% end %>
 
-<% if params[:search] %>
-<%= link_to "Previous Page", books_path(page: @page - 1, search: params[:search])  if @page!= 0 %>
-|
-<%= link_to "Next Page", books_path(page: @page + 1, search: params[:search])  if @page < (@books_count/3) %>
-<% else %>
-<%= link_to "Previous Page", books_path(page: @page - 1)  if @page!= 0 %>
-|
-<%= link_to "Next Page", books_path(page: @page + 1)  if @page < (@books_count/3) %>
-<% end %>
-
 <table>
   <thead>
     <tr>
@@ -26,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @books.each do |book| %>
+    <% @book.each do |book| %>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.id %></td>
@@ -38,3 +28,4 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @book %>

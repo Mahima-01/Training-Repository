@@ -5,11 +5,21 @@ Enter new student information
   Lastname: <%= f.text_field :lastname %><br />
   Gender: <%= f.radio_button :gender, :male %> Male
   <%= f.radio_button :gender, :female %> Female<br />
-  <%= f.submit "Create"%>
-  
-<% end %>
+  Country: <%= f.select :country , ['India',
+                                'China',
+                                'United States',
+                                'Russia',
+                                'Brazil',
+                                'Mexico',
+                                'Germany',
+                                'France',
+                                'Italy',
+                                'Spain',
+                                'Cuba',
+                                'Belgium'] %>
+  <%= f.submit "Create" %>
+<% end%>
 <br>
-
 Display all students information
 <% if !@students.blank? %><br />
 <table>
@@ -17,10 +27,11 @@ Display all students information
   <tr>
     <th> Name </th>
     <th> Gender </th>
+    <th> Country </th>
   </tr>
 
   <%  @students.each do |item| %>
-    <tr><td><%= item.firstname %> <%= item.lastname %></td> <td><%= item.gender %></td></tr> 
+    <tr><td><%= item.firstname %> <%= item.lastname %></td> <td><%= item.gender %></td><td><%= item.country %></td></tr> 
   <% end %>
 </table>  
 <% end %>  

@@ -444,6 +444,223 @@ hospitalms=# Select now()::Date + Interval '10 Months';
 ---------------------
  2023-06-03 00:00:00
 (1 row)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find count of males and females:
+hospitalms=# select(select count(*) from patient where gender = 'Male') as male_count
+,(select count(*) from patient where gender = 'Female') as female_count;
+ male_count | female_count 
+------------+--------------
+          3 |            3
+(1 row)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find that a doctor has visited atleast 2 patients:
+hospitalms=# select doctor.name from patient
+inner join appointment 
+on patient.id = appointment.patient_id
+inner join doctor
+on doctor.id = appointment.doctor_id
+group by doctor.name
+having count(*)>=2;
+    name     
+-------------
+ Mamta Singh
+ Geeta Dua
+(2 rows)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find that a doctor has visited atleast 2 patients: [group by patient name and doctor name]
+hospitalms=# select patient.name, doctor.name from patient
+inner join appointment 
+on patient.id = appointment.patient_id
+inner join doctor
+on doctor.id = appointment.doctor_id
+group by patient.name,doctor.name
+hospitalms-# having count(*)>=2;
+   name   |   name    
+----------+-----------
+ Ram Jain | Geeta Dua
+(1 row)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find name of doctor whose salary > than 400000:
+hospitalms=# select name,salary from doctor where salary > 400000;
+      name      | salary 
+----------------+--------
+ Aman Gulati    | 420000
+ Khushi Katuria | 500000
+ Mamta Singh    | 540000
+(3 rows)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find current age:
+hospitalms=# select name, date_part('year',age(dob)) as Age from doctor;
+      name      | age 
+----------------+-----
+ Rishabh Sharma |  27
+ Aman Gulati    |  25
+ Khushi Katuria |  22
+ Mamta Singh    |  21
+ Dr AK Mehta    |  21
+ Geeta Dua      |  27
+(6 rows)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find max salary from doctor:
+hospitalms=# select max(salary) from doctor;
+  max   
+--------
+ 540000
+(1 row)
+
+-> Query to find min salary from doctor:
+hospitalms=# select min(salary) from doctor;
+  min  
+-------
+ 50000
+(1 row)
+
+-> Query to find avg salary from doctor:
+hospitalms=# select avg(salary) from doctor;
+         avg         
+---------------------
+ 330000.000000000000
+(1 row)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find salary between given range:
+hospitalms=# select name,salary from doctor where salary between 100000 and 2000000;
+      name      | salary 
+----------------+--------
+ Rishabh Sharma | 400000
+ Aman Gulati    | 420000
+ Khushi Katuria | 500000
+ Mamta Singh    | 540000
+(4 rows)
+
+hospitalms=# select name,salary from doctor where salary > 100000 or salary<=2000000;
+      name      | salary 
+----------------+--------
+ Rishabh Sharma | 400000
+ Aman Gulati    | 420000
+ Khushi Katuria | 500000
+ Mamta Singh    | 540000
+ Dr AK Mehta    |  50000
+ Geeta Dua      |  70000
+(6 rows)
+
+hospitalms=# select name,salary from doctor where salary > 100000 and salary<=2000000;
+      name      | salary 
+----------------+--------
+ Rishabh Sharma | 400000
+ Aman Gulati    | 420000
+ Khushi Katuria | 500000
+ Mamta Singh    | 540000
+(4 rows)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query  displays the sum of each doctor's salary based on their id.
+hospitalms=# select name, id, sum(salary)
+from doctor
+group by name,id
+having sum(salary) > 200000
+order by name desc;
+      name      | id  |  sum   
+----------------+-----+--------
+ Rishabh Sharma | 101 | 400000
+ Mamta Singh    | 104 | 540000
+ Khushi Katuria | 103 | 500000
+ Aman Gulati    | 102 | 420000
+(4 rows)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to display name and appointment date_time:
+hospitalms=# select patient.name,appointment.date_time from patient
+inner join appointment
+on patient.id = appointment.patient_id;
+      name      |      date_time      
+----------------+---------------------
+ Ram Jain       | 1998-07-01 13:42:12
+ Hariom Vashist | 1999-02-10 08:20:26
+ Ruchi Garg     | 2000-12-23 10:38:30
+ Neelam Kumari  | 1994-11-30 06:15:10
+ Neha Bhati     | 2012-02-28 14:06:45
+ Keshav Jain    | 2014-08-14 18:41:00
+ Ram Jain       | 1998-07-01 13:42:12
+ Neelam Kumari  | 2012-02-28 14:10:34
+(8 rows)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find patient_name, doctor_name and appointment date_time: [Done using joins]
+hospitalms=# select patient.name,appointment.date_time,doctor.name from appointment
+inner join patient    
+on patient.id = appointment.patient_id
+inner join doctor
+on doctor.id = appointment.doctor_id;
+      name      |      date_time      |      name      
+----------------+---------------------+----------------
+ Ram Jain       | 1998-07-01 13:42:12 | Geeta Dua
+ Hariom Vashist | 1999-02-10 08:20:26 | Dr AK Mehta
+ Ruchi Garg     | 2000-12-23 10:38:30 | Mamta Singh
+ Neelam Kumari  | 1994-11-30 06:15:10 | Khushi Katuria
+ Neha Bhati     | 2012-02-28 14:06:45 | Rishabh Sharma
+ Keshav Jain    | 2014-08-14 18:41:00 | Aman Gulati
+ Ram Jain       | 1998-07-01 13:42:12 | Geeta Dua
+ Neelam Kumari  | 2012-02-28 14:10:34 | Mamta Singh
+(8 rows)
+
+hospitalms=# select patient.name as "patient_name",appointment.date_time,doctor.name from appointment
+inner join patient
+on patient.id = appointment.patient_id
+inner join doctor
+on doctor.id = appointment.doctor_id;
+  patient_name  |      date_time      |      name      
+----------------+---------------------+----------------
+ Ram Jain       | 1998-07-01 13:42:12 | Geeta Dua
+ Hariom Vashist | 1999-02-10 08:20:26 | Dr AK Mehta
+ Ruchi Garg     | 2000-12-23 10:38:30 | Mamta Singh
+ Neelam Kumari  | 1994-11-30 06:15:10 | Khushi Katuria
+ Neha Bhati     | 2012-02-28 14:06:45 | Rishabh Sharma
+ Keshav Jain    | 2014-08-14 18:41:00 | Aman Gulati
+ Ram Jain       | 1998-07-01 13:42:12 | Geeta Dua
+ Neelam Kumari  | 2012-02-28 14:10:34 | Mamta Singh
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Query to find third highest salary of doctor:
+hospitalms=# SELECT salary FROM doctor ORDER BY salary DESC LIMIT 1 OFFSET 2;
+ salary 
+--------
+ 420000
+(1 row)
+
+-> Query to find second highest salary of doctor:
+hospitalms=# SELECT salary FROM doctor ORDER BY salary DESC LIMIT 1 OFFSET 1;
+ salary 
+--------
+ 500000
+(1 row)
+
+-> Query to find third highest salary of doctor: [without offset]
+hospitalms=# SELECT Max(salary) FROM doctor 
+WHERE  salary < (SELECT Max(salary) 
+from doctor          
+WHERE  salary NOT IN(SELECT Max(salary) 
+ FROM doctor));
+  max   
+--------
+ 420000
+(1 row)
+
+-> Query to find second highest salary of doctor:
+hospitalms=# select max(salary) from doctor where salary not in (select max(salary) from doctor);
+  max   
+--------
+ 500000
+(1 row)
+
+-> Query to find third max salary of doctor:
+hospitalms=# select max(salary) from doctor where salary not in (select distinct(salary) from doctor order by salary desc limit 2);
+  max   
+--------
+ 420000
+(1 row)
+
+-> Query to find third lowest salary of doctor:
+hospitalms=# select min(salary) from doctor where salary not in (select distinct(salary) from doctor order by salary asc limit 2);
+  min   
+--------
+ 400000
+(1 row)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

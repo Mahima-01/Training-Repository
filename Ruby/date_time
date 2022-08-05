@@ -128,4 +128,183 @@ split:
  => "hi hello how are you" 
 2.7.0 :038 > arr = a.split(" ")
  => ["hi", "hello", "how", "are", "you"] 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                             Strings:
+2.7.0 :001 > a = "hello world"
+ => "hello world" 
+2.7.0 :002 > puts a
+hello world
+ => nil 
+2.7.0 :003 > b = String.new("hello world")
+ => "hello world" 
+2.7.0 :004 > puts b
+hello world
+ => nil 
+
+2.7.0 :005 > puts a == b
+true
+ => nil 
+ 
+2.7.0 :007 > a.size
+ => 11 
+2.7.0 :008 > c = [1,2,3]
+ => [1, 2, 3] 
+2.7.0 :009 > c.include?(2)
+ => true 
+2.7.0 :010 > a = "hello world"
+ => "hello world" 
+2.7.0 :011 > a.include?('e')
+ => true 
+
+2.7.0 :012 > puts a[0]
+h
+ => nil                                             
+2.7.0 :013 > puts a[a.length - 1]
+d
+ => nil  
+
+2.7.0 :014 > puts a[-1]
+d
+ => nil
+
+2.7.0 :015 > a.upcase
+ => "HELLO WORLD" 
+
+2.7.0 :016 > a.downcase
+ => "hello world" 
+ 
+2.7.0 :017 > a.upcase!
+ => "HELLO WORLD"
+
+2.7.0 :018 > a = "   hello world    "
+ => "   hello world    " 
+2.7.0 :019 > a.strip
+ => "hello world" 
+
+.7.0 :020 > string = "ruby programming"
+ => "ruby programming" 
+2.7.0 :021 > string.end_with?
+ => false 
+2.7.0 :022 > string.end_with? 'programming'
+ => true 
+
+.7.0 :023 > string = "ruby is programming language"
+ => "ruby is programming language" 
+2.7.0 :024 > string.delete_suffix('is programming')
+ => "ruby is programming language" 
+2.7.0 :025 > string.delete_suffix(' programming language')
+ => "ruby is"
+
+Convert string to array of character:
+2.7.0 :026 > string = "a b c d"
+ => "a b c d" 
+2.7.0 :027 > string.split
+ => ["a", "b", "c", "d"]
+
+Convert an array to string:
+2.7.0 :030 > arr = ['a', 'b', 'c']
+ => ["a", "b", "c"] 
+2.7.0 :031 > arr.join
+ => "abc" 
+ 
+ 
+Convert string to an integer:
+2.7.0 :032 > "49".to_i
+ => 49 
+2.7.0 :033 > "a".to_i
+ => 0 
+
+Check if string is a number:
+2.7.0 :034 > "123".match?(/\A-?\d+\Z/)
+2.7.0 :035 >   
+ => true 
+2.7.0 :036 > "123bb".match?(/\A-?\d+\Z/)
+2.7.0 :037 >   
+ => false 
+
+Append character:
+ => "" 
+2.7.0 :039 > string << "hello"
+ => "hello" 
+2.7.0 :040 > string << "" 
+ => "hello" 
+2.7.0 :041 > string << "there" 
+ => "hellothere" 
+
+Iterate over character of a string:
+One way to do that is to use the each_char method
+2.7.0 :042 > "rubyguides".each_char {|ch| puts ch}
+r
+u                                                                         
+b                                                                         
+y                                                                         
+g                                                                         
+u                                                                         
+i                                                                         
+d                                                                         
+e                                                                         
+s                                                                         
+ => "rubyguides"
+
+
+Uppercase and Lowercase:
+2.7.0 :043 > "hello".upcase
+ => "HELLO" 
+2.7.0 :044 > "HELLO".downcase
+ => "hello" 
+
+
+Multiline string:
+2.7.0 :045"> b = <<-STRING
+2.7.0 :046"> aaa
+2.7.0 :047"> bbb
+2.7.0 :048"> ccc
+2.7.0 :049 > STRING
+ => "aaa\nbbb\nccc\n" 
+
+And another is by using %Q:
+2.7.0 :052"> a = %Q(aaa
+2.7.0 :053"> bbb
+2.7.0 :054"> ccc)
+ => "aaa\nbbb\nccc"
+
+
+Replace Text Inside a String Using The Gsub Method:
+2.7.0 :055 > string = "We have many dogs"
+ => "We have many dogs" 
+2.7.0 :056 > string.gsub("dogs", "cats")
+ => "We have many cats" 
+The gsub method returns a new string.
+If you want to apply the changes to the original string you can use the gsub! method.
+The gsub method also takes regular expressions as an argument so you can replace patterns instead of exact words.
+
+2.7.0 :057 > string = "We have 2 dogs"
+ => "We have 2 dogs" 
+2.7.0 :058 > string.gsub("/\d+/", "5")
+ => "We have 2 dogs" 
+2.7.0 :059 > string.gsub(/\d+/, "5")
+ => "We have 5 dogs"
+
+2.7.0 :060 > title = "the lord of the rings"
+ => "the lord of the rings" 
+2.7.0 :061 > title.gsub(/\w+/) {|word| word.capitalize}
+ => "The Lord Of The Rings"
+
+What about gsub vs sub?
+Well, sub is the same as gsub, but it will only replace the first match.
+Gsub replaces ALL matches.
+
+Remove the Last Character From a String:
+2.7.0 :062 > "abcd?".chomp("?")
+ => "abcd" 
+
+2.7.0 :063 > "Hello!".chomp
+ => "Hello!" 
+2.7.0 :064 > "Hello!".chomp("!")
+ => "Hello"
+ 
+2.7.0 :068 > str = "aaaabfbfbgf"
+ => "aaaabfbfbgf" 
+2.7.0 :069 > str.count("a")
+ => 4 
 

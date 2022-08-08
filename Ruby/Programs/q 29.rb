@@ -14,8 +14,10 @@ class Integer
 end
 puts ARGV[0].to_i.to_roman
 
+=begin
 Output:
 itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb 23
 XXIII
 itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb 115
 CXV
+=end

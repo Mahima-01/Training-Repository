@@ -1,0 +1,56 @@
+# Procs and Lambdas:
+
+itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository/Ruby$ irb
+2.7.0 :001 > proc_object = Proc.new{ puts "I am learning proc" }
+ => #<Proc:0x0000557421114168 (irb):1> 
+2.7.0 :002 > proc_object.call
+I am learning proc
+ => nil 
+2.7.0 :003 > proc_object = lambda{ puts "I am inside proc" }
+ => #<Proc:0x0000557421cd76f8 (irb):3 (lambda)> 
+2.7.0 :004 > proc_object.call
+I am inside proc
+ => nil                                                                         
+2.7.0 :005 > puts "Is proc object a lambda - #{proc_object.lambda?}"
+Is proc object a lambda - true
+ => nil 
+
+Lambda:
+2.7.0 :010 > lambda1 = lambda{ |param1, param2| puts "parameter 1 : #{param1} an
+d parameter 2 : #{param2}"}
+ => #<Proc:0x00005574214c8fc0 (irb):10 (lambda)> 
+2.7.0 :011 > lambda1.call(10, 20)
+parameter 1 : 10 and parameter 2 : 20
+
+2.7.0 :015 > proc_object = Proc.new{|x| "Ruby" * x}
+ => #<Proc:0x0000557421b10450 (irb):15> 
+2.7.0 :016 > proc_object.call(2)
+ => "RubyRuby"
+                OR
+2.7.0 :017 > puts Proc.new{ |x| "Ruby" * x}.call(2)
+RubyRuby
+ => nil 
+                OR
+2.7.0 :018 > puts Proc.new{ |x| "Ruby" * x}.(2)
+RubyRuby
+                OR
+2.7.0 :020 > puts Proc.new{ |x| "Ruby" * x}[2]
+RubyRuby
+ => nil 
+
+
+2.7.0 :024 > proc1 = "Ruby"
+ => "Ruby" 
+2.7.0 :025 > proc2 = "Ruby"
+ => "Ruby" 
+2.7.0 :026 > puts"comparison results of strings: #{proc1 == proc2}"
+comparison results of strings: true
+ => nil                                                                         
+2.7.0 :027 > proc1 = Proc.new {"Ruby"}
+ => #<Proc:0x0000557421e0a4f8 (irb):27> 
+2.7.0 :028 > proc2 = Proc.new{"Ruby"}
+ => #<Proc:0x00005574215da670 (irb):28> 
+2.7.0 :029 > puts"comparison results of strings: #{proc1 == proc2}"
+comparison results of strings: false
+ => nil               
+

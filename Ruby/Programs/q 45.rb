@@ -23,9 +23,11 @@ end_year = gets.to_i
 
 leap_years_in_range(start_year, end_year)
 
+=begin
 Output:
 itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
 Enter the range of year to find leap years 
  Start year : 2010
 End Year : 2020
 3
+=end

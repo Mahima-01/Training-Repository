@@ -1,3 +1,4 @@
+=begin
 5.Program to find fibonacci series:
 first = 0
 second = 1
@@ -47,4 +48,21 @@ The first 10 terms of Fibonacci series are:-
 21
 34
 55
+=end
 
+# Fibonacci series using recursion
+
+def printFibonacci(a,b,term) 
+	if term > 0 
+		sum = a + b;
+		print sum, " ";
+		a = b;
+		b = sum;
+		printFibonacci(a, b, term-1);
+	end
+end
+
+a=0;
+b=1;
+
+printFibonacci(a, b, 6);

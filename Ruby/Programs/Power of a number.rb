@@ -15,6 +15,7 @@ expo = gets.chomp.to_i
 
 puts "The power is #{ pow(base, expo)}"
 
+=begin
 OUTPUT:
 itsacheckmate@itsacheckmate:~/Training-Repository/Rvm and Ruby$ ruby Ruby.rb
 Enter Base:-
@@ -28,3 +29,4 @@ Enter Base:-
 Enter exponent:-
 3
 The power is 1728
+=end

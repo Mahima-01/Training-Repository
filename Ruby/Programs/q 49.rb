@@ -34,7 +34,7 @@ print 'Enter the date to find if it is palindrome : '
 date = gets
 is_date_palindrome(date)
 
-
+=begin
 Output:
 itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
 Enter the date to find if it is palindrome : 11/12/2022                  
@@ -43,3 +43,4 @@ Not a palindrome
 itsacheckmate@itsacheckmate:~/Training-Repository/Rvm_Ruby$ ruby Ruby.rb
 Enter the date to find if it is palindrome : 02/02/2020
 It is a palindrome 
+=end

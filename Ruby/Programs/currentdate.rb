@@ -7,6 +7,7 @@ cdt = current_time.strftime "%d/%m/%Y %H:%M"
 puts "Current Date and Time: "+cdt
 
 # Output:
+=begin
 itsacheckmate@itsacheckmate:~/Html_Project/Training-Repository/Ruby/Programs$ ruby currentdate.rb 
 Current Date and Time: 15/07/2022 19:00
-
+=end

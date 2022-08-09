@@ -1,0 +1,57 @@
+What is Automation Testing?
+Automation testing is a Software testing technique to test and compare the actual outcome with the expected outcome. 
+The automation testing software can also enter test data into the System Under Test, compare expected and actual results and generate detailed test reports. 
+This can be achieved by writing test scripts or using any automation testing tool. 
+Test automation is used to automate repetitive tasks and other testing tasks which are difficult to perform manually. 
+
+-> Unit Testing:
+Unit testing is testing the smallest testable unit of an application. 
+It is done during the coding phase by the developers. 
+To perform unit testing, a developer writes a piece of code (unit tests) to verify the code to be tested (unit) is correct
+It is a good approach for projects which involve API and third-party tools.
+
+-> TDD:
+TDD stands for Test Driven Development. 
+In this software development technique, we create the test cases first and then write the code underlying those test cases.
+The teams that implement TDD, take more time for development.
+TDD results in improved quality of code and the code that is more reusable and flexible.
+In TDD the starting point is a test case.
+
+Process Of TDD
+TDD methodology follows a very simple 6 step process:
+1) Write a test case: Based on the requirements, write an automated test case.
+
+2) Run all the test cases: Run these automated test cases on the currently developed code.
+
+3) Develop the code for that test cases: If the test case fails, then, write the code to make that test-case work as expected.
+
+4) Run test cases again: Run the test cases again and check if all the test cases developed so far are implemented.
+
+5) Refactor your code: This is an optional step. However, it’s important to refactor your code to make it more readable and reusable.
+
+6) Repeat the steps 1- 5 for new test cases: Repeat the cycle for the other test cases until all the test cases are implemented.
+Mainly it refers to write a test case that fails because the specified functionality doesn’t exist and after that update the code that can make the test case pass and as a result we get the feature implemented in the system.
+
+-> BDD:
+BDD stands for Behavior Driven Development. BDD is an extension to TDD where instead of writing the test cases, we start by writing a behavior. 
+Later, we develop the code which is required for our application to perform the behavior.
+The scenario defined in the BDD approach makes it easy for the developers, testers and business users to collaborate.
+BDD is considered a best practice when it comes to automated testing as it focuses on the behavior of the application and not on thinking about the implementation of the code.
+
+The process involved in BDD methodology also consists of 6 steps and is very similar to that of TDD.
+1) Write the behavior of the application: The behavior of an application is written in simple English like language by the product owner or the business analysts or QAs.
+
+2) Write the automated scripts: This simple English like language is then converted into programming tests.
+
+3) Implement the functional code: The functional code underlying the behavior is then implemented.
+
+4) Check if the behavior is successful: Run the behavior and see if it is successful. If successful, move to the next behavior otherwise fix the errors in the functional code to achieve the application behavior.
+
+5) Refactor or organize code: Refactor or organize your code to make it more readable and re-usable.
+
+6) Repeat the steps 1-5 for new behavior: Repeat the steps to implement more behaviors in your application.
+
+It is a good approach for project development which are driven by user actions.
+In BDD the starting point is a scenario.
+Its main focus is on system requirements.
+

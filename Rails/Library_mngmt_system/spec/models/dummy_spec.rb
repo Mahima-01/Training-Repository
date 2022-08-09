@@ -5,4 +5,9 @@ RSpec.describe Dummy, type: :model do
     dummy = Dummy.new(name: "Ram")
     expect(dummy).to be_valid
   end
+  it "is valid if email present" do
+    dummy = FactoryBot.build_stubbed(:dummy)
+    expect(dummy.email).to eq("hello@cjav.dev")
+  end
+
 end

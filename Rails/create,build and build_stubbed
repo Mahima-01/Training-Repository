@@ -1,0 +1,104 @@
+factory_girl supports several different build strategies: 
+build, create and build_stubbed:
+
+- Returns a dummy instance that's not saved
+dummy = build(:dummy)
+
+- Returns a saved dummy instance
+dummy = create(:dummy)
+
+- Build a dummy instance and override the name property
+dummy = build(:dummy, name: "Ria")
+dummy.name
+ => "Ria"
+ 
+- FactoryGirl.build_stubbed(:article) - is a shiny new method from FactoryGirl.
+It creates non-persisted instance just as #build, but makes it look, as though it is persisted, by assigning an :id field.
+
+
+# create:
+3.0.0 :006 > dummy = FactoryBot.create(:dummy, name: "Neha")
+  TRANSACTION (0.3ms)  BEGIN
+  Dummy Create (8.1ms)  INSERT INTO "dummies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Neha"], ["email", "hello@cjav.dev"], ["created_at", "2022-08-10 08:17:35.750373"], ["updated_at", "2022-08-10 08:17:35.750373"]]                                   
+  TRANSACTION (0.6ms)  COMMIT                                     
+ =>                                                               
+#<Dummy:0x00007fc5f452b3b0                                        
+...                                                               
+3.0.0 :007 > dummy
+ => 
+#<Dummy:0x00007fc5f452b3b0                                        
+ id: 3,                                                           
+ name: "Neha",                                                    
+ email: "hello@cjav.dev",                                         
+ created_at: Wed, 10 Aug 2022 08:17:35.750373000 UTC +00:00,
+ updated_at: Wed, 10 Aug 2022 08:17:35.750373000 UTC +00:00> 
+
+
+# Build:
+3.0.0 :002 > dummy = FactoryBot.build(:dummy, name: "ria")
+ => 
+#<Dummy:0x00007fc5f4dfe0f0                                        
+...                                                               
+3.0.0 :003 > dummy
+ => 
+#<Dummy:0x00007fc5f4dfe0f0                                        
+ id: nil,                                                         
+ name: "ria",                                                     
+ email: "hello@cjav.dev",                                         
+ created_at: nil,                                                 
+ updated_at: nil> 
+
+
+# build_stubbed:
+FactoryBot.build_stubbed(:profile) does not call database at all. 
+It creates and assigns attributes to an object to make it behave like an instantiated object. It provides a fake id and created_at.
+
+3.0.0 :004 > dummy = FactoryBot.build_stubbed(:dummy, name: "Ravi")
+ => 
+#<Dummy:0x00007fc5f4fb2108                                        
+...                                                               
+3.0.0 :005 > dummy
+ => 
+#<Dummy:0x00007fc5f4fb2108                                
+ id: 1001,                          
+ name: "Ravi",                      
+ email: "hello@cjav.dev",           
+ created_at: Wed, 10 Aug 2022 08:16:44.835689000 UTC +00:00,
+ updated_at: Wed, 10 Aug 2022 08:16:44.835723000 UTC +00:00> 
+
+3.0.0 :008 > Dummy.all
+  Dummy Load (0.6ms)  SELECT "dummies".* FROM "dummies"
+ =>                                                          
+[#<Dummy:0x00007fc5f4520fa0                                  
+  id: 2,                                                     
+  name: "My String",                                         
+  email: "hello@cjav.dev",                                   
+  created_at: Tue, 09 Aug 2022 13:38:49.723145000 UTC +00:00,
+  updated_at: Tue, 09 Aug 2022 13:38:49.723145000 UTC +00:00>,
+ #<Dummy:0x00007fc5f45194f8                                  
+  id: 3,                                                     
+  name: "Neha",                                              
+  email: "hello@cjav.dev",                                   
+  created_at: Wed, 10 Aug 2022 08:17:35.750373000 UTC +00:00,
+  updated_at: Wed, 10 Aug 2022 08:17:35.750373000 UTC +00:00>] 
+
+
+3.0.0 :009 > dummy = FactoryBot.build(:dummy, name: "Arya")
+ => 
+#<Dummy:0x00007fc5f4fbf678                          
+...                                                 
+3.0.0 :010 > dummy.save
+  TRANSACTION (0.4ms)  BEGIN
+  Dummy Create (0.6ms)  INSERT INTO "dummies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Arya"], ["email", "hello@cjav.dev"], ["created_at", "2022-08-10 08:20:25.232262"], ["updated_at", "2022-08-10 08:20:25.232262"]]                              
+  TRANSACTION (6.7ms)  COMMIT                                
+ => true                                                     
+3.0.0 :011 > dummy
+ => 
+#<Dummy:0x00007fc5f4fbf678                                   
+ id: 4,                                                      
+ name: "Arya",                                               
+ email: "hello@cjav.dev",                                    
+ created_at: Wed, 10 Aug 2022 08:20:25.232262000 UTC +00:00, 
+ updated_at: Wed, 10 Aug 2022 08:20:25.232262000 UTC +00:00> 
+
+

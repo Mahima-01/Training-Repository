@@ -121,5 +121,32 @@ describe "An example of the error Matchers" do
       expect { 1/0 }.to raise_error("divided by 0", ZeroDivisionError) 
    end 
 end
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Feature specs
+Feature specs, a kind of acceptance test, are high-level tests that walk through your entire application ensuring that each of the components work together. 
+Feature specs tell you whether all parts of your application are working together.
+Feature specs test the whole “stack” including model code, controller code, and any HTML/CSS/JavaScript together.
+They’re written from the perspective of a user clicking around the application and filling in forms. 
+We use RSpec and Capybara, which allow you to write tests that can interact with the web page in this manner.
+The reason feature specs are time-consuming to write is that, unlike a model spec where you can exercise e.g. just one method at a time, a feature spec has to exercise a whole feature at a time. 
+Here is an example RSpec feature test:
+# spec/features/user_creates_a_foobar_spec.rb
 
+feature 'User creates a foobar' do
+  scenario 'they see the foobar on the page' do
+    visit new_foobar_path
 
+    fill_in 'Name', with: 'My foobar'
+    click_button 'Create Foobar'
+
+    expect(page).to have_css '.foobar-name', 'My foobar'
+  end
+end
+This test emulates a user visiting the new foobar form, filling it in, and clicking “Create”. 
+The test then asserts that the page has the text of the created foobar where it expects it to be.
+
+Model specs
+Model specs are similar to unit tests in that they are used to test smaller parts of the system, such as classes or methods. 
+Sometimes they interact with the database, too.
+Disadvantage of model spec is that they dont tell you anything about whether your application works from user's perspective.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

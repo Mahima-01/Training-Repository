@@ -97,4 +97,35 @@ factory :comment do
   body "Great article!"
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Every Rails application you build has 3 sides: a side for production, a side for development, and a side for testing.
+One place you’ll find this distinction is in the config/database.yml file. 
+This YAML configuration file has 3 different sections defining 3 unique database setups:
+production
+development
+test
+
+# Unit Testing:
+- Unit testing is a testing method where individual units of source code, program modules, usage procedures, and operating procedures are tested to determine if they are fit for use. 
+- They make sure that a section of an application, or a “unit”, is behaving as intended. 
+- In a Rails context, unit tests are what you use to test your models. 
+Although it is possible in Rails to run all tests simultaneously, each unit test case should be tested independently to isolate issues that may arise. 
+The goal of unit testing is to isolate each part of the program and show that the individual parts are correct.
+
+-> The Test Directory:
+Rails automatically adds new test files to the models directory when new models are generated. 
+So if you were to run a rails generate model User, Rails would add a user_test.rb file in the test/models directory. 
+The unit tests will be written in these files for each model.
+
+# Integration Testing:
+- Integration tests are used to test the interaction among any number of controllers. 
+- They are generally used to test important work flows within your application.
+- Unlike Unit and Functional tests, integration tests have to be explicitly created under the ‘test/integration’ folder within your application. 
+- Rails provides a generator to create an integration test skeleton for you.
+$ rails generate integration_test user_flows
+      exists  test/integration/
+      create  test/integration/user_flows_test.rb
+
+- With integration tests, your goal is to simulate a real-world scenario in which many units of code collaborate to deliver some value. 
+- Another way to look at it is making sure all the units work together as a whole. 
+That is because while each unit can function independently, it must also collaborate correctly with others.
 

@@ -1,0 +1,125 @@
+# RSpec - Matchers
+
+1. Equality/Identity Matchers
+Matchers to test for object or value equality.
+Matcher	          Description	                              Example
+eq	          Passes when actual == expected	             expect(actual).to eq expected
+eql	          Passes when actual.eql?(expected)	           expect(actual).to eql expected
+be	          Passes when actual.equal?(expected)	         expect(actual).to be expected
+equal	        Also passes when actual.equal?(expected)	   expect(actual).to equal expected
+
+Example:
+describe "An example of the equality Matchers" do 
+   it "should show how the equality Matchers work" do 
+      a = "test string" 
+      b = a 
+      
+      # The following Expectations will all pass 
+      expect(a).to eq "test string" 
+      expect(a).to eql "test string" 
+      expect(a).to be b 
+      expect(a).to equal b 
+   end
+end
+
+2. Comparison Matchers
+Matchers for comparing to values.
+
+Matcher	                       Description	                                          Example
+>	                     Passes when actual > expected	                       expect(actual).to be > expected
+>=	                   Passes when actual >= expected	                       expect(actual).to be >= expected
+<	                     Passes when actual < expected	                       expect(actual).to be < expected
+<=	                   Passes when actual <= expected	                       expect(actual).to be <= expected
+be_between inclusive	 Passes when actual is <= min and >= max	             expect(actual).to be_between(min, max).inclusive
+be_between exclusive	 Passes when actual is < min and > max	               expect(actual).to be_between(min, max).exclusive
+match	                 Passes when actual matches a regular expression	     expect(actual).to match(/regex/)
+
+Example
+describe "An example of the comparison Matchers" do
+   it "should show how the comparison Matchers work" do
+      a = 1
+      b = 2
+      c = 3		
+      d = 'test string'
+      
+      # The following Expectations will all pass
+      expect(b).to be > a
+      expect(a).to be >= a 
+      expect(a).to be < b 
+      expect(b).to be <= b 
+      expect(c).to be_between(1,3).inclusive 
+      expect(b).to be_between(1,3).exclusive 
+      expect(d).to match /TEST/i 
+   end  
+end
+
+3. Class/Type Matchers
+Matchers for testing the type or class of objects.
+Matcher	                         Description	                                                      Example
+be_instance_of	        Passes when actual is an instance of the expected class.	 expect(actual).to be_instance_of(Expected)
+be_kind_of	Passes when actual is an instance of the expected class or any of its parent classes.expect(actual).to be_kind_of(Expected)c
+respond_to	Passes when actual responds to the specified method.	                   expect(actual).to respond_to(expected)
+
+Example
+describe "An example of the type/class Matchers" do
+ 
+   it "should show how the type/class Matchers work" do
+      x = 1 
+      y = 3.14 
+      z = 'test string' 
+      
+      # The following Expectations will all pass
+      expect(x).to be_instance_of Fixnum 
+      expect(y).to be_kind_of Numeric 
+      expect(z).to respond_to(:length) 
+   end   
+end
+
+4.True/False/Nil Matchers
+Matchers for testing whether a value is true, false or nil.
+
+Matcher	Description	                                        Example
+be true	Passes when actual == true	                     expect(actual).to be true
+be false	Passes when actual == false	                     expect(actual).to be false
+be_truthy	Passes when actual is not false or nil	     expect(actual).to be_truthy
+be_falsey	Passes when actual is false or nil	             expect(actual).to be_falsey
+be_nil	        Passes when actual is nil	                     expect(actual).to be_nil
+
+Example
+describe "An example of the true/false/nil Matchers" do
+   it "should show how the true/false/nil Matchers work" do
+      x = true 
+      y = false 
+      z = nil 
+      a = "test string" 
+      
+      # The following Expectations will all pass
+      expect(x).to be true 
+      expect(y).to be false 
+      expect(a).to be_truthy 
+      expect(z).to be_falsey 
+      expect(z).to be_nil 
+   end 
+end
+
+5. Error Matchers
+Matchers for testing, when a block of code raises an error.
+Matcher	                                                 Description	                                                                         Example
+raise_error(ErrorClass)	                Passes when the block raises an error of type ErrorClass.	                               expect {block}.to raise_error(ErrorClass)
+raise_error("error message")	                Passes when the block raise an error with the message “error message”.	                expect {block}.to raise_error(“error message”)
+raise_error(ErrorClass, "error message")	 Passes when the block raises an error of type ErrorClass with the message “error message”	 expect {block}.to raise_error(ErrorClass,“error message”)
+
+Example
+Save the following code to a file with the name error_matcher_spec.rb and run it with this command − rspec error_matcher_spec.rb.
+
+describe "An example of the error Matchers" do 
+   it "should show how the error Matchers work" do 
+      
+      # The following Expectations will all pass 
+      expect { 1/0 }.to raise_error(ZeroDivisionError)
+      expect { 1/0 }.to raise_error("divided by 0") 
+      expect { 1/0 }.to raise_error("divided by 0", ZeroDivisionError) 
+   end 
+end
+
+

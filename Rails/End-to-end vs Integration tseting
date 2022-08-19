@@ -1,0 +1,32 @@
+-> Integration Testing:
+- Integration testing starts at the very early stages of development. Bugs are caught earlier, rather than later, in the cycle.
+- It's easy to integrate with daily builds and easy to test in the development environment.
+- Tests run faster compared to end-to-end tests.
+- Aims to test how external systems work with internal modules, one by one.
+- Used to test a single process from third-party software that will be used in conjunction with your software.
+
+Assume you work for an IT firm that has been tasked with developing an online shopping website for Camp World, a retailer of camping equipment.
+Following the completion of the requirements gathering, analysis, and design phases, one developer was assigned to each of the modules listed below.
+1. Authentication/Login and User Registration
+2. Catalog of Products
+3. Shopping Cart
+4. Billing
+5. Integration of a payment gateway
+6. Package & Shipping Tracking
+
+-> End to End Testing:
+- End-to-end testing is done when the product is almost ready for release.
+- It may be impossible to perform until the product is nearing completion.
+- Tests run slower compared to integration testing.
+- Aims to test the user experience from start to finish.
+- Can be used for either a single process being executed from start to finish or various different processes involving different applications.
+
+Let’s assume that testers are tasked with validating the functionality of a Gmail account. The following characteristics must be examined:
+1. To access the Gmail login page, type the URL into the address box.
+2. Use correct credentials to log in to your account.
+3. Inbox can be accessed—open Emails that have been read and those that have not been read.
+4. Create a new email message.
+5. Respond to and forward an email that has already been sent.
+6. Go to the Sent Items folder and open it. There you may check your emails.
+7. Now go to the Spam folder and open it. There you may check your emails.
+8. By hitting ‘logout,’ you can exit Gmail.
